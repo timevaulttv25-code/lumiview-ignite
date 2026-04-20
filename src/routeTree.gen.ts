@@ -9,38 +9,290 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ServiceAreasRouteImport } from './routes/service-areas'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as QuoteRouteImport } from './routes/quote'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as ServiceAreasSlugRouteImport } from './routes/service-areas.$slug'
+import { Route as IndustriesSlugRouteImport } from './routes/industries.$slug'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasRoute = ServiceAreasRouteImport.update({
+  id: '/service-areas',
+  path: '/service-areas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuoteRoute = QuoteRouteImport.update({
+  id: '/quote',
+  path: '/quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesRoute = IndustriesRouteImport.update({
+  id: '/industries',
+  path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServiceAreasSlugRoute = ServiceAreasSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ServiceAreasRoute,
+} as any)
+const IndustriesSlugRoute = IndustriesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/industries': typeof IndustriesRouteWithChildren
+  '/privacy': typeof PrivacyRoute
+  '/quote': typeof QuoteRoute
+  '/reviews': typeof ReviewsRoute
+  '/service-areas': typeof ServiceAreasRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
+  '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/industries/$slug': typeof IndustriesSlugRoute
+  '/service-areas/$slug': typeof ServiceAreasSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/industries': typeof IndustriesRouteWithChildren
+  '/privacy': typeof PrivacyRoute
+  '/quote': typeof QuoteRoute
+  '/reviews': typeof ReviewsRoute
+  '/service-areas': typeof ServiceAreasRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
+  '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/industries/$slug': typeof IndustriesSlugRoute
+  '/service-areas/$slug': typeof ServiceAreasSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/industries': typeof IndustriesRouteWithChildren
+  '/privacy': typeof PrivacyRoute
+  '/quote': typeof QuoteRoute
+  '/reviews': typeof ReviewsRoute
+  '/service-areas': typeof ServiceAreasRouteWithChildren
+  '/services': typeof ServicesRouteWithChildren
+  '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/industries/$slug': typeof IndustriesSlugRoute
+  '/service-areas/$slug': typeof ServiceAreasSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/contact'
+    | '/industries'
+    | '/privacy'
+    | '/quote'
+    | '/reviews'
+    | '/service-areas'
+    | '/services'
+    | '/terms'
+    | '/blog/$slug'
+    | '/industries/$slug'
+    | '/service-areas/$slug'
+    | '/services/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/contact'
+    | '/industries'
+    | '/privacy'
+    | '/quote'
+    | '/reviews'
+    | '/service-areas'
+    | '/services'
+    | '/terms'
+    | '/blog/$slug'
+    | '/industries/$slug'
+    | '/service-areas/$slug'
+    | '/services/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/contact'
+    | '/industries'
+    | '/privacy'
+    | '/quote'
+    | '/reviews'
+    | '/service-areas'
+    | '/services'
+    | '/terms'
+    | '/blog/$slug'
+    | '/industries/$slug'
+    | '/service-areas/$slug'
+    | '/services/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BlogRoute: typeof BlogRouteWithChildren
+  ContactRoute: typeof ContactRoute
+  IndustriesRoute: typeof IndustriesRouteWithChildren
+  PrivacyRoute: typeof PrivacyRoute
+  QuoteRoute: typeof QuoteRoute
+  ReviewsRoute: typeof ReviewsRoute
+  ServiceAreasRoute: typeof ServiceAreasRouteWithChildren
+  ServicesRoute: typeof ServicesRouteWithChildren
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas': {
+      id: '/service-areas'
+      path: '/service-areas'
+      fullPath: '/service-areas'
+      preLoaderRoute: typeof ServiceAreasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quote': {
+      id: '/quote'
+      path: '/quote'
+      fullPath: '/quote'
+      preLoaderRoute: typeof QuoteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries': {
+      id: '/industries'
+      path: '/industries'
+      fullPath: '/industries'
+      preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,21 +300,96 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/service-areas/$slug': {
+      id: '/service-areas/$slug'
+      path: '/$slug'
+      fullPath: '/service-areas/$slug'
+      preLoaderRoute: typeof ServiceAreasSlugRouteImport
+      parentRoute: typeof ServiceAreasRoute
+    }
+    '/industries/$slug': {
+      id: '/industries/$slug'
+      path: '/$slug'
+      fullPath: '/industries/$slug'
+      preLoaderRoute: typeof IndustriesSlugRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
+interface IndustriesRouteChildren {
+  IndustriesSlugRoute: typeof IndustriesSlugRoute
+}
+
+const IndustriesRouteChildren: IndustriesRouteChildren = {
+  IndustriesSlugRoute: IndustriesSlugRoute,
+}
+
+const IndustriesRouteWithChildren = IndustriesRoute._addFileChildren(
+  IndustriesRouteChildren,
+)
+
+interface ServiceAreasRouteChildren {
+  ServiceAreasSlugRoute: typeof ServiceAreasSlugRoute
+}
+
+const ServiceAreasRouteChildren: ServiceAreasRouteChildren = {
+  ServiceAreasSlugRoute: ServiceAreasSlugRoute,
+}
+
+const ServiceAreasRouteWithChildren = ServiceAreasRoute._addFileChildren(
+  ServiceAreasRouteChildren,
+)
+
+interface ServicesRouteChildren {
+  ServicesSlugRoute: typeof ServicesSlugRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesSlugRoute: ServicesSlugRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BlogRoute: BlogRouteWithChildren,
+  ContactRoute: ContactRoute,
+  IndustriesRoute: IndustriesRouteWithChildren,
+  PrivacyRoute: PrivacyRoute,
+  QuoteRoute: QuoteRoute,
+  ReviewsRoute: ReviewsRoute,
+  ServiceAreasRoute: ServiceAreasRouteWithChildren,
+  ServicesRoute: ServicesRouteWithChildren,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
