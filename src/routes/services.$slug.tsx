@@ -100,7 +100,7 @@ function ServiceDetail() {
           <h2 className="mt-3 font-serif text-3xl font-medium">Every visit, every time.</h2>
         </div>
         <ul className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
-          {details.includes.map((i) => (
+          {details.includes.map((i: string) => (
             <li key={i} className="flex items-start gap-3 rounded-xl border border-border bg-card p-5">
               <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
               <span className="text-sm font-medium">{i}</span>

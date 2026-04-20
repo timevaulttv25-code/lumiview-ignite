@@ -35,7 +35,7 @@ export const Route = createFileRoute("/blog/$slug")({
           breadcrumbs={[{ label: "Home", to: "/" }, { label: "Insights", to: "/blog" }, { label: post.title }]} />
         <article className="container-prose py-16 lg:py-20">
           <div className="mx-auto max-w-2xl text-lg leading-relaxed text-foreground/90 [&>strong]:font-semibold [&>strong]:text-foreground">
-            {body.split("\n\n").map((p, i) => (
+            {body.split("\n\n").map((p: string, i: number) => (
               <p key={i} className="mb-5" dangerouslySetInnerHTML={{ __html: p.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") }} />
             ))}
           </div>
