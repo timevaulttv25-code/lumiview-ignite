@@ -14,16 +14,130 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      quote_requests: {
+        Row: {
+          access: string | null
+          additional_info: string | null
+          city: string | null
+          company_name: string | null
+          contact_method: string
+          created_at: string
+          email: string | null
+          flexibility: string | null
+          frequency: string | null
+          full_name: string
+          has_pets: string | null
+          hear_about: string | null
+          id: string
+          internal_notes: string | null
+          parking: string | null
+          phone: string | null
+          preferred_timing: string | null
+          project_details: string | null
+          property_type: string
+          services: string[]
+          square_footage: string | null
+          state: string | null
+          status: Database["public"]["Enums"]["quote_status"]
+          street_address: string | null
+          updated_at: string
+          zip: string | null
+        }
+        Insert: {
+          access?: string | null
+          additional_info?: string | null
+          city?: string | null
+          company_name?: string | null
+          contact_method: string
+          created_at?: string
+          email?: string | null
+          flexibility?: string | null
+          frequency?: string | null
+          full_name: string
+          has_pets?: string | null
+          hear_about?: string | null
+          id?: string
+          internal_notes?: string | null
+          parking?: string | null
+          phone?: string | null
+          preferred_timing?: string | null
+          project_details?: string | null
+          property_type: string
+          services?: string[]
+          square_footage?: string | null
+          state?: string | null
+          status?: Database["public"]["Enums"]["quote_status"]
+          street_address?: string | null
+          updated_at?: string
+          zip?: string | null
+        }
+        Update: {
+          access?: string | null
+          additional_info?: string | null
+          city?: string | null
+          company_name?: string | null
+          contact_method?: string
+          created_at?: string
+          email?: string | null
+          flexibility?: string | null
+          frequency?: string | null
+          full_name?: string
+          has_pets?: string | null
+          hear_about?: string | null
+          id?: string
+          internal_notes?: string | null
+          parking?: string | null
+          phone?: string | null
+          preferred_timing?: string | null
+          project_details?: string | null
+          property_type?: string
+          services?: string[]
+          square_footage?: string | null
+          state?: string | null
+          status?: Database["public"]["Enums"]["quote_status"]
+          street_address?: string | null
+          updated_at?: string
+          zip?: string | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
+      quote_status: "new" | "contacted" | "quoted" | "won" | "lost"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +264,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+      quote_status: ["new", "contacted", "quoted", "won", "lost"],
+    },
   },
 } as const
