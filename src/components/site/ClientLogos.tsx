@@ -15,14 +15,14 @@ import lowcostPharmacy from "@/assets/clients/lowcost-pharmacy.png";
  */
 const LOGOS: { src: string; name: string; scale?: number }[] = [
   { src: maximizeFitness, name: "Maximize Fitness" },
-  { src: coffeeTherapy, name: "Coffee Therapy", scale: 1.9 },
+  { src: coffeeTherapy, name: "Coffee Therapy", scale: 1.5 },
   { src: oliveTree, name: "Olive Tree", scale: 1.9 },
   { src: amanisLearning, name: "Amani's Hopes & Dreams Early Learning Center" },
-  { src: wirelessExpress, name: "Wireless Express", scale: 1.5 },
+  { src: wirelessExpress, name: "Wireless Express", scale: 1.2 },
   { src: blushBeauty, name: "Blush Beauty & Aesthetics" },
   { src: perfect10Nails, name: "Perfect 10 Nails" },
   { src: zeinas, name: "Zeina's Frozen Yogurt & Fried Chicken" },
-  { src: bkBarbershop, name: "BK Barbershop", scale: 1.9 },
+  { src: bkBarbershop, name: "BK Barbershop", scale: 1.5 },
   { src: lowcostPharmacy, name: "LowCost Pharmacy & Urgent Care" },
 ];
 
