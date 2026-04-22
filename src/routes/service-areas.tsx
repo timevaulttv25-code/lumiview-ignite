@@ -34,18 +34,6 @@ function ServiceAreasPage() {
         pillsAsLinks
       />
 
-      <section className="container-prose py-16 lg:py-20">
-        <div className="rounded-2xl border border-border bg-secondary/40 p-8">
-          <div className="eyebrow text-accent">Additional coverage</div>
-          <p className="mt-3 text-muted-foreground">
-            We also serve North Ridgeville, Strongsville, Berea, Olmsted Falls,
-            Fairview Park, Brook Park, Elyria, Lorain, Sheffield Lake, Amherst,
-            Grafton, Columbia Station, LaGrange, Oberlin, Vermilion and west-side
-            Cleveland neighborhoods.
-          </p>
-        </div>
-      </section>
-
       <CTABand title="Outside our standard area? Just ask." />
     </SiteShell>
   );
