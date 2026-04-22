@@ -1,18 +1,16 @@
-import { createFileRoute, notFound, Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
-import { INDUSTRIES, SITE } from "@/lib/site";
-import { buildSeo } from "@/lib/seo";
 import residentialImg from "@/assets/industry-residential.jpg";
 import commercialImg from "@/assets/industry-commercial.jpg";
 import pmImg from "@/assets/industry-property-managers.jpg";
 import constructionImg from "@/assets/industry-construction.jpg";
 import daycareImg from "@/assets/industry-daycare.jpg";
 
-const IMG: Record<string, string> = {
+export const INDUSTRY_IMG: Record<string, string> = {
   residential: residentialImg,
   commercial: commercialImg,
   "property-managers": pmImg,
@@ -20,15 +18,18 @@ const IMG: Record<string, string> = {
   daycare: daycareImg,
 };
 
-const DETAILS: Record<
-  string,
-  {
-    intro: string;
-    services: string[];
-    faqs: { q: string; a: string }[];
-  }
-> = {
+export type IndustryDetailContent = {
+  slug: string;
+  title: string;
+  intro: string;
+  services: string[];
+  faqs: { q: string; a: string }[];
+};
+
+export const INDUSTRY_DETAILS: Record<string, IndustryDetailContent> = {
   residential: {
+    slug: "residential",
+    title: "Residential Properties",
     intro:
       "From quarterly window cleaning to seasonal exterior refreshes and short-term rental turnovers, we help homeowners and rental owners protect the look and value of their largest investment.",
     services: [
@@ -51,6 +52,8 @@ const DETAILS: Record<
     ],
   },
   commercial: {
+    slug: "commercial",
+    title: "Commercial Properties",
     intro:
       "Storefronts, offices, restaurants and retail plazas depend on first impressions. We deliver consistent, scheduled care that keeps your brand presentation sharp.",
     services: [
@@ -73,6 +76,8 @@ const DETAILS: Record<
     ],
   },
   "property-managers": {
+    slug: "property-managers",
+    title: "Property Managers",
     intro:
       "One point of contact, one invoice, one consistent standard across your entire portfolio — common areas, exteriors, turnover units and short-term rentals.",
     services: [
@@ -95,6 +100,8 @@ const DETAILS: Record<
     ],
   },
   construction: {
+    slug: "construction",
+    title: "Builders & New Construction",
     intro:
       "Post-construction window cleaning, debris removal and final-detail cleaning so newly built or renovated properties show — and sell — at their absolute best.",
     services: [
@@ -117,6 +124,8 @@ const DETAILS: Record<
     ],
   },
   daycare: {
+    slug: "daycare",
+    title: "Daycare & Childcare",
     intro:
       "Detail-focused interior and exterior cleaning for childcare environments where cleanliness, safety and presentation directly affect the trust of every parent through the door.",
     services: [
@@ -140,45 +149,33 @@ const DETAILS: Record<
   },
 };
 
-export const Route = createFileRoute("/industries/$slug")({
-  loader: ({ params }) => {
-    const ind = INDUSTRIES.find((i) => i.slug === params.slug);
-    if (!ind) throw notFound();
-    return { ind, details: DETAILS[params.slug], image: IMG[params.slug] };
-  },
-  head: ({ loaderData }) =>
-    loaderData
-      ? buildSeo({
-          title: `${loaderData.ind.title} Cleaning Services — Northeast Ohio`,
-          description: loaderData.details?.intro ?? "",
-          path: `/industries/${loaderData.ind.slug}`,
-          image: `${SITE.url}${loaderData.image}`,
-        })
-      : {},
-  notFoundComponent: () => (
-    <SiteShell>
-      <div className="container-prose py-32 text-center">
-        <Link to="/industries" className="text-accent">
-          All industries →
-        </Link>
-      </div>
-    </SiteShell>
-  ),
-  component: IndustryDetail,
-});
+export function IndustryDetailPage({ slug }: { slug: string }) {
+  const details = INDUSTRY_DETAILS[slug];
+  const image = INDUSTRY_IMG[slug];
 
-function IndustryDetail() {
-  const { ind, details, image } = Route.useLoaderData();
+  if (!details) {
+    return (
+      <SiteShell>
+        <div className="container-prose py-32 text-center">
+          <h1 className="font-serif text-4xl">Industry not found</h1>
+          <Link to="/industries" className="mt-6 inline-block text-accent">
+            View all industries →
+          </Link>
+        </div>
+      </SiteShell>
+    );
+  }
+
   return (
     <SiteShell>
       <PageHero
         eyebrow="Industry"
-        title={ind.title}
+        title={details.title}
         description={details.intro}
         breadcrumbs={[
           { label: "Home", to: "/" },
           { label: "Industries", to: "/industries" },
-          { label: ind.title },
+          { label: details.title },
         ]}
         image={image}
       />
@@ -186,7 +183,7 @@ function IndustryDetail() {
         <div className="lg:col-span-5">
           <div className="eyebrow">What we deliver</div>
           <h2 className="mt-3 font-serif text-3xl font-medium">
-            Tailored to {ind.title.toLowerCase()}.
+            Tailored to {details.title.toLowerCase()}.
           </h2>
           <p className="mt-4 text-muted-foreground">
             Every service is delivered by an insured, background-checked crew operating from the
@@ -205,8 +202,8 @@ function IndustryDetail() {
           ))}
         </ul>
       </section>
-      <FaqSection items={details.faqs} title={`${ind.title} — common questions`} />
-      <CTABand title={`Cleaning services built for ${ind.title.toLowerCase()}.`} />
+      <FaqSection items={details.faqs} title={`${details.title} — common questions`} />
+      <CTABand title={`Cleaning services built for ${details.title.toLowerCase()}.`} />
     </SiteShell>
   );
 }

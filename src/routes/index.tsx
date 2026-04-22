@@ -196,8 +196,7 @@ function HomePage() {
           ].map((s) => (
             <Link
               key={s.slug}
-              to="/services/$slug"
-              params={{ slug: s.slug }}
+              to={`/services/${s.slug}`}
               className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-elegant"
             >
               <div className="aspect-[4/3] overflow-hidden">
@@ -233,8 +232,7 @@ function HomePage() {
                 {INDUSTRIES.map((ind) => (
                   <Link
                     key={ind.slug}
-                    to="/industries/$slug"
-                    params={{ slug: ind.slug }}
+                    to={`/industries/${ind.slug}`}
                     className="group flex items-center justify-between gap-6 bg-navy-deep p-6 transition-colors hover:bg-navy lg:p-8"
                   >
                     <div>
