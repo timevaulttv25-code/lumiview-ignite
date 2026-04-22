@@ -13,7 +13,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { RichServiceLayout } from "@/components/site/RichServiceLayout";
 import heroImg from "@/assets/service-property-care.jpg";
-import baImg from "@/assets/work-siding-ba.jpg";
+import beforeImg from "@/assets/work/work-siding-before.jpg";
+import afterImg from "@/assets/work/work-siding-after.jpg";
 
 const slug = "property-care";
 const title = "Property Care & Facility Support";
@@ -172,7 +173,8 @@ export const Route = createFileRoute("/services/property-care")({
       resultEyebrow="The Result"
       resultHeading="Less vendor management. Cleaner properties. Predictable spend."
       resultBody="Property managers tell us the biggest win isn't the cleaning, it's the time they get back. One call, one invoice, one accountable partner across every property they manage."
-      resultImage={baImg}
+      resultBeforeImage={beforeImg}
+      resultAfterImage={afterImg}
       resultImageAlt="Before and after property exterior care by LumiView Services"
       audienceEyebrow="Who We Serve"
       audienceHeading="Portfolio-grade care for the operators who run Northeast Ohio."

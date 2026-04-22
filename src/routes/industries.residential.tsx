@@ -4,7 +4,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, faqJsonLd } from "@/lib/seo";
 import { RichIndustryLayout } from "@/components/site/RichIndustryLayout";
 import heroImg from "@/assets/industry-residential.jpg";
-import resultImg from "@/assets/work-windows-ba.jpg";
+import beforeImg from "@/assets/work/work-windows-before.jpg";
+import afterImg from "@/assets/work/work-windows-after.jpg";
 
 const slug = "residential";
 const industryTitle = "Residential Properties";
@@ -131,7 +132,8 @@ function ResidentialIndustryPage() {
       resultEyebrow="The Result"
       resultHeading="A home that looks brighter, feels cleaner, and protects its value."
       resultBody="Regular professional cleaning protects siding, glass and surfaces from long-term damage, and turns your home into one you actually look forward to walking into."
-      resultImage={resultImg}
+      resultBeforeImage={beforeImg}
+      resultAfterImage={afterImg}
       resultImageAlt="Before and after residential window cleaning by LumiView"
       relatedEyebrow="Popular Services"
       relatedHeading="Residential services homeowners book most."

@@ -13,7 +13,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { RichServiceLayout } from "@/components/site/RichServiceLayout";
 import heroImg from "@/assets/service-airbnb-turnover.jpg";
-import baImg from "@/assets/work-windows-ba.jpg";
+import beforeImg from "@/assets/work/work-windows-before.jpg";
+import afterImg from "@/assets/work/work-windows-after.jpg";
 
 const slug = "airbnb-vrbo-turnover";
 const title = "Airbnb & Vrbo Turnover Cleaning";
@@ -187,7 +188,8 @@ export const Route = createFileRoute("/services/airbnb-vrbo-turnover")({
       resultEyebrow="The Result"
       resultHeading="Higher review scores, fewer guest complaints, and your weekends back."
       resultBody="Hosts who switch to LumiView typically see review scores climb above 4.9 within 60 days, and complaint messages about cleanliness drop to near zero. The cleaner the turnover, the better the listing performs in Airbnb and Vrbo search."
-      resultImage={baImg}
+      resultBeforeImage={beforeImg}
+      resultAfterImage={afterImg}
       resultImageAlt="Before and after Airbnb turnover cleaning by LumiView Services"
       audienceEyebrow="Who We Serve"
       audienceHeading="Built for the way short-term rental hosts actually operate."

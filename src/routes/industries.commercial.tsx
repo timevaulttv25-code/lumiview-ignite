@@ -4,7 +4,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, faqJsonLd } from "@/lib/seo";
 import { RichIndustryLayout } from "@/components/site/RichIndustryLayout";
 import heroImg from "@/assets/industry-commercial.jpg";
-import resultImg from "@/assets/work-storefront-ba.jpg";
+import beforeImg from "@/assets/work/work-storefront-before.jpg";
+import afterImg from "@/assets/work/work-storefront-after.jpg";
 
 const slug = "commercial";
 const industryTitle = "Commercial Properties";
@@ -131,7 +132,8 @@ function CommercialIndustryPage() {
       resultEyebrow="The Result"
       resultHeading="Sharper first impressions, fewer customer complaints, zero disruption."
       resultBody="Customers form an opinion of your business in the first six seconds at the door. Spotless glass, swept entryways and clean restrooms keep that opinion working in your favor, without ever interrupting your operation."
-      resultImage={resultImg}
+      resultBeforeImage={beforeImg}
+      resultAfterImage={afterImg}
       resultImageAlt="Before and after commercial storefront cleaning by LumiView"
       relatedEyebrow="Popular Services"
       relatedHeading="Commercial services businesses book most."

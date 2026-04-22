@@ -4,7 +4,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, faqJsonLd } from "@/lib/seo";
 import { RichIndustryLayout } from "@/components/site/RichIndustryLayout";
 import heroImg from "@/assets/industry-property-managers.jpg";
-import resultImg from "@/assets/work-storefront-ba.jpg";
+import beforeImg from "@/assets/work/work-storefront-before.jpg";
+import afterImg from "@/assets/work/work-storefront-after.jpg";
 
 const slug = "property-managers";
 const industryTitle = "Property Managers";
@@ -131,7 +132,8 @@ function PropertyManagersIndustryPage() {
       resultEyebrow="The Result"
       resultHeading="Faster turns, fewer tenant complaints, less time chasing vendors."
       resultBody="With one trusted vendor across the portfolio, you stop coordinating five different cleaners, and start getting consistent results, predictable invoicing and units that lease faster."
-      resultImage={resultImg}
+      resultBeforeImage={beforeImg}
+      resultAfterImage={afterImg}
       resultImageAlt="Common-area cleaning portfolio support by LumiView"
       relatedEyebrow="Popular Services"
       relatedHeading="Services property managers book most."
