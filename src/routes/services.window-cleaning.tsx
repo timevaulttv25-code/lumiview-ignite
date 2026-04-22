@@ -360,7 +360,7 @@ function WindowCleaningPage() {
               </div>
             </div>
             <ul className="grid gap-2 text-sm text-foreground/85 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-3">
-              {SITE.primaryAreas.slice(0, 12).map((c) => (
+              {SITE.primaryAreas.map((c) => (
                 <li key={c} className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                   {c}
