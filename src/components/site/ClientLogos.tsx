@@ -16,8 +16,8 @@ import wcma from "@/assets/clients/wcma.png";
  */
 const LOGOS: { src: string; name: string; scale?: number }[] = [
   { src: maximizeFitness, name: "Maximize Fitness" },
-  { src: coffeeTherapy, name: "Coffee Therapy", scale: 1.27 },
-  { src: oliveTree, name: "Olive Tree", scale: 1.27 },
+  { src: coffeeTherapy, name: "Coffee Therapy", scale: 1.4 },
+  { src: oliveTree, name: "Olive Tree", scale: 1.52 },
   { src: amanisLearning, name: "Amani's Hopes & Dreams Early Learning Center" },
   { src: wirelessExpress, name: "Wireless Express", scale: 1.15 },
   { src: blushBeauty, name: "Blush Beauty & Aesthetics" },
