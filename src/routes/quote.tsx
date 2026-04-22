@@ -112,7 +112,7 @@ function QuotePage() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState<Record<string, any>>({ services: [], contact_method: "Email", state: "Ohio" });
+  const [form, setForm] = useState<Record<string, any>>({ services: [], contact_method: "Email", state: "OH" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const update = (k: string, v: any) => {
