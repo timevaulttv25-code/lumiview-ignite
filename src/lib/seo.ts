@@ -146,6 +146,44 @@ export function websiteJsonLd() {
   };
 }
 
+/** Review collection schema for the /reviews page — boosts star-rich snippets. */
+export function reviewCollectionJsonLd(
+  reviews: { author: string; rating: number; body: string; date?: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${SITE.url}#business`,
+    name: SITE.name,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: SITE.rating.value,
+      reviewCount: SITE.rating.count,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    review: reviews.map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.author },
+      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
+      reviewBody: r.body,
+      ...(r.date ? { datePublished: r.date } : {}),
+    })),
+  };
+}
+
+/** Speakable schema — flags FAQ content for voice assistants (Google Assistant, etc.). */
+export function speakableFaqJsonLd(cssSelectors: string[] = [".faq-question", ".faq-answer"]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors,
+    },
+  };
+}
+
 /** Helper to inject JSON-LD as a script tag via TanStack head() scripts array. */
 export function jsonLdScript(data: unknown) {
   return { type: "application/ld+json", children: JSON.stringify(data) };

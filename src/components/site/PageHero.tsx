@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
+import { SITE } from "@/lib/site";
 
 export function PageHero({
   eyebrow,
@@ -14,8 +15,26 @@ export function PageHero({
   breadcrumbs?: { label: string; to?: string }[];
   image?: string;
 }) {
+  // Auto-emit BreadcrumbList JSON-LD when breadcrumbs are provided (boosts SERP rich results).
+  const breadcrumbLd = breadcrumbs && breadcrumbs.length > 1 ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((b, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: b.label,
+      ...(b.to ? { item: `${SITE.url}${b.to}` } : {}),
+    })),
+  } : null;
+
   return (
     <section className="relative overflow-hidden border-b border-border bg-secondary/40">
+      {breadcrumbLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+        />
+      )}
       <div className="container-prose grid gap-12 py-16 lg:grid-cols-12 lg:py-24">
         <div className="lg:col-span-7">
           {breadcrumbs && (
