@@ -77,10 +77,10 @@ export const Route = createFileRoute("/case-studies")({
   component: () => (
     <SiteShell>
       <PageHero
-        eyebrow="Results"
+        eyebrow="Case Studies"
         title="Outcomes our clients can measure."
         description="The work speaks for itself — but the numbers help. See how homeowners, property managers, and businesses across Northeast Ohio use LumiView to protect their assets and look their best."
-        breadcrumbs={[{ label: "Home", to: "/" }, { label: "Results" }]}
+        breadcrumbs={[{ label: "Home", to: "/" }, { label: "Results", to: "/results" }, { label: "Case Studies" }]}
       />
 
       <section className="container-prose py-20 lg:py-24">

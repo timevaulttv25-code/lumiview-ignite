@@ -35,7 +35,7 @@ const NAV: Array<{
     children: [
       { to: "/reviews", label: "Reviews", description: `${SITE.rating.value}★ across ${SITE.rating.count}+ Google reviews.` },
       { to: "/our-work", label: "Our Work", description: "Before & after photos from real projects." },
-      { to: "/results", label: "Case Studies", description: "Measurable outcomes from real clients." },
+      { to: "/case-studies", label: "Case Studies", description: "Measurable outcomes from real clients." },
     ],
   },
   {
