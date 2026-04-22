@@ -69,7 +69,6 @@ export function Header() {
                       <Link
                         key={c.label}
                         to={c.to}
-                        params={c.params}
                         className="flex flex-col gap-0.5 rounded-xl px-4 py-3 transition-colors hover:bg-muted"
                       >
                         <span className="text-sm font-semibold text-foreground">{c.label}</span>
@@ -144,7 +143,6 @@ export function Header() {
                         <Link
                           key={c.label}
                           to={c.to}
-                          params={c.params}
                           onClick={() => setOpen(false)}
                           className="rounded-md px-3 py-2 text-sm text-foreground/75 hover:bg-muted"
                         >
