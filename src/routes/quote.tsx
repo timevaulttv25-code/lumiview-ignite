@@ -23,14 +23,27 @@ export const Route = createFileRoute("/quote")({
   component: QuotePage,
 });
 
+// US phone: accepts 10 digits with optional +1, spaces, dashes, parens, dots
+const phoneRegex = /^(?:\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+
 const schema = z.object({
-  full_name: z.string().trim().min(1).max(120),
+  full_name: z.string().trim().min(1, "Full name is required").max(120),
   company_name: z.string().trim().max(160).optional().or(z.literal("")),
   contact_method: z.enum(["Call", "Text", "Email"]),
-  email: z.string().trim().email().max(254).optional().or(z.literal("")),
-  phone: z.string().trim().max(40).optional().or(z.literal("")),
-  property_type: z.string().min(1),
-  preferred_timing: z.string().optional(),
+  email: z
+    .string()
+    .trim()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address")
+    .max(254),
+  phone: z
+    .string()
+    .trim()
+    .min(1, "Phone number is required")
+    .regex(phoneRegex, "Please enter a valid US phone number (e.g. 216-555-1234)")
+    .max(40),
+  property_type: z.string().min(1, "Property type is required"),
+  preferred_timing: z.string().min(1, "Preferred timing is required"),
   hear_about: z.string().optional(),
   street_address: z.string().max(200).optional(),
   city: z.string().max(80).optional(),
@@ -48,7 +61,7 @@ const schema = z.object({
 });
 
 const SERVICES = ["Window Cleaning", "Pressure Washing & Exterior", "Janitorial & Interior", "Property Care", "Not Sure Yet"];
-const PROPERTY_TYPES = ["Residential", "Commercial", "Builder / New Construction", "Property Management", "Daycare / Childcare"];
+const PROPERTY_TYPES = ["Residential", "Commercial", "Builder / New Construction", "Property Management", "Daycare / Childcare", "Facility"];
 const TIMING = ["As Soon as Possible", "Within 1–2 Weeks", "This Month", "Planning Ahead", "Looking for Recurring Service"];
 const HEAR = ["Google Search", "Google Business Profile", "Referral", "Social Media", "Mailer", "Door Hanger", "Yard Sign", "Repeat Customer", "Other"];
 const FREQUENCY = ["One-Time", "Weekly", "Bi-Weekly", "Monthly", "Quarterly", "Not Sure Yet"];
@@ -75,7 +88,6 @@ function QuotePage() {
     const { error } = await supabase.from("quote_requests").insert({
       ...parsed.data,
       company_name: parsed.data.company_name || null,
-      email: parsed.data.email || null,
     });
     setLoading(false);
     if (error) {
@@ -122,8 +134,8 @@ function QuotePage() {
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div><Label>Full name *</Label><Input value={form.full_name || ""} onChange={(e) => update("full_name", e.target.value)} /></div>
                   <div><Label>Company name</Label><Input value={form.company_name || ""} onChange={(e) => update("company_name", e.target.value)} /></div>
-                  <div><Label>Email</Label><Input type="email" value={form.email || ""} onChange={(e) => update("email", e.target.value)} /></div>
-                  <div><Label>Phone</Label><Input value={form.phone || ""} onChange={(e) => update("phone", e.target.value)} /></div>
+                  <div><Label>Email *</Label><Input type="email" required value={form.email || ""} onChange={(e) => update("email", e.target.value)} /></div>
+                  <div><Label>Phone *</Label><Input type="tel" required inputMode="tel" placeholder="(216) 555-1234" value={form.phone || ""} onChange={(e) => update("phone", e.target.value)} /></div>
                   <div>
                     <Label>Best way to reach you *</Label>
                     <Select value={form.contact_method} onValueChange={(v) => update("contact_method", v)}>
@@ -139,7 +151,7 @@ function QuotePage() {
                     </Select>
                   </div>
                   <div>
-                    <Label>Preferred timing</Label>
+                    <Label>Preferred timing *</Label>
                     <Select value={form.preferred_timing} onValueChange={(v) => update("preferred_timing", v)}>
                       <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
                       <SelectContent>{TIMING.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
@@ -154,7 +166,28 @@ function QuotePage() {
                   </div>
                 </div>
                 <div className="flex justify-end">
-                  <Button className="rounded-full" onClick={() => { if (!form.full_name || !form.property_type) { toast.error("Name and property type are required"); return; } setStep(2); }}>Continue →</Button>
+                  <Button
+                    className="rounded-full"
+                    onClick={() => {
+                      const step1 = schema.pick({
+                        full_name: true,
+                        email: true,
+                        phone: true,
+                        contact_method: true,
+                        property_type: true,
+                        preferred_timing: true,
+                      }).safeParse(form);
+                      if (!step1.success) {
+                        toast.error("Please fix the highlighted field", {
+                          description: step1.error.issues[0]?.message,
+                        });
+                        return;
+                      }
+                      setStep(2);
+                    }}
+                  >
+                    Continue →
+                  </Button>
                 </div>
               </div>
             )}
