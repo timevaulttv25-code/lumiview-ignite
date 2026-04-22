@@ -132,18 +132,8 @@ export function ServiceAreaMap({
             </div>
 
             {interactive && active && (
-              <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4 text-sm">
-                <div className="text-muted-foreground">
-                  Showing <span className="font-semibold text-navy-deep">{active.name}</span>{" "}
-                  · ZIP {active.zip}
-                </div>
-                <Link
-                  to="/service-areas/$slug"
-                  params={{ slug: active.slug }}
-                  className="font-semibold text-accent hover:underline"
-                >
-                  See {active.name} services →
-                </Link>
+              <div className="mt-4 border-t border-border pt-4 text-sm text-muted-foreground">
+                Showing <span className="font-semibold text-navy-deep">{active.name}</span> · ZIP {active.zip}
               </div>
             )}
           </div>
