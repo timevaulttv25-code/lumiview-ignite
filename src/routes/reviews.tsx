@@ -148,6 +148,7 @@ function ReviewsPage() {
             </a>
           </Button>
         </div>
+        </Reveal>
       </section>
 
       <CTABand
