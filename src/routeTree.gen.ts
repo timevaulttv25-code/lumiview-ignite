@@ -13,10 +13,12 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ServiceAreasRouteImport } from './routes/service-areas'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ResultsRouteImport } from './routes/results'
 import { Route as ReferralRouteImport } from './routes/referral'
 import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PartnerRouteImport } from './routes/partner'
+import { Route as OurWorkRouteImport } from './routes/our-work'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as GivingBackRouteImport } from './routes/giving-back'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -59,6 +61,11 @@ const ReviewsRoute = ReviewsRouteImport.update({
   path: '/reviews',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResultsRoute = ResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReferralRoute = ReferralRouteImport.update({
   id: '/referral',
   path: '/referral',
@@ -77,6 +84,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const PartnerRoute = PartnerRouteImport.update({
   id: '/partner',
   path: '/partner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurWorkRoute = OurWorkRouteImport.update({
+  id: '/our-work',
+  path: '/our-work',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesRoute = IndustriesRouteImport.update({
@@ -198,10 +210,12 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/giving-back': typeof GivingBackRoute
   '/industries': typeof IndustriesRouteWithChildren
+  '/our-work': typeof OurWorkRoute
   '/partner': typeof PartnerRoute
   '/privacy': typeof PrivacyRoute
   '/quote': typeof QuoteRoute
   '/referral': typeof ReferralRoute
+  '/results': typeof ResultsRoute
   '/reviews': typeof ReviewsRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
@@ -229,10 +243,12 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/giving-back': typeof GivingBackRoute
   '/industries': typeof IndustriesRouteWithChildren
+  '/our-work': typeof OurWorkRoute
   '/partner': typeof PartnerRoute
   '/privacy': typeof PrivacyRoute
   '/quote': typeof QuoteRoute
   '/referral': typeof ReferralRoute
+  '/results': typeof ResultsRoute
   '/reviews': typeof ReviewsRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
@@ -261,10 +277,12 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/giving-back': typeof GivingBackRoute
   '/industries': typeof IndustriesRouteWithChildren
+  '/our-work': typeof OurWorkRoute
   '/partner': typeof PartnerRoute
   '/privacy': typeof PrivacyRoute
   '/quote': typeof QuoteRoute
   '/referral': typeof ReferralRoute
+  '/results': typeof ResultsRoute
   '/reviews': typeof ReviewsRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
@@ -294,10 +312,12 @@ export interface FileRouteTypes {
     | '/faq'
     | '/giving-back'
     | '/industries'
+    | '/our-work'
     | '/partner'
     | '/privacy'
     | '/quote'
     | '/referral'
+    | '/results'
     | '/reviews'
     | '/service-areas'
     | '/services'
@@ -325,10 +345,12 @@ export interface FileRouteTypes {
     | '/faq'
     | '/giving-back'
     | '/industries'
+    | '/our-work'
     | '/partner'
     | '/privacy'
     | '/quote'
     | '/referral'
+    | '/results'
     | '/reviews'
     | '/service-areas'
     | '/services'
@@ -356,10 +378,12 @@ export interface FileRouteTypes {
     | '/faq'
     | '/giving-back'
     | '/industries'
+    | '/our-work'
     | '/partner'
     | '/privacy'
     | '/quote'
     | '/referral'
+    | '/results'
     | '/reviews'
     | '/service-areas'
     | '/services'
@@ -388,10 +412,12 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   GivingBackRoute: typeof GivingBackRoute
   IndustriesRoute: typeof IndustriesRouteWithChildren
+  OurWorkRoute: typeof OurWorkRoute
   PartnerRoute: typeof PartnerRoute
   PrivacyRoute: typeof PrivacyRoute
   QuoteRoute: typeof QuoteRoute
   ReferralRoute: typeof ReferralRoute
+  ResultsRoute: typeof ResultsRoute
   ReviewsRoute: typeof ReviewsRoute
   ServiceAreasRoute: typeof ServiceAreasRouteWithChildren
   ServicesRoute: typeof ServicesRouteWithChildren
@@ -428,6 +454,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/results': {
+      id: '/results'
+      path: '/results'
+      fullPath: '/results'
+      preLoaderRoute: typeof ResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/referral': {
       id: '/referral'
       path: '/referral'
@@ -454,6 +487,13 @@ declare module '@tanstack/react-router' {
       path: '/partner'
       fullPath: '/partner'
       preLoaderRoute: typeof PartnerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-work': {
+      id: '/our-work'
+      path: '/our-work'
+      fullPath: '/our-work'
+      preLoaderRoute: typeof OurWorkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industries': {
@@ -681,10 +721,12 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   GivingBackRoute: GivingBackRoute,
   IndustriesRoute: IndustriesRouteWithChildren,
+  OurWorkRoute: OurWorkRoute,
   PartnerRoute: PartnerRoute,
   PrivacyRoute: PrivacyRoute,
   QuoteRoute: QuoteRoute,
   ReferralRoute: ReferralRoute,
+  ResultsRoute: ResultsRoute,
   ReviewsRoute: ReviewsRoute,
   ServiceAreasRoute: ServiceAreasRouteWithChildren,
   ServicesRoute: ServicesRouteWithChildren,
