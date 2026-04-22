@@ -1,10 +1,37 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Building2, Home, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, Star, Images, LineChart } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { SITE } from "@/lib/site";
 import { buildSeo } from "@/lib/seo";
+
+const PILLARS = [
+  {
+    icon: Star,
+    eyebrow: "Reviews",
+    title: `${SITE.rating.value}★ on Google`,
+    body: `Hear directly from ${SITE.rating.count}+ homeowners, businesses, and property managers across Northeast Ohio.`,
+    to: "/reviews",
+    cta: "Read Reviews",
+  },
+  {
+    icon: Images,
+    eyebrow: "Our Work",
+    title: "Before & after gallery",
+    body: "Real photo proof from real Northeast Ohio properties — windows, driveways, siding, patios, storefronts, and more.",
+    to: "/our-work",
+    cta: "View Gallery",
+  },
+  {
+    icon: LineChart,
+    eyebrow: "Case Studies",
+    title: "Measurable client outcomes",
+    body: "PM portfolio consolidation, Airbnb rating recovery, retail plaza routes, post-construction handoffs — with the numbers behind them.",
+    to: "/case-studies",
+    cta: "Read Case Studies",
+  },
+] as const;
 
 const STATS = [
   { value: "12,000+", label: "Windows cleaned this year" },
@@ -13,73 +40,18 @@ const STATS = [
   { value: "24 hr", label: "Average quote turnaround" },
 ];
 
-const CASE_STUDIES = [
-  {
-    icon: Building2,
-    eyebrow: "Property Management",
-    title: "8-building rental portfolio — one vendor, one invoice",
-    client: "Regional PM company • Lakewood + Rocky River",
-    challenge: "Coordinating 4 different vendors across 142 doors meant missed turnovers, inconsistent quality, and frustrated tenants.",
-    solution: "Consolidated window, exterior, and turnover cleaning under a single recurring contract with a dedicated account manager.",
-    outcomes: [
-      "32% reduction in vendor management overhead",
-      "Zero missed turnovers in 14 months of service",
-      "Tenant satisfaction scores up across all 8 properties",
-    ],
-  },
-  {
-    icon: Home,
-    eyebrow: "Residential — Airbnb",
-    title: "5-star rating recovery for short-term rental host",
-    client: "Lakefront Airbnb host • Avon Lake",
-    challenge: "Inconsistent cleaning was costing 4-star reviews and reducing nightly rate. Host needed reliable, photo-documented turnovers.",
-    solution: "Hotel-grade turnover with linen service, restock checklist, and photo confirmation sent within 30 minutes of completion.",
-    outcomes: [
-      "Average review score climbed from 4.6 to 4.94",
-      "Superhost status maintained 4 quarters running",
-      "Nightly rate increased ~18% with better reviews",
-    ],
-  },
-  {
-    icon: Sparkles,
-    eyebrow: "Commercial",
-    title: "Retail plaza — weekly storefront route",
-    client: "Mixed-use retail plaza • Westlake",
-    challenge: "11 storefronts with inconsistent vendor showings made the plaza look neglected and hurt foot traffic perception.",
-    solution: "Single weekly route, before-doors-open scheduling, and unified billing through plaza management.",
-    outcomes: [
-      "100% on-time service rate over 18 months",
-      "Tenants report cleaner, more inviting storefronts",
-      "Single PO replaced 11 separate vendor invoices",
-    ],
-  },
-  {
-    icon: TrendingUp,
-    eyebrow: "New Construction",
-    title: "Post-construction window cleaning — 32-unit build",
-    client: "Custom home builder • Avon",
-    challenge: "Construction debris, stickers, and mortar splatter on 600+ windows needed removing before final walkthroughs.",
-    solution: "Two-person crew, scraper-and-pure-water method, completed across 4 days to align with builder closing schedule.",
-    outcomes: [
-      "All 32 units delivered on schedule",
-      "Zero buyer complaints about glass at walkthrough",
-      "Builder added LumiView as preferred vendor",
-    ],
-  },
-];
-
 export const Route = createFileRoute("/results")({
   head: () => buildSeo({
-    title: "Results — Case Studies & Outcomes",
-    description: "Real outcomes from LumiView clients: portfolio consolidation, Airbnb rating recovery, retail plaza routes, and post-construction projects across Northeast Ohio.",
+    title: "Results — Reviews, Before & After, Case Studies",
+    description: "Three ways to see the LumiView difference: verified Google reviews, before-and-after photo galleries, and detailed case studies with measurable client outcomes.",
     path: "/results",
   }),
   component: () => (
     <SiteShell>
       <PageHero
         eyebrow="Results"
-        title="Outcomes our clients can measure."
-        description="The work speaks for itself — but the numbers help. See how homeowners, property managers, and businesses across Northeast Ohio use LumiView to protect their assets and look their best."
+        title="See the work, the proof, and the outcomes."
+        description="Whether you want quick social proof, visual before-and-afters, or the full story behind a project — we've got you covered."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Results" }]}
       />
 
@@ -96,67 +68,36 @@ export const Route = createFileRoute("/results")({
 
       <section className="container-prose pb-20 lg:pb-28">
         <div className="mb-12 max-w-2xl">
-          <div className="eyebrow">Case Studies</div>
+          <div className="eyebrow">Three ways to explore</div>
           <h2 className="mt-3 font-serif text-3xl font-medium tracking-tight text-navy-deep lg:text-4xl">
-            Selected client stories.
+            Pick how you want to see the proof.
           </h2>
         </div>
-        <div className="grid gap-8 lg:grid-cols-2">
-          {CASE_STUDIES.map((c) => {
-            const Icon = c.icon;
+        <div className="grid gap-8 lg:grid-cols-3">
+          {PILLARS.map((p) => {
+            const Icon = p.icon;
             return (
-              <article key={c.title} className="flex flex-col rounded-2xl border border-border bg-card p-8 shadow-soft transition-shadow duration-300 hover:shadow-elegant lg:p-10">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/15 text-accent">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <div className="eyebrow text-accent">{c.eyebrow}</div>
+              <Link
+                key={p.to}
+                to={p.to}
+                className="group flex flex-col rounded-2xl border border-border bg-card p-8 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-elegant"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/15 text-accent">
+                  <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-5 font-serif text-2xl font-medium leading-snug text-navy-deep">{c.title}</h3>
-                <div className="mt-2 text-sm text-muted-foreground">{c.client}</div>
-
-                <dl className="mt-6 space-y-4 text-sm">
-                  <div>
-                    <dt className="font-semibold text-foreground">Challenge</dt>
-                    <dd className="mt-1 leading-relaxed text-muted-foreground">{c.challenge}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-semibold text-foreground">What we did</dt>
-                    <dd className="mt-1 leading-relaxed text-muted-foreground">{c.solution}</dd>
-                  </div>
-                </dl>
-
-                <div className="mt-6 rounded-xl bg-secondary/40 p-5">
-                  <div className="text-xs font-semibold uppercase tracking-wide text-accent">Outcomes</div>
-                  <ul className="mt-3 space-y-2 text-sm">
-                    {c.outcomes.map((o) => (
-                      <li key={o} className="flex gap-2 leading-snug text-foreground">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                        {o}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
+                <div className="eyebrow mt-6 text-accent">{p.eyebrow}</div>
+                <h3 className="mt-2 font-serif text-2xl font-medium leading-snug text-navy-deep">{p.title}</h3>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
+                  {p.cta} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
             );
           })}
         </div>
-
-        <div className="mt-14 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-secondary/30 p-8">
-          <div>
-            <div className="font-serif text-xl font-medium text-navy-deep">Want to see the visual proof?</div>
-            <p className="mt-1 text-sm text-muted-foreground">Browse our before-and-after gallery from real Northeast Ohio jobs.</p>
-          </div>
-          <Link
-            to="/our-work"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            View Our Work <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
       </section>
 
-      <CTABand title="Ready to be our next case study?" />
+      <CTABand title="Ready to be our next happy result?" />
     </SiteShell>
   ),
 });
