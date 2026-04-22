@@ -3,7 +3,7 @@ import coffeeTherapy from "@/assets/clients/coffee-therapy.png";
 import oliveTree from "@/assets/clients/olive-tree.png";
 import amanisLearning from "@/assets/clients/amanis-learning.png";
 import wirelessExpress from "@/assets/clients/wireless-express.png";
-import blushBeauty from "@/assets/clients/blush-beauty.jpeg";
+
 import perfect10Nails from "@/assets/clients/perfect-10-nails.png";
 import zeinas from "@/assets/clients/zeinas.png";
 import bkBarbershop from "@/assets/clients/bk-barbershop.png";
@@ -19,7 +19,7 @@ const LOGOS: { src: string; name: string; scale?: number }[] = [
   { src: oliveTree, name: "Olive Tree", scale: 1.9 },
   { src: amanisLearning, name: "Amani's Hopes & Dreams Early Learning Center" },
   { src: wirelessExpress, name: "Wireless Express", scale: 1.5 },
-  { src: blushBeauty, name: "Blush Beauty & Aesthetics" },
+  
   { src: perfect10Nails, name: "Perfect 10 Nails", scale: 0.8 },
   { src: zeinas, name: "Zeina's Frozen Yogurt & Fried Chicken", scale: 0.8 },
   { src: bkBarbershop, name: "BK Barbershop", scale: 1.5 },
