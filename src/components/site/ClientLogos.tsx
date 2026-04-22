@@ -8,6 +8,7 @@ import blushBeauty from "@/assets/clients/blush-beauty.png";
 import perfect10Nails from "@/assets/clients/perfect-10-nails.png";
 import zeinas from "@/assets/clients/zeinas.png";
 import bkBarbershop from "@/assets/clients/bk-barbershop.png";
+import lowcostPharmacy from "@/assets/clients/lowcost-pharmacy.png";
 
 /**
  * Add or remove logos here, the marquee adapts automatically.
@@ -24,6 +25,7 @@ const LOGOS: { src: string; name: string }[] = [
   { src: perfect10Nails, name: "Perfect 10 Nails" },
   { src: zeinas, name: "Zeina's Frozen Yogurt & Fried Chicken" },
   { src: bkBarbershop, name: "BK Barbershop" },
+  { src: lowcostPharmacy, name: "LowCost Pharmacy & Urgent Care" },
 ];
 
 export function ClientLogos({
