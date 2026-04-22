@@ -181,7 +181,7 @@ export const Route = createFileRoute("/services/janitorial-interior-cleaning")({
         {
           to: "/industries/daycare",
           eyebrow: "Childcare",
-          title: "Daycare & childcare centers",
+          title: "Daycare & Childcare Facility",
           body: "Detail-focused, compliance-aware cleaning for licensed daycare and early-learning facilities.",
         },
         {
