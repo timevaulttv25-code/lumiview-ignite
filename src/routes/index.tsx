@@ -375,7 +375,7 @@ function HeroCarousel() {
                   i === index ? "opacity-100 translate-y-0" : "absolute opacity-0 translate-y-3"
                 }`}
               >
-                <div className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+                <div className="inline-flex rounded-full bg-navy-deep/55 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-ivory backdrop-blur-sm">
                   {slide.sub}
                 </div>
                 <div className="mt-1 font-serif text-2xl font-medium text-ivory lg:text-3xl">
