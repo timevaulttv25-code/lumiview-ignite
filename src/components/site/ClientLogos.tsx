@@ -28,7 +28,7 @@ const LOGOS: { src: string; name: string; scale?: number }[] = [
 
 export function ClientLogos({
   eyebrow = "Trusted by",
-  title = "Property owners and operators across Northeast Ohio.",
+  title = "Businesses and property owners across Northeast Ohio.",
 }: { eyebrow?: string; title?: string }) {
   // Duplicate the list so the marquee can loop seamlessly
   const loop = [...LOGOS, ...LOGOS];
