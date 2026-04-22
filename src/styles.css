@@ -83,7 +83,7 @@
   --muted: oklch(0.96 0.010 260);
   --muted-foreground: oklch(0.48 0.03 265);
 
-  --accent: oklch(0.60 0.24 305);                 /* purple */
+  --accent: oklch(0.50 0.235 305);                /* purple — darkened for readability on white */
   --accent-foreground: oklch(1 0 0);
 
   --destructive: oklch(0.55 0.20 27);
