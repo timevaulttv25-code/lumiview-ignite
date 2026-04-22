@@ -7,9 +7,13 @@ export function Footer() {
     <footer className="navy-gradient mt-24 text-ivory">
       <div className="container-prose grid gap-12 py-16 lg:grid-cols-12 lg:py-20">
         <div className="lg:col-span-4">
-          <div className="font-serif text-3xl font-semibold tracking-tight">
-            Lumi<span className="text-accent">View</span>
-          </div>
+          <img
+            src={new URL("../../assets/lumiview-logo.png", import.meta.url).href}
+            alt={SITE.name}
+            className="h-10 w-auto brightness-0 invert"
+            width={220}
+            height={40}
+          />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ivory/70">
             Premium window cleaning, pressure washing and property care for homes,
             businesses and managed properties across Avon and Northeast Ohio.

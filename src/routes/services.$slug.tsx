@@ -10,12 +10,16 @@ import windowImg from "@/assets/service-window-cleaning.jpg";
 import pressureImg from "@/assets/service-pressure-washing.jpg";
 import janitorialImg from "@/assets/service-janitorial.jpg";
 import propertyImg from "@/assets/service-property-care.jpg";
+import airbnbImg from "@/assets/service-airbnb-turnover.jpg";
+import pmImg from "@/assets/service-property-management.jpg";
 
 const IMG: Record<string, string> = {
   "window-cleaning": windowImg,
   "pressure-washing": pressureImg,
   "janitorial-interior-cleaning": janitorialImg,
   "property-care": propertyImg,
+  "airbnb-vrbo-turnover": airbnbImg,
+  "property-management-cleaning": pmImg,
 };
 
 const DETAILS: Record<string, { intro: string; includes: string[]; faqs: { q: string; a: string }[] }> = {
@@ -49,6 +53,38 @@ const DETAILS: Record<string, { intro: string; includes: string[]; faqs: { q: st
     faqs: [
       { q: "Can you handle multiple properties on one account?", a: "Absolutely — that's exactly what this service is built for. Consolidated scheduling, reporting, and billing." },
       { q: "Do you provide certificates of insurance?", a: "Yes, immediately on request, with your management company listed as additional insured if needed." },
+    ],
+  },
+  "airbnb-vrbo-turnover": {
+    intro: "Hotel-grade turnover cleaning for short-term rentals on Airbnb, Vrbo, Booking.com and direct-booking platforms. Same-day turnovers, fresh linens, restocked essentials and photo confirmation — so every guest walks into a 5-star experience.",
+    includes: [
+      "Same-day check-out / check-in turnovers",
+      "Fresh linen & towel service",
+      "Bed-making to hotel standard",
+      "Toiletry & consumable restocking",
+      "Damage & low-inventory reporting",
+      "Photo confirmation after every clean",
+    ],
+    faqs: [
+      { q: "How fast is your turnover window?", a: "Standard Airbnb / Vrbo turnovers are completed inside the 11am check-out to 4pm check-in window. Tight back-to-back bookings are accommodated when scheduled in advance." },
+      { q: "Do you provide linens?", a: "Yes — we offer optional hotel-grade linen and towel service with laundering, or we can launder your existing inventory on-site." },
+      { q: "What if a guest leaves damage?", a: "We document and photograph any damage, missing items or low supplies and notify you immediately so you can file with the platform." },
+    ],
+  },
+  "property-management-cleaning": {
+    intro: "Recurring cleaning, turnover support and exterior care for residential rental portfolios, multi-unit apartment buildings, commercial offices, retail plazas and storefronts. One vetted, insured vendor across every door — with consolidated scheduling, reporting and billing.",
+    includes: [
+      "Move-in / move-out turnover cleaning",
+      "Common-area & hallway janitorial",
+      "Storefront & plaza window cleaning",
+      "Parking lot & sidewalk pressure washing",
+      "Make-ready cleans for new tenants",
+      "Single invoice across the portfolio",
+    ],
+    faqs: [
+      { q: "Do you work with property managers and landlords?", a: "Yes — managed residential portfolios, commercial buildings, and retail plaza ownership groups are a core part of what we do. We can serve a single building or hundreds of units." },
+      { q: "Can you handle emergency turnovers?", a: "Yes. We maintain reserve crew capacity for same-week make-ready cleans and unexpected vacancies." },
+      { q: "How is billing handled?", a: "Most management clients prefer a single consolidated monthly invoice with line-item detail per property. Net-30 terms are available on approval." },
     ],
   },
 };
