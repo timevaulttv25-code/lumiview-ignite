@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Star, MapPinned } from "lucide-react";
 import { SITE, SERVICES, CITIES } from "@/lib/site";
 
 export function Footer() {
@@ -27,6 +27,49 @@ export function Footer() {
             </a>
             <div className="flex items-center gap-2.5 text-ivory/80">
               <MapPin className="h-4 w-4 text-accent" /> {SITE.address.city}, {SITE.address.region}
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <div className="eyebrow text-ivory/60">Follow & Review</div>
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <a
+                href={SITE.social.googleReviews}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Leave a Google review"
+                className="inline-flex items-center gap-2 rounded-full border border-ivory/15 bg-ivory/5 px-3.5 py-1.5 text-xs font-semibold text-ivory transition-colors hover:border-accent hover:bg-accent/15 hover:text-accent"
+              >
+                <Star className="h-3.5 w-3.5 fill-accent text-accent" />
+                {SITE.rating.value}★ Google Reviews
+              </a>
+              <a
+                href={SITE.social.google}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LumiView on Google Maps"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-ivory/15 text-ivory transition-colors hover:border-accent hover:bg-accent/15 hover:text-accent"
+              >
+                <MapPinned className="h-4 w-4" />
+              </a>
+              <a
+                href={SITE.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LumiView on Facebook"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-ivory/15 text-ivory transition-colors hover:border-accent hover:bg-accent/15 hover:text-accent"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href={SITE.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LumiView on Instagram"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-ivory/15 text-ivory transition-colors hover:border-accent hover:bg-accent/15 hover:text-accent"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
@@ -58,12 +101,26 @@ export function Footer() {
               <Link to="/service-areas" className="text-accent hover:underline">All areas →</Link>
             </li>
           </ul>
+
+          <div className="mt-8">
+            <div className="eyebrow text-ivory/60">Hours</div>
+            <ul className="mt-3 space-y-1.5 text-sm text-ivory/80">
+              {SITE.hoursDisplay.map((h) => (
+                <li key={h.days} className="flex justify-between gap-4">
+                  <span>{h.days}</span>
+                  <span className="text-ivory/65">{h.time}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="lg:col-span-3">
           <div className="eyebrow text-ivory/60">Company</div>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li><Link to="/about" className="text-ivory/85 hover:text-accent">About LumiView</Link></li>
+            <li><Link to="/giving-back" className="text-ivory/85 hover:text-accent">Giving Back</Link></li>
+            <li><Link to="/careers" className="text-ivory/85 hover:text-accent">Careers</Link></li>
             <li><Link to="/our-work" className="text-ivory/85 hover:text-accent">Our Work (Before & After)</Link></li>
             <li><Link to="/case-studies" className="text-ivory/85 hover:text-accent">Case Studies</Link></li>
             <li><Link to="/reviews" className="text-ivory/85 hover:text-accent">Customer Reviews</Link></li>
@@ -71,7 +128,6 @@ export function Footer() {
             <li><Link to="/faq" className="text-ivory/85 hover:text-accent">FAQ</Link></li>
             <li><Link to="/partner" className="text-ivory/85 hover:text-accent">Partner With Us</Link></li>
             <li><Link to="/referral" className="text-ivory/85 hover:text-accent">Referral Program</Link></li>
-            <li><Link to="/careers" className="text-ivory/85 hover:text-accent">Careers</Link></li>
             <li><Link to="/quote" className="text-ivory/85 hover:text-accent">Request a Quote</Link></li>
             <li><Link to="/contact" className="text-ivory/85 hover:text-accent">Contact</Link></li>
           </ul>

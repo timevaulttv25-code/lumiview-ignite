@@ -54,7 +54,7 @@ export function localBusinessJsonLd(extra?: Record<string, unknown>) {
       addressCountry: SITE.address.country,
     },
     geo: { "@type": "GeoCoordinates", latitude: SITE.geo.lat, longitude: SITE.geo.lng },
-    openingHours: SITE.hours,
+    openingHours: SITE.hoursSchema,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: SITE.rating.value,
