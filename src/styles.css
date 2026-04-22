@@ -59,11 +59,11 @@
   /* LumiView brand — exact hex from live site */
   --brand-cyan: oklch(0.82 0.135 210);            /* #22D3EE */
   --brand-blue: oklch(0.62 0.21 268);             /* #4A6CF7 */
-  --brand-purple: oklch(0.64 0.235 305);          /* #A855F7 */
+  --brand-purple: oklch(0.50 0.235 305);          /* deeper purple for AA contrast on white */
   --navy-deep: oklch(0.20 0.05 265);              /* headline navy */
   --navy: oklch(0.32 0.06 265);
   --ivory: oklch(1 0 0);
-  --gold: oklch(0.60 0.24 305);                   /* legacy alias → purple */
+  --gold: oklch(0.50 0.235 305);                  /* legacy alias → purple */
   --sage: oklch(0.78 0.16 215);                   /* legacy alias → cyan */
 
   /* Surfaces */
@@ -83,7 +83,7 @@
   --muted: oklch(0.96 0.010 260);
   --muted-foreground: oklch(0.48 0.03 265);
 
-  --accent: oklch(0.60 0.24 305);                 /* purple */
+  --accent: oklch(0.50 0.235 305);                /* purple — darkened for readability on white */
   --accent-foreground: oklch(1 0 0);
 
   --destructive: oklch(0.55 0.20 27);
