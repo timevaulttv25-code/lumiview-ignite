@@ -89,13 +89,7 @@ function HomePage() {
             </div>
             <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.05] tracking-tight text-balance text-navy-deep sm:text-6xl lg:text-[5rem]">
               Windows that disappear.{" "}
-              <span className="italic text-navy-deep">
-                Properties that{" "}
-                <span className="rounded-lg bg-accent/15 px-2 py-0.5 font-semibold not-italic text-accent">
-                  shine
-                </span>
-                .
-              </span>
+              <span className="italic text-navy">Properties that <span className="text-accent">shine</span>.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty">
               Premium window cleaning, pressure washing and property care for homes,
@@ -381,7 +375,7 @@ function HeroCarousel() {
                   i === index ? "opacity-100 translate-y-0" : "absolute opacity-0 translate-y-3"
                 }`}
               >
-                <div className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+                <div className="inline-flex rounded-full bg-navy-deep/55 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-ivory backdrop-blur-sm">
                   {slide.sub}
                 </div>
                 <div className="mt-1 font-serif text-2xl font-medium text-ivory lg:text-3xl">
