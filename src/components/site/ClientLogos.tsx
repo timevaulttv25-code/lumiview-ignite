@@ -1,25 +1,29 @@
-import client1 from "@/assets/clients/client-1.png";
-import client2 from "@/assets/clients/client-2.png";
-import client3 from "@/assets/clients/client-3.png";
-import client4 from "@/assets/clients/client-4.png";
-import client5 from "@/assets/clients/client-5.png";
-import client6 from "@/assets/clients/client-6.png";
-import client7 from "@/assets/clients/client-7.png";
-import client8 from "@/assets/clients/client-8.png";
+import maximizeFitness from "@/assets/clients/maximize-fitness.png";
+import coffeeTherapy from "@/assets/clients/coffee-therapy.png";
+import oliveTree from "@/assets/clients/olive-tree.png";
+import qahwahHouse from "@/assets/clients/qahwah-house.png";
+import amanisLearning from "@/assets/clients/amanis-learning.png";
+import wirelessExpress from "@/assets/clients/wireless-express.png";
+import blushBeauty from "@/assets/clients/blush-beauty.png";
+import perfect10Nails from "@/assets/clients/perfect-10-nails.png";
+import zeinas from "@/assets/clients/zeinas.png";
+import bkBarbershop from "@/assets/clients/bk-barbershop.png";
 
 /**
  * Add or remove logos here, the marquee adapts automatically.
  * Use square or wide PNGs with transparent background for best results.
  */
 const LOGOS: { src: string; name: string }[] = [
-  { src: client1, name: "Lakewood Realty" },
-  { src: client2, name: "Northcoast Properties" },
-  { src: client3, name: "Avon Plaza" },
-  { src: client4, name: "Westshore Builders" },
-  { src: client5, name: "Bright Path Daycare" },
-  { src: client6, name: "Harborview Stays" },
-  { src: client7, name: "Maple Ridge HOA" },
-  { src: client8, name: "Crestwood Office Park" },
+  { src: maximizeFitness, name: "Maximize Fitness" },
+  { src: coffeeTherapy, name: "Coffee Therapy" },
+  { src: oliveTree, name: "Olive Tree" },
+  { src: qahwahHouse, name: "Qahwah House Coffee" },
+  { src: amanisLearning, name: "Amani's Hopes & Dreams Early Learning Center" },
+  { src: wirelessExpress, name: "Wireless Express" },
+  { src: blushBeauty, name: "Blush Beauty & Aesthetics" },
+  { src: perfect10Nails, name: "Perfect 10 Nails" },
+  { src: zeinas, name: "Zeina's Frozen Yogurt & Fried Chicken" },
+  { src: bkBarbershop, name: "BK Barbershop" },
 ];
 
 export function ClientLogos({
