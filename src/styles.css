@@ -56,10 +56,10 @@
 :root {
   --radius: 0.5rem;
 
-  /* LumiView brand — cyan→blue→purple gradient + deep navy text on white */
-  --brand-cyan: oklch(0.78 0.16 215);             /* logo cyan */
-  --brand-blue: oklch(0.58 0.22 270);             /* CTA blue */
-  --brand-purple: oklch(0.60 0.24 305);           /* CTA purple */
+  /* LumiView brand — exact hex from live site */
+  --brand-cyan: oklch(0.82 0.135 210);            /* #22D3EE */
+  --brand-blue: oklch(0.62 0.21 268);             /* #4A6CF7 */
+  --brand-purple: oklch(0.64 0.235 305);          /* #A855F7 */
   --navy-deep: oklch(0.20 0.05 265);              /* headline navy */
   --navy: oklch(0.32 0.06 265);
   --ivory: oklch(1 0 0);
