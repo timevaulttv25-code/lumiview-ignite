@@ -51,29 +51,23 @@ export function ClientLogos({
             "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
         }}
       >
-        <div className="mx-auto flex w-max animate-marquee items-center justify-center gap-20 will-change-transform group-hover:[animation-play-state:paused]">
-          {loop.map((l, i) => {
-            // Convert per-logo "scale" into inverse padding so the slot stays the same size
-            const scale = l.scale ?? 1;
-            const padPct = Math.max(0, (1 - 1 / Math.max(scale, 0.5)) * 50);
-            return (
-              <div
-                key={`${l.name}-${i}`}
-                className="flex h-28 w-44 shrink-0 items-center justify-center overflow-hidden"
-                aria-hidden={i >= LOGOS.length}
-              >
-                <img
-                  src={l.src}
-                  alt={i < LOGOS.length ? l.name : ""}
-                  className="max-h-full max-w-full object-contain transition duration-300 hover:scale-105"
-                  style={{ padding: scale < 1 ? `${(1 - scale) * 50}%` : 0, transform: scale > 1 ? `scale(${scale})` : undefined, transformOrigin: "center" }}
-                  loading="lazy"
-                  width={176}
-                  height={112}
-                />
-              </div>
-            );
-          })}
+        <div className="mx-auto flex w-max animate-marquee items-center will-change-transform group-hover:[animation-play-state:paused]">
+          {loop.map((l, i) => (
+            <div
+              key={`${l.name}-${i}`}
+              className="flex h-24 w-48 shrink-0 items-center justify-center px-6"
+              aria-hidden={i >= LOGOS.length}
+            >
+              <img
+                src={l.src}
+                alt={i < LOGOS.length ? l.name : ""}
+                className="h-full w-full object-contain transition duration-300 hover:scale-105"
+                loading="lazy"
+                width={192}
+                height={96}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
