@@ -162,14 +162,37 @@ function QuotePage() {
     return true;
   };
 
+  const validateStep2 = () => {
+    const result = schema.pick({
+      street_address: true,
+      city: true,
+      state: true,
+      zip: true,
+      frequency: true,
+      services: true,
+    }).safeParse(form);
+    if (!result.success) {
+      const map = collectErrors(result.error.issues);
+      setErrors((prev) => ({ ...prev, ...map }));
+      toast.error("Please fix the highlighted fields", {
+        description: Object.values(map)[0],
+      });
+      return false;
+    }
+    return true;
+  };
+
+  const step1Keys = ["full_name", "email", "phone", "contact_method", "property_type", "preferred_timing"];
+  const step2Keys = ["street_address", "city", "state", "zip", "frequency", "services"];
+
   const submit = async () => {
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
       const map = collectErrors(parsed.error.issues);
       setErrors(map);
-      // If errors are on step-1 fields, send the user back so they can see them
-      const step1Keys = ["full_name", "email", "phone", "contact_method", "property_type", "preferred_timing"];
-      if (Object.keys(map).some((k) => step1Keys.includes(k))) setStep(1);
+      const errKeys = Object.keys(map);
+      if (errKeys.some((k) => step1Keys.includes(k))) setStep(1);
+      else if (errKeys.some((k) => step2Keys.includes(k))) setStep(2);
       toast.error("Please check the highlighted fields", { description: Object.values(map)[0] });
       return;
     }
