@@ -59,11 +59,25 @@ export const SERVICES = [
     excerpt:
       "Single point of contact for ongoing exterior and interior upkeep across managed properties, multi-unit buildings, and facility portfolios.",
   },
+  {
+    slug: "airbnb-vrbo-turnover",
+    title: "Airbnb & Vrbo Turnover Cleaning",
+    short: "5-star ready between every guest.",
+    excerpt:
+      "Hotel-grade short-term rental turnover cleaning with linen service, restocking and photo confirmation — built for Airbnb, Vrbo and Booking.com hosts who need flawless reviews.",
+  },
+  {
+    slug: "property-management-cleaning",
+    title: "Property Management Cleaning",
+    short: "Residential rentals, buildings & plazas.",
+    excerpt:
+      "Recurring cleaning and turnover support for residential rental portfolios, multi-unit buildings, commercial offices, retail plazas and storefronts — one trusted vendor across every door.",
+  },
 ] as const;
 
 export const INDUSTRIES = [
   { slug: "residential", title: "Residential Properties", short: "Homeowners & private estates" },
-  { slug: "commercial", title: "Commercial Properties", short: "Offices, storefronts, retail" },
+  { slug: "commercial", title: "Commercial Properties", short: "Offices, storefronts, retail plazas" },
   { slug: "property-managers", title: "Property Managers", short: "Multi-unit & portfolio support" },
   { slug: "construction", title: "Builders & New Construction", short: "Post-build & turnover prep" },
   { slug: "daycare", title: "Daycare & Childcare", short: "Detail-focused, family-trusted" },
