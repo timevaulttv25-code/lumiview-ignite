@@ -169,4 +169,39 @@
   .cta-gradient {
     background: linear-gradient(90deg, var(--brand-blue), var(--brand-purple));
   }
+
+  /* Horizontal marquee for client logos */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 38s linear infinite;
+  }
+
+  /* Trust-strip pop-in (staggered via inline animation-delay) */
+  @keyframes trust-pop {
+    0%   { opacity: 0; transform: translateY(6px) scale(0.96); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .animate-trust-pop {
+    animation: trust-pop 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  /* Soft float for badges / pills */
+  @keyframes soft-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-3px); }
+  }
+  .animate-soft-float {
+    animation: soft-float 4s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee,
+    .animate-trust-pop,
+    .animate-soft-float {
+      animation: none !important;
+    }
+  }
 }
