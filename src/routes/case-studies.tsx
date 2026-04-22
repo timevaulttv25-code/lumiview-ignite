@@ -131,7 +131,8 @@ export const Route = createFileRoute("/case-studies")({
                     </div>
                   </dl>
 
-                  <div className="mt-6 rounded-xl bg-secondary/40 p-5">
+                  <div className="mt-auto pt-6">
+                  <div className="rounded-xl bg-secondary/40 p-5">
                     <div className="text-xs font-semibold uppercase tracking-wide text-accent">Outcomes</div>
                     <ul className="mt-3 space-y-2 text-sm">
                       {c.outcomes.map((o) => (
