@@ -84,7 +84,7 @@ export function BeforeAfterSlider({
             src={beforeSrc}
             alt={`${alt} — before`}
             className="absolute inset-0 h-full w-full object-cover"
-            style={{ width: `${100 / Math.max(pos, 0.0001) * 100}%`, maxWidth: "none" }}
+            style={{ width: `${(100 / Math.max(pos, 0.01)) * 100}%`, maxWidth: "none" }}
             loading="lazy"
             draggable={false}
           />
