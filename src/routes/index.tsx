@@ -104,11 +104,15 @@ function HomePage() {
               </a>
             </div>
 
-            <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-4 sm:grid-cols-4">
-              {TRUST.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2">
-                  <Icon className="h-4 w-4 text-accent" />
-                  <dt className="text-xs font-medium text-foreground/80">{label}</dt>
+            <dl className="mt-10 grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4">
+              {TRUST.map(({ icon: Icon, label }, i) => (
+                <div
+                  key={label}
+                  className="animate-trust-pop flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-2 backdrop-blur-sm transition-colors hover:border-accent/50 hover:bg-accent/5"
+                  style={{ animationDelay: `${120 + i * 110}ms` }}
+                >
+                  <Icon className="h-4 w-4 shrink-0 text-accent" />
+                  <dt className="text-xs font-medium text-foreground/85">{label}</dt>
                 </div>
               ))}
             </dl>
@@ -142,6 +146,9 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* CLIENT LOGOS */}
+      <ClientLogos />
 
       {/* WHY */}
       <section className="border-y border-border bg-secondary/40 py-20 lg:py-28">
