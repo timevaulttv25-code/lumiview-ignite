@@ -3,6 +3,7 @@ import { ArrowRight, Building2, Home, Sparkles, TrendingUp } from "lucide-react"
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
+import { Reveal } from "@/components/site/Reveal";
 import { SITE } from "@/lib/site";
 import { buildSeo } from "@/lib/seo";
 
@@ -85,11 +86,13 @@ export const Route = createFileRoute("/case-studies")({
 
       <section className="container-prose py-20 lg:py-24">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {STATS.map((s) => (
-            <div key={s.label} className="rounded-2xl border border-border bg-card p-8 text-center shadow-soft">
-              <div className="font-serif text-4xl font-semibold text-navy-deep lg:text-5xl">{s.value}</div>
-              <div className="mt-3 text-sm leading-snug text-muted-foreground">{s.label}</div>
-            </div>
+          {STATS.map((s, i) => (
+            <Reveal key={s.label} delay={i * 90}>
+              <div className="lift-card rounded-2xl border border-border bg-card p-8 text-center shadow-soft hover:shadow-elegant">
+                <div className="font-serif text-4xl font-semibold text-navy-deep lg:text-5xl">{s.value}</div>
+                <div className="mt-3 text-sm leading-snug text-muted-foreground">{s.label}</div>
+              </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -103,46 +106,49 @@ export const Route = createFileRoute("/case-studies")({
           </h2>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
-          {CASE_STUDIES.map((c) => {
+          {CASE_STUDIES.map((c, idx) => {
             const Icon = c.icon;
             return (
-              <article key={c.title} className="flex flex-col rounded-2xl border border-border bg-card p-8 shadow-soft transition-shadow duration-300 hover:shadow-elegant lg:p-10">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/15 text-accent">
-                    <Icon className="h-5 w-5" />
+              <Reveal key={c.title} delay={(idx % 2) * 120} as="article">
+                <div className="lift-card flex flex-col rounded-2xl border border-border bg-card p-8 shadow-soft hover:shadow-elegant lg:p-10">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/15 text-accent transition-transform duration-500 hover:rotate-6 hover:scale-110">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div className="eyebrow text-accent">{c.eyebrow}</div>
                   </div>
-                  <div className="eyebrow text-accent">{c.eyebrow}</div>
-                </div>
-                <h3 className="mt-5 font-serif text-2xl font-medium leading-snug text-navy-deep">{c.title}</h3>
-                <div className="mt-2 text-sm text-muted-foreground">{c.client}</div>
+                  <h3 className="mt-5 font-serif text-2xl font-medium leading-snug text-navy-deep">{c.title}</h3>
+                  <div className="mt-2 text-sm text-muted-foreground">{c.client}</div>
 
-                <dl className="mt-6 space-y-4 text-sm">
-                  <div>
-                    <dt className="font-semibold text-foreground">Challenge</dt>
-                    <dd className="mt-1 leading-relaxed text-muted-foreground">{c.challenge}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-semibold text-foreground">What we did</dt>
-                    <dd className="mt-1 leading-relaxed text-muted-foreground">{c.solution}</dd>
-                  </div>
-                </dl>
+                  <dl className="mt-6 space-y-4 text-sm">
+                    <div>
+                      <dt className="font-semibold text-foreground">Challenge</dt>
+                      <dd className="mt-1 leading-relaxed text-muted-foreground">{c.challenge}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-semibold text-foreground">What we did</dt>
+                      <dd className="mt-1 leading-relaxed text-muted-foreground">{c.solution}</dd>
+                    </div>
+                  </dl>
 
-                <div className="mt-6 rounded-xl bg-secondary/40 p-5">
-                  <div className="text-xs font-semibold uppercase tracking-wide text-accent">Outcomes</div>
-                  <ul className="mt-3 space-y-2 text-sm">
-                    {c.outcomes.map((o) => (
-                      <li key={o} className="flex gap-2 leading-snug text-foreground">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                        {o}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="mt-6 rounded-xl bg-secondary/40 p-5">
+                    <div className="text-xs font-semibold uppercase tracking-wide text-accent">Outcomes</div>
+                    <ul className="mt-3 space-y-2 text-sm">
+                      {c.outcomes.map((o) => (
+                        <li key={o} className="flex gap-2 leading-snug text-foreground">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                          {o}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </article>
+              </Reveal>
             );
           })}
         </div>
 
+        <Reveal>
         <div className="mt-14 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-secondary/30 p-8">
           <div>
             <div className="font-serif text-xl font-medium text-navy-deep">Want to see the visual proof?</div>
@@ -150,11 +156,12 @@ export const Route = createFileRoute("/case-studies")({
           </div>
           <Link
             to="/our-work"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-elegant"
           >
-            View Our Work <ArrowRight className="h-4 w-4" />
+            View Our Work <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
+        </Reveal>
         </div>
       </section>
 
