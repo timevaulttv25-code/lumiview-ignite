@@ -29,7 +29,18 @@ const NAV: Array<{
     })),
   },
   { to: "/service-areas", label: "Service Areas" },
-  { to: "/about", label: "About" },
+  {
+    to: "/about",
+    label: "About",
+    children: [
+      { to: "/about", label: "Our Story", description: "Locally owned. Detail obsessed." },
+      { to: "/faq", label: "FAQ", description: "Pricing, scheduling, methods, and more." },
+      { to: "/careers", label: "Careers", description: "Join a team that pays and trains right." },
+      { to: "/giving-back", label: "Giving Back", description: "How we invest in Northeast Ohio." },
+      { to: "/partner", label: "Partner With Us", description: "For PMs, realtors, builders, hosts." },
+      { to: "/referral", label: "Referral Program", description: "Earn credit or cash for every referral." },
+    ],
+  },
   { to: "/blog", label: "Insights" },
   { to: "/contact", label: "Contact" },
 ];

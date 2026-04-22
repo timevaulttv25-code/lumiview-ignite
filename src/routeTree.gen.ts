@@ -13,10 +13,15 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ServiceAreasRouteImport } from './routes/service-areas'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ReferralRouteImport } from './routes/referral'
 import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PartnerRouteImport } from './routes/partner'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as GivingBackRouteImport } from './routes/giving-back'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -54,6 +59,11 @@ const ReviewsRoute = ReviewsRouteImport.update({
   path: '/reviews',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReferralRoute = ReferralRouteImport.update({
+  id: '/referral',
+  path: '/referral',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QuoteRoute = QuoteRouteImport.update({
   id: '/quote',
   path: '/quote',
@@ -64,14 +74,34 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PartnerRoute = PartnerRouteImport.update({
+  id: '/partner',
+  path: '/partner',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GivingBackRoute = GivingBackRouteImport.update({
+  id: '/giving-back',
+  path: '/giving-back',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -163,10 +193,15 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/giving-back': typeof GivingBackRoute
   '/industries': typeof IndustriesRouteWithChildren
+  '/partner': typeof PartnerRoute
   '/privacy': typeof PrivacyRoute
   '/quote': typeof QuoteRoute
+  '/referral': typeof ReferralRoute
   '/reviews': typeof ReviewsRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
@@ -189,10 +224,15 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/giving-back': typeof GivingBackRoute
   '/industries': typeof IndustriesRouteWithChildren
+  '/partner': typeof PartnerRoute
   '/privacy': typeof PrivacyRoute
   '/quote': typeof QuoteRoute
+  '/referral': typeof ReferralRoute
   '/reviews': typeof ReviewsRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
@@ -216,10 +256,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/giving-back': typeof GivingBackRoute
   '/industries': typeof IndustriesRouteWithChildren
+  '/partner': typeof PartnerRoute
   '/privacy': typeof PrivacyRoute
   '/quote': typeof QuoteRoute
+  '/referral': typeof ReferralRoute
   '/reviews': typeof ReviewsRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
@@ -244,10 +289,15 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/careers'
     | '/contact'
+    | '/faq'
+    | '/giving-back'
     | '/industries'
+    | '/partner'
     | '/privacy'
     | '/quote'
+    | '/referral'
     | '/reviews'
     | '/service-areas'
     | '/services'
@@ -270,10 +320,15 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/careers'
     | '/contact'
+    | '/faq'
+    | '/giving-back'
     | '/industries'
+    | '/partner'
     | '/privacy'
     | '/quote'
+    | '/referral'
     | '/reviews'
     | '/service-areas'
     | '/services'
@@ -296,10 +351,15 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/careers'
     | '/contact'
+    | '/faq'
+    | '/giving-back'
     | '/industries'
+    | '/partner'
     | '/privacy'
     | '/quote'
+    | '/referral'
     | '/reviews'
     | '/service-areas'
     | '/services'
@@ -323,10 +383,15 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRouteWithChildren
+  CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  GivingBackRoute: typeof GivingBackRoute
   IndustriesRoute: typeof IndustriesRouteWithChildren
+  PartnerRoute: typeof PartnerRoute
   PrivacyRoute: typeof PrivacyRoute
   QuoteRoute: typeof QuoteRoute
+  ReferralRoute: typeof ReferralRoute
   ReviewsRoute: typeof ReviewsRoute
   ServiceAreasRoute: typeof ServiceAreasRouteWithChildren
   ServicesRoute: typeof ServicesRouteWithChildren
@@ -363,6 +428,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/referral': {
+      id: '/referral'
+      path: '/referral'
+      fullPath: '/referral'
+      preLoaderRoute: typeof ReferralRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/quote': {
       id: '/quote'
       path: '/quote'
@@ -377,6 +449,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/partner': {
+      id: '/partner'
+      path: '/partner'
+      fullPath: '/partner'
+      preLoaderRoute: typeof PartnerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/industries': {
       id: '/industries'
       path: '/industries'
@@ -384,11 +463,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/giving-back': {
+      id: '/giving-back'
+      path: '/giving-back'
+      fullPath: '/giving-back'
+      preLoaderRoute: typeof GivingBackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -576,10 +676,15 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BlogRoute: BlogRouteWithChildren,
+  CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  GivingBackRoute: GivingBackRoute,
   IndustriesRoute: IndustriesRouteWithChildren,
+  PartnerRoute: PartnerRoute,
   PrivacyRoute: PrivacyRoute,
   QuoteRoute: QuoteRoute,
+  ReferralRoute: ReferralRoute,
   ReviewsRoute: ReviewsRoute,
   ServiceAreasRoute: ServiceAreasRouteWithChildren,
   ServicesRoute: ServicesRouteWithChildren,
