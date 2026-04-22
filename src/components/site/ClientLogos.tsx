@@ -51,16 +51,16 @@ export function ClientLogos({
           {loop.map((l, i) => (
             <div
               key={`${l.name}-${i}`}
-              className="flex h-40 w-80 shrink-0 items-center justify-center"
+              className="flex h-32 w-56 shrink-0 items-center justify-center"
               aria-hidden={i >= LOGOS.length}
             >
               <img
                 src={l.src}
                 alt={i < LOGOS.length ? l.name : ""}
-                className="max-h-40 w-auto opacity-85 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                className="h-full w-full object-contain opacity-85 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
                 loading="lazy"
-                width={320}
-                height={160}
+                width={224}
+                height={128}
               />
             </div>
           ))}
