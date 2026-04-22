@@ -76,9 +76,9 @@ const schema = z.object({
     .max(20),
   project_details: z.string().max(4000).optional(),
   parking: z.string().optional(),
-  flexibility: z.string().optional(),
-  access: z.string().optional(),
-  has_pets: z.string().optional(),
+  flexibility: z.string().min(1, "Please let us know if your day or time is flexible"),
+  access: z.string().min(1, "Please tell us how we can access the property"),
+  has_pets: z.string().min(1, "Please let us know about pets on the property"),
   additional_info: z.string().max(4000).optional(),
 });
 
@@ -429,25 +429,28 @@ function QuotePage() {
                     </Select>
                   </div>
                   <div>
-                    <Label>Is your day or time flexible?</Label>
+                    <Label>Is your day or time flexible? *</Label>
                     <Select value={form.flexibility} onValueChange={(v) => update("flexibility", v)}>
-                      <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                      <SelectTrigger className={inputErrCls("flexibility")}><SelectValue placeholder="Select" /></SelectTrigger>
                       <SelectContent>{FLEXIBILITY.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
                     </Select>
+                    <FieldError name="flexibility" />
                   </div>
                   <div>
-                    <Label>How can we access the property?</Label>
+                    <Label>How can we access the property? *</Label>
                     <Select value={form.access} onValueChange={(v) => update("access", v)}>
-                      <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                      <SelectTrigger className={inputErrCls("access")}><SelectValue placeholder="Select" /></SelectTrigger>
                       <SelectContent>{ACCESS.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
                     </Select>
+                    <FieldError name="access" />
                   </div>
                   <div>
-                    <Label>Pets on property? (residential)</Label>
+                    <Label>Pets on property? *</Label>
                     <Select value={form.has_pets} onValueChange={(v) => update("has_pets", v)}>
-                      <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                      <SelectTrigger className={inputErrCls("has_pets")}><SelectValue placeholder="Select" /></SelectTrigger>
                       <SelectContent>{PETS.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
                     </Select>
+                    <FieldError name="has_pets" />
                   </div>
                   <div><Label>Additional information</Label><Textarea rows={4} value={form.additional_info || ""} onChange={(e) => update("additional_info", e.target.value)} /></div>
                 </div>
