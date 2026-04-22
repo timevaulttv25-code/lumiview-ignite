@@ -14,7 +14,7 @@ import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
 import { ClientLogos } from "@/components/site/ClientLogos";
 import { ServiceAreaMap } from "@/components/site/ServiceAreaMap";
-import { SITE, SERVICES, INDUSTRIES } from "@/lib/site";
+import { SITE, SERVICES, INDUSTRIES, CITIES } from "@/lib/site";
 import { buildSeo, faqJsonLd, jsonLdScript, localBusinessJsonLd } from "@/lib/seo";
 
 const FAQS = [
