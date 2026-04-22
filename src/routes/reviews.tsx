@@ -5,7 +5,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
-import { buildSeo } from "@/lib/seo";
+import { buildSeo, jsonLdScript, reviewCollectionJsonLd } from "@/lib/seo";
 
 const REVIEWS = [
   { name: "James L.", role: "Property Owner & Airbnb Host · Avon Lake", quote: "They've been consistent and dependable across multiple units. Communication is clear, and the results are always solid." },
@@ -20,12 +20,20 @@ const REVIEWS = [
 ];
 
 export const Route = createFileRoute("/reviews")({
-  head: () =>
-    buildSeo({
+  head: () => ({
+    ...buildSeo({
       title: `Customer Reviews — ${SITE.rating.value}★ on Google`,
       description: `LumiView is rated ${SITE.rating.value}★ across ${SITE.rating.count}+ verified Google reviews. Read what homeowners, businesses and property managers across Northeast Ohio say about working with us.`,
       path: "/reviews",
     }),
+    scripts: [
+      jsonLdScript(
+        reviewCollectionJsonLd(
+          REVIEWS.map((r) => ({ author: r.name, rating: 5, body: r.quote })),
+        ),
+      ),
+    ],
+  }),
   component: ReviewsPage,
 });
 

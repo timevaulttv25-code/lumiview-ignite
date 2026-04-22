@@ -18,10 +18,10 @@ export function FaqSection({ items, title = "Common questions", eyebrow = "FAQ" 
         <Accordion type="single" collapsible className="border-t border-border">
           {items.map((it, i) => (
             <AccordionItem key={i} value={`q-${i}`} className="border-b border-border">
-              <AccordionTrigger className="py-5 text-left font-serif text-xl font-medium hover:no-underline">
+              <AccordionTrigger className="faq-question py-5 text-left font-serif text-xl font-medium hover:no-underline">
                 {it.q}
               </AccordionTrigger>
-              <AccordionContent className="pb-5 pr-8 text-base leading-relaxed text-muted-foreground">
+              <AccordionContent className="faq-answer pb-5 pr-8 text-base leading-relaxed text-muted-foreground">
                 {it.a}
               </AccordionContent>
             </AccordionItem>
