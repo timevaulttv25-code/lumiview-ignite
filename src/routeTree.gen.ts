@@ -26,14 +26,12 @@ import { Route as ServicesPropertyCareRouteImport } from './routes/services.prop
 import { Route as ServicesPressureWashingRouteImport } from './routes/services.pressure-washing'
 import { Route as ServicesJanitorialInteriorCleaningRouteImport } from './routes/services.janitorial-interior-cleaning'
 import { Route as ServicesAirbnbVrboTurnoverRouteImport } from './routes/services.airbnb-vrbo-turnover'
-import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as ServiceAreasSlugRouteImport } from './routes/service-areas.$slug'
 import { Route as IndustriesResidentialRouteImport } from './routes/industries.residential'
 import { Route as IndustriesPropertyManagersRouteImport } from './routes/industries.property-managers'
 import { Route as IndustriesDaycareRouteImport } from './routes/industries.daycare'
 import { Route as IndustriesConstructionRouteImport } from './routes/industries.construction'
 import { Route as IndustriesCommercialRouteImport } from './routes/industries.commercial'
-import { Route as IndustriesSlugRouteImport } from './routes/industries.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const TermsRoute = TermsRouteImport.update({
@@ -124,11 +122,6 @@ const ServicesAirbnbVrboTurnoverRoute =
     path: '/airbnb-vrbo-turnover',
     getParentRoute: () => ServicesRoute,
   } as any)
-const ServicesSlugRoute = ServicesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ServicesRoute,
-} as any)
 const ServiceAreasSlugRoute = ServiceAreasSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -160,11 +153,6 @@ const IndustriesCommercialRoute = IndustriesCommercialRouteImport.update({
   path: '/commercial',
   getParentRoute: () => IndustriesRoute,
 } as any)
-const IndustriesSlugRoute = IndustriesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => IndustriesRoute,
-} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -184,14 +172,12 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/industries/$slug': typeof IndustriesSlugRoute
   '/industries/commercial': typeof IndustriesCommercialRoute
   '/industries/construction': typeof IndustriesConstructionRoute
   '/industries/daycare': typeof IndustriesDaycareRoute
   '/industries/property-managers': typeof IndustriesPropertyManagersRoute
   '/industries/residential': typeof IndustriesResidentialRoute
   '/service-areas/$slug': typeof ServiceAreasSlugRoute
-  '/services/$slug': typeof ServicesSlugRoute
   '/services/airbnb-vrbo-turnover': typeof ServicesAirbnbVrboTurnoverRoute
   '/services/janitorial-interior-cleaning': typeof ServicesJanitorialInteriorCleaningRoute
   '/services/pressure-washing': typeof ServicesPressureWashingRoute
@@ -212,14 +198,12 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/industries/$slug': typeof IndustriesSlugRoute
   '/industries/commercial': typeof IndustriesCommercialRoute
   '/industries/construction': typeof IndustriesConstructionRoute
   '/industries/daycare': typeof IndustriesDaycareRoute
   '/industries/property-managers': typeof IndustriesPropertyManagersRoute
   '/industries/residential': typeof IndustriesResidentialRoute
   '/service-areas/$slug': typeof ServiceAreasSlugRoute
-  '/services/$slug': typeof ServicesSlugRoute
   '/services/airbnb-vrbo-turnover': typeof ServicesAirbnbVrboTurnoverRoute
   '/services/janitorial-interior-cleaning': typeof ServicesJanitorialInteriorCleaningRoute
   '/services/pressure-washing': typeof ServicesPressureWashingRoute
@@ -241,14 +225,12 @@ export interface FileRoutesById {
   '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/industries/$slug': typeof IndustriesSlugRoute
   '/industries/commercial': typeof IndustriesCommercialRoute
   '/industries/construction': typeof IndustriesConstructionRoute
   '/industries/daycare': typeof IndustriesDaycareRoute
   '/industries/property-managers': typeof IndustriesPropertyManagersRoute
   '/industries/residential': typeof IndustriesResidentialRoute
   '/service-areas/$slug': typeof ServiceAreasSlugRoute
-  '/services/$slug': typeof ServicesSlugRoute
   '/services/airbnb-vrbo-turnover': typeof ServicesAirbnbVrboTurnoverRoute
   '/services/janitorial-interior-cleaning': typeof ServicesJanitorialInteriorCleaningRoute
   '/services/pressure-washing': typeof ServicesPressureWashingRoute
@@ -271,14 +253,12 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms'
     | '/blog/$slug'
-    | '/industries/$slug'
     | '/industries/commercial'
     | '/industries/construction'
     | '/industries/daycare'
     | '/industries/property-managers'
     | '/industries/residential'
     | '/service-areas/$slug'
-    | '/services/$slug'
     | '/services/airbnb-vrbo-turnover'
     | '/services/janitorial-interior-cleaning'
     | '/services/pressure-washing'
@@ -299,14 +279,12 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms'
     | '/blog/$slug'
-    | '/industries/$slug'
     | '/industries/commercial'
     | '/industries/construction'
     | '/industries/daycare'
     | '/industries/property-managers'
     | '/industries/residential'
     | '/service-areas/$slug'
-    | '/services/$slug'
     | '/services/airbnb-vrbo-turnover'
     | '/services/janitorial-interior-cleaning'
     | '/services/pressure-washing'
@@ -327,14 +305,12 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms'
     | '/blog/$slug'
-    | '/industries/$slug'
     | '/industries/commercial'
     | '/industries/construction'
     | '/industries/daycare'
     | '/industries/property-managers'
     | '/industries/residential'
     | '/service-areas/$slug'
-    | '/services/$slug'
     | '/services/airbnb-vrbo-turnover'
     | '/services/janitorial-interior-cleaning'
     | '/services/pressure-washing'
@@ -478,13 +454,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAirbnbVrboTurnoverRouteImport
       parentRoute: typeof ServicesRoute
     }
-    '/services/$slug': {
-      id: '/services/$slug'
-      path: '/$slug'
-      fullPath: '/services/$slug'
-      preLoaderRoute: typeof ServicesSlugRouteImport
-      parentRoute: typeof ServicesRoute
-    }
     '/service-areas/$slug': {
       id: '/service-areas/$slug'
       path: '/$slug'
@@ -527,13 +496,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesCommercialRouteImport
       parentRoute: typeof IndustriesRoute
     }
-    '/industries/$slug': {
-      id: '/industries/$slug'
-      path: '/$slug'
-      fullPath: '/industries/$slug'
-      preLoaderRoute: typeof IndustriesSlugRouteImport
-      parentRoute: typeof IndustriesRoute
-    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/$slug'
@@ -555,7 +517,6 @@ const BlogRouteChildren: BlogRouteChildren = {
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface IndustriesRouteChildren {
-  IndustriesSlugRoute: typeof IndustriesSlugRoute
   IndustriesCommercialRoute: typeof IndustriesCommercialRoute
   IndustriesConstructionRoute: typeof IndustriesConstructionRoute
   IndustriesDaycareRoute: typeof IndustriesDaycareRoute
@@ -564,7 +525,6 @@ interface IndustriesRouteChildren {
 }
 
 const IndustriesRouteChildren: IndustriesRouteChildren = {
-  IndustriesSlugRoute: IndustriesSlugRoute,
   IndustriesCommercialRoute: IndustriesCommercialRoute,
   IndustriesConstructionRoute: IndustriesConstructionRoute,
   IndustriesDaycareRoute: IndustriesDaycareRoute,
@@ -589,7 +549,6 @@ const ServiceAreasRouteWithChildren = ServiceAreasRoute._addFileChildren(
 )
 
 interface ServicesRouteChildren {
-  ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesAirbnbVrboTurnoverRoute: typeof ServicesAirbnbVrboTurnoverRoute
   ServicesJanitorialInteriorCleaningRoute: typeof ServicesJanitorialInteriorCleaningRoute
   ServicesPressureWashingRoute: typeof ServicesPressureWashingRoute
@@ -599,7 +558,6 @@ interface ServicesRouteChildren {
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesSlugRoute: ServicesSlugRoute,
   ServicesAirbnbVrboTurnoverRoute: ServicesAirbnbVrboTurnoverRoute,
   ServicesJanitorialInteriorCleaningRoute:
     ServicesJanitorialInteriorCleaningRoute,
