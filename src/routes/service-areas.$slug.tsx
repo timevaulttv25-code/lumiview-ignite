@@ -35,7 +35,7 @@ export const Route = createFileRoute("/service-areas/$slug")({
           <h2 className="font-serif text-3xl font-medium">Services available in {city.name}</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {SERVICES.map((s) => (
-              <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }}
+              <Link key={s.slug} to={`/services/${s.slug}`}
                 className="rounded-xl border border-border bg-card p-6 hover:border-accent hover:shadow-soft">
                 <div className="font-serif text-xl font-medium">{s.title}</div>
                 <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
