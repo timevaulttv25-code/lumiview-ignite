@@ -2,7 +2,7 @@ import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-r
 
 import appCss from "../styles.css?url";
 import { SITE } from "@/lib/site";
-import { jsonLdScript, localBusinessJsonLd } from "@/lib/seo";
+import { jsonLdScript, localBusinessJsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -55,7 +55,11 @@ export const Route = createRootRoute({
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap",
       },
     ],
-    scripts: [jsonLdScript(localBusinessJsonLd())],
+    scripts: [
+      jsonLdScript(localBusinessJsonLd()),
+      jsonLdScript(organizationJsonLd()),
+      jsonLdScript(websiteJsonLd()),
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
