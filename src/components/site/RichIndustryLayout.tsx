@@ -292,7 +292,7 @@ export function RichIndustryLayout(p: RichIndustryLayoutProps) {
               </div>
             </div>
             <ul className="grid gap-2 text-sm text-foreground/85 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-3">
-              {SITE.primaryAreas.slice(0, 12).map((c) => (
+              {SITE.primaryAreas.map((c) => (
                 <li key={c} className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" /> {c}
                 </li>
