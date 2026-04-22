@@ -13,16 +13,16 @@ import lowcostPharmacy from "@/assets/clients/lowcost-pharmacy.png";
  * Add or remove logos here, the marquee adapts automatically.
  * Use square or wide PNGs with transparent background for best results.
  */
-const LOGOS: { src: string; name: string }[] = [
+const LOGOS: { src: string; name: string; scale?: number }[] = [
   { src: maximizeFitness, name: "Maximize Fitness" },
-  { src: coffeeTherapy, name: "Coffee Therapy" },
-  { src: oliveTree, name: "Olive Tree" },
+  { src: coffeeTherapy, name: "Coffee Therapy", scale: 1.5 },
+  { src: oliveTree, name: "Olive Tree", scale: 1.5 },
   { src: amanisLearning, name: "Amani's Hopes & Dreams Early Learning Center" },
   { src: wirelessExpress, name: "Wireless Express" },
   { src: blushBeauty, name: "Blush Beauty & Aesthetics" },
   { src: perfect10Nails, name: "Perfect 10 Nails" },
   { src: zeinas, name: "Zeina's Frozen Yogurt & Fried Chicken" },
-  { src: bkBarbershop, name: "BK Barbershop" },
+  { src: bkBarbershop, name: "BK Barbershop", scale: 1.5 },
   { src: lowcostPharmacy, name: "LowCost Pharmacy & Urgent Care" },
 ];
 
@@ -62,6 +62,7 @@ export function ClientLogos({
                 src={l.src}
                 alt={i < LOGOS.length ? l.name : ""}
                 className="max-h-full max-w-full object-contain transition duration-300 hover:scale-105"
+                style={l.scale ? { transform: `scale(${l.scale})` } : undefined}
                 loading="lazy"
                 width={176}
                 height={112}
