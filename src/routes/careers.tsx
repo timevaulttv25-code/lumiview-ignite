@@ -1,10 +1,13 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/ui/button";
+import { CareerApplyDialog } from "@/components/site/CareerApplyDialog";
 import { buildSeo } from "@/lib/seo";
 import { CheckCircle2, Heart, TrendingUp, Users } from "lucide-react";
+import heroImg from "@/assets/page-careers.jpg";
 
 const VALUES = [
   {
@@ -72,6 +75,142 @@ const PERKS = [
 ];
 
 export const Route = createFileRoute("/careers")({
+  head: () =>
+    buildSeo({
+      title: "Careers at LumiView Services",
+      description:
+        "Join a Northeast Ohio property-care team that pays well, trains thoroughly, and treats people right. Open roles in window cleaning, pressure washing, janitorial, and crew leadership.",
+      path: "/careers",
+    }),
+  component: CareersPage,
+});
+
+function CareersPage() {
+  const [open, setOpen] = useState(false);
+  const [selectedRole, setSelectedRole] = useState<string | undefined>(undefined);
+
+  const openDialog = (role?: string) => {
+    setSelectedRole(role);
+    setOpen(true);
+  };
+
+  return (
+    <SiteShell>
+      <PageHero
+        eyebrow="Careers"
+        title="Build a career, not just a job."
+        description="LumiView is hiring kind, dependable people who take pride in their work. Paid training, real growth, and a crew you'll actually like working with."
+        breadcrumbs={[
+          { label: "Home", to: "/" },
+          { label: "About", to: "/about" },
+          { label: "Careers" },
+        ]}
+        image={heroImg}
+      />
+
+      <section className="container-prose py-20 lg:py-24">
+        <div className="max-w-2xl">
+          <div className="eyebrow">Why LumiView</div>
+          <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight lg:text-5xl">
+            Hard work deserves a serious team behind it.
+          </h2>
+          <p className="mt-5 text-muted-foreground leading-relaxed">
+            We built LumiView because we wanted to work somewhere that paid fairly,
+            communicated clearly, and respected the people doing the work. If that
+            sounds like the kind of place you'd want to spend your week, we should talk.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {VALUES.map((v) => (
+            <div key={v.title} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+              <v.icon className="h-7 w-7 text-accent" />
+              <h3 className="mt-4 font-serif text-xl font-medium">{v.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-secondary/40 py-20 lg:py-24">
+        <div className="container-prose">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <div className="eyebrow">Open roles</div>
+              <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight lg:text-5xl">
+                We're hiring.
+              </h2>
+            </div>
+            <p className="max-w-md text-muted-foreground">
+              Don't see a perfect fit? We hire year-round and grow into new roles often.{" "}
+              <button
+                onClick={() => openDialog("Other / Open Application")}
+                className="font-semibold text-accent underline-offset-4 hover:underline"
+              >
+                Send your info
+              </button>{" "}
+              and we'll keep you in mind.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            {OPEN_ROLES.map((r) => (
+              <div key={r.title} className="rounded-2xl border border-border bg-background p-7 shadow-soft">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="font-serif text-2xl font-medium">{r.title}</h3>
+                  <span className="text-sm font-semibold text-accent">{r.pay}</span>
+                </div>
+                <p className="mt-1 text-xs uppercase tracking-wide text-muted-foreground">{r.type}</p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{r.summary}</p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="mt-5 rounded-full"
+                  onClick={() => openDialog(r.title)}
+                >
+                  Apply for this role
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-prose grid gap-12 py-20 lg:grid-cols-2 lg:py-24">
+        <div>
+          <div className="eyebrow">Pay & perks</div>
+          <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight lg:text-5xl">
+            What you get with the job.
+          </h2>
+          <p className="mt-5 text-muted-foreground leading-relaxed">
+            Competitive pay is the floor, not the ceiling. Here's what comes with the role.
+          </p>
+          <Button
+            size="lg"
+            className="mt-7 rounded-full"
+            onClick={() => openDialog()}
+          >
+            Apply now
+          </Button>
+        </div>
+        <ul className="space-y-3">
+          {PERKS.map((p) => (
+            <li key={p} className="flex items-start gap-3 text-foreground/90">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" />
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <CTABand
+        eyebrow="Ready to apply?"
+        title="Send us a quick hello."
+        body="No formal resume needed for entry roles. Tell us a little about yourself and we'll be in touch within two business days."
+      />
+
+      <CareerApplyDialog open={open} onOpenChange={setOpen} defaultRole={selectedRole} />
+    </SiteShell>
+  );
+}
   head: () =>
     buildSeo({
       title: "Careers at LumiView Services",
