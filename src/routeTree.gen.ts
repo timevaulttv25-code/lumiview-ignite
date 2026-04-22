@@ -10,9 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ServicePolicyRouteImport } from './routes/service-policy'
 import { Route as ServiceAreasRouteImport } from './routes/service-areas'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as ResultsRouteImport } from './routes/results'
 import { Route as ReferralRouteImport } from './routes/referral'
@@ -48,6 +50,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -61,6 +68,11 @@ const ServicePolicyRoute = ServicePolicyRouteImport.update({
 const ServiceAreasRoute = ServiceAreasRouteImport.update({
   id: '/service-areas',
   path: '/service-areas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReviewsRoute = ReviewsRouteImport.update({
@@ -230,9 +242,11 @@ export interface FileRoutesByFullPath {
   '/referral': typeof ReferralRoute
   '/results': typeof ResultsRoute
   '/reviews': typeof ReviewsRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
   '/service-policy': typeof ServicePolicyRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/industries/commercial': typeof IndustriesCommercialRoute
@@ -265,9 +279,11 @@ export interface FileRoutesByTo {
   '/referral': typeof ReferralRoute
   '/results': typeof ResultsRoute
   '/reviews': typeof ReviewsRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
   '/service-policy': typeof ServicePolicyRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/industries/commercial': typeof IndustriesCommercialRoute
@@ -301,9 +317,11 @@ export interface FileRoutesById {
   '/referral': typeof ReferralRoute
   '/results': typeof ResultsRoute
   '/reviews': typeof ReviewsRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
   '/service-policy': typeof ServicePolicyRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/industries/commercial': typeof IndustriesCommercialRoute
@@ -338,9 +356,11 @@ export interface FileRouteTypes {
     | '/referral'
     | '/results'
     | '/reviews'
+    | '/robots.txt'
     | '/service-areas'
     | '/service-policy'
     | '/services'
+    | '/sitemap.xml'
     | '/terms'
     | '/blog/$slug'
     | '/industries/commercial'
@@ -373,9 +393,11 @@ export interface FileRouteTypes {
     | '/referral'
     | '/results'
     | '/reviews'
+    | '/robots.txt'
     | '/service-areas'
     | '/service-policy'
     | '/services'
+    | '/sitemap.xml'
     | '/terms'
     | '/blog/$slug'
     | '/industries/commercial'
@@ -408,9 +430,11 @@ export interface FileRouteTypes {
     | '/referral'
     | '/results'
     | '/reviews'
+    | '/robots.txt'
     | '/service-areas'
     | '/service-policy'
     | '/services'
+    | '/sitemap.xml'
     | '/terms'
     | '/blog/$slug'
     | '/industries/commercial'
@@ -444,9 +468,11 @@ export interface RootRouteChildren {
   ReferralRoute: typeof ReferralRoute
   ResultsRoute: typeof ResultsRoute
   ReviewsRoute: typeof ReviewsRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
   ServiceAreasRoute: typeof ServiceAreasRouteWithChildren
   ServicePolicyRoute: typeof ServicePolicyRoute
   ServicesRoute: typeof ServicesRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
 }
 
@@ -457,6 +483,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -478,6 +511,13 @@ declare module '@tanstack/react-router' {
       path: '/service-areas'
       fullPath: '/service-areas'
       preLoaderRoute: typeof ServiceAreasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reviews': {
@@ -769,9 +809,11 @@ const rootRouteChildren: RootRouteChildren = {
   ReferralRoute: ReferralRoute,
   ResultsRoute: ResultsRoute,
   ReviewsRoute: ReviewsRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
   ServiceAreasRoute: ServiceAreasRouteWithChildren,
   ServicePolicyRoute: ServicePolicyRoute,
   ServicesRoute: ServicesRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport

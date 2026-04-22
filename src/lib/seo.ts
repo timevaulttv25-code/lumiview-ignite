@@ -87,7 +87,12 @@ export function serviceJsonLd(name: string, description: string, slug: string) {
     description,
     url: `${SITE.url}/services/${slug}`,
     provider: { "@id": `${SITE.url}#business` },
-    areaServed: SITE.primaryAreas,
+    areaServed: SITE.primaryAreas.map((c) => ({ "@type": "City", name: c })),
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: SITE.rating.value,
+      reviewCount: SITE.rating.count,
+    },
   };
 }
 
@@ -104,7 +109,45 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   };
 }
 
+/** Organization schema — strengthens entity recognition for AI search engines. */
+export function organizationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE.url}#organization`,
+    name: SITE.name,
+    alternateName: SITE.shortName,
+    url: SITE.url,
+    logo: `${SITE.url}/og-default.jpg`,
+    image: `${SITE.url}/og-default.jpg`,
+    telephone: SITE.phoneDisplay,
+    email: SITE.email,
+    sameAs: Object.values(SITE.social),
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: SITE.phoneLink.replace("tel:", ""),
+      contactType: "customer service",
+      areaServed: "US",
+      availableLanguage: ["English"],
+    },
+  };
+}
+
+/** WebSite schema with SearchAction for sitelinks search box. */
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE.url}#website`,
+    url: SITE.url,
+    name: SITE.name,
+    publisher: { "@id": `${SITE.url}#organization` },
+    inLanguage: "en-US",
+  };
+}
+
 /** Helper to inject JSON-LD as a script tag via TanStack head() scripts array. */
 export function jsonLdScript(data: unknown) {
   return { type: "application/ld+json", children: JSON.stringify(data) };
 }
+
