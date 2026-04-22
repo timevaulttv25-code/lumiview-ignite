@@ -25,7 +25,7 @@ export const Route = createFileRoute("/reviews")({
     <SiteShell>
       <PageHero eyebrow="Reviews" title={`${SITE.rating.value}★ across ${SITE.rating.count}+ reviews.`}
         description="What our residential, commercial and property-management clients say about working with LumiView."
-        breadcrumbs={[{ label: "Home", to: "/" }, { label: "Reviews" }]} />
+        breadcrumbs={[{ label: "Home", to: "/" }, { label: "Results", to: "/results" }, { label: "Reviews" }]} />
       <section className="container-prose grid gap-6 py-20 lg:grid-cols-3 lg:py-28">
         {REVIEWS.map((t) => (
           <figure key={t.name} className="flex flex-col rounded-2xl border border-border bg-card p-8 shadow-soft">
