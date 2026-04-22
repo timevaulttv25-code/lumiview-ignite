@@ -156,7 +156,7 @@ function HomePage() {
         <div className="container-prose">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <div className="eyebrow">Why LumiView</div>
+              <div className="eyebrow text-accent">Why LumiView</div>
               <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-balance lg:text-5xl">
                 The standard your property deserves.
               </h2>
@@ -186,7 +186,7 @@ function HomePage() {
       <section className="container-prose py-20 lg:py-28">
         <div className="flex flex-col items-end justify-between gap-6 lg:flex-row">
           <div className="max-w-2xl">
-            <div className="eyebrow">Services</div>
+            <div className="eyebrow text-accent">Services</div>
             <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-balance lg:text-5xl">
               Professional cleaning &amp; property-care services
             </h2>
@@ -260,7 +260,7 @@ function HomePage() {
       {/* PROCESS */}
       <section className="container-prose py-20 lg:py-28">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="eyebrow">How it works</div>
+          <div className="eyebrow text-accent">How it works</div>
           <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-balance lg:text-5xl">
             Simple. Clear. Reliable.
           </h2>
@@ -284,7 +284,7 @@ function HomePage() {
       <section className="border-y border-border bg-secondary/40 py-20 lg:py-28">
         <div className="container-prose">
           <div className="mx-auto max-w-2xl text-center">
-            <div className="eyebrow">Reviews</div>
+            <div className="eyebrow text-accent">Reviews</div>
             <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-balance lg:text-5xl">
               Trusted by homeowners, businesses &amp; property managers.
             </h2>
