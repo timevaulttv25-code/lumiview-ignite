@@ -86,7 +86,9 @@ function HomePage() {
           <div className="lg:col-span-6 lg:pt-12">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Residential & commercial property care · Avon, OH
+              <span>Residential &amp; commercial property care</span>
+              <span className="text-muted-foreground/50">•</span>
+              <span>Avon, OH</span>
             </div>
             <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.05] tracking-tight text-balance text-navy-deep sm:text-6xl lg:text-[5rem]">
               Windows that disappear.{" "}

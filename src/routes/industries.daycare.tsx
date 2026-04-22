@@ -115,6 +115,10 @@ function DaycareIndustryPage() {
         "CDC childcare protocols",
         "After-hours & weekend service",
         "Outbreak deep-clean response",
+        "Background-checked crews",
+        "Toy & high-touch sanitization",
+        "Fragrance-free options available",
+        "Licensing-inspection ready",
       ]}
       tiersEyebrow="Childcare Services"
       tiersHeading="A cleaning program designed for facilities with the youngest stakes."

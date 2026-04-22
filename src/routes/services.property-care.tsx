@@ -77,6 +77,10 @@ export const Route = createFileRoute("/services/property-care")({
         "One consolidated invoice",
         "Reserve crews for emergencies",
         "COI with additional insured",
+        "Multi-property scheduling",
+        "Per-site reporting & photos",
+        "Net-15 / net-30 billing terms",
+        "24-hour response on incidents",
       ]}
       tiersEyebrow="Property Care Plans"
       tiersHeading="Built for portfolios — scaled to your door count."

@@ -115,6 +115,10 @@ function CommercialIndustryPage() {
         "$2M insured + COI on request",
         "Recurring weekly routes",
         "Single point of contact",
+        "Storefront, office & medical experience",
+        "OSHA-aware safety standards",
+        "Net-15 / net-30 billing",
+        "Same-week start on most accounts",
       ]}
       tiersEyebrow="Commercial Services"
       tiersHeading="Built for the way your business actually operates."

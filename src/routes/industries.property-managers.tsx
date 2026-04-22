@@ -115,6 +115,10 @@ function PropertyManagersIndustryPage() {
         "Per-property reporting & photos",
         "COI per property on request",
         "Dedicated account manager",
+        "Single consolidated invoice",
+        "Multi-unit & portfolio scheduling",
+        "AppFolio / Buildium / Yardi friendly",
+        "Reserve crews for emergencies",
       ]}
       tiersEyebrow="Portfolio Services"
       tiersHeading="The full cleaning stack a property manager actually needs."

@@ -75,8 +75,12 @@ export const Route = createFileRoute("/services/pressure-washing")({
       highlights={[
         "Soft-wash safe for siding & roofs",
         "Driveway & patio specialists",
-        `${SITE.rating.value}★ rated service`,
+        `${SITE.rating.value}★ on Google`,
         "Free 24-hour quotes",
+        "Eco-safe biodegradable detergents",
+        "Hot-water surface cleaning",
+        "Concrete oil-stain removal",
+        "Fully insured + bonded crews",
       ]}
       tiersEyebrow="Pressure Washing Services"
       tiersHeading="The right method for every exterior surface."

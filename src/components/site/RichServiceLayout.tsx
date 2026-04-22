@@ -6,6 +6,7 @@ import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
+import { HighlightMarquee } from "@/components/site/HighlightMarquee";
 import { Button } from "@/components/ui/button";
 
 export interface RichTier {
@@ -104,17 +105,8 @@ export function RichServiceLayout(p: RichServiceLayoutProps) {
         image={p.heroImage}
       />
 
-      {/* Quick highlights / trust bar */}
-      <section className="border-b border-border bg-secondary/30">
-        <div className="container-prose grid gap-4 py-8 sm:grid-cols-2 lg:grid-cols-4">
-          {p.highlights.map((h) => (
-            <div key={h} className="flex items-center gap-2.5 text-sm font-medium text-foreground">
-              <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" />
-              {h}
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Quick highlights / trust marquee */}
+      <HighlightMarquee items={p.highlights} />
 
       {/* Tiers */}
       <section className="container-prose py-20 lg:py-28">

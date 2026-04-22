@@ -77,6 +77,10 @@ export const Route = createFileRoute("/services/janitorial-interior-cleaning")({
         "Background-checked, insured crew",
         "After-hours & weekend service",
         "CDC-aligned disinfection",
+        "Office, medical & retail experience",
+        "Touch-point sanitization included",
+        "Green Seal-certified products",
+        "Customizable scope & checklists",
       ]}
       tiersEyebrow="Janitorial Programs"
       tiersHeading="A scheduled cleaning plan that fits how your space is used."
