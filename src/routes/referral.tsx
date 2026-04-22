@@ -74,6 +74,7 @@ export const Route = createFileRoute("/referral")({
           { label: "About", to: "/about" },
           { label: "Referral Program" },
         ]}
+        image={heroImg}
       />
 
       <section className="container-prose py-20 lg:py-24">
