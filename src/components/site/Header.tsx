@@ -30,6 +30,15 @@ const NAV: Array<{
   },
   { to: "/service-areas", label: "Service Areas" },
   {
+    to: "/results",
+    label: "Results",
+    children: [
+      { to: "/reviews", label: "Reviews", description: `${SITE.rating.value}★ across ${SITE.rating.count}+ Google reviews.` },
+      { to: "/our-work", label: "Our Work", description: "Before & after photos from real projects." },
+      { to: "/results", label: "Case Studies", description: "Measurable outcomes from real clients." },
+    ],
+  },
+  {
     to: "/about",
     label: "About",
     children: [

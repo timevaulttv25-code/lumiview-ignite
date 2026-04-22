@@ -64,6 +64,8 @@ export function Footer() {
           <div className="eyebrow text-ivory/60">Company</div>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li><Link to="/about" className="text-ivory/85 hover:text-accent">About LumiView</Link></li>
+            <li><Link to="/our-work" className="text-ivory/85 hover:text-accent">Our Work (Before & After)</Link></li>
+            <li><Link to="/results" className="text-ivory/85 hover:text-accent">Case Studies</Link></li>
             <li><Link to="/reviews" className="text-ivory/85 hover:text-accent">Customer Reviews</Link></li>
             <li><Link to="/blog" className="text-ivory/85 hover:text-accent">Insights & Guides</Link></li>
             <li><Link to="/quote" className="text-ivory/85 hover:text-accent">Request a Quote</Link></li>
