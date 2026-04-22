@@ -16,14 +16,14 @@ import wcma from "@/assets/clients/wcma.png";
  */
 const LOGOS: { src: string; name: string; scale?: number }[] = [
   { src: maximizeFitness, name: "Maximize Fitness" },
-  { src: coffeeTherapy, name: "Coffee Therapy", scale: 1.5 },
-  { src: oliveTree, name: "Olive Tree", scale: 1.9 },
+  { src: coffeeTherapy, name: "Coffee Therapy", scale: 1.15 },
+  { src: oliveTree, name: "Olive Tree", scale: 1.15 },
   { src: amanisLearning, name: "Amani's Hopes & Dreams Early Learning Center" },
-  { src: wirelessExpress, name: "Wireless Express", scale: 1.5 },
+  { src: wirelessExpress, name: "Wireless Express", scale: 1.15 },
   { src: blushBeauty, name: "Blush Beauty & Aesthetics" },
-  { src: perfect10Nails, name: "Perfect 10 Nails", scale: 0.8 },
-  { src: zeinas, name: "Zeina's Frozen Yogurt & Fried Chicken", scale: 0.8 },
-  { src: bkBarbershop, name: "BK Barbershop", scale: 1.5 },
+  { src: perfect10Nails, name: "Perfect 10 Nails" },
+  { src: zeinas, name: "Zeina's Frozen Yogurt & Fried Chicken" },
+  { src: bkBarbershop, name: "BK Barbershop", scale: 1.15 },
   { src: lowcostPharmacy, name: "LowCost Pharmacy & Urgent Care" },
   { src: wcma, name: "West Cleveland Muslim Association" },
 ];
@@ -64,6 +64,7 @@ export function ClientLogos({
                 src={l.src}
                 alt={i < LOGOS.length ? l.name : ""}
                 className="h-full w-full object-contain transition duration-300 hover:scale-105"
+                style={l.scale ? { transform: `scale(${l.scale})` } : undefined}
                 loading="lazy"
                 width={192}
                 height={96}
