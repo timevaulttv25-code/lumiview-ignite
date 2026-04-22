@@ -113,15 +113,15 @@ function HomePage() {
               </a>
             </div>
 
-            <dl className="mt-10 flex flex-wrap gap-2">
+            <dl className="mt-10 grid grid-cols-4 gap-2">
               {TRUST.map(({ icon: Icon, label }, i) => (
                 <div
                   key={label}
-                  className="animate-trust-pop inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-2 backdrop-blur-sm transition-colors hover:border-accent/50 hover:bg-accent/5"
+                  className="animate-trust-pop flex min-w-0 items-center justify-center gap-1.5 rounded-full border border-border bg-card/70 px-2 py-2 backdrop-blur-sm transition-colors hover:border-accent/50 hover:bg-accent/5"
                   style={{ animationDelay: `${120 + i * 110}ms` }}
                 >
-                  <Icon className="h-4 w-4 shrink-0 text-accent" />
-                  <dt className="whitespace-nowrap text-xs font-medium text-foreground/85">{label}</dt>
+                  <Icon className="h-3.5 w-3.5 shrink-0 text-accent" />
+                  <dt className="whitespace-nowrap text-[11px] font-medium text-foreground/85">{label}</dt>
                 </div>
               ))}
             </dl>
