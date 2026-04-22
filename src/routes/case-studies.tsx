@@ -143,6 +143,7 @@ export const Route = createFileRoute("/case-studies")({
                       ))}
                     </ul>
                   </div>
+                  </div>
                 </div>
               </Reveal>
             );
