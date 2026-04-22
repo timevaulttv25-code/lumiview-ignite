@@ -68,7 +68,7 @@ const CASE_STUDIES = [
   },
 ];
 
-export const Route = createFileRoute("/results")({
+export const Route = createFileRoute("/case-studies")({
   head: () => buildSeo({
     title: "Results — Case Studies & Outcomes",
     description: "Real outcomes from LumiView clients: portfolio consolidation, Airbnb rating recovery, retail plaza routes, and post-construction projects across Northeast Ohio.",
