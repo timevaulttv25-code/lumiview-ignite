@@ -155,8 +155,8 @@ function CareersPage() {
             {OPEN_ROLES.map((r) => (
               <div key={r.title} className="rounded-2xl border border-border bg-background p-7 shadow-soft">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="font-serif text-2xl font-medium">{r.title}</h3>
-                  <span className="text-sm font-semibold text-accent">{r.pay}</span>
+                  <h3 className="font-serif text-2xl font-medium whitespace-nowrap">{r.title}</h3>
+                  <span className="text-sm font-semibold text-accent whitespace-nowrap">{r.pay}</span>
                 </div>
                 <p className="mt-1 text-xs uppercase tracking-wide text-muted-foreground">{r.type}</p>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{r.summary}</p>
