@@ -18,7 +18,7 @@ const LOGOS: { src: string; name: string; scale?: number }[] = [
   { src: coffeeTherapy, name: "Coffee Therapy", scale: 1.5 },
   { src: oliveTree, name: "Olive Tree", scale: 1.9 },
   { src: amanisLearning, name: "Amani's Hopes & Dreams Early Learning Center" },
-  { src: wirelessExpress, name: "Wireless Express", scale: 1.2 },
+  { src: wirelessExpress, name: "Wireless Express", scale: 1.5 },
   { src: blushBeauty, name: "Blush Beauty & Aesthetics" },
   { src: perfect10Nails, name: "Perfect 10 Nails", scale: 0.8 },
   { src: zeinas, name: "Zeina's Frozen Yogurt & Fried Chicken", scale: 0.8 },
