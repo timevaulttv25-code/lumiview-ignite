@@ -135,8 +135,8 @@ function QuotePage() {
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div><Label>Full name *</Label><Input value={form.full_name || ""} onChange={(e) => update("full_name", e.target.value)} /></div>
                   <div><Label>Company name</Label><Input value={form.company_name || ""} onChange={(e) => update("company_name", e.target.value)} /></div>
-                  <div><Label>Email</Label><Input type="email" value={form.email || ""} onChange={(e) => update("email", e.target.value)} /></div>
-                  <div><Label>Phone</Label><Input value={form.phone || ""} onChange={(e) => update("phone", e.target.value)} /></div>
+                  <div><Label>Email *</Label><Input type="email" required value={form.email || ""} onChange={(e) => update("email", e.target.value)} /></div>
+                  <div><Label>Phone *</Label><Input type="tel" required inputMode="tel" placeholder="(216) 555-1234" value={form.phone || ""} onChange={(e) => update("phone", e.target.value)} /></div>
                   <div>
                     <Label>Best way to reach you *</Label>
                     <Select value={form.contact_method} onValueChange={(v) => update("contact_method", v)}>
@@ -152,7 +152,7 @@ function QuotePage() {
                     </Select>
                   </div>
                   <div>
-                    <Label>Preferred timing</Label>
+                    <Label>Preferred timing *</Label>
                     <Select value={form.preferred_timing} onValueChange={(v) => update("preferred_timing", v)}>
                       <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
                       <SelectContent>{TIMING.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
@@ -167,7 +167,28 @@ function QuotePage() {
                   </div>
                 </div>
                 <div className="flex justify-end">
-                  <Button className="rounded-full" onClick={() => { if (!form.full_name || !form.property_type) { toast.error("Name and property type are required"); return; } setStep(2); }}>Continue →</Button>
+                  <Button
+                    className="rounded-full"
+                    onClick={() => {
+                      const step1 = schema.pick({
+                        full_name: true,
+                        email: true,
+                        phone: true,
+                        contact_method: true,
+                        property_type: true,
+                        preferred_timing: true,
+                      }).safeParse(form);
+                      if (!step1.success) {
+                        toast.error("Please fix the highlighted field", {
+                          description: step1.error.issues[0]?.message,
+                        });
+                        return;
+                      }
+                      setStep(2);
+                    }}
+                  >
+                    Continue →
+                  </Button>
                 </div>
               </div>
             )}
