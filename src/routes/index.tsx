@@ -323,7 +323,7 @@ function HomePage() {
             Serving Avon &amp; <span className="brand-gradient-text">Northeast Ohio</span>.
           </h2>
           <p className="mt-5 text-muted-foreground">
-            Local crews across {CITIES.map((c) => c.name).join(", ")} and {SITE.primaryAreas.length - CITIES.length}+ surrounding Northeast Ohio communities.
+            Local crews across {CITIES.length}+ communities including {CITIES.slice(0, 7).map((c) => c.name).join(", ")} and many more across Northeast Ohio.
           </p>
           <Button asChild variant="outline" className="mt-6 rounded-full">
             <Link to="/service-areas">View all service areas <ArrowRight className="ml-1 h-4 w-4" /></Link>
