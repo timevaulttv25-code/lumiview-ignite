@@ -11,7 +11,7 @@ export function FaqSection({ items, title = "Common questions", eyebrow = "FAQ" 
           {title}
         </h2>
         <p className="mt-4 text-muted-foreground">
-          Don't see your question? Call us — we're happy to walk through the details.
+          Don't see your question? Call us, we're happy to walk through the details.
         </p>
       </div>
       <div className="lg:col-span-8">

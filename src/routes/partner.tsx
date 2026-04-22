@@ -10,7 +10,7 @@ const PARTNER_TYPES = [
   {
     icon: Building2,
     title: "Property Management Companies",
-    body: "Single-vendor coverage across your residential and commercial portfolio — windows, exterior, janitorial, turnover. Consolidated invoicing, dedicated account manager.",
+    body: "Single-vendor coverage across your residential and commercial portfolio, windows, exterior, janitorial, turnover. Consolidated invoicing, dedicated account manager.",
   },
   {
     icon: KeyRound,
@@ -55,7 +55,7 @@ export const Route = createFileRoute("/partner")({
     buildSeo({
       title: "Partner With LumiView",
       description:
-        "Property managers, realtors, builders, designers and STR hosts — partner with LumiView for trade pricing, net terms and a single dependable vendor across Northeast Ohio.",
+        "Property managers, realtors, builders, designers and STR hosts, partner with LumiView for trade pricing, net terms and a single dependable vendor across Northeast Ohio.",
       path: "/partner",
     }),
   component: () => (
@@ -79,7 +79,7 @@ export const Route = createFileRoute("/partner")({
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
             We work behind the scenes for the businesses that make Northeast Ohio properties
-            shine. If you sell, manage, build, design or host — we're your exterior and
+            shine. If you sell, manage, build, design or host, we're your exterior and
             interior cleaning department.
           </p>
         </div>

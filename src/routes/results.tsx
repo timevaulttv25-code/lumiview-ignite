@@ -19,7 +19,7 @@ const PILLARS = [
     icon: Images,
     eyebrow: "Our Work",
     title: "Before & after gallery",
-    body: "Real photo proof from real Northeast Ohio properties — windows, driveways, siding, patios, storefronts, and more.",
+    body: "Real photo proof from real Northeast Ohio properties, windows, driveways, siding, patios, storefronts, and more.",
     to: "/our-work",
     cta: "View Gallery",
   },
@@ -27,7 +27,7 @@ const PILLARS = [
     icon: LineChart,
     eyebrow: "Case Studies",
     title: "Measurable client outcomes",
-    body: "PM portfolio consolidation, Airbnb rating recovery, retail plaza routes, post-construction handoffs — with the numbers behind them.",
+    body: "PM portfolio consolidation, Airbnb rating recovery, retail plaza routes, post-construction handoffs, with the numbers behind them.",
     to: "/case-studies",
     cta: "Read Case Studies",
   },
@@ -42,7 +42,7 @@ const STATS = [
 
 export const Route = createFileRoute("/results")({
   head: () => buildSeo({
-    title: "Results — Reviews, Before & After, Case Studies",
+    title: "Results, Reviews, Before & After, Case Studies",
     description: "Three ways to see the LumiView difference: verified Google reviews, before-and-after photo galleries, and detailed case studies with measurable client outcomes.",
     path: "/results",
   }),
@@ -51,7 +51,7 @@ export const Route = createFileRoute("/results")({
       <PageHero
         eyebrow="Results"
         title="See the work, the proof, and the outcomes."
-        description="Whether you want quick social proof, visual before-and-afters, or the full story behind a project — we've got you covered."
+        description="Whether you want quick social proof, visual before-and-afters, or the full story behind a project, we've got you covered."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Results" }]}
       />
 

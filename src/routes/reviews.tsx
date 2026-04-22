@@ -22,7 +22,7 @@ const REVIEWS = [
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     ...buildSeo({
-      title: `Customer Reviews — ${SITE.rating.value}★ on Google`,
+      title: `Customer Reviews, ${SITE.rating.value}★ on Google`,
       description: `LumiView is rated ${SITE.rating.value}★ across ${SITE.rating.count}+ verified Google reviews. Read what homeowners, businesses and property managers across Northeast Ohio say about working with us.`,
       path: "/reviews",
     }),
@@ -128,8 +128,7 @@ function ReviewsPage() {
             Worked with LumiView? Tell the next neighbor.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground leading-relaxed">
-            A 30-second Google review is the single best way to support a small local business —
-            and it helps the next homeowner or property manager find a vendor they can trust.
+            A 30-second Google review is the single best way to support a small local business, and it helps the next homeowner or property manager find a vendor they can trust.
           </p>
           <Button asChild size="lg" className="mt-7 rounded-full">
             <a

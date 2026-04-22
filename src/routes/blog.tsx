@@ -4,14 +4,14 @@ import { PageHero } from "@/components/site/PageHero";
 import { buildSeo } from "@/lib/seo";
 
 export const POSTS = [
-  { slug: "how-often-clean-windows", title: "How often should you really clean your windows?", excerpt: "A practical schedule for homes, storefronts and managed properties — and why most owners under-clean.", date: "2026-04-12" },
+  { slug: "how-often-clean-windows", title: "How often should you really clean your windows?", excerpt: "A practical schedule for homes, storefronts and managed properties, and why most owners under-clean.", date: "2026-04-12" },
   { slug: "pressure-vs-soft-wash", title: "Pressure washing vs. soft washing: what your siding actually needs", excerpt: "Choosing the wrong method can damage siding. Here's how the pros decide.", date: "2026-04-05" },
   { slug: "property-manager-checklist", title: "The property manager's quarterly exterior-care checklist", excerpt: "Five items that protect curb appeal, tenant satisfaction, and your asset value.", date: "2026-03-28" },
 ];
 
 export const Route = createFileRoute("/blog")({
   head: () => buildSeo({
-    title: "Insights & Guides — LumiView",
+    title: "Insights & Guides, LumiView",
     description: "Practical guides on window cleaning, pressure washing, janitorial care and property management for Northeast Ohio property owners.",
     path: "/blog",
   }),

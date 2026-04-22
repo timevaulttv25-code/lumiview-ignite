@@ -34,17 +34,17 @@ const VALUES = [
   {
     icon: Heart,
     title: "Locally owned, locally invested",
-    body: "Built in Avon. Run by people who live here. A portion of every invoice funds free cleanings for neighbors going through hard seasons — quietly, no marketing line item.",
+    body: "Built in Avon. Run by people who live here. A portion of every invoice funds free cleanings for neighbors going through hard seasons, quietly, no marketing line item.",
   },
   {
     icon: Handshake,
     title: "Same crew, every visit",
-    body: "Recurring accounts get the same lead and the same team. They learn your property, your access details, and your standards — and the quality compounds visit after visit.",
+    body: "Recurring accounts get the same lead and the same team. They learn your property, your access details, and your standards, and the quality compounds visit after visit.",
   },
   {
     icon: Star,
     title: "Backed by a real guarantee",
-    body: "If something falls short of the standard set in your estimate, call within 48 hours and we'll be back to make it right — no charge, no friction, no fine print.",
+    body: "If something falls short of the standard set in your estimate, call within 48 hours and we'll be back to make it right, no charge, no friction, no fine print.",
   },
 ];
 
@@ -53,7 +53,7 @@ const STANDARDS = [
   "Fully insured (general liability + workers' comp)",
   "Same crew lead on every recurring visit",
   "Same-day response for urgent commercial needs",
-  "Transparent flat-rate pricing — no surprise charges",
+  "Transparent flat-rate pricing, no surprise charges",
   "Photo confirmation on commercial and turnover work",
   "Purified-water-fed pole system on exterior glass",
   "Soft-wash methodology on siding, paint, and roofs",
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/about")({
     buildSeo({
       title: "About LumiView Services",
       description:
-        "LumiView is a locally owned property-care company in Avon, OH. Reliable scheduling, clear communication, and a finish that reflects well on every property we touch — across Northeast Ohio.",
+        "LumiView is a locally owned property-care company in Avon, OH. Reliable scheduling, clear communication, and a finish that reflects well on every property we touch, across Northeast Ohio.",
       path: "/about",
     }),
   component: AboutPage,
@@ -90,8 +90,7 @@ function AboutPage() {
           <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>
               Missed appointments. Unanswered calls. A different crew every visit. Quotes that
-              quietly grew on the invoice. The bar in our industry had slipped to "good enough" —
-              and homeowners, business owners, and property managers were paying the price for it.
+              quietly grew on the invoice. The bar in our industry had slipped to "good enough", and homeowners, business owners, and property managers were paying the price for it.
             </p>
             <p>
               We built LumiView to be the opposite of that experience. Uniformed crews who arrive
@@ -155,7 +154,7 @@ function AboutPage() {
             Six standards, applied to every job.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            These aren't poster phrases — they're how we hire, train, schedule, and finish every
+            These aren't poster phrases, they're how we hire, train, schedule, and finish every
             visit. If we ever fall short of one, we want to hear about it the same day.
           </p>
         </div>
@@ -179,7 +178,7 @@ function AboutPage() {
               The standard, in plain English.
             </h2>
             <p className="mt-5 text-ivory/75 leading-relaxed">
-              Every quote, every visit, every invoice — measured against this list. If something on
+              Every quote, every visit, every invoice, measured against this list. If something on
               this page doesn't match your experience, that's on us to fix.
             </p>
             <Button asChild size="lg" variant="secondary" className="mt-7 rounded-full">

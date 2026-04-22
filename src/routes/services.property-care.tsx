@@ -18,16 +18,16 @@ import baImg from "@/assets/work-siding-ba.jpg";
 const slug = "property-care";
 const title = "Property Care & Facility Support";
 const intro =
-  "A single, vetted vendor for ongoing exterior and interior property upkeep — built for property managers, facility teams, HOAs, and multi-property owners who need predictable scheduling, consolidated billing, and dependable communication across every door.";
+  "A single, vetted vendor for ongoing exterior and interior property upkeep, built for property managers, facility teams, HOAs, and multi-property owners who need predictable scheduling, consolidated billing, and dependable communication across every door.";
 
 const FAQS = [
   {
     q: "What is a property care plan?",
-    a: "A property care plan bundles recurring services — janitorial, window cleaning, pressure washing, seasonal exterior refresh, turnover cleaning — into one schedule, one account manager, and one monthly invoice across all of your properties.",
+    a: "A property care plan bundles recurring services, janitorial, window cleaning, pressure washing, seasonal exterior refresh, turnover cleaning, into one schedule, one account manager, and one monthly invoice across all of your properties.",
   },
   {
     q: "Can you handle multiple properties under one account?",
-    a: "Yes — that's exactly what this service is built for. We currently support property managers and owners with portfolios ranging from 3 to 100+ doors across Northeast Ohio.",
+    a: "Yes, that's exactly what this service is built for. We currently support property managers and owners with portfolios ranging from 3 to 100+ doors across Northeast Ohio.",
   },
   {
     q: "Do you provide certificates of insurance and add additional insured?",
@@ -43,7 +43,7 @@ const FAQS = [
   },
   {
     q: "Do you have a single point of contact for our portfolio?",
-    a: "Every property care client gets a dedicated account manager who knows your portfolio, schedule, and standards — and who you can call or text directly during business hours.",
+    a: "Every property care client gets a dedicated account manager who knows your portfolio, schedule, and standards, and who you can call or text directly during business hours.",
   },
   {
     q: "Can you coordinate with our maintenance and leasing teams?",
@@ -58,7 +58,7 @@ const FAQS = [
 export const Route = createFileRoute("/services/property-care")({
   head: () => ({
     ...buildSeo({
-      title: `${title} for Portfolios — Northeast Ohio`,
+      title: `${title} for Portfolios, Northeast Ohio`,
       description: intro,
       path: `/services/${slug}`,
       image: `${SITE.url}${heroImg}`,
@@ -83,7 +83,7 @@ export const Route = createFileRoute("/services/property-care")({
         "24-hour response on incidents",
       ]}
       tiersEyebrow="Property Care Plans"
-      tiersHeading="Built for portfolios — scaled to your door count."
+      tiersHeading="Built for portfolios, scaled to your door count."
       tiersIntro="Choose a plan that matches your portfolio size and complexity. Each tier bundles recurring service, on-call response, and consolidated reporting."
       tiers={[
         {
@@ -125,12 +125,12 @@ export const Route = createFileRoute("/services/property-care")({
       ]}
       featuresEyebrow="Everything Included in Property Care"
       featuresHeading="The full facility-support toolkit, coordinated by one team."
-      featuresIntro="Every property care client picks the services they want bundled. Add or remove anything — exterior, interior, turnover, seasonal — and we'll keep it on one calendar and one invoice."
+      featuresIntro="Every property care client picks the services they want bundled. Add or remove anything, exterior, interior, turnover, seasonal, and we'll keep it on one calendar and one invoice."
       features={[
         {
           icon: Calendar,
           title: "Coordinated scheduling",
-          body: "One calendar across every property in your portfolio — no more juggling multiple vendors.",
+          body: "One calendar across every property in your portfolio, no more juggling multiple vendors.",
           items: ["Recurring service calendar", "Make-ready turnover queue", "Seasonal exterior plans", "Holiday & weekend coverage"],
         },
         {
@@ -148,13 +148,13 @@ export const Route = createFileRoute("/services/property-care")({
         {
           icon: ClipboardList,
           title: "Turnover & make-ready",
-          body: "Reliable turnover cleaning for vacancies — coordinated with your leasing and maintenance teams.",
+          body: "Reliable turnover cleaning for vacancies, coordinated with your leasing and maintenance teams.",
           items: ["Move-out deep clean", "Move-in make-ready", "Damage & inventory reporting", "Photo confirmation"],
         },
         {
           icon: ShieldCheck,
           title: "Compliance & reporting",
-          body: "The paperwork side of multi-property service — handled.",
+          body: "The paperwork side of multi-property service, handled.",
           items: [
             "COI with additional insured",
             "W-9 & vendor onboarding",
@@ -165,13 +165,13 @@ export const Route = createFileRoute("/services/property-care")({
         {
           icon: Phone,
           title: "Account management",
-          body: "A real person who knows your portfolio — not a ticket queue.",
+          body: "A real person who knows your portfolio, not a ticket queue.",
           items: ["Dedicated account manager", "Direct phone & text access", "Quarterly review meetings", "Reserve crew for emergencies"],
         },
       ]}
       resultEyebrow="The Result"
       resultHeading="Less vendor management. Cleaner properties. Predictable spend."
-      resultBody="Property managers tell us the biggest win isn't the cleaning — it's the time they get back. One call, one invoice, one accountable partner across every property they manage."
+      resultBody="Property managers tell us the biggest win isn't the cleaning, it's the time they get back. One call, one invoice, one accountable partner across every property they manage."
       resultImage={baImg}
       resultImageAlt="Before and after property exterior care by LumiView Services"
       audienceEyebrow="Who We Serve"

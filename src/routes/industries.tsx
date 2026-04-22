@@ -21,7 +21,7 @@ const IMG: Record<string, string> = {
 
 export const Route = createFileRoute("/industries")({
   head: () => buildSeo({
-    title: "Industries We Serve — Residential, Commercial & Property Managers",
+    title: "Industries We Serve, Residential, Commercial & Property Managers",
     description: "LumiView serves homeowners, businesses, property managers, builders and daycare facilities across Avon and Northeast Ohio.",
     path: "/industries",
   }),
@@ -42,7 +42,7 @@ function IndustriesIndex() {
       <PageHero
         eyebrow="Industries"
         title="Care tailored to every type of property."
-        description="The same dependable standard, adapted to context — from single-family homes to short-term rentals to multi-property portfolios and retail plazas."
+        description="The same dependable standard, adapted to context, from single-family homes to short-term rentals to multi-property portfolios and retail plazas."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Industries" }]}
       />
       <section className="border-y border-border bg-secondary/40">

@@ -5,7 +5,7 @@ export const Route = createFileRoute("/robots.txt")({
   server: {
     handlers: {
       GET: () => {
-        const body = `# LumiView Services — robots.txt
+        const body = `# LumiView Services, robots.txt
 User-agent: *
 Allow: /
 Disallow: /api/

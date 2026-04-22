@@ -30,7 +30,7 @@ export const Route = createFileRoute("/service-areas/$slug")({
       <SiteShell>
         <PageHero eyebrow={`${city.name}, OH · ${city.zip}`}
           title={`Window cleaning & property care in ${city.name}.`}
-          description={`Local crews serving ${city.name} homeowners, businesses and property managers — from streak-free glass to soft-washed siding and recurring interior care.`}
+          description={`Local crews serving ${city.name} homeowners, businesses and property managers, from streak-free glass to soft-washed siding and recurring interior care.`}
           breadcrumbs={[{ label: "Home", to: "/" }, { label: "Service areas", to: "/service-areas" }, { label: city.name }]} />
         <section className="container-prose py-20 lg:py-28">
           <h2 className="font-serif text-3xl font-medium text-navy-deep">Services available in {city.name}</h2>

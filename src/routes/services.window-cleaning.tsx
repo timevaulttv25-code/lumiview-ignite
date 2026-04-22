@@ -25,7 +25,7 @@ import beforeAfterImg from "@/assets/work-windows-ba.jpg";
 const slug = "window-cleaning";
 const title = "Window Cleaning";
 const intro =
-  "LumiView provides detail-focused window cleaning for homes, storefronts, offices, and managed properties across Avon and Northeast Ohio — purified water, professional squeegee technique, no streaks, no residue.";
+  "LumiView provides detail-focused window cleaning for homes, storefronts, offices, and managed properties across Avon and Northeast Ohio, purified water, professional squeegee technique, no streaks, no residue.";
 
 const TIERS = [
   {
@@ -110,11 +110,11 @@ const PROCESS = [
 
 const FAQS = [
   { q: "How often should windows be cleaned?", a: "Most homes benefit from twice yearly (spring and fall). Storefronts often run weekly or biweekly to maintain a polished appearance. Lakeside and tree-lined properties may want quarterly service." },
-  { q: "Do you clean both interior and exterior?", a: "Yes — interior and exterior are included by default. You can request exterior-only if preferred, which is common for second-story homes." },
+  { q: "Do you clean both interior and exterior?", a: "Yes, interior and exterior are included by default. You can request exterior-only if preferred, which is common for second-story homes." },
   { q: "What method do you use?", a: "Purified (deionized) water with professional squeegee technique on most glass, plus water-fed poles for elevated and hard-to-reach panels. No soap residue, no spotting." },
-  { q: "Can you remove hard water stains?", a: "Yes. We assess the severity first — light mineral haze typically restores to clear, while deeply etched glass may require multiple treatments. We'll set expectations honestly before starting." },
+  { q: "Can you remove hard water stains?", a: "Yes. We assess the severity first, light mineral haze typically restores to clear, while deeply etched glass may require multiple treatments. We'll set expectations honestly before starting." },
   { q: "Are screens and tracks included?", a: "Screens are washed and rehung on full-service cleans. Tracks and sills are wiped down as part of the standard scope." },
-  { q: "Are you insured?", a: "Yes — fully insured with general liability and workers' comp. Certificates of insurance available on request, with property managers added as additional insured if needed." },
+  { q: "Are you insured?", a: "Yes, fully insured with general liability and workers' comp. Certificates of insurance available on request, with property managers added as additional insured if needed." },
   { q: "Do you service commercial storefronts on a route?", a: "Yes. Weekly and biweekly storefront routes are a core part of what we do across Avon, Westlake, Rocky River, and Lakewood." },
 ];
 
@@ -212,8 +212,7 @@ function WindowCleaningPage() {
               The full glass-care toolkit, combined into one clear plan.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Some properties only need standard interior and exterior cleaning. Others want a broader scope —
-              screens, tracks, frames, shower glass, storefront presentation, web removal, and more. We combine
+              Some properties only need standard interior and exterior cleaning. Others want a broader scope, screens, tracks, frames, shower glass, storefront presentation, web removal, and more. We combine
               the right services into a single visit.
             </p>
           </div>
@@ -254,7 +253,7 @@ function WindowCleaningPage() {
               A finish that looks more open, polished, and cared for.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Clean glass is one of the fastest ways to improve how a space feels — from the inside and from
+              Clean glass is one of the fastest ways to improve how a space feels, from the inside and from
               the curb. Hard-water haze, exterior pollen, and storefront fingerprints all disappear in a
               single visit.
             </p>
@@ -345,7 +344,7 @@ function WindowCleaningPage() {
                 Serving Avon and nearby Northeast Ohio communities.
               </h2>
               <p className="mt-4 text-sm text-muted-foreground">
-                Window cleaning quotes are based on property type, glass count, and access — call us or
+                Window cleaning quotes are based on property type, glass count, and access, call us or
                 request one online and we'll respond inside 24 hours.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">

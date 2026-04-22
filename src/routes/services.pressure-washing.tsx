@@ -18,7 +18,7 @@ import baImg from "@/assets/work-driveway-ba.jpg";
 const slug = "pressure-washing";
 const title = "Pressure Washing & Exterior Cleaning";
 const intro =
-  "Soft-wash and pressure-wash exterior cleaning that lifts grime, algae, mildew, oxidation, and oil from siding, driveways, walkways, patios, decks, fences, and roofs — without damaging the surface beneath.";
+  "Soft-wash and pressure-wash exterior cleaning that lifts grime, algae, mildew, oxidation, and oil from siding, driveways, walkways, patios, decks, fences, and roofs, without damaging the surface beneath.";
 
 const FAQS = [
   {
@@ -27,11 +27,11 @@ const FAQS = [
   },
   {
     q: "Will pressure washing damage my siding or roof?",
-    a: "No — when done correctly. We use low-pressure soft-wash with a cleaning solution on siding, roofs, and painted surfaces, and reserve high pressure only for hard surfaces like concrete and pavers. This is the same method recommended by most siding and shingle manufacturers.",
+    a: "No, when done correctly. We use low-pressure soft-wash with a cleaning solution on siding, roofs, and painted surfaces, and reserve high pressure only for hard surfaces like concrete and pavers. This is the same method recommended by most siding and shingle manufacturers.",
   },
   {
     q: "What's the difference between pressure washing and soft washing?",
-    a: "Pressure washing uses high-pressure water and is ideal for concrete, brick, and stone. Soft washing uses low pressure plus a biodegradable cleaning solution that kills algae, mildew, and mold at the root — safe for siding, roofs, fences, and painted wood.",
+    a: "Pressure washing uses high-pressure water and is ideal for concrete, brick, and stone. Soft washing uses low pressure plus a biodegradable cleaning solution that kills algae, mildew, and mold at the root, safe for siding, roofs, fences, and painted wood.",
   },
   {
     q: "How often should I pressure wash my house?",
@@ -39,7 +39,7 @@ const FAQS = [
   },
   {
     q: "Can you remove rust, oil, and battery stains from concrete?",
-    a: "Yes. We carry rust removers and degreasers for oil drips, battery leaks, fertilizer stains, and tire marks. Severely set-in stains may lighten rather than disappear completely — we'll tell you upfront before we start.",
+    a: "Yes. We carry rust removers and degreasers for oil drips, battery leaks, fertilizer stains, and tire marks. Severely set-in stains may lighten rather than disappear completely, we'll tell you upfront before we start.",
   },
   {
     q: "Do you offer roof soft-washing?",
@@ -51,7 +51,7 @@ const FAQS = [
   },
   {
     q: "Are you insured for exterior work?",
-    a: "Yes — fully insured with general liability and workers' comp. Certificates available on request, with property managers added as additional insured if needed.",
+    a: "Yes, fully insured with general liability and workers' comp. Certificates available on request, with property managers added as additional insured if needed.",
   },
 ];
 
@@ -84,13 +84,13 @@ export const Route = createFileRoute("/services/pressure-washing")({
       ]}
       tiersEyebrow="Pressure Washing Services"
       tiersHeading="The right method for every exterior surface."
-      tiersIntro="From soft-wash siding and roof treatments to high-pressure concrete restoration, we match the technique to the surface — protecting your property while delivering visible results."
+      tiersIntro="From soft-wash siding and roof treatments to high-pressure concrete restoration, we match the technique to the surface, protecting your property while delivering visible results."
       tiers={[
         {
           icon: Home,
           eyebrow: "Residential",
           title: "Home exterior cleaning",
-          body: "Restore curb appeal with a full exterior refresh — siding, walkways, driveways, patios, decks, and fences.",
+          body: "Restore curb appeal with a full exterior refresh, siding, walkways, driveways, patios, decks, and fences.",
           items: [
             "Vinyl, brick, fiber-cement & stucco siding",
             "Driveways, walkways & sidewalks",
@@ -114,7 +114,7 @@ export const Route = createFileRoute("/services/pressure-washing")({
           icon: Sparkles,
           eyebrow: "Specialty",
           title: "Roof & deep restoration",
-          body: "For surfaces that need more than a maintenance wash — algae-streaked roofs, oxidized siding, and rust-stained concrete.",
+          body: "For surfaces that need more than a maintenance wash, algae-streaked roofs, oxidized siding, and rust-stained concrete.",
           items: [
             "Roof soft-wash (algae & black streaks)",
             "Oxidation removal on vinyl & aluminum",
@@ -125,7 +125,7 @@ export const Route = createFileRoute("/services/pressure-washing")({
       ]}
       featuresEyebrow="Complete Exterior Cleaning Features"
       featuresHeading="Every surface, the right method, one trusted crew."
-      featuresIntro="Our crews carry the equipment, chemistry, and training to safely clean every common exterior surface in Northeast Ohio — and we'll bundle the full scope into one visit so you only schedule once."
+      featuresIntro="Our crews carry the equipment, chemistry, and training to safely clean every common exterior surface in Northeast Ohio, and we'll bundle the full scope into one visit so you only schedule once."
       features={[
         {
           icon: Droplets,
@@ -153,7 +153,7 @@ export const Route = createFileRoute("/services/pressure-washing")({
         {
           icon: Wrench,
           title: "Deck, fence & wood",
-          body: "Pressure tuned for wood — opens the grain for staining without splintering.",
+          body: "Pressure tuned for wood, opens the grain for staining without splintering.",
           items: ["Pressure-treated decks", "Cedar fences", "Pergolas & gazebos", "Pre-stain prep washing"],
         },
         {
@@ -165,7 +165,7 @@ export const Route = createFileRoute("/services/pressure-washing")({
         {
           icon: Sparkles,
           title: "Stain & restoration work",
-          body: "When standard washing isn't enough — targeted treatments for set-in stains and oxidation.",
+          body: "When standard washing isn't enough, targeted treatments for set-in stains and oxidation.",
           items: [
             "Rust, oil & battery stains",
             "Vinyl & aluminum oxidation",
@@ -176,7 +176,7 @@ export const Route = createFileRoute("/services/pressure-washing")({
       ]}
       resultEyebrow="The Result"
       resultHeading="Driveways, siding, and patios that look years younger in a single visit."
-      resultBody="Pressure washing is one of the highest-ROI things you can do for a property — appraisers, realtors, and property managers consistently rank it among the top exterior improvements for resale value and tenant impression."
+      resultBody="Pressure washing is one of the highest-ROI things you can do for a property, appraisers, realtors, and property managers consistently rank it among the top exterior improvements for resale value and tenant impression."
       resultImage={baImg}
       resultImageAlt="Before and after driveway pressure washing by LumiView Services"
       audienceEyebrow="Who We Serve"
@@ -212,7 +212,7 @@ export const Route = createFileRoute("/services/pressure-washing")({
         {
           step: "02",
           title: "Match method to surface",
-          body: "Soft-wash for siding and roofs, surface-cleaner for concrete, low-pressure for wood — every surface gets the right approach.",
+          body: "Soft-wash for siding and roofs, surface-cleaner for concrete, low-pressure for wood, every surface gets the right approach.",
         },
         {
           step: "03",

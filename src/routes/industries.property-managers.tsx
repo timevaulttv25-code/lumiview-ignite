@@ -9,7 +9,7 @@ import resultImg from "@/assets/work-storefront-ba.jpg";
 const slug = "property-managers";
 const industryTitle = "Property Managers";
 const intro =
-  "One point of contact, one invoice, one consistent standard across your entire portfolio. Make-ready turns, common-area janitorial, exterior wash, storefront windows and short-term rental turnovers — all under one trusted vendor.";
+  "One point of contact, one invoice, one consistent standard across your entire portfolio. Make-ready turns, common-area janitorial, exterior wash, storefront windows and short-term rental turnovers, all under one trusted vendor.";
 
 const TIERS = [
   {
@@ -30,7 +30,7 @@ const TIERS = [
     icon: ClipboardList,
     eyebrow: "Portfolio",
     title: "Multi-property scheduling & reporting",
-    body: "Coordinated service across every door in the portfolio — one schedule, one report, one invoice.",
+    body: "Coordinated service across every door in the portfolio, one schedule, one report, one invoice.",
     items: ["Per-property reporting", "Consolidated invoicing", "Same-team continuity", "Dedicated account manager"],
   },
 ];
@@ -39,7 +39,7 @@ const FEATURES = [
   {
     icon: KeyRound,
     title: "Make-ready & turnover",
-    body: "Standardized turnover scope so every unit lists at the same level — regardless of who's cleaning it.",
+    body: "Standardized turnover scope so every unit lists at the same level, regardless of who's cleaning it.",
     items: ["Full-unit deep clean", "Appliance interior detail", "Carpet vacuum & spot treat", "Punch-list & touch-up"],
   },
   {
@@ -57,13 +57,13 @@ const FEATURES = [
   {
     icon: FileText,
     title: "Per-property reporting",
-    body: "Every visit is logged with date, crew, scope and (on request) before/after photos — broken out per door.",
+    body: "Every visit is logged with date, crew, scope and (on request) before/after photos, broken out per door.",
     items: ["Date & crew logged", "Scope confirmation", "Before/after photos on request", "Issue & damage flags"],
   },
   {
     icon: Phone,
     title: "Single point of contact",
-    body: "One account manager handles every property, every request, every issue — no chasing crews or vendors.",
+    body: "One account manager handles every property, every request, every issue, no chasing crews or vendors.",
     items: ["Dedicated account manager", "Text & email response", "Same-day urgent dispatch", "Quarterly portfolio review"],
   },
   {
@@ -82,17 +82,17 @@ const PROCESS = [
 
 const FAQS = [
   { q: "How quickly can you turn a vacated unit?", a: "Standard make-ready turns are scheduled within 24–72 hours of vacancy. Same-day emergency turns are available for active accounts." },
-  { q: "Do you provide reporting per property?", a: "Yes — every visit is logged with date, crew, scope and (on request) before/after photos, broken out per door for easy reconciliation." },
+  { q: "Do you provide reporting per property?", a: "Yes, every visit is logged with date, crew, scope and (on request) before/after photos, broken out per door for easy reconciliation." },
   { q: "Can we get one consolidated invoice for the portfolio?", a: "Yes. We bill consolidated by portfolio with per-property line items, or per-property if your accounting requires it. Net-30 terms available for established accounts." },
-  { q: "Do you provide certificates of insurance per property?", a: "Yes — we issue COIs per managed property with your management company listed as additional insured. Most COI requests are completed within 24 hours." },
-  { q: "Will the same crew clean my properties every time?", a: "Yes. Same-team continuity is core to how we work — your maintenance team and tenants see the same faces, and standards stay consistent." },
+  { q: "Do you provide certificates of insurance per property?", a: "Yes, we issue COIs per managed property with your management company listed as additional insured. Most COI requests are completed within 24 hours." },
+  { q: "Will the same crew clean my properties every time?", a: "Yes. Same-team continuity is core to how we work, your maintenance team and tenants see the same faces, and standards stay consistent." },
   { q: "How is pricing structured for property management accounts?", a: "Recurring services are priced per visit or per unit with portfolio discounts. Make-ready turns are typically priced per square foot. Clear written proposal after a walkthrough." },
 ];
 
 export const Route = createFileRoute("/industries/property-managers")({
   head: () => ({
     ...buildSeo({
-      title: `${industryTitle} — Portfolio Cleaning Across Northeast Ohio`,
+      title: `${industryTitle}, Portfolio Cleaning Across Northeast Ohio`,
       description: intro,
       path: `/industries/${slug}`,
       image: `${SITE.url}${heroImg}`,
@@ -106,7 +106,7 @@ function PropertyManagersIndustryPage() {
   return (
     <RichIndustryLayout
       heroEyebrow="Industry • Property Managers"
-      heroTitle="One vendor, one standard, one invoice — across every door."
+      heroTitle="One vendor, one standard, one invoice, across every door."
       heroDescription={intro}
       heroImage={heroImg}
       industryTitle={industryTitle}
@@ -122,15 +122,15 @@ function PropertyManagersIndustryPage() {
       ]}
       tiersEyebrow="Portfolio Services"
       tiersHeading="The full cleaning stack a property manager actually needs."
-      tiersIntro="Make-ready turns, common-area janitorial and recurring exterior care — coordinated across multifamily, mixed-use and commercial portfolios."
+      tiersIntro="Make-ready turns, common-area janitorial and recurring exterior care, coordinated across multifamily, mixed-use and commercial portfolios."
       tiers={TIERS}
       featuresEyebrow="What's Included"
-      featuresHeading="Built for portfolios — not one-off jobs."
+      featuresHeading="Built for portfolios, not one-off jobs."
       featuresIntro="Standardized scope, predictable scheduling, photo-documented quality control and reporting that drops straight into your management software."
       features={FEATURES}
       resultEyebrow="The Result"
       resultHeading="Faster turns, fewer tenant complaints, less time chasing vendors."
-      resultBody="With one trusted vendor across the portfolio, you stop coordinating five different cleaners — and start getting consistent results, predictable invoicing and units that lease faster."
+      resultBody="With one trusted vendor across the portfolio, you stop coordinating five different cleaners, and start getting consistent results, predictable invoicing and units that lease faster."
       resultImage={resultImg}
       resultImageAlt="Common-area cleaning portfolio support by LumiView"
       relatedEyebrow="Popular Services"
@@ -146,7 +146,7 @@ function PropertyManagersIndustryPage() {
       serviceAreaHeading="Serving property managers across Northeast Ohio."
       serviceAreaBody="We service multifamily, mixed-use, commercial and HOA portfolios across Avon, Westlake, Lakewood, Rocky River and surrounding communities."
       faqs={FAQS}
-      faqTitle="Property management — common questions"
+      faqTitle="Property management, common questions"
       ctaTitle="One trusted cleaning partner for the entire portfolio."
       ctaBody="Free portfolio walkthroughs. COI per property. Dedicated account manager. Tell us about your portfolio and we'll follow up with a clear proposal."
     />

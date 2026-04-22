@@ -18,16 +18,16 @@ import baImg from "@/assets/work-storefront-ba.jpg";
 const slug = "property-management-cleaning";
 const title = "Property Management Cleaning";
 const intro =
-  "Recurring cleaning, turnover support, and exterior care for residential rental portfolios, multi-unit apartment buildings, commercial offices, retail plazas, and storefronts. One vetted, insured vendor across every door — with consolidated scheduling, reporting, and billing.";
+  "Recurring cleaning, turnover support, and exterior care for residential rental portfolios, multi-unit apartment buildings, commercial offices, retail plazas, and storefronts. One vetted, insured vendor across every door, with consolidated scheduling, reporting, and billing.";
 
 const FAQS = [
   {
     q: "Do you work directly with property managers and landlords?",
-    a: "Yes — managed residential portfolios, multi-unit apartment buildings, commercial office buildings, and retail plaza ownership groups are a core part of what we do. We can serve a single building or hundreds of units under one account.",
+    a: "Yes, managed residential portfolios, multi-unit apartment buildings, commercial office buildings, and retail plaza ownership groups are a core part of what we do. We can serve a single building or hundreds of units under one account.",
   },
   {
     q: "Can you handle emergency turnovers and same-week make-readies?",
-    a: "Yes. We maintain reserve crew capacity specifically for property management clients — same-week make-ready cleans for unexpected vacancies, post-eviction deep cleans, and rush turnovers between leases.",
+    a: "Yes. We maintain reserve crew capacity specifically for property management clients, same-week make-ready cleans for unexpected vacancies, post-eviction deep cleans, and rush turnovers between leases.",
   },
   {
     q: "How is billing handled across a portfolio?",
@@ -35,7 +35,7 @@ const FAQS = [
   },
   {
     q: "Do you integrate with property management software?",
-    a: "Yes — we work routinely with AppFolio, Buildium, Yardi, Propertyware, and Rent Manager. Work orders can be received via email, your platform's vendor portal, or directly with your assigned account manager.",
+    a: "Yes, we work routinely with AppFolio, Buildium, Yardi, Propertyware, and Rent Manager. Work orders can be received via email, your platform's vendor portal, or directly with your assigned account manager.",
   },
   {
     q: "Can you provide certificates of insurance with our company as additional insured?",
@@ -43,14 +43,14 @@ const FAQS = [
   },
   {
     q: "Do you do common-area cleaning for apartment buildings?",
-    a: "Yes — hallways, lobbies, mailrooms, laundry rooms, fitness rooms, elevators, and stairwells on the schedule each property needs (typically 1–3x/week for apartment buildings).",
+    a: "Yes, hallways, lobbies, mailrooms, laundry rooms, fitness rooms, elevators, and stairwells on the schedule each property needs (typically 1–3x/week for apartment buildings).",
   },
   {
     q: "What does a make-ready / move-out cleaning include?",
-    a: "A full top-to-bottom deep clean designed to deliver a turn-key unit: appliances inside and out, cabinets, baseboards, blinds, windows, tubs, toilets, vents, light fixtures, and floors — photo-documented on completion.",
+    a: "A full top-to-bottom deep clean designed to deliver a turn-key unit: appliances inside and out, cabinets, baseboards, blinds, windows, tubs, toilets, vents, light fixtures, and floors, photo-documented on completion.",
   },
   {
-    q: "Can you also handle the exterior — parking lot, sidewalks, dumpster pads?",
+    q: "Can you also handle the exterior, parking lot, sidewalks, dumpster pads?",
     a: "Yes. Property management cleaning is bundled with our pressure washing and exterior services so one vendor handles parking lots, sidewalks, dumpster pad pressure washing, and storefront windows on the same schedule.",
   },
 ];
@@ -58,7 +58,7 @@ const FAQS = [
 export const Route = createFileRoute("/services/property-management-cleaning")({
   head: () => ({
     ...buildSeo({
-      title: `${title} — Rentals, Buildings & Plazas in Northeast Ohio`,
+      title: `${title}, Rentals, Buildings & Plazas in Northeast Ohio`,
       description: intro,
       path: `/services/${slug}`,
       image: `${SITE.url}${heroImg}`,
@@ -84,7 +84,7 @@ export const Route = createFileRoute("/services/property-management-cleaning")({
       ]}
       tiersEyebrow="Property Management Programs"
       tiersHeading="Cleaning programs built for the doors you actually manage."
-      tiersIntro="Single-family rentals, large apartment buildings, commercial office space, and retail plazas all need different cleaning rhythms — we structure each program around the asset class you operate."
+      tiersIntro="Single-family rentals, large apartment buildings, commercial office space, and retail plazas all need different cleaning rhythms, we structure each program around the asset class you operate."
       tiers={[
         {
           icon: KeyRound,
@@ -124,7 +124,7 @@ export const Route = createFileRoute("/services/property-management-cleaning")({
         },
       ]}
       featuresEyebrow="Property Management Cleaning Toolkit"
-      featuresHeading="Every service your property managers actually call about — under one vendor."
+      featuresHeading="Every service your property managers actually call about, under one vendor."
       featuresIntro="Stop juggling separate vendors for janitorial, turnovers, window cleaning, and pressure washing. Property management cleaning bundles every common request into one calendar, one account manager, and one invoice."
       features={[
         {
@@ -141,7 +141,7 @@ export const Route = createFileRoute("/services/property-management-cleaning")({
         {
           icon: Building2,
           title: "Common-area janitorial",
-          body: "Hallways, lobbies, elevators, mailrooms — the spaces every tenant judges your building by.",
+          body: "Hallways, lobbies, elevators, mailrooms, the spaces every tenant judges your building by.",
           items: ["Hallway & stairwell vacuum/mop", "Lobby & entry-glass detail", "Elevator interior cleaning", "Laundry & fitness-room sanitation"],
         },
         {
@@ -165,7 +165,7 @@ export const Route = createFileRoute("/services/property-management-cleaning")({
         {
           icon: ShieldCheck,
           title: "Vendor compliance",
-          body: "The vendor paperwork your accounting and risk teams actually want — handled.",
+          body: "The vendor paperwork your accounting and risk teams actually want, handled.",
           items: [
             "COI with additional insured",
             "W-9 & vendor onboarding",

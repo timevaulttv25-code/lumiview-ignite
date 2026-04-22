@@ -44,7 +44,7 @@ export const SERVICES = [
     title: "Window Cleaning",
     short: "Streak-free interior & exterior glass.",
     excerpt:
-      "Professional interior and exterior window cleaning for homes, storefronts, and commercial properties — purified water, no streaks, no residue.",
+      "Professional interior and exterior window cleaning for homes, storefronts, and commercial properties, purified water, no streaks, no residue.",
   },
   {
     slug: "pressure-washing",
@@ -58,7 +58,7 @@ export const SERVICES = [
     title: "Janitorial & Interior Cleaning",
     short: "Reliable recurring interior care.",
     excerpt:
-      "Detail-driven janitorial and interior cleaning for offices, facilities, and residences — scheduled service you can plan a week around.",
+      "Detail-driven janitorial and interior cleaning for offices, facilities, and residences, scheduled service you can plan a week around.",
   },
   {
     slug: "property-care",
@@ -72,14 +72,14 @@ export const SERVICES = [
     title: "Airbnb & Vrbo Turnover Cleaning",
     short: "5-star ready between every guest.",
     excerpt:
-      "Hotel-grade short-term rental turnover cleaning with linen service, restocking and photo confirmation — built for Airbnb, Vrbo and Booking.com hosts who need flawless reviews.",
+      "Hotel-grade short-term rental turnover cleaning with linen service, restocking and photo confirmation, built for Airbnb, Vrbo and Booking.com hosts who need flawless reviews.",
   },
   {
     slug: "property-management-cleaning",
     title: "Property Management Cleaning",
     short: "Residential rentals, buildings & plazas.",
     excerpt:
-      "Recurring cleaning and turnover support for residential rental portfolios, multi-unit buildings, commercial offices, retail plazas and storefronts — one trusted vendor across every door.",
+      "Recurring cleaning and turnover support for residential rental portfolios, multi-unit buildings, commercial offices, retail plazas and storefronts, one trusted vendor across every door.",
   },
 ] as const;
 

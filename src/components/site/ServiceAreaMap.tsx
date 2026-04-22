@@ -68,7 +68,7 @@ export function ServiceAreaMap({
           <div className="relative" onMouseLeave={() => setMapActive(false)}>
             <iframe
               key={`${lat},${lng}`}
-              title={`${SITE.name} service area map — ${active?.name ?? "Avon"}`}
+              title={`${SITE.name} service area map, ${active?.name ?? "Avon"}`}
               src={mapSrc}
               loading="lazy"
               className={`h-[420px] w-full bg-muted ${mapActive ? "" : "pointer-events-none"}`}
@@ -78,7 +78,7 @@ export function ServiceAreaMap({
               <button
                 type="button"
                 onClick={() => setMapActive(true)}
-                aria-label="Activate map — click to enable scrolling and zooming"
+                aria-label="Activate map, click to enable scrolling and zooming"
                 className="absolute inset-0 flex items-end justify-center bg-transparent pb-6 text-xs font-semibold text-navy-deep transition-colors hover:bg-navy-deep/5"
               >
                 <span className="rounded-full bg-background/95 px-4 py-2 shadow-soft">
@@ -157,8 +157,7 @@ export function ServiceAreaMap({
             Don&rsquo;t see your town? Call{" "}
             <a href={SITE.phoneLink} className="font-semibold text-accent hover:underline">
               {SITE.phoneDisplay}
-            </a>{" "}
-            — we&rsquo;re happy to confirm coverage.
+            </a>{" "}, we&rsquo;re happy to confirm coverage.
           </p>
         )}
       </div>
