@@ -88,7 +88,6 @@ function QuotePage() {
     const { error } = await supabase.from("quote_requests").insert({
       ...parsed.data,
       company_name: parsed.data.company_name || null,
-      email: parsed.data.email || null,
     });
     setLoading(false);
     if (error) {
