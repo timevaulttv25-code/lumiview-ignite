@@ -4,8 +4,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, faqJsonLd } from "@/lib/seo";
 import { RichIndustryLayout } from "@/components/site/RichIndustryLayout";
 import heroImg from "@/assets/industry-property-managers.jpg";
-import beforeImg from "@/assets/work/work-storefront-before.jpg";
-import afterImg from "@/assets/work/work-storefront-after.jpg";
+import beforeImg from "@/assets/ba/property-mgr-before.jpg";
+import afterImg from "@/assets/ba/property-mgr-after.jpg";
 
 const slug = "property-managers";
 const industryTitle = "Property Managers";

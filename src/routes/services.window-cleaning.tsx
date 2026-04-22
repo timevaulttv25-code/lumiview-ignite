@@ -21,8 +21,8 @@ import { HighlightMarquee } from "@/components/site/HighlightMarquee";
 import { BeforeAfterSlider } from "@/components/site/BeforeAfterSlider";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/service-window-cleaning.jpg";
-import beforeImg from "@/assets/work/work-windows-before.jpg";
-import afterImg from "@/assets/work/work-windows-after.jpg";
+import beforeImg from "@/assets/ba/window-cleaning-before.jpg";
+import afterImg from "@/assets/ba/window-cleaning-after.jpg";
 
 const slug = "window-cleaning";
 const title = "Window Cleaning";

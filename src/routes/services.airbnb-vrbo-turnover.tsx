@@ -13,8 +13,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { RichServiceLayout } from "@/components/site/RichServiceLayout";
 import heroImg from "@/assets/service-airbnb-turnover.jpg";
-import beforeImg from "@/assets/work/work-windows-before.jpg";
-import afterImg from "@/assets/work/work-windows-after.jpg";
+import beforeImg from "@/assets/ba/airbnb-before.jpg";
+import afterImg from "@/assets/ba/airbnb-after.jpg";
 
 const slug = "airbnb-vrbo-turnover";
 const title = "Airbnb & Vrbo Turnover Cleaning";

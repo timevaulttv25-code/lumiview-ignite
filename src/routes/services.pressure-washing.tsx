@@ -13,8 +13,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { RichServiceLayout } from "@/components/site/RichServiceLayout";
 import heroImg from "@/assets/service-pressure-washing.jpg";
-import beforeImg from "@/assets/work/work-driveway-before.jpg";
-import afterImg from "@/assets/work/work-driveway-after.jpg";
+import beforeImg from "@/assets/ba/pressure-wash-before.jpg";
+import afterImg from "@/assets/ba/pressure-wash-after.jpg";
 
 const slug = "pressure-washing";
 const title = "Pressure Washing & Exterior Cleaning";

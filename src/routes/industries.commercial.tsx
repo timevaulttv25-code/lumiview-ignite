@@ -4,8 +4,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, faqJsonLd } from "@/lib/seo";
 import { RichIndustryLayout } from "@/components/site/RichIndustryLayout";
 import heroImg from "@/assets/industry-commercial.jpg";
-import beforeImg from "@/assets/work/work-storefront-before.jpg";
-import afterImg from "@/assets/work/work-storefront-after.jpg";
+import beforeImg from "@/assets/ba/commercial-before.jpg";
+import afterImg from "@/assets/ba/commercial-after.jpg";
 
 const slug = "commercial";
 const industryTitle = "Commercial Properties";
