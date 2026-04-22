@@ -20,7 +20,7 @@ import { FaqSection } from "@/components/site/FaqSection";
 import { ClientLogos } from "@/components/site/ClientLogos";
 import { ServiceAreaMap } from "@/components/site/ServiceAreaMap";
 import { SITE, SERVICES, INDUSTRIES, CITIES } from "@/lib/site";
-import { buildSeo, faqJsonLd, jsonLdScript, localBusinessJsonLd } from "@/lib/seo";
+import { buildSeo, faqJsonLd, jsonLdScript, localBusinessJsonLd, speakableFaqJsonLd } from "@/lib/seo";
 
 const FAQS = [
   { q: "How quickly can you respond to a quote request?", a: "We respond to all inquiries within 24 hours, often the same business day. For urgent commercial or property-management needs, call us directly at " + SITE.phoneDisplay + " for same-day scheduling when available." },
@@ -43,6 +43,7 @@ export const Route = createFileRoute("/")({
     scripts: [
       jsonLdScript(localBusinessJsonLd()),
       jsonLdScript(faqJsonLd(FAQS as unknown as { q: string; a: string }[])),
+      jsonLdScript(speakableFaqJsonLd()),
     ],
   }),
   component: HomePage,
