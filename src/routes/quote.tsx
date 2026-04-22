@@ -465,6 +465,7 @@ function QuotePage() {
             )}
           </div>
         </div>
+        </div>
       </section>
     </SiteShell>
   );
