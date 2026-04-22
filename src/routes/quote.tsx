@@ -71,17 +71,64 @@ function QuotePage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState<Record<string, any>>({ services: [], contact_method: "Email", state: "Ohio" });
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const update = (k: string, v: any) => setForm((f) => ({ ...f, [k]: v }));
+  const update = (k: string, v: any) => {
+    setForm((f) => ({ ...f, [k]: v }));
+    // Clear an existing error as soon as the user starts correcting it
+    setErrors((e) => (e[k] ? { ...e, [k]: "" } : e));
+  };
   const toggleService = (s: string) => {
     const has = form.services?.includes(s);
     update("services", has ? form.services.filter((x: string) => x !== s) : [...(form.services || []), s]);
   };
 
+  const FieldError = ({ name }: { name: string }) =>
+    errors[name] ? (
+      <p className="mt-1.5 text-sm font-medium text-destructive">{errors[name]}</p>
+    ) : null;
+
+  const inputErrCls = (name: string) =>
+    errors[name] ? "border-destructive focus-visible:ring-destructive" : "";
+
+  const collectErrors = (issues: { path: (string | number)[]; message: string }[]) => {
+    const map: Record<string, string> = {};
+    for (const i of issues) {
+      const key = String(i.path[0] ?? "");
+      if (key && !map[key]) map[key] = i.message;
+    }
+    return map;
+  };
+
+  const validateStep1 = () => {
+    const result = schema.pick({
+      full_name: true,
+      email: true,
+      phone: true,
+      contact_method: true,
+      property_type: true,
+      preferred_timing: true,
+    }).safeParse(form);
+    if (!result.success) {
+      const map = collectErrors(result.error.issues);
+      setErrors((prev) => ({ ...prev, ...map }));
+      toast.error("Please fix the highlighted fields", {
+        description: Object.values(map)[0],
+      });
+      return false;
+    }
+    return true;
+  };
+
   const submit = async () => {
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
-      toast.error("Please check the highlighted fields", { description: parsed.error.issues[0]?.message });
+      const map = collectErrors(parsed.error.issues);
+      setErrors(map);
+      // If errors are on step-1 fields, send the user back so they can see them
+      const step1Keys = ["full_name", "email", "phone", "contact_method", "property_type", "preferred_timing"];
+      if (Object.keys(map).some((k) => step1Keys.includes(k))) setStep(1);
+      toast.error("Please check the highlighted fields", { description: Object.values(map)[0] });
       return;
     }
     setLoading(true);
@@ -132,30 +179,69 @@ function QuotePage() {
               <div className="space-y-5">
                 <h2 className="font-serif text-2xl font-medium">About you</h2>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div><Label>Full name *</Label><Input value={form.full_name || ""} onChange={(e) => update("full_name", e.target.value)} /></div>
-                  <div><Label>Company name</Label><Input value={form.company_name || ""} onChange={(e) => update("company_name", e.target.value)} /></div>
-                  <div><Label>Email *</Label><Input type="email" required value={form.email || ""} onChange={(e) => update("email", e.target.value)} /></div>
-                  <div><Label>Phone *</Label><Input type="tel" required inputMode="tel" placeholder="(216) 555-1234" value={form.phone || ""} onChange={(e) => update("phone", e.target.value)} /></div>
+                  <div>
+                    <Label>Full name *</Label>
+                    <Input
+                      value={form.full_name || ""}
+                      onChange={(e) => update("full_name", e.target.value)}
+                      className={inputErrCls("full_name")}
+                      aria-invalid={!!errors.full_name}
+                    />
+                    <FieldError name="full_name" />
+                  </div>
+                  <div>
+                    <Label>Company name</Label>
+                    <Input value={form.company_name || ""} onChange={(e) => update("company_name", e.target.value)} />
+                  </div>
+                  <div>
+                    <Label>Email *</Label>
+                    <Input
+                      type="email"
+                      required
+                      value={form.email || ""}
+                      onChange={(e) => update("email", e.target.value)}
+                      className={inputErrCls("email")}
+                      aria-invalid={!!errors.email}
+                    />
+                    <FieldError name="email" />
+                  </div>
+                  <div>
+                    <Label>Phone *</Label>
+                    <Input
+                      type="tel"
+                      required
+                      inputMode="tel"
+                      placeholder="(216) 555-1234"
+                      value={form.phone || ""}
+                      onChange={(e) => update("phone", e.target.value)}
+                      className={inputErrCls("phone")}
+                      aria-invalid={!!errors.phone}
+                    />
+                    <FieldError name="phone" />
+                  </div>
                   <div>
                     <Label>Best way to reach you *</Label>
                     <Select value={form.contact_method} onValueChange={(v) => update("contact_method", v)}>
-                      <SelectTrigger><SelectValue /></SelectTrigger>
+                      <SelectTrigger className={inputErrCls("contact_method")}><SelectValue /></SelectTrigger>
                       <SelectContent>{["Call", "Text", "Email"].map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
                     </Select>
+                    <FieldError name="contact_method" />
                   </div>
                   <div>
                     <Label>Property type *</Label>
                     <Select value={form.property_type} onValueChange={(v) => update("property_type", v)}>
-                      <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                      <SelectTrigger className={inputErrCls("property_type")}><SelectValue placeholder="Select" /></SelectTrigger>
                       <SelectContent>{PROPERTY_TYPES.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
                     </Select>
+                    <FieldError name="property_type" />
                   </div>
                   <div>
                     <Label>Preferred timing *</Label>
                     <Select value={form.preferred_timing} onValueChange={(v) => update("preferred_timing", v)}>
-                      <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                      <SelectTrigger className={inputErrCls("preferred_timing")}><SelectValue placeholder="Select" /></SelectTrigger>
                       <SelectContent>{TIMING.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
                     </Select>
+                    <FieldError name="preferred_timing" />
                   </div>
                   <div>
                     <Label>How did you hear about us?</Label>
@@ -169,21 +255,7 @@ function QuotePage() {
                   <Button
                     className="rounded-full"
                     onClick={() => {
-                      const step1 = schema.pick({
-                        full_name: true,
-                        email: true,
-                        phone: true,
-                        contact_method: true,
-                        property_type: true,
-                        preferred_timing: true,
-                      }).safeParse(form);
-                      if (!step1.success) {
-                        toast.error("Please fix the highlighted field", {
-                          description: step1.error.issues[0]?.message,
-                        });
-                        return;
-                      }
-                      setStep(2);
+                      if (validateStep1()) setStep(2);
                     }}
                   >
                     Continue →
