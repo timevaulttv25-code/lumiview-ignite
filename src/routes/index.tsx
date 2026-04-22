@@ -12,6 +12,7 @@ import { SiteShell } from "@/components/site/SiteShell";
 import { Button } from "@/components/ui/button";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
+import { ClientLogos } from "@/components/site/ClientLogos";
 import { SITE, SERVICES, INDUSTRIES, CITIES } from "@/lib/site";
 import { buildSeo, faqJsonLd, jsonLdScript, localBusinessJsonLd } from "@/lib/seo";
 

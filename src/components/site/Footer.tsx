@@ -1,19 +1,22 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Facebook, Instagram, Star, MapPinned } from "lucide-react";
 import { SITE, SERVICES, CITIES } from "@/lib/site";
+import logo from "@/assets/lumiview-logo.png";
 
 export function Footer() {
   return (
     <footer className="navy-gradient mt-24 text-ivory">
       <div className="container-prose grid gap-12 py-16 lg:grid-cols-12 lg:py-20">
         <div className="lg:col-span-4">
-          <img
-            src={new URL("../../assets/lumiview-logo.png", import.meta.url).href}
-            alt={SITE.name}
-            className="h-10 w-auto brightness-0 invert"
-            width={220}
-            height={40}
-          />
+          <Link to="/" aria-label={`${SITE.name} home`} className="inline-flex items-center">
+            <img
+              src={logo}
+              alt={SITE.name}
+              className="h-11 w-auto"
+              width={220}
+              height={44}
+            />
+          </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ivory/70">
             Premium window cleaning, pressure washing and property care for homes,
             businesses and managed properties across Avon and Northeast Ohio.
