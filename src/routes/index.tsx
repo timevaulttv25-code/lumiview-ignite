@@ -127,7 +127,6 @@ function HomePage() {
           <div className="lg:col-span-6">
             <HeroCarousel />
           </div>
-          </div>
         </div>
       </section>
 
