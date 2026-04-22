@@ -3,6 +3,7 @@ import { Star, Quote } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
+import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, reviewCollectionJsonLd } from "@/lib/seo";
@@ -53,76 +54,82 @@ function ReviewsPage() {
 
       {/* RATING BANNER */}
       <section className="container-prose pt-12">
-        <div className="flex flex-col items-center justify-between gap-6 rounded-3xl border border-border bg-card p-8 shadow-soft md:flex-row md:p-10">
-          <div className="flex items-center gap-5">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/15">
-              <span className="font-serif text-2xl font-semibold text-navy-deep">
-                {SITE.rating.value}
-              </span>
+        <Reveal>
+          <div className="flex flex-col items-center justify-between gap-6 rounded-3xl border border-border bg-card p-8 shadow-soft md:flex-row md:p-10">
+            <div className="flex items-center gap-5">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/15 animate-soft-float">
+                <span className="font-serif text-2xl font-semibold text-navy-deep">
+                  {SITE.rating.value}
+                </span>
+              </div>
+              <div>
+                <div className="flex gap-0.5">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-accent text-accent animate-twinkle"
+                      style={{ animationDelay: `${i * 0.18}s` }}
+                    />
+                  ))}
+                </div>
+                <div className="mt-1 font-semibold text-foreground">
+                  Rated {SITE.rating.value} out of 5 on Google
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Based on {SITE.rating.count}+ verified customer reviews
+                </div>
+              </div>
             </div>
-            <div>
-              <div className="flex">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-accent text-accent" />
-                ))}
-              </div>
-              <div className="mt-1 font-semibold text-foreground">
-                Rated {SITE.rating.value} out of 5 on Google
-              </div>
-              <div className="text-sm text-muted-foreground">
-                Based on {SITE.rating.count}+ verified customer reviews
-              </div>
+            <div className="flex flex-wrap gap-3">
+              <Button asChild size="lg" className="rounded-full transition-transform hover:-translate-y-0.5">
+                <a
+                  href={SITE.social.googleReviews}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Star className="mr-1.5 h-4 w-4 fill-current" />
+                  Leave a Google review
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="rounded-full transition-transform hover:-translate-y-0.5">
+                <a href={SITE.social.google} target="_blank" rel="noopener noreferrer">
+                  Read all on Google →
+                </a>
+              </Button>
             </div>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild size="lg" className="rounded-full">
-              <a
-                href={SITE.social.googleReviews}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Star className="mr-1.5 h-4 w-4 fill-current" />
-                Leave a Google review
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full">
-              <a href={SITE.social.google} target="_blank" rel="noopener noreferrer">
-                Read all on Google →
-              </a>
-            </Button>
-          </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* REVIEW GRID */}
       <section className="container-prose grid gap-6 py-20 lg:grid-cols-3 lg:py-24">
-        {REVIEWS.map((t) => (
-          <figure
-            key={t.name}
-            className="flex flex-col rounded-2xl border border-border bg-card p-8 shadow-soft transition-shadow hover:shadow-elegant"
-          >
-            <Quote className="h-6 w-6 text-accent/60" />
-            <div className="mt-4 flex">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-              ))}
+        {REVIEWS.map((t, idx) => (
+          <Reveal key={t.name} delay={(idx % 3) * 90} as="figure" className="flex">
+            <div className="lift-card flex flex-1 flex-col rounded-2xl border border-border bg-card p-8 shadow-soft hover:shadow-elegant">
+              <Quote className="h-6 w-6 text-accent/60 transition-transform duration-500 group-hover:rotate-6" />
+              <div className="mt-4 flex gap-0.5">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                ))}
+              </div>
+              <blockquote className="mt-4 flex-1 font-serif text-lg italic leading-snug text-foreground">
+                "{t.quote}"
+              </blockquote>
+              <figcaption className="mt-6 border-t border-border pt-5">
+                <div className="font-semibold text-navy-deep">{t.name}</div>
+                <div className="text-sm text-muted-foreground">{t.role}</div>
+              </figcaption>
             </div>
-            <blockquote className="mt-4 flex-1 font-serif text-lg italic leading-snug text-foreground">
-              "{t.quote}"
-            </blockquote>
-            <figcaption className="mt-6 border-t border-border pt-5">
-              <div className="font-semibold text-navy-deep">{t.name}</div>
-              <div className="text-sm text-muted-foreground">{t.role}</div>
-            </figcaption>
-          </figure>
+          </Reveal>
         ))}
       </section>
 
       {/* LEAVE A REVIEW CTA */}
       <section className="container-prose pb-20 lg:pb-24">
+        <Reveal>
         <div className="rounded-3xl border border-border bg-secondary/40 p-10 text-center lg:p-14">
-          <div className="mx-auto inline-flex items-center justify-center rounded-full bg-accent/15 p-4">
-            <Star className="h-7 w-7 fill-accent text-accent" />
+          <div className="mx-auto inline-flex items-center justify-center rounded-full bg-accent/15 p-4 animate-soft-float">
+            <Star className="h-7 w-7 fill-accent text-accent animate-twinkle" />
           </div>
           <h2 className="mt-5 font-serif text-3xl font-medium tracking-tight lg:text-4xl">
             Worked with LumiView? Tell the next neighbor.
