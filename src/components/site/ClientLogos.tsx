@@ -20,8 +20,8 @@ const LOGOS: { src: string; name: string; scale?: number }[] = [
   { src: amanisLearning, name: "Amani's Hopes & Dreams Early Learning Center" },
   { src: wirelessExpress, name: "Wireless Express", scale: 1.2 },
   { src: blushBeauty, name: "Blush Beauty & Aesthetics" },
-  { src: perfect10Nails, name: "Perfect 10 Nails" },
-  { src: zeinas, name: "Zeina's Frozen Yogurt & Fried Chicken" },
+  { src: perfect10Nails, name: "Perfect 10 Nails", scale: 0.8 },
+  { src: zeinas, name: "Zeina's Frozen Yogurt & Fried Chicken", scale: 0.8 },
   { src: bkBarbershop, name: "BK Barbershop", scale: 1.5 },
   { src: lowcostPharmacy, name: "LowCost Pharmacy & Urgent Care" },
 ];
