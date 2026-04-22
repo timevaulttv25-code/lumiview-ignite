@@ -1,8 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/ui/button";
+import { ReferralProgramForm } from "@/components/site/ReferralProgramForm";
 import { buildSeo } from "@/lib/seo";
 import { Gift, Users, DollarSign, Sparkles } from "lucide-react";
 import heroImg from "@/assets/page-referral.jpg";
@@ -77,25 +78,46 @@ export const Route = createFileRoute("/referral")({
         image={heroImg}
       />
 
-      <section className="container-prose py-20 lg:py-24">
-        <div className="max-w-2xl">
-          <div className="eyebrow">How you earn</div>
+      <section id="referral-form" className="container-prose grid gap-12 py-20 lg:grid-cols-12 lg:py-24">
+        <div className="lg:col-span-5">
+          <div className="eyebrow">Submit a referral</div>
           <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight lg:text-5xl">
-            Real rewards. No fine print.
+            Send someone our way in under a minute.
           </h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed">
-            Three ways to earn, pick whichever applies. Stack them as often as you want.
+          <p className="mt-5 leading-relaxed text-muted-foreground">
+            Share a homeowner, neighbor, office, retail space, plaza, or property manager.
+            Once they book and complete their first service, we’ll issue your reward.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            Residential referrals earn service credit. Commercial referrals can earn cash.
           </p>
         </div>
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {TIERS.map((t) => (
-            <div key={t.title} className="relative rounded-2xl border border-border bg-card p-7 shadow-soft transition-shadow hover:shadow-elegant">
-              <t.icon className="h-8 w-8 text-accent" />
-              <div className="mt-5 font-serif text-4xl font-medium text-navy-deep">{t.title}</div>
-              <div className="mt-1 text-sm font-semibold uppercase tracking-wide text-accent">{t.sub}</div>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
-            </div>
-          ))}
+        <div className="lg:col-span-7">
+          <ReferralProgramForm />
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-secondary/40 py-20 lg:py-24">
+        <div className="container-prose">
+          <div className="max-w-2xl">
+            <div className="eyebrow">How you earn</div>
+            <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight lg:text-5xl">
+              Real rewards. No fine print.
+            </h2>
+            <p className="mt-5 text-muted-foreground leading-relaxed">
+              Three ways to earn, pick whichever applies. Stack them as often as you want.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {TIERS.map((t) => (
+              <div key={t.title} className="relative rounded-2xl border border-border bg-card p-7 shadow-soft transition-shadow hover:shadow-elegant">
+                <t.icon className="h-8 w-8 text-accent" />
+                <div className="mt-5 font-serif text-4xl font-medium text-navy-deep">{t.title}</div>
+                <div className="mt-1 text-sm font-semibold uppercase tracking-wide text-accent">{t.sub}</div>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -130,7 +152,7 @@ export const Route = createFileRoute("/referral")({
             question that isn't answered here, just ask.
           </p>
           <Button asChild size="lg" className="mt-7 rounded-full">
-            <Link to="/contact">Submit a referral now</Link>
+            <a href="#referral-form">Submit a referral now</a>
           </Button>
         </div>
         <ul className="space-y-3 lg:col-span-7">
