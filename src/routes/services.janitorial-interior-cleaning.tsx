@@ -13,7 +13,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { RichServiceLayout } from "@/components/site/RichServiceLayout";
 import heroImg from "@/assets/service-janitorial.jpg";
-import baImg from "@/assets/work-storefront-ba.jpg";
+import beforeImg from "@/assets/work/work-storefront-before.jpg";
+import afterImg from "@/assets/work/work-storefront-after.jpg";
 
 const slug = "janitorial-interior-cleaning";
 const title = "Janitorial & Interior Cleaning";
@@ -167,7 +168,8 @@ export const Route = createFileRoute("/services/janitorial-interior-cleaning")({
       resultEyebrow="The Result"
       resultHeading="A facility your team is proud to walk into every morning."
       resultBody="Consistent interior cleaning improves employee retention, reduces sick days, and sets the standard your customers feel the moment they walk in. We make it boring, in the best possible way."
-      resultImage={baImg}
+      resultBeforeImage={beforeImg}
+      resultAfterImage={afterImg}
       resultImageAlt="Before and after interior storefront cleaning by LumiView Services"
       audienceEyebrow="Who We Serve"
       audienceHeading="Janitorial programs built for the way your facility runs."

@@ -13,7 +13,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { RichServiceLayout } from "@/components/site/RichServiceLayout";
 import heroImg from "@/assets/service-property-management.jpg";
-import baImg from "@/assets/work-storefront-ba.jpg";
+import beforeImg from "@/assets/work/work-storefront-before.jpg";
+import afterImg from "@/assets/work/work-storefront-after.jpg";
 
 const slug = "property-management-cleaning";
 const title = "Property Management Cleaning";
@@ -177,7 +178,8 @@ export const Route = createFileRoute("/services/property-management-cleaning")({
       resultEyebrow="The Result"
       resultHeading="Faster turnovers, happier tenants, fewer vendor headaches."
       resultBody="Property managers who consolidate cleaning with LumiView typically reduce vacancy days by 1–3 days per turn and eliminate 4–6 separate vendor invoices each month. Less coordination, faster leasing, cleaner buildings."
-      resultImage={baImg}
+      resultBeforeImage={beforeImg}
+      resultAfterImage={afterImg}
       resultImageAlt="Before and after property management cleaning by LumiView Services"
       audienceEyebrow="Who We Serve"
       audienceHeading="Property management cleaning across every asset class."

@@ -4,7 +4,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, faqJsonLd } from "@/lib/seo";
 import { RichIndustryLayout } from "@/components/site/RichIndustryLayout";
 import heroImg from "@/assets/industry-daycare.jpg";
-import resultImg from "@/assets/work-storefront-ba.jpg";
+import beforeImg from "@/assets/work/work-storefront-before.jpg";
+import afterImg from "@/assets/work/work-storefront-after.jpg";
 
 const slug = "daycare";
 const industryTitle = "Daycare & Childcare Facility";
@@ -131,7 +132,8 @@ function DaycareIndustryPage() {
       resultEyebrow="The Result"
       resultHeading="A facility that looks, smells and feels safe, every morning."
       resultBody="Parents make daycare decisions in the first 30 seconds at the door. A spotless entry, a clean smell, gleaming windows and a director who can speak confidently about the cleaning protocol, that's what wins enrollment and keeps it."
-      resultImage={resultImg}
+      resultBeforeImage={beforeImg}
+      resultAfterImage={afterImg}
       resultImageAlt="Daycare entry and lobby cleaning by LumiView"
       relatedEyebrow="Popular Services"
       relatedHeading="Services childcare facilities book most."

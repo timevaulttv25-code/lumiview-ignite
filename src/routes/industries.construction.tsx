@@ -4,7 +4,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, faqJsonLd } from "@/lib/seo";
 import { RichIndustryLayout } from "@/components/site/RichIndustryLayout";
 import heroImg from "@/assets/industry-construction.jpg";
-import resultImg from "@/assets/work-windows-ba.jpg";
+import beforeImg from "@/assets/work/work-windows-before.jpg";
+import afterImg from "@/assets/work/work-windows-after.jpg";
 
 const slug = "construction";
 const industryTitle = "Builders & New Construction";
@@ -131,7 +132,8 @@ function ConstructionIndustryPage() {
       resultEyebrow="The Result"
       resultHeading="A property that shows the way the renderings promised."
       resultBody="Buyers, tenants and inspectors notice clean glass, dust-free trim and polished floors before they notice anything else. A proper post-construction clean is the final 1% that protects the other 99% of the build."
-      resultImage={resultImg}
+      resultBeforeImage={beforeImg}
+      resultAfterImage={afterImg}
       resultImageAlt="Before and after post-construction window cleaning by LumiView"
       relatedEyebrow="Popular Services"
       relatedHeading="Services builders book most."

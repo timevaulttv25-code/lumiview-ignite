@@ -7,6 +7,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
 import { HighlightMarquee } from "@/components/site/HighlightMarquee";
+import { BeforeAfterSlider } from "@/components/site/BeforeAfterSlider";
 import { Button } from "@/components/ui/button";
 
 export interface RichTier {
@@ -64,7 +65,8 @@ export interface RichIndustryLayoutProps {
   resultEyebrow: string;
   resultHeading: string;
   resultBody: string;
-  resultImage: string;
+  resultBeforeImage: string;
+  resultAfterImage: string;
   resultImageAlt: string;
 
   // Related services
@@ -206,16 +208,15 @@ export function RichIndustryLayout(p: RichIndustryLayoutProps) {
             </div>
           </div>
           <div className="lg:col-span-7">
-            <div className="overflow-hidden rounded-2xl border border-border shadow-elegant">
-              <img
-                src={p.resultImage}
-                alt={p.resultImageAlt}
-                width={1280}
-                height={832}
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-            </div>
+            <BeforeAfterSlider
+              beforeSrc={p.resultBeforeImage}
+              afterSrc={p.resultAfterImage}
+              alt={p.resultImageAlt}
+              className="overflow-hidden rounded-2xl border border-border shadow-elegant"
+            />
+            <p className="mt-3 text-center text-xs text-muted-foreground">
+              Drag the slider to compare before and after.
+            </p>
           </div>
         </div>
       </section>

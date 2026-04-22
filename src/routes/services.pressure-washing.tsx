@@ -13,7 +13,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { RichServiceLayout } from "@/components/site/RichServiceLayout";
 import heroImg from "@/assets/service-pressure-washing.jpg";
-import baImg from "@/assets/work-driveway-ba.jpg";
+import beforeImg from "@/assets/work/work-driveway-before.jpg";
+import afterImg from "@/assets/work/work-driveway-after.jpg";
 
 const slug = "pressure-washing";
 const title = "Pressure Washing & Exterior Cleaning";
@@ -177,7 +178,8 @@ export const Route = createFileRoute("/services/pressure-washing")({
       resultEyebrow="The Result"
       resultHeading="Driveways, siding, and patios that look years younger in a single visit."
       resultBody="Pressure washing is one of the highest-ROI things you can do for a property, appraisers, realtors, and property managers consistently rank it among the top exterior improvements for resale value and tenant impression."
-      resultImage={baImg}
+      resultBeforeImage={beforeImg}
+      resultAfterImage={afterImg}
       resultImageAlt="Before and after driveway pressure washing by LumiView Services"
       audienceEyebrow="Who We Serve"
       audienceHeading="Pressure washing built around how each property is used."
