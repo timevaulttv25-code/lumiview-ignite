@@ -5,6 +5,7 @@ import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/ui/button";
 import { buildSeo } from "@/lib/seo";
 import { Gift, Users, DollarSign, Sparkles } from "lucide-react";
+import heroImg from "@/assets/page-referral.jpg";
 
 const TIERS = [
   {
