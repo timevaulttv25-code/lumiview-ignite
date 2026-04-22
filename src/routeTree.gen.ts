@@ -20,8 +20,19 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesWindowCleaningRouteImport } from './routes/services.window-cleaning'
+import { Route as ServicesPropertyManagementCleaningRouteImport } from './routes/services.property-management-cleaning'
+import { Route as ServicesPropertyCareRouteImport } from './routes/services.property-care'
+import { Route as ServicesPressureWashingRouteImport } from './routes/services.pressure-washing'
+import { Route as ServicesJanitorialInteriorCleaningRouteImport } from './routes/services.janitorial-interior-cleaning'
+import { Route as ServicesAirbnbVrboTurnoverRouteImport } from './routes/services.airbnb-vrbo-turnover'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as ServiceAreasSlugRouteImport } from './routes/service-areas.$slug'
+import { Route as IndustriesResidentialRouteImport } from './routes/industries.residential'
+import { Route as IndustriesPropertyManagersRouteImport } from './routes/industries.property-managers'
+import { Route as IndustriesDaycareRouteImport } from './routes/industries.daycare'
+import { Route as IndustriesConstructionRouteImport } from './routes/industries.construction'
+import { Route as IndustriesCommercialRouteImport } from './routes/industries.commercial'
 import { Route as IndustriesSlugRouteImport } from './routes/industries.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
@@ -80,6 +91,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesWindowCleaningRoute = ServicesWindowCleaningRouteImport.update({
+  id: '/window-cleaning',
+  path: '/window-cleaning',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesPropertyManagementCleaningRoute =
+  ServicesPropertyManagementCleaningRouteImport.update({
+    id: '/property-management-cleaning',
+    path: '/property-management-cleaning',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesPropertyCareRoute = ServicesPropertyCareRouteImport.update({
+  id: '/property-care',
+  path: '/property-care',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesPressureWashingRoute = ServicesPressureWashingRouteImport.update({
+  id: '/pressure-washing',
+  path: '/pressure-washing',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesJanitorialInteriorCleaningRoute =
+  ServicesJanitorialInteriorCleaningRouteImport.update({
+    id: '/janitorial-interior-cleaning',
+    path: '/janitorial-interior-cleaning',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesAirbnbVrboTurnoverRoute =
+  ServicesAirbnbVrboTurnoverRouteImport.update({
+    id: '/airbnb-vrbo-turnover',
+    path: '/airbnb-vrbo-turnover',
+    getParentRoute: () => ServicesRoute,
+  } as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -89,6 +133,32 @@ const ServiceAreasSlugRoute = ServiceAreasSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => ServiceAreasRoute,
+} as any)
+const IndustriesResidentialRoute = IndustriesResidentialRouteImport.update({
+  id: '/residential',
+  path: '/residential',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesPropertyManagersRoute =
+  IndustriesPropertyManagersRouteImport.update({
+    id: '/property-managers',
+    path: '/property-managers',
+    getParentRoute: () => IndustriesRoute,
+  } as any)
+const IndustriesDaycareRoute = IndustriesDaycareRouteImport.update({
+  id: '/daycare',
+  path: '/daycare',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesConstructionRoute = IndustriesConstructionRouteImport.update({
+  id: '/construction',
+  path: '/construction',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesCommercialRoute = IndustriesCommercialRouteImport.update({
+  id: '/commercial',
+  path: '/commercial',
+  getParentRoute: () => IndustriesRoute,
 } as any)
 const IndustriesSlugRoute = IndustriesSlugRouteImport.update({
   id: '/$slug',
@@ -115,8 +185,19 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/industries/$slug': typeof IndustriesSlugRoute
+  '/industries/commercial': typeof IndustriesCommercialRoute
+  '/industries/construction': typeof IndustriesConstructionRoute
+  '/industries/daycare': typeof IndustriesDaycareRoute
+  '/industries/property-managers': typeof IndustriesPropertyManagersRoute
+  '/industries/residential': typeof IndustriesResidentialRoute
   '/service-areas/$slug': typeof ServiceAreasSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/services/airbnb-vrbo-turnover': typeof ServicesAirbnbVrboTurnoverRoute
+  '/services/janitorial-interior-cleaning': typeof ServicesJanitorialInteriorCleaningRoute
+  '/services/pressure-washing': typeof ServicesPressureWashingRoute
+  '/services/property-care': typeof ServicesPropertyCareRoute
+  '/services/property-management-cleaning': typeof ServicesPropertyManagementCleaningRoute
+  '/services/window-cleaning': typeof ServicesWindowCleaningRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -132,8 +213,19 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/industries/$slug': typeof IndustriesSlugRoute
+  '/industries/commercial': typeof IndustriesCommercialRoute
+  '/industries/construction': typeof IndustriesConstructionRoute
+  '/industries/daycare': typeof IndustriesDaycareRoute
+  '/industries/property-managers': typeof IndustriesPropertyManagersRoute
+  '/industries/residential': typeof IndustriesResidentialRoute
   '/service-areas/$slug': typeof ServiceAreasSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/services/airbnb-vrbo-turnover': typeof ServicesAirbnbVrboTurnoverRoute
+  '/services/janitorial-interior-cleaning': typeof ServicesJanitorialInteriorCleaningRoute
+  '/services/pressure-washing': typeof ServicesPressureWashingRoute
+  '/services/property-care': typeof ServicesPropertyCareRoute
+  '/services/property-management-cleaning': typeof ServicesPropertyManagementCleaningRoute
+  '/services/window-cleaning': typeof ServicesWindowCleaningRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -150,8 +242,19 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/industries/$slug': typeof IndustriesSlugRoute
+  '/industries/commercial': typeof IndustriesCommercialRoute
+  '/industries/construction': typeof IndustriesConstructionRoute
+  '/industries/daycare': typeof IndustriesDaycareRoute
+  '/industries/property-managers': typeof IndustriesPropertyManagersRoute
+  '/industries/residential': typeof IndustriesResidentialRoute
   '/service-areas/$slug': typeof ServiceAreasSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/services/airbnb-vrbo-turnover': typeof ServicesAirbnbVrboTurnoverRoute
+  '/services/janitorial-interior-cleaning': typeof ServicesJanitorialInteriorCleaningRoute
+  '/services/pressure-washing': typeof ServicesPressureWashingRoute
+  '/services/property-care': typeof ServicesPropertyCareRoute
+  '/services/property-management-cleaning': typeof ServicesPropertyManagementCleaningRoute
+  '/services/window-cleaning': typeof ServicesWindowCleaningRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -169,8 +272,19 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/industries/$slug'
+    | '/industries/commercial'
+    | '/industries/construction'
+    | '/industries/daycare'
+    | '/industries/property-managers'
+    | '/industries/residential'
     | '/service-areas/$slug'
     | '/services/$slug'
+    | '/services/airbnb-vrbo-turnover'
+    | '/services/janitorial-interior-cleaning'
+    | '/services/pressure-washing'
+    | '/services/property-care'
+    | '/services/property-management-cleaning'
+    | '/services/window-cleaning'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -186,8 +300,19 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/industries/$slug'
+    | '/industries/commercial'
+    | '/industries/construction'
+    | '/industries/daycare'
+    | '/industries/property-managers'
+    | '/industries/residential'
     | '/service-areas/$slug'
     | '/services/$slug'
+    | '/services/airbnb-vrbo-turnover'
+    | '/services/janitorial-interior-cleaning'
+    | '/services/pressure-washing'
+    | '/services/property-care'
+    | '/services/property-management-cleaning'
+    | '/services/window-cleaning'
   id:
     | '__root__'
     | '/'
@@ -203,8 +328,19 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/industries/$slug'
+    | '/industries/commercial'
+    | '/industries/construction'
+    | '/industries/daycare'
+    | '/industries/property-managers'
+    | '/industries/residential'
     | '/service-areas/$slug'
     | '/services/$slug'
+    | '/services/airbnb-vrbo-turnover'
+    | '/services/janitorial-interior-cleaning'
+    | '/services/pressure-washing'
+    | '/services/property-care'
+    | '/services/property-management-cleaning'
+    | '/services/window-cleaning'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -300,6 +436,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/window-cleaning': {
+      id: '/services/window-cleaning'
+      path: '/window-cleaning'
+      fullPath: '/services/window-cleaning'
+      preLoaderRoute: typeof ServicesWindowCleaningRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/property-management-cleaning': {
+      id: '/services/property-management-cleaning'
+      path: '/property-management-cleaning'
+      fullPath: '/services/property-management-cleaning'
+      preLoaderRoute: typeof ServicesPropertyManagementCleaningRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/property-care': {
+      id: '/services/property-care'
+      path: '/property-care'
+      fullPath: '/services/property-care'
+      preLoaderRoute: typeof ServicesPropertyCareRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/pressure-washing': {
+      id: '/services/pressure-washing'
+      path: '/pressure-washing'
+      fullPath: '/services/pressure-washing'
+      preLoaderRoute: typeof ServicesPressureWashingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/janitorial-interior-cleaning': {
+      id: '/services/janitorial-interior-cleaning'
+      path: '/janitorial-interior-cleaning'
+      fullPath: '/services/janitorial-interior-cleaning'
+      preLoaderRoute: typeof ServicesJanitorialInteriorCleaningRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/airbnb-vrbo-turnover': {
+      id: '/services/airbnb-vrbo-turnover'
+      path: '/airbnb-vrbo-turnover'
+      fullPath: '/services/airbnb-vrbo-turnover'
+      preLoaderRoute: typeof ServicesAirbnbVrboTurnoverRouteImport
+      parentRoute: typeof ServicesRoute
+    }
     '/services/$slug': {
       id: '/services/$slug'
       path: '/$slug'
@@ -313,6 +491,41 @@ declare module '@tanstack/react-router' {
       fullPath: '/service-areas/$slug'
       preLoaderRoute: typeof ServiceAreasSlugRouteImport
       parentRoute: typeof ServiceAreasRoute
+    }
+    '/industries/residential': {
+      id: '/industries/residential'
+      path: '/residential'
+      fullPath: '/industries/residential'
+      preLoaderRoute: typeof IndustriesResidentialRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/property-managers': {
+      id: '/industries/property-managers'
+      path: '/property-managers'
+      fullPath: '/industries/property-managers'
+      preLoaderRoute: typeof IndustriesPropertyManagersRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/daycare': {
+      id: '/industries/daycare'
+      path: '/daycare'
+      fullPath: '/industries/daycare'
+      preLoaderRoute: typeof IndustriesDaycareRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/construction': {
+      id: '/industries/construction'
+      path: '/construction'
+      fullPath: '/industries/construction'
+      preLoaderRoute: typeof IndustriesConstructionRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/commercial': {
+      id: '/industries/commercial'
+      path: '/commercial'
+      fullPath: '/industries/commercial'
+      preLoaderRoute: typeof IndustriesCommercialRouteImport
+      parentRoute: typeof IndustriesRoute
     }
     '/industries/$slug': {
       id: '/industries/$slug'
@@ -343,10 +556,20 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface IndustriesRouteChildren {
   IndustriesSlugRoute: typeof IndustriesSlugRoute
+  IndustriesCommercialRoute: typeof IndustriesCommercialRoute
+  IndustriesConstructionRoute: typeof IndustriesConstructionRoute
+  IndustriesDaycareRoute: typeof IndustriesDaycareRoute
+  IndustriesPropertyManagersRoute: typeof IndustriesPropertyManagersRoute
+  IndustriesResidentialRoute: typeof IndustriesResidentialRoute
 }
 
 const IndustriesRouteChildren: IndustriesRouteChildren = {
   IndustriesSlugRoute: IndustriesSlugRoute,
+  IndustriesCommercialRoute: IndustriesCommercialRoute,
+  IndustriesConstructionRoute: IndustriesConstructionRoute,
+  IndustriesDaycareRoute: IndustriesDaycareRoute,
+  IndustriesPropertyManagersRoute: IndustriesPropertyManagersRoute,
+  IndustriesResidentialRoute: IndustriesResidentialRoute,
 }
 
 const IndustriesRouteWithChildren = IndustriesRoute._addFileChildren(
@@ -367,10 +590,24 @@ const ServiceAreasRouteWithChildren = ServiceAreasRoute._addFileChildren(
 
 interface ServicesRouteChildren {
   ServicesSlugRoute: typeof ServicesSlugRoute
+  ServicesAirbnbVrboTurnoverRoute: typeof ServicesAirbnbVrboTurnoverRoute
+  ServicesJanitorialInteriorCleaningRoute: typeof ServicesJanitorialInteriorCleaningRoute
+  ServicesPressureWashingRoute: typeof ServicesPressureWashingRoute
+  ServicesPropertyCareRoute: typeof ServicesPropertyCareRoute
+  ServicesPropertyManagementCleaningRoute: typeof ServicesPropertyManagementCleaningRoute
+  ServicesWindowCleaningRoute: typeof ServicesWindowCleaningRoute
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
   ServicesSlugRoute: ServicesSlugRoute,
+  ServicesAirbnbVrboTurnoverRoute: ServicesAirbnbVrboTurnoverRoute,
+  ServicesJanitorialInteriorCleaningRoute:
+    ServicesJanitorialInteriorCleaningRoute,
+  ServicesPressureWashingRoute: ServicesPressureWashingRoute,
+  ServicesPropertyCareRoute: ServicesPropertyCareRoute,
+  ServicesPropertyManagementCleaningRoute:
+    ServicesPropertyManagementCleaningRoute,
+  ServicesWindowCleaningRoute: ServicesWindowCleaningRoute,
 }
 
 const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
