@@ -5,6 +5,7 @@ import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/ui/button";
 import { buildSeo } from "@/lib/seo";
 import { Gift, Users, DollarSign, Sparkles } from "lucide-react";
+import heroImg from "@/assets/page-referral.jpg";
 
 const TIERS = [
   {
@@ -73,6 +74,7 @@ export const Route = createFileRoute("/referral")({
           { label: "About", to: "/about" },
           { label: "Referral Program" },
         ]}
+        image={heroImg}
       />
 
       <section className="container-prose py-20 lg:py-24">
