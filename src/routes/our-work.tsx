@@ -22,7 +22,7 @@ const PROJECTS = [
   {
     before: windowsBefore,
     after: windowsAfter,
-    title: "Two-story residential — full window restoration",
+    title: "Two-story residential, full window restoration",
     location: "Westlake, OH",
     service: "Window Cleaning",
     detail:
@@ -35,7 +35,7 @@ const PROJECTS = [
     location: "Avon Lake, OH",
     service: "Pressure Washing",
     detail:
-      "Lifted oil staining, tire marks, and embedded grime from 1,400 sq ft of concrete. Surface-cleaner finish — no wand stripes.",
+      "Lifted oil staining, tire marks, and embedded grime from 1,400 sq ft of concrete. Surface-cleaner finish, no wand stripes.",
   },
   {
     before: sidingBefore,
@@ -58,7 +58,7 @@ const PROJECTS = [
   {
     before: storefrontBefore,
     after: storefrontAfter,
-    title: "Retail storefront glass — weekly route",
+    title: "Retail storefront glass, weekly route",
     location: "Rocky River, OH",
     service: "Commercial Window Cleaning",
     detail:
@@ -78,7 +78,7 @@ const PROJECTS = [
 export const Route = createFileRoute("/our-work")({
   head: () =>
     buildSeo({
-      title: "Our Work — Before & After Gallery",
+      title: "Our Work, Before & After Gallery",
       description:
         "Drag the slider on real before-and-after photos from window cleaning, pressure washing, and exterior projects across Avon and Northeast Ohio.",
       path: "/our-work",
@@ -98,7 +98,7 @@ function OurWorkPage() {
       <PageHero
         eyebrow="Our Work"
         title="The proof is in the panes."
-        description="Drag the slider on each project to reveal the difference. Every job is photographed before and after — homes, storefronts, and managed properties across Northeast Ohio."
+        description="Drag the slider on each project to reveal the difference. Every job is photographed before and after, homes, storefronts, and managed properties across Northeast Ohio."
         breadcrumbs={[
           { label: "Home", to: "/" },
           { label: "Results", to: "/results" },

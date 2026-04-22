@@ -10,7 +10,7 @@ const VALUES = [
   {
     icon: CheckCircle2,
     title: "Show up & follow through",
-    body: "On time, in uniform, with a plan. We do what we said we'd do — every visit, every property.",
+    body: "On time, in uniform, with a plan. We do what we said we'd do, every visit, every property.",
   },
   {
     icon: Heart,
@@ -25,7 +25,7 @@ const VALUES = [
   {
     icon: Users,
     title: "Crew over ego",
-    body: "We hire kind, coachable people. Drama-free crews stay together — and our customers feel it.",
+    body: "We hire kind, coachable people. Drama-free crews stay together, and our customers feel it.",
   },
 ];
 
@@ -61,13 +61,13 @@ const OPEN_ROLES = [
 ];
 
 const PERKS = [
-  "Paid training — no experience required for entry roles",
+  "Paid training, no experience required for entry roles",
   "Company-supplied uniforms, equipment, and PPE",
   "Weekly pay via direct deposit",
   "Paid time off after 90 days",
   "Performance bonuses on quality reviews and tips",
   "Mileage reimbursement for personal-vehicle travel",
-  "Clear promotion path — Technician → Senior Tech → Crew Lead",
+  "Clear promotion path, Technician → Senior Tech → Crew Lead",
   "Drug-free, drama-free workplace",
 ];
 
@@ -153,7 +153,7 @@ export const Route = createFileRoute("/careers")({
             What you get with the job.
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
-            Competitive pay is the floor — not the ceiling. Here's what comes with the role.
+            Competitive pay is the floor, not the ceiling. Here's what comes with the role.
           </p>
         </div>
         <ul className="space-y-3">

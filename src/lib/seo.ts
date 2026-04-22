@@ -109,7 +109,7 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   };
 }
 
-/** Organization schema — strengthens entity recognition for AI search engines. */
+/** Organization schema, strengthens entity recognition for AI search engines. */
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -146,7 +146,7 @@ export function websiteJsonLd() {
   };
 }
 
-/** Review collection schema for the /reviews page — boosts star-rich snippets. */
+/** Review collection schema for the /reviews page, boosts star-rich snippets. */
 export function reviewCollectionJsonLd(
   reviews: { author: string; rating: number; body: string; date?: string }[],
 ) {
@@ -172,7 +172,7 @@ export function reviewCollectionJsonLd(
   };
 }
 
-/** Speakable schema — flags FAQ content for voice assistants (Google Assistant, etc.). */
+/** Speakable schema, flags FAQ content for voice assistants (Google Assistant, etc.). */
 export function speakableFaqJsonLd(cssSelectors: string[] = [".faq-question", ".faq-answer"]) {
   return {
     "@context": "https://schema.org",

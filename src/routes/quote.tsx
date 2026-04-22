@@ -16,7 +16,7 @@ import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/quote")({
   head: () => buildSeo({
-    title: "Request a Free Quote — LumiView Services",
+    title: "Request a Free Quote, LumiView Services",
     description: "Three-step quote request for window cleaning, pressure washing, janitorial and property-care services. 24-hour response.",
     path: "/quote",
   }),
@@ -87,10 +87,10 @@ const PROPERTY_TYPES = ["Residential", "Commercial", "Builder / New Construction
 const TIMING = ["As Soon as Possible", "Within 1–2 Weeks", "This Month", "Planning Ahead", "Looking for Recurring Service"];
 const HEAR = ["Google Search", "Google Business Profile", "Referral", "Social Media", "Mailer", "Door Hanger", "Yard Sign", "Repeat Customer", "Other"];
 const FREQUENCY = ["One-Time", "Weekly", "Bi-Weekly", "Monthly", "Quarterly", "Not Sure Yet"];
-const PARKING = ["Driveway", "Street Parking", "Parking Lot", "Designated Visitor Spot", "Garage", "No Specific Spot — Please Advise"];
-const FLEXIBILITY = ["Yes — Fully Flexible", "Somewhat Flexible", "Specific Day Only", "Specific Time Only", "Not Flexible"];
-const ACCESS = ["I'll Be On Site", "Gate Code / Lockbox (Provided Later)", "Property Manager Will Provide Access", "Open Access — No Code Needed", "Other (Explain in Notes)"];
-const PETS = ["No Pets", "Yes — Friendly Dog", "Yes — Cat(s)", "Yes — Multiple Pets", "Pets Will Be Secured Indoors", "Not Applicable"];
+const PARKING = ["Driveway", "Street Parking", "Parking Lot", "Designated Visitor Spot", "Garage", "No Specific Spot, Please Advise"];
+const FLEXIBILITY = ["Yes, Fully Flexible", "Somewhat Flexible", "Specific Day Only", "Specific Time Only", "Not Flexible"];
+const ACCESS = ["I'll Be On Site", "Gate Code / Lockbox (Provided Later)", "Property Manager Will Provide Access", "Open Access, No Code Needed", "Other (Explain in Notes)"];
+const PETS = ["No Pets", "Yes, Friendly Dog", "Yes, Cat(s)", "Yes, Multiple Pets", "Pets Will Be Secured Indoors", "Not Applicable"];
 
 const US_STATES: { code: string; name: string }[] = [
   { code: "AL", name: "Alabama" }, { code: "AK", name: "Alaska" }, { code: "AZ", name: "Arizona" },

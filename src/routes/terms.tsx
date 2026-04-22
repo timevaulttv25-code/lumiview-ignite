@@ -38,8 +38,8 @@ function TermsPage() {
             <h2 className="font-serif text-2xl font-semibold text-foreground">1. Scope of work</h2>
             <p className="mt-3">
               The scope of work for any project is defined in the written estimate or service agreement
-              accepted by the customer. Work outside that defined scope — additional surfaces, second-story
-              work, hard-water restoration, biohazard cleanup, or any item not listed — is considered a
+              accepted by the customer. Work outside that defined scope, additional surfaces, second-story
+              work, hard-water restoration, biohazard cleanup, or any item not listed, is considered a
               change order and may require an updated estimate before being performed.
             </p>
           </section>
@@ -49,8 +49,8 @@ function TermsPage() {
             <p className="mt-3">
               Written estimates are valid for 30 days from the date issued. Estimates are based on the
               information provided by the customer and a visual assessment of the property. If on-site
-              conditions differ materially from what was described — for example, additional square footage,
-              heavy paint overspray, mineral staining, or unsafe access — {SITE.name} will pause and review
+              conditions differ materially from what was described, for example, additional square footage,
+              heavy paint overspray, mineral staining, or unsafe access, {SITE.name} will pause and review
               the revised scope and pricing with the customer before proceeding.
             </p>
           </section>
@@ -68,7 +68,7 @@ function TermsPage() {
           <section>
             <h2 className="font-serif text-2xl font-semibold text-foreground">4. Weather and rescheduling</h2>
             <p className="mt-3">
-              Many services — exterior window cleaning, pressure washing, soft washing — are weather
+              Many services, exterior window cleaning, pressure washing, soft washing, are weather
               dependent. {SITE.name} reserves the right to reschedule for active rain, lightning, freezing
               temperatures, or sustained high winds. Customers will be contacted as early as possible and
               the next available date offered at no additional charge.
@@ -100,8 +100,8 @@ function TermsPage() {
             <p className="mt-3">
               {SITE.name} stands behind its work. If something does not meet the standard set in your
               estimate, contact us within 48 hours of service completion and we will return to make it
-              right at no additional cost. The detailed terms of this guarantee — including coverage,
-              exclusions, and the response window — are described in our{" "}
+              right at no additional cost. The detailed terms of this guarantee, including coverage,
+              exclusions, and the response window, are described in our{" "}
               <Link to="/service-policy" className="font-semibold text-primary hover:underline">
                 Service Policy
               </Link>
@@ -114,7 +114,7 @@ function TermsPage() {
             <p className="mt-3">
               {SITE.name} carries general liability and workers&apos; compensation insurance. Certificates of
               insurance are available upon request. {SITE.name} is not responsible for pre-existing damage,
-              defects, or conditions disclosed or undisclosed at the time of service — including but not
+              defects, or conditions disclosed or undisclosed at the time of service, including but not
               limited to failed window seals, oxidized siding, soft or rotted wood, loose or unsealed
               caulking, or mineral and hard-water etching that has bonded to the glass.
             </p>
@@ -137,8 +137,7 @@ function TermsPage() {
           <section>
             <h2 className="font-serif text-2xl font-semibold text-foreground">10. Website use</h2>
             <p className="mt-3">
-              The content on the {SITE.name} website — including text, photographs, logos, and graphics —
-              is the property of {SITE.name} or its licensors and is provided for informational purposes
+              The content on the {SITE.name} website, including text, photographs, logos, and graphics, is the property of {SITE.name} or its licensors and is provided for informational purposes
               only. You may not copy, reproduce, or redistribute website content for commercial purposes
               without written permission.
             </p>

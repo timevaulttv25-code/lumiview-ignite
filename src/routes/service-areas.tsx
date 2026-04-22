@@ -9,7 +9,7 @@ import { buildSeo } from "@/lib/seo";
 export const Route = createFileRoute("/service-areas")({
   head: () =>
     buildSeo({
-      title: "Service Areas — Avon, Westlake, Lakewood & Northeast Ohio",
+      title: "Service Areas, Avon, Westlake, Lakewood & Northeast Ohio",
       description:
         "LumiView serves Avon, Avon Lake, Westlake, Lakewood, Rocky River, North Olmsted, Bay Village and surrounding Northeast Ohio communities.",
       path: "/service-areas",
@@ -23,7 +23,7 @@ function ServiceAreasPage() {
       <PageHero
         eyebrow="Service areas"
         title="Serving Avon & Northeast Ohio."
-        description={`Local crews across ${SITE.primaryAreas.length}+ communities. Tap your city below — the pin moves to that area, and you can jump straight to its localized page.`}
+        description={`Local crews across ${SITE.primaryAreas.length}+ communities. Tap your city below, the pin moves to that area, and you can jump straight to its localized page.`}
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Service areas" }]}
       />
 

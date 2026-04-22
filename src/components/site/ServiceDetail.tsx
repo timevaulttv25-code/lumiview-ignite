@@ -33,7 +33,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailContent> = {
     slug: "window-cleaning",
     title: "Window Cleaning",
     intro:
-      "Crystal-clear, streak-free interior and exterior window cleaning for homes, storefronts and commercial buildings. We use purified water and professional squeegee technique — no soap residue, no spotting.",
+      "Crystal-clear, streak-free interior and exterior window cleaning for homes, storefronts and commercial buildings. We use purified water and professional squeegee technique, no soap residue, no spotting.",
     includes: [
       "Interior & exterior glass",
       "Frame & sill wipe-down",
@@ -49,7 +49,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailContent> = {
       },
       {
         q: "Do you clean both sides?",
-        a: "Yes — interior and exterior are included unless you request otherwise.",
+        a: "Yes, interior and exterior are included unless you request otherwise.",
       },
     ],
   },
@@ -57,7 +57,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailContent> = {
     slug: "pressure-washing",
     title: "Pressure Washing & Exterior Cleaning",
     intro:
-      "Soft-wash and pressure-wash exterior cleaning that lifts grime, algae and oxidation from siding, walkways, driveways, patios and decks — without damaging the surface beneath.",
+      "Soft-wash and pressure-wash exterior cleaning that lifts grime, algae and oxidation from siding, walkways, driveways, patios and decks, without damaging the surface beneath.",
     includes: [
       "House siding (vinyl, brick, fiber cement)",
       "Driveways & sidewalks",
@@ -93,7 +93,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailContent> = {
     faqs: [
       {
         q: "Do you bring your own supplies?",
-        a: "Yes — all standard supplies and equipment are included. We can also use your preferred products on request.",
+        a: "Yes, all standard supplies and equipment are included. We can also use your preferred products on request.",
       },
       {
         q: "Do you offer after-hours service?",
@@ -105,7 +105,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailContent> = {
     slug: "property-care",
     title: "Property Care & Facility Support",
     intro:
-      "Single point of contact for ongoing exterior and interior property upkeep — ideal for property managers, multi-unit buildings and facility portfolios.",
+      "Single point of contact for ongoing exterior and interior property upkeep, ideal for property managers, multi-unit buildings and facility portfolios.",
     includes: [
       "Coordinated multi-property scheduling",
       "Quarterly exterior refresh",
@@ -117,7 +117,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailContent> = {
     faqs: [
       {
         q: "Can you handle multiple properties on one account?",
-        a: "Absolutely — that's exactly what this service is built for. Consolidated scheduling, reporting, and billing.",
+        a: "Absolutely, that's exactly what this service is built for. Consolidated scheduling, reporting, and billing.",
       },
       {
         q: "Do you provide certificates of insurance?",
@@ -129,7 +129,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailContent> = {
     slug: "airbnb-vrbo-turnover",
     title: "Airbnb & Vrbo Turnover Cleaning",
     intro:
-      "Hotel-grade turnover cleaning for short-term rentals on Airbnb, Vrbo, Booking.com and direct-booking platforms. Same-day turnovers, fresh linens, restocked essentials and photo confirmation — so every guest walks into a 5-star experience.",
+      "Hotel-grade turnover cleaning for short-term rentals on Airbnb, Vrbo, Booking.com and direct-booking platforms. Same-day turnovers, fresh linens, restocked essentials and photo confirmation, so every guest walks into a 5-star experience.",
     includes: [
       "Same-day check-out / check-in turnovers",
       "Fresh linen & towel service",
@@ -145,7 +145,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailContent> = {
       },
       {
         q: "Do you provide linens?",
-        a: "Yes — we offer optional hotel-grade linen and towel service with laundering, or we can launder your existing inventory on-site.",
+        a: "Yes, we offer optional hotel-grade linen and towel service with laundering, or we can launder your existing inventory on-site.",
       },
       {
         q: "What if a guest leaves damage?",
@@ -157,7 +157,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailContent> = {
     slug: "property-management-cleaning",
     title: "Property Management Cleaning",
     intro:
-      "Recurring cleaning, turnover support and exterior care for residential rental portfolios, multi-unit apartment buildings, commercial offices, retail plazas and storefronts. One vetted, insured vendor across every door — with consolidated scheduling, reporting and billing.",
+      "Recurring cleaning, turnover support and exterior care for residential rental portfolios, multi-unit apartment buildings, commercial offices, retail plazas and storefronts. One vetted, insured vendor across every door, with consolidated scheduling, reporting and billing.",
     includes: [
       "Move-in / move-out turnover cleaning",
       "Common-area & hallway janitorial",
@@ -169,7 +169,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailContent> = {
     faqs: [
       {
         q: "Do you work with property managers and landlords?",
-        a: "Yes — managed residential portfolios, commercial buildings, and retail plaza ownership groups are a core part of what we do. We can serve a single building or hundreds of units.",
+        a: "Yes, managed residential portfolios, commercial buildings, and retail plaza ownership groups are a core part of what we do. We can serve a single building or hundreds of units.",
       },
       {
         q: "Can you handle emergency turnovers?",

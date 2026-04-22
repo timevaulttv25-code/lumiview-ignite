@@ -17,7 +17,7 @@ const CASE_STUDIES = [
   {
     icon: Building2,
     eyebrow: "Property Management",
-    title: "8-building rental portfolio — one vendor, one invoice",
+    title: "8-building rental portfolio, one vendor, one invoice",
     client: "Regional PM company • Lakewood + Rocky River",
     challenge: "Coordinating 4 different vendors across 142 doors meant missed turnovers, inconsistent quality, and frustrated tenants.",
     solution: "Consolidated window, exterior, and turnover cleaning under a single recurring contract with a dedicated account manager.",
@@ -29,7 +29,7 @@ const CASE_STUDIES = [
   },
   {
     icon: Home,
-    eyebrow: "Residential — Airbnb",
+    eyebrow: "Residential, Airbnb",
     title: "5-star rating recovery for short-term rental host",
     client: "Lakefront Airbnb host • Avon Lake",
     challenge: "Inconsistent cleaning was costing 4-star reviews and reducing nightly rate. Host needed reliable, photo-documented turnovers.",
@@ -43,7 +43,7 @@ const CASE_STUDIES = [
   {
     icon: Sparkles,
     eyebrow: "Commercial",
-    title: "Retail plaza — weekly storefront route",
+    title: "Retail plaza, weekly storefront route",
     client: "Mixed-use retail plaza • Westlake",
     challenge: "11 storefronts with inconsistent vendor showings made the plaza look neglected and hurt foot traffic perception.",
     solution: "Single weekly route, before-doors-open scheduling, and unified billing through plaza management.",
@@ -56,7 +56,7 @@ const CASE_STUDIES = [
   {
     icon: TrendingUp,
     eyebrow: "New Construction",
-    title: "Post-construction window cleaning — 32-unit build",
+    title: "Post-construction window cleaning, 32-unit build",
     client: "Custom home builder • Avon",
     challenge: "Construction debris, stickers, and mortar splatter on 600+ windows needed removing before final walkthroughs.",
     solution: "Two-person crew, scraper-and-pure-water method, completed across 4 days to align with builder closing schedule.",
@@ -70,7 +70,7 @@ const CASE_STUDIES = [
 
 export const Route = createFileRoute("/case-studies")({
   head: () => buildSeo({
-    title: "Case Studies — Measurable Client Outcomes",
+    title: "Case Studies, Measurable Client Outcomes",
     description: "Real outcomes from LumiView clients: portfolio consolidation, Airbnb rating recovery, retail plaza routes, and post-construction projects across Northeast Ohio.",
     path: "/case-studies",
   }),
@@ -79,7 +79,7 @@ export const Route = createFileRoute("/case-studies")({
       <PageHero
         eyebrow="Case Studies"
         title="Outcomes our clients can measure."
-        description="The work speaks for itself — but the numbers help. See how homeowners, property managers, and businesses across Northeast Ohio use LumiView to protect their assets and look their best."
+        description="The work speaks for itself, but the numbers help. See how homeowners, property managers, and businesses across Northeast Ohio use LumiView to protect their assets and look their best."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Results", to: "/results" }, { label: "Case Studies" }]}
       />
 

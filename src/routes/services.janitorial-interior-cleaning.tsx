@@ -18,7 +18,7 @@ import baImg from "@/assets/work-storefront-ba.jpg";
 const slug = "janitorial-interior-cleaning";
 const title = "Janitorial & Interior Cleaning";
 const intro =
-  "Reliable scheduled janitorial and interior cleaning for offices, medical and dental practices, daycares, fitness studios, and facilities across Northeast Ohio — same crew, same standard, every visit.";
+  "Reliable scheduled janitorial and interior cleaning for offices, medical and dental practices, daycares, fitness studios, and facilities across Northeast Ohio, same crew, same standard, every visit.";
 
 const FAQS = [
   {
@@ -27,7 +27,7 @@ const FAQS = [
   },
   {
     q: "Do you bring your own cleaning supplies and equipment?",
-    a: "Yes — all standard supplies, vacuums, mops, and equipment are included. We can also use your preferred green-certified or facility-specific products on request.",
+    a: "Yes, all standard supplies, vacuums, mops, and equipment are included. We can also use your preferred green-certified or facility-specific products on request.",
   },
   {
     q: "Do you offer after-hours and weekend cleaning?",
@@ -47,7 +47,7 @@ const FAQS = [
   },
   {
     q: "Do you handle floor stripping, waxing, and carpet care?",
-    a: "Yes — periodic floor care is offered as an add-on or a separate scheduled service. This includes VCT strip & wax, hard-floor burnishing, and commercial carpet extraction.",
+    a: "Yes, periodic floor care is offered as an add-on or a separate scheduled service. This includes VCT strip & wax, hard-floor burnishing, and commercial carpet extraction.",
   },
   {
     q: "How do you handle quality control?",
@@ -58,7 +58,7 @@ const FAQS = [
 export const Route = createFileRoute("/services/janitorial-interior-cleaning")({
   head: () => ({
     ...buildSeo({
-      title: `${title} for Offices & Facilities — Northeast Ohio`,
+      title: `${title} for Offices & Facilities, Northeast Ohio`,
       description: intro,
       path: `/services/${slug}`,
       image: `${SITE.url}${heroImg}`,
@@ -124,7 +124,7 @@ export const Route = createFileRoute("/services/janitorial-interior-cleaning")({
         },
       ]}
       featuresEyebrow="What's Included Every Visit"
-      featuresHeading="A complete interior care program — written down, repeated, audited."
+      featuresHeading="A complete interior care program, written down, repeated, audited."
       featuresIntro="Every account gets a written scope of work and a per-visit checklist so you know exactly what was completed and when. Add periodic services like floor care or carpet extraction whenever you need them."
       features={[
         {
@@ -136,7 +136,7 @@ export const Route = createFileRoute("/services/janitorial-interior-cleaning")({
         {
           icon: Droplets,
           title: "Restroom sanitation",
-          body: "Detail-driven restroom service — the area clients and employees notice first.",
+          body: "Detail-driven restroom service, the area clients and employees notice first.",
           items: ["Toilets, urinals & sinks", "Mirrors & fixtures", "Restock paper & soap", "Floor disinfection"],
         },
         {
@@ -166,7 +166,7 @@ export const Route = createFileRoute("/services/janitorial-interior-cleaning")({
       ]}
       resultEyebrow="The Result"
       resultHeading="A facility your team is proud to walk into every morning."
-      resultBody="Consistent interior cleaning improves employee retention, reduces sick days, and sets the standard your customers feel the moment they walk in. We make it boring — in the best possible way."
+      resultBody="Consistent interior cleaning improves employee retention, reduces sick days, and sets the standard your customers feel the moment they walk in. We make it boring, in the best possible way."
       resultImage={baImg}
       resultImageAlt="Before and after interior storefront cleaning by LumiView Services"
       audienceEyebrow="Who We Serve"

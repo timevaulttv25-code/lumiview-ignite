@@ -14,7 +14,7 @@ const INITIATIVES = [
   {
     icon: HandHeart,
     title: "Veteran & First Responder Discount",
-    body: "Year-round 10% discount on every service for active military, veterans, police, fire, and EMS — because their work makes ours possible.",
+    body: "Year-round 10% discount on every service for active military, veterans, police, fire, and EMS, because their work makes ours possible.",
   },
   {
     icon: Sparkles,
@@ -32,7 +32,7 @@ const PARTNERS = [
   "Avon City Schools",
   "Avon Lake Soccer Association",
   "Northeast Ohio Food Bank",
-  "Cleveland Clinic Foundation — community programs",
+  "Cleveland Clinic Foundation, community programs",
   "Local Habitat for Humanity chapters",
 ];
 
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/giving-back")({
     buildSeo({
       title: "Giving Back to Northeast Ohio",
       description:
-        "LumiView donates time, services and sponsorships to Northeast Ohio neighbors, first responders, schools and families in need. Here's how — and how to nominate someone.",
+        "LumiView donates time, services and sponsorships to Northeast Ohio neighbors, first responders, schools and families in need. Here's how, and how to nominate someone.",
       path: "/giving-back",
     }),
   component: () => (
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/giving-back")({
             5% of every job, given back.
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
-            A portion of every invoice — residential or commercial — is set aside for community
+            A portion of every invoice, residential or commercial, is set aside for community
             initiatives. No marketing line item, no asterisk. It funds the programs below
             and a steady rotation of one-off needs that come up across our service area.
           </p>
@@ -88,8 +88,8 @@ export const Route = createFileRoute("/giving-back")({
               Know someone who could use a hand?
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              If a neighbor, family member, or coworker is going through a hard season — illness,
-              loss, a new baby, a tough move — and a clean home or storefront would lift the
+              If a neighbor, family member, or coworker is going through a hard season, illness,
+              loss, a new baby, a tough move, and a clean home or storefront would lift the
               load, tell us. Nominations stay confidential, and the recipient never has to know
               who reached out.
             </p>

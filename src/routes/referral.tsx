@@ -11,13 +11,13 @@ const TIERS = [
     icon: Gift,
     title: "$50 credit",
     sub: "per residential referral",
-    body: "When a friend, family member or neighbor books any residential service of $200 or more, you get $50 off your next service. No limit — refer 10, save $500.",
+    body: "When a friend, family member or neighbor books any residential service of $200 or more, you get $50 off your next service. No limit, refer 10, save $500.",
   },
   {
     icon: DollarSign,
     title: "$250 cash",
     sub: "per commercial referral",
-    body: "Refer a commercial property, HOA, office or retail plaza that signs a recurring contract — receive a $250 cash bonus once the first invoice is paid.",
+    body: "Refer a commercial property, HOA, office or retail plaza that signs a recurring contract, receive a $250 cash bonus once the first invoice is paid.",
   },
   {
     icon: Sparkles,
@@ -31,25 +31,25 @@ const HOW = [
   {
     step: "1",
     title: "Tell them about us",
-    body: "Send your friend or business contact our way — text, email, social, word of mouth. They mention your name when they book.",
+    body: "Send your friend or business contact our way, text, email, social, word of mouth. They mention your name when they book.",
   },
   {
     step: "2",
     title: "We do the work",
-    body: "We deliver the LumiView experience they were promised — clear quote, on-time arrival, finish you'd be proud to have referred.",
+    body: "We deliver the LumiView experience they were promised, clear quote, on-time arrival, finish you'd be proud to have referred.",
   },
   {
     step: "3",
     title: "You get rewarded",
-    body: "Your credit or cash bonus is issued within 7 days of the completed first invoice. Stack as many as you want — no annual limit.",
+    body: "Your credit or cash bonus is issued within 7 days of the completed first invoice. Stack as many as you want, no annual limit.",
   },
 ];
 
 const RULES = [
   "Referred client must be a new LumiView customer (no prior service in the last 12 months).",
   "Residential credit applied automatically to your next service.",
-  "Commercial cash bonus paid via Venmo, Zelle, ACH, or check — your choice.",
-  "Referral must be named at time of booking — we can't backdate after the fact.",
+  "Commercial cash bonus paid via Venmo, Zelle, ACH, or check, your choice.",
+  "Referral must be named at time of booking, we can't backdate after the fact.",
   "No limit on how many friends, family or businesses you refer in a year.",
   "Stack referral credits with seasonal promotions and recurring-customer discounts.",
 ];
@@ -57,7 +57,7 @@ const RULES = [
 export const Route = createFileRoute("/referral")({
   head: () =>
     buildSeo({
-      title: "Referral Program — Earn With LumiView",
+      title: "Referral Program, Earn With LumiView",
       description:
         "Refer a friend, neighbor or business to LumiView and earn $50 in service credit or up to $250 in cash. No annual cap. Built to thank the people who built our business.",
       path: "/referral",
@@ -67,7 +67,7 @@ export const Route = createFileRoute("/referral")({
       <PageHero
         eyebrow="Referral Program"
         title="The best compliment is a referral."
-        description="Most of LumiView's growth has come from existing customers telling someone they trust about us. This program is our thank you — every time you do it."
+        description="Most of LumiView's growth has come from existing customers telling someone they trust about us. This program is our thank you, every time you do it."
         breadcrumbs={[
           { label: "Home", to: "/" },
           { label: "About", to: "/about" },
@@ -82,7 +82,7 @@ export const Route = createFileRoute("/referral")({
             Real rewards. No fine print.
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
-            Three ways to earn — pick whichever applies. Stack them as often as you want.
+            Three ways to earn, pick whichever applies. Stack them as often as you want.
           </p>
         </div>
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -124,7 +124,7 @@ export const Route = createFileRoute("/referral")({
             Simple, fair rules.
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
-            We wrote this program to be easy to use — not to be a riddle. If you have a
+            We wrote this program to be easy to use, not to be a riddle. If you have a
             question that isn't answered here, just ask.
           </p>
           <Button asChild size="lg" className="mt-7 rounded-full">

@@ -8,7 +8,7 @@ import client7 from "@/assets/clients/client-7.png";
 import client8 from "@/assets/clients/client-8.png";
 
 /**
- * Add or remove logos here — the marquee adapts automatically.
+ * Add or remove logos here, the marquee adapts automatically.
  * Use square or wide PNGs with transparent background for best results.
  */
 const LOGOS: { src: string; name: string }[] = [

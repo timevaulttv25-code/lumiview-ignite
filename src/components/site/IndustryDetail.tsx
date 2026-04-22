@@ -43,7 +43,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetailContent> = {
     faqs: [
       {
         q: "Do I need to be home during service?",
-        a: "No — most of our residential clients aren't. We're fully insured, background-checked and can work from a lockbox or coordinated entry.",
+        a: "No, most of our residential clients aren't. We're fully insured, background-checked and can work from a lockbox or coordinated entry.",
       },
       {
         q: "Are your products pet- and child-safe?",
@@ -67,7 +67,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetailContent> = {
     faqs: [
       {
         q: "Can you service us before or after business hours?",
-        a: "Yes — most commercial accounts prefer evening, early-morning, or weekend service so there's no disruption to staff or customers.",
+        a: "Yes, most commercial accounts prefer evening, early-morning, or weekend service so there's no disruption to staff or customers.",
       },
       {
         q: "Are you insured for commercial work?",
@@ -79,7 +79,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetailContent> = {
     slug: "property-managers",
     title: "Property Managers",
     intro:
-      "One point of contact, one invoice, one consistent standard across your entire portfolio — common areas, exteriors, turnover units and short-term rentals.",
+      "One point of contact, one invoice, one consistent standard across your entire portfolio, common areas, exteriors, turnover units and short-term rentals.",
     services: [
       "Make-ready & turnover cleaning",
       "Common-area & hallway janitorial",
@@ -95,7 +95,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetailContent> = {
       },
       {
         q: "Do you provide reporting per property?",
-        a: "Yes — every visit is logged with date, crew, scope and (on request) before/after photos, broken out per door.",
+        a: "Yes, every visit is logged with date, crew, scope and (on request) before/after photos, broken out per door.",
       },
     ],
   },
@@ -103,7 +103,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetailContent> = {
     slug: "construction",
     title: "Builders & New Construction",
     intro:
-      "Post-construction window cleaning, debris removal and final-detail cleaning so newly built or renovated properties show — and sell — at their absolute best.",
+      "Post-construction window cleaning, debris removal and final-detail cleaning so newly built or renovated properties show, and sell, at their absolute best.",
     services: [
       "Rough, post-construction & final cleans",
       "Sticker, paint & adhesive removal from glass",
@@ -115,11 +115,11 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetailContent> = {
     faqs: [
       {
         q: "Can you handle a multi-phase clean?",
-        a: "Yes — we routinely run rough, post-trade and final-detail phases, coordinating directly with your superintendent or project manager.",
+        a: "Yes, we routinely run rough, post-trade and final-detail phases, coordinating directly with your superintendent or project manager.",
       },
       {
         q: "Do you do high or specialty glass?",
-        a: "Yes — including skylights, atriums, storefront glass and post-construction adhesive and overspray removal.",
+        a: "Yes, including skylights, atriums, storefront glass and post-construction adhesive and overspray removal.",
       },
     ],
   },
@@ -143,7 +143,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetailContent> = {
       },
       {
         q: "Do you service evenings or weekends?",
-        a: "Yes — almost all daycare accounts run after closing or on weekends so the facility is fully reset before the next morning's drop-off.",
+        a: "Yes, almost all daycare accounts run after closing or on weekends so the facility is fully reset before the next morning's drop-off.",
       },
     ],
   },
@@ -187,7 +187,7 @@ export function IndustryDetailPage({ slug }: { slug: string }) {
           </h2>
           <p className="mt-4 text-muted-foreground">
             Every service is delivered by an insured, background-checked crew operating from the
-            same rigorous LumiView playbook — adapted to the unique demands of your space.
+            same rigorous LumiView playbook, adapted to the unique demands of your space.
           </p>
         </div>
         <ul className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
@@ -202,7 +202,7 @@ export function IndustryDetailPage({ slug }: { slug: string }) {
           ))}
         </ul>
       </section>
-      <FaqSection items={details.faqs} title={`${details.title} — common questions`} />
+      <FaqSection items={details.faqs} title={`${details.title}, common questions`} />
       <CTABand title={`Cleaning services built for ${details.title.toLowerCase()}.`} />
     </SiteShell>
   );

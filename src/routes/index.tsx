@@ -24,9 +24,9 @@ import { buildSeo, faqJsonLd, jsonLdScript, localBusinessJsonLd, speakableFaqJso
 
 const FAQS = [
   { q: "How quickly can you respond to a quote request?", a: "We respond to all inquiries within 24 hours, often the same business day. For urgent commercial or property-management needs, call us directly at " + SITE.phoneDisplay + " for same-day scheduling when available." },
-  { q: "Do you serve my area in Northeast Ohio?", a: "We serve Avon, Avon Lake, Westlake, Lakewood, Rocky River, North Olmsted, Bay Village, North Ridgeville, Strongsville, Berea, Elyria, Lorain, and many surrounding communities. If you're nearby and unsure, give us a call — we're happy to confirm coverage." },
+  { q: "Do you serve my area in Northeast Ohio?", a: "We serve Avon, Avon Lake, Westlake, Lakewood, Rocky River, North Olmsted, Bay Village, North Ridgeville, Strongsville, Berea, Elyria, Lorain, and many surrounding communities. If you're nearby and unsure, give us a call, we're happy to confirm coverage." },
   { q: "Are you fully insured?", a: "Yes. LumiView carries full general liability and workers' compensation insurance. Certificates of insurance are available on request for property managers and commercial clients." },
-  { q: "Do I need to be home during service?", a: "In most cases, no. We coordinate access in advance — driveway, lockbox code, or property manager handoff — and complete the work professionally and securely without disturbing your day." },
+  { q: "Do I need to be home during service?", a: "In most cases, no. We coordinate access in advance, driveway, lockbox code, or property manager handoff, and complete the work professionally and securely without disturbing your day." },
   { q: "Do you offer recurring service plans?", a: "Yes. Monthly, quarterly, and seasonal plans are available for both residential and commercial properties, with priority scheduling and consistent crews." },
   { q: "What payment methods do you accept?", a: "We accept all major credit cards, ACH bank transfer, and check. Commercial accounts can be invoiced on net-15 or net-30 terms." },
 ] as const;
@@ -57,16 +57,16 @@ const TRUST = [
 ] as const;
 
 const WHY = [
-  { title: "Reliable scheduling", body: "We arrive on time and complete work as promised. Plan your week — and your property's upkeep — with confidence." },
+  { title: "Reliable scheduling", body: "We arrive on time and complete work as promised. Plan your week, and your property's upkeep, with confidence." },
   { title: "Clear communication", body: "You know what to expect and when. Straightforward updates from quote to completion, no guesswork." },
   { title: "Professional presentation", body: "Uniformed crews, clean equipment, and a finish that reflects well on your home or business." },
   { title: "Attention to detail", body: "From glass clarity to surface finish, every service is performed with care for the small things." },
-  { title: "Residential & commercial fluency", body: "Single-family homes, storefronts, multi-unit portfolios — the same standard, adapted to context." },
+  { title: "Residential & commercial fluency", body: "Single-family homes, storefronts, multi-unit portfolios, the same standard, adapted to context." },
   { title: "Consistent quality", body: "One-time or recurring, you get the same dependable result every visit." },
 ] as const;
 
 const PROCESS = [
-  { n: "01", title: "Tell us about your property", body: "Share your location, property type, and the services you're considering — online or by phone." },
+  { n: "01", title: "Tell us about your property", body: "Share your location, property type, and the services you're considering, online or by phone." },
   { n: "02", title: "We review the scope", body: "We confirm details, recommend the right approach, and follow up with a clear, written estimate." },
   { n: "03", title: "Enjoy a better-presented property", body: "Our crew completes the work with care. You'll see the difference the moment we leave." },
 ] as const;
@@ -218,7 +218,7 @@ function HomePage() {
                 Care tailored to every type of property.
               </h2>
               <p className="mt-5 max-w-md text-ivory/70">
-                Single homes to multi-property portfolios — the same standard, adapted to context.
+                Single homes to multi-property portfolios, the same standard, adapted to context.
               </p>
             </div>
             <div className="lg:col-span-8">

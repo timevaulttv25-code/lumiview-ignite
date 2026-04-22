@@ -60,7 +60,7 @@ export function BeforeAfterSlider({
         {/* AFTER (full image, base layer) */}
         <img
           src={afterSrc}
-          alt={`${alt} — after`}
+          alt={`${alt}, after`}
           className="pointer-events-none absolute inset-0 h-full w-full object-cover"
           loading="lazy"
           draggable={false}
@@ -72,7 +72,7 @@ export function BeforeAfterSlider({
         >
           <img
             src={beforeSrc}
-            alt={`${alt} — before`}
+            alt={`${alt}, before`}
             className="absolute inset-0 h-full w-full object-cover"
             style={{ width: `${(100 / Math.max(pos, 0.01)) * 100}%`, maxWidth: "none" }}
             loading="lazy"

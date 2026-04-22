@@ -9,7 +9,7 @@ import resultImg from "@/assets/work-windows-ba.jpg";
 const slug = "construction";
 const industryTitle = "Builders & New Construction";
 const intro =
-  "Post-construction cleaning for builders, GCs and renovation contractors across Northeast Ohio. Rough, post-trade and final-detail phases — sticker and adhesive removal, fine-particulate dust wipe-down, floor finishing and punch-list support so the property shows at its absolute best.";
+  "Post-construction cleaning for builders, GCs and renovation contractors across Northeast Ohio. Rough, post-trade and final-detail phases, sticker and adhesive removal, fine-particulate dust wipe-down, floor finishing and punch-list support so the property shows at its absolute best.";
 
 const TIERS = [
   {
@@ -30,7 +30,7 @@ const TIERS = [
     icon: Sparkles,
     eyebrow: "Final Detail",
     title: "Final & punch-list clean",
-    body: "Move-in-ready finish — every glass surface, fixture, edge and floor brought to handover standard.",
+    body: "Move-in-ready finish, every glass surface, fixture, edge and floor brought to handover standard.",
     items: ["Final-detail wipe-down", "Glass adhesive & overspray", "Fixture & cabinet detail", "Punch-list & touch-up"],
   },
 ];
@@ -45,7 +45,7 @@ const FEATURES = [
   {
     icon: Wind,
     title: "Fine-particulate dust wipe-down",
-    body: "Top-to-bottom detail wipe of every horizontal surface — drywall dust is the silent killer of a final walkthrough.",
+    body: "Top-to-bottom detail wipe of every horizontal surface, drywall dust is the silent killer of a final walkthrough.",
     items: ["Trim, ledges & ceilings", "HVAC vent & register detail", "Cabinet interior wipe-down", "Light fixture detail"],
   },
   {
@@ -81,18 +81,18 @@ const PROCESS = [
 ];
 
 const FAQS = [
-  { q: "Can you handle a multi-phase clean?", a: "Yes — we routinely run rough, post-trade and final-detail phases, coordinating directly with your superintendent or project manager. Phase scheduling has built-in flex for inevitable construction delays." },
-  { q: "Do you do high or specialty glass?", a: "Yes — including skylights, atriums, storefront glass and post-construction adhesive, paint, stucco and overspray removal. We carry the right poles, ladders and razors for the job." },
+  { q: "Can you handle a multi-phase clean?", a: "Yes, we routinely run rough, post-trade and final-detail phases, coordinating directly with your superintendent or project manager. Phase scheduling has built-in flex for inevitable construction delays." },
+  { q: "Do you do high or specialty glass?", a: "Yes, including skylights, atriums, storefront glass and post-construction adhesive, paint, stucco and overspray removal. We carry the right poles, ladders and razors for the job." },
   { q: "How much does post-construction cleaning cost?", a: "Final-detail cleans typically run $0.20–$0.50 per sq ft depending on finish level, glass count and adhesive load. Multi-phase projects are quoted per phase. Free walkthroughs and proposals." },
-  { q: "Can you start before the project is finished?", a: "Yes — most multi-phase projects benefit from rough and post-trade cleans during the build, then a final-detail clean before handover. This keeps quality control high and shortens the final clean." },
+  { q: "Can you start before the project is finished?", a: "Yes, most multi-phase projects benefit from rough and post-trade cleans during the build, then a final-detail clean before handover. This keeps quality control high and shortens the final clean." },
   { q: "Are you OSHA-aware on active jobsites?", a: "Yes. Our crews are trained to work alongside active trades safely, follow site-specific safety plans and check in with the super on arrival each day." },
-  { q: "Do you attend the final punch-list walkthrough?", a: "Yes — on request we attend the walkthrough so any flagged cleaning items can be closed out same-day before client handover." },
+  { q: "Do you attend the final punch-list walkthrough?", a: "Yes, on request we attend the walkthrough so any flagged cleaning items can be closed out same-day before client handover." },
 ];
 
 export const Route = createFileRoute("/industries/construction")({
   head: () => ({
     ...buildSeo({
-      title: `${industryTitle} — Post-Construction Cleaning in Northeast Ohio`,
+      title: `${industryTitle}, Post-Construction Cleaning in Northeast Ohio`,
       description: intro,
       path: `/industries/${slug}`,
       image: `${SITE.url}${heroImg}`,
@@ -121,12 +121,12 @@ function ConstructionIndustryPage() {
         "Weekend & evening crews available",
       ]}
       tiersEyebrow="Construction Services"
-      tiersHeading="Three phases, one cleaning partner — no surprises at handover."
+      tiersHeading="Three phases, one cleaning partner, no surprises at handover."
       tiersIntro="Most builders we work with run rough, post-trade and final-detail phases. We staff each phase with the right crew size and equipment for the job."
       tiers={TIERS}
       featuresEyebrow="What's Included"
       featuresHeading="Everything new construction needs to pass a walkthrough."
-      featuresIntro="From skylight overspray to baseboard dust to cabinet interiors — every detail that determines whether a property looks finished or just built."
+      featuresIntro="From skylight overspray to baseboard dust to cabinet interiors, every detail that determines whether a property looks finished or just built."
       features={FEATURES}
       resultEyebrow="The Result"
       resultHeading="A property that shows the way the renderings promised."
@@ -146,7 +146,7 @@ function ConstructionIndustryPage() {
       serviceAreaHeading="Serving builders & GCs across Northeast Ohio."
       serviceAreaBody="We work with custom-home builders, multifamily developers and commercial GCs across Avon, Westlake, Lakewood, Rocky River and surrounding communities."
       faqs={FAQS}
-      faqTitle="Post-construction cleaning — common questions"
+      faqTitle="Post-construction cleaning, common questions"
       ctaTitle="A cleaning partner that knows how a jobsite actually runs."
       ctaBody="Free walkthroughs. Phase scheduling. OSHA-aware crews. Tell us about the project and we'll follow up with a clear written proposal."
     />

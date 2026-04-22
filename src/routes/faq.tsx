@@ -8,7 +8,7 @@ import { buildSeo, faqJsonLd, jsonLdScript, speakableFaqJsonLd } from "@/lib/seo
 const FAQS = [
   {
     q: "What areas does LumiView serve?",
-    a: "We serve Avon, Avon Lake, Westlake, Lakewood, Rocky River, North Olmsted, Bay Village, North Ridgeville, Strongsville, Berea, Fairview Park, Olmsted Falls, Elyria, Lorain, Sheffield Lake, Amherst and the surrounding Northeast Ohio communities. Not sure if we cover your address? Call us — if we don't service your area, we'll point you to someone reputable who does.",
+    a: "We serve Avon, Avon Lake, Westlake, Lakewood, Rocky River, North Olmsted, Bay Village, North Ridgeville, Strongsville, Berea, Fairview Park, Olmsted Falls, Elyria, Lorain, Sheffield Lake, Amherst and the surrounding Northeast Ohio communities. Not sure if we cover your address? Call us, if we don't service your area, we'll point you to someone reputable who does.",
   },
   {
     q: "Are you licensed and insured?",
@@ -20,7 +20,7 @@ const FAQS = [
   },
   {
     q: "How do you price your services?",
-    a: "Pricing is based on the scope of work — size, surface, access, frequency — not a vague hourly rate. You receive a flat, transparent quote before we start, and we don't add surprise charges after the job. Recurring clients receive preferred pricing.",
+    a: "Pricing is based on the scope of work, size, surface, access, frequency, not a vague hourly rate. You receive a flat, transparent quote before we start, and we don't add surprise charges after the job. Recurring clients receive preferred pricing.",
   },
   {
     q: "What forms of payment do you accept?",
@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "Do I need to be home during service?",
-    a: "Not at all. The majority of our exterior work — windows, pressure washing, gutters, soft-wash — is completed without anyone home. We confirm access details ahead of time and send a completion notice with photos when we wrap up.",
+    a: "Not at all. The majority of our exterior work, windows, pressure washing, gutters, soft-wash, is completed without anyone home. We confirm access details ahead of time and send a completion notice with photos when we wrap up.",
   },
   {
     q: "What window-cleaning method do you use?",
@@ -40,19 +40,19 @@ const FAQS = [
   },
   {
     q: "How often should exterior cleaning be done?",
-    a: "Most Northeast Ohio homes benefit from window cleaning twice a year (spring and fall) and a full exterior soft-wash annually. Lakefront, wooded, and high-traffic commercial properties usually warrant a quarterly schedule. We'll recommend a cadence based on your property — never an upsell that doesn't make sense.",
+    a: "Most Northeast Ohio homes benefit from window cleaning twice a year (spring and fall) and a full exterior soft-wash annually. Lakefront, wooded, and high-traffic commercial properties usually warrant a quarterly schedule. We'll recommend a cadence based on your property, never an upsell that doesn't make sense.",
   },
   {
     q: "Do you handle short-term rentals like Airbnb and Vrbo?",
-    a: "Yes — turnover cleaning between guests is one of our specialties. We work directly with hosts and co-hosts, sync to your booking calendar, restock essentials, and send photo confirmation after every turn so you can publish next-guest-ready with confidence.",
+    a: "Yes, turnover cleaning between guests is one of our specialties. We work directly with hosts and co-hosts, sync to your booking calendar, restock essentials, and send photo confirmation after every turn so you can publish next-guest-ready with confidence.",
   },
   {
     q: "Can you support property managers across multiple buildings?",
-    a: "Absolutely. We provide single-point-of-contact service across residential rentals, multi-unit buildings, office portfolios, and retail plazas — consolidated invoicing, scheduled recurring service, and rapid response for unit turnovers and emergency calls.",
+    a: "Absolutely. We provide single-point-of-contact service across residential rentals, multi-unit buildings, office portfolios, and retail plazas, consolidated invoicing, scheduled recurring service, and rapid response for unit turnovers and emergency calls.",
   },
   {
     q: "What's your cancellation or reschedule policy?",
-    a: "Life happens — and so does Ohio weather. We don't charge cancellation fees as long as you let us know at least 24 hours ahead. Weather-related reschedules from our side are always free and re-booked at the next available window.",
+    a: "Life happens, and so does Ohio weather. We don't charge cancellation fees as long as you let us know at least 24 hours ahead. Weather-related reschedules from our side are always free and re-booked at the next available window.",
   },
   {
     q: "Are your cleaning products pet- and family-safe?",
@@ -82,7 +82,7 @@ export const Route = createFileRoute("/faq")({
       <PageHero
         eyebrow="FAQ"
         title="Answers before you ask."
-        description="Pricing, scheduling, methods, insurance, weather, pets — the questions our customers ask most. If yours isn't here, we're a phone call away."
+        description="Pricing, scheduling, methods, insurance, weather, pets, the questions our customers ask most. If yours isn't here, we're a phone call away."
         breadcrumbs={[
           { label: "Home", to: "/" },
           { label: "About", to: "/about" },
