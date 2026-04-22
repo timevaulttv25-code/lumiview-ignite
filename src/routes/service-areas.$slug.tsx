@@ -45,8 +45,10 @@ export const Route = createFileRoute("/service-areas/$slug")({
           </div>
         </section>
         <ServiceAreaMap
-          title={`Where ${city.name} fits in our coverage`}
-          subtitle="The pin shows our home base in Avon. We dispatch crews across the region every day."
+          title={`${city.name} is in our daily route`}
+          subtitle="The pin is on your city. Tap another to compare nearby coverage."
+          interactive
+          activeCitySlug={city.slug}
         />
         <CTABand title={`Get a ${city.name} quote within 24 hours.`} />
       </SiteShell>

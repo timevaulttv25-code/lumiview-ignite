@@ -1,10 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { MapPin } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { ServiceAreaMap } from "@/components/site/ServiceAreaMap";
-import { CITIES, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/service-areas")({
@@ -24,39 +23,19 @@ function ServiceAreasPage() {
       <PageHero
         eyebrow="Service areas"
         title="Serving Avon & Northeast Ohio."
-        description={`Local crews across ${SITE.primaryAreas.length}+ communities. If you're nearby and unsure, call us — we're happy to confirm coverage.`}
+        description={`Local crews across ${SITE.primaryAreas.length}+ communities. Tap your city below — the pin moves to that area, and you can jump straight to its localized page.`}
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Service areas" }]}
       />
 
       <ServiceAreaMap
-        title="Where we work"
-        subtitle="Tap a city below the map to see services available there."
+        title="Find your city"
+        subtitle="Tap a city to move the pin and open its dedicated services page."
+        interactive
+        pillsAsLinks
       />
 
-      <section className="container-prose py-20 lg:py-28">
-        <div className="mx-auto max-w-2xl text-center">
-          <div className="eyebrow text-accent">Featured cities</div>
-          <h2 className="mt-3 font-serif text-3xl font-medium tracking-tight text-balance text-navy-deep lg:text-4xl">
-            Pick your city for a localized page
-          </h2>
-        </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {CITIES.map((c) => (
-            <Link
-              key={c.slug}
-              to="/service-areas/$slug"
-              params={{ slug: c.slug }}
-              className="group flex items-center justify-between rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent hover:shadow-soft"
-            >
-              <div>
-                <div className="font-serif text-xl font-medium text-navy-deep">{c.name}</div>
-                <div className="text-sm text-muted-foreground">ZIP {c.zip}</div>
-              </div>
-              <MapPin className="h-5 w-5 text-accent transition-transform group-hover:scale-110" />
-            </Link>
-          ))}
-        </div>
-        <div className="mt-12 rounded-2xl border border-border bg-secondary/40 p-8">
+      <section className="container-prose py-16 lg:py-20">
+        <div className="rounded-2xl border border-border bg-secondary/40 p-8">
           <div className="eyebrow text-accent">Additional coverage</div>
           <p className="mt-3 text-muted-foreground">
             We also serve North Ridgeville, Strongsville, Berea, Olmsted Falls,
@@ -66,6 +45,7 @@ function ServiceAreasPage() {
           </p>
         </div>
       </section>
+
       <CTABand title="Outside our standard area? Just ask." />
     </SiteShell>
   );

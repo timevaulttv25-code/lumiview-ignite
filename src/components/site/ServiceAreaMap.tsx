@@ -1,26 +1,48 @@
+import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { MapPin } from "lucide-react";
 import { CITIES, SITE } from "@/lib/site";
 
+type CityLike = { slug: string; name: string; zip: string; lat: number; lng: number };
+
 /**
- * Embedded interactive map of LumiView's service areas.
- * Uses OpenStreetMap (no API key required) centered on Avon, OH with a marker.
- * Below the map we render a quick-jump grid of every primary city we serve.
+ * Embedded interactive service-area map.
+ * - Renders an OpenStreetMap iframe centered on the active city.
+ * - When `interactive`, clicking a city pill moves the marker to that city.
+ * - When `pillsAsLinks`, pills also navigate to the city detail page.
+ * - When `activeCitySlug` is provided (e.g. on a city page), the map starts there.
  */
 export function ServiceAreaMap({
   title = "Where we work",
-  subtitle = "Local crews across Avon and Northeast Ohio. Tap a city to see services available there.",
+  subtitle = "Tap a city to move the pin and explore that area.",
   compact = false,
+  interactive = false,
+  activeCitySlug,
+  pillsAsLinks = false,
 }: {
   title?: string;
   subtitle?: string;
-  /** Compact removes the heading and tightens spacing — use inside dense layouts. */
   compact?: boolean;
+  interactive?: boolean;
+  activeCitySlug?: string;
+  pillsAsLinks?: boolean;
 }) {
-  const { lat, lng } = SITE.geo;
-  // Bounding box around Lorain → Lakewood (covers all primary areas)
-  const bbox = "-82.45,41.30,-81.70,41.60";
+  const cities = CITIES as ReadonlyArray<CityLike>;
+  const initialSlug =
+    activeCitySlug && cities.find((c) => c.slug === activeCitySlug)
+      ? activeCitySlug
+      : "avon";
+  const [selectedSlug, setSelectedSlug] = useState(initialSlug);
+  const active = cities.find((c) => c.slug === selectedSlug) ?? cities[0];
+
+  const lat = active?.lat ?? SITE.geo.lat;
+  const lng = active?.lng ?? SITE.geo.lng;
+
+  // ~0.18° box around the marker keeps the city framed nicely.
+  const d = 0.18;
+  const bbox = `${lng - d},${lat - d},${lng + d},${lat + d}`;
   const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lng}`;
-  const externalMap = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=11/${lat}/${lng}`;
+  const externalMap = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=12/${lat}/${lng}`;
 
   return (
     <section
@@ -44,7 +66,8 @@ export function ServiceAreaMap({
         <div className="mt-10 overflow-hidden rounded-2xl border border-border shadow-soft">
           <div className="relative">
             <iframe
-              title={`${SITE.name} service area map`}
+              key={`${lat},${lng}`}
+              title={`${SITE.name} service area map — ${active?.name ?? "Avon"}`}
               src={mapSrc}
               loading="lazy"
               className="h-[420px] w-full bg-muted"
@@ -60,26 +83,73 @@ export function ServiceAreaMap({
             </a>
           </div>
 
-          {/* City pills band — also serves as a visual legend of markers */}
           <div className="border-t border-border bg-card p-5">
             <div className="flex flex-wrap items-center gap-2">
               <MapPin className="h-4 w-4 text-accent" />
               <span className="mr-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Primary cities
+                {interactive ? "Select your city" : "Primary cities"}
               </span>
-              {SITE.primaryAreas.map((area) => (
-                <span
-                  key={area}
-                  className="rounded-full border border-border bg-secondary/60 px-3 py-1 text-xs font-medium text-foreground/80"
-                >
-                  {area}
-                </span>
-              ))}
+              {cities.map((c) => {
+                const isActive = c.slug === selectedSlug;
+                const base =
+                  "rounded-full border px-3 py-1 text-xs font-medium transition-colors";
+                const styles = isActive
+                  ? "border-accent bg-accent text-accent-foreground"
+                  : "border-border bg-secondary/60 text-foreground/80 hover:border-accent hover:text-accent";
+
+                if (pillsAsLinks) {
+                  return (
+                    <Link
+                      key={c.slug}
+                      to="/service-areas/$slug"
+                      params={{ slug: c.slug }}
+                      onMouseEnter={() => interactive && setSelectedSlug(c.slug)}
+                      onFocus={() => interactive && setSelectedSlug(c.slug)}
+                      className={`${base} ${styles}`}
+                    >
+                      {c.name}
+                    </Link>
+                  );
+                }
+                if (interactive) {
+                  return (
+                    <button
+                      key={c.slug}
+                      type="button"
+                      onClick={() => setSelectedSlug(c.slug)}
+                      className={`${base} ${styles}`}
+                    >
+                      {c.name}
+                    </button>
+                  );
+                }
+                return (
+                  <span key={c.slug} className={`${base} ${styles}`}>
+                    {c.name}
+                  </span>
+                );
+              })}
             </div>
+
+            {interactive && active && (
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4 text-sm">
+                <div className="text-muted-foreground">
+                  Showing <span className="font-semibold text-navy-deep">{active.name}</span>{" "}
+                  · ZIP {active.zip}
+                </div>
+                <Link
+                  to="/service-areas/$slug"
+                  params={{ slug: active.slug }}
+                  className="font-semibold text-accent hover:underline"
+                >
+                  See {active.name} services →
+                </Link>
+              </div>
+            )}
           </div>
         </div>
 
-        {!compact && CITIES.length > 0 && (
+        {!compact && (
           <p className="mt-6 text-center text-sm text-muted-foreground">
             Don&rsquo;t see your town? Call{" "}
             <a href={SITE.phoneLink} className="font-semibold text-accent hover:underline">

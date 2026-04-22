@@ -92,11 +92,11 @@ export const INDUSTRIES = [
 ] as const;
 
 export const CITIES = [
-  { slug: "avon", name: "Avon", zip: "44011" },
-  { slug: "avon-lake", name: "Avon Lake", zip: "44012" },
-  { slug: "westlake", name: "Westlake", zip: "44145" },
-  { slug: "lakewood", name: "Lakewood", zip: "44107" },
-  { slug: "rocky-river", name: "Rocky River", zip: "44116" },
-  { slug: "north-olmsted", name: "North Olmsted", zip: "44070" },
-  { slug: "bay-village", name: "Bay Village", zip: "44140" },
+  { slug: "avon", name: "Avon", zip: "44011", lat: 41.4517, lng: -82.0357 },
+  { slug: "avon-lake", name: "Avon Lake", zip: "44012", lat: 41.5053, lng: -82.0282 },
+  { slug: "westlake", name: "Westlake", zip: "44145", lat: 41.4553, lng: -81.9179 },
+  { slug: "lakewood", name: "Lakewood", zip: "44107", lat: 41.4820, lng: -81.7982 },
+  { slug: "rocky-river", name: "Rocky River", zip: "44116", lat: 41.4753, lng: -81.8593 },
+  { slug: "north-olmsted", name: "North Olmsted", zip: "44070", lat: 41.4156, lng: -81.9234 },
+  { slug: "bay-village", name: "Bay Village", zip: "44140", lat: 41.4856, lng: -81.9290 },
 ] as const;
