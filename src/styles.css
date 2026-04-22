@@ -226,13 +226,60 @@
     100% { background-position: -20% 0; }
   }
 
+  /* Scroll reveal — fade up + slight scale. Apply via .reveal (initial) + .reveal-in (when shown). */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+  }
+  .reveal-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hover lift used on cards */
+  .lift-card {
+    transition:
+      transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .lift-card:hover {
+    transform: translateY(-6px);
+  }
+
+  /* Star twinkle for review pages */
+  @keyframes star-twinkle {
+    0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 0 transparent); }
+    50%      { transform: scale(1.15) rotate(-4deg); filter: drop-shadow(0 0 6px color-mix(in oklab, var(--accent) 60%, transparent)); }
+  }
+  .animate-twinkle {
+    animation: star-twinkle 2.6s ease-in-out infinite;
+  }
+
+  /* Count-up reveal helper for big stat numbers */
+  @keyframes stat-pop {
+    0%   { opacity: 0; transform: translateY(14px) scale(0.92); }
+    60%  { opacity: 1; transform: translateY(-2px) scale(1.04); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .animate-stat-pop {
+    animation: stat-pop 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-marquee,
     .animate-trust-pop,
     .animate-soft-float,
+    .animate-twinkle,
+    .animate-stat-pop,
     .text-shine {
       animation: none !important;
     }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .lift-card:hover { transform: none; }
     .text-shine { color: var(--accent); }
   }
 }
