@@ -89,13 +89,7 @@ function HomePage() {
             </div>
             <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.05] tracking-tight text-balance text-navy-deep sm:text-6xl lg:text-[5rem]">
               Windows that disappear.{" "}
-              <span className="italic text-navy-deep">
-                Properties that{" "}
-                <span className="rounded-lg bg-accent/15 px-2 py-0.5 font-semibold not-italic text-accent">
-                  shine
-                </span>
-                .
-              </span>
+              <span className="italic text-navy">Properties that <span className="text-accent">shine</span>.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty">
               Premium window cleaning, pressure washing and property care for homes,
