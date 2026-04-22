@@ -47,16 +47,6 @@ export function BeforeAfterSlider({
 
   return (
     <div className={className}>
-      {/* Labels ABOVE the image — never obscured by the slider */}
-      <div className="flex items-center justify-between px-1 pb-2 text-[11px] font-semibold uppercase tracking-wider">
-        <span className="rounded-full bg-navy-deep/10 px-2.5 py-1 text-navy-deep">
-          Before
-        </span>
-        <span className="rounded-full bg-accent/15 px-2.5 py-1 text-accent">
-          After
-        </span>
-      </div>
-
       <div
         ref={wrapRef}
         className="relative aspect-[3/2] w-full select-none overflow-hidden rounded-2xl bg-muted"
