@@ -332,21 +332,62 @@ function QuotePage() {
               <div className="space-y-5">
                 <h2 className="font-serif text-2xl font-medium">About the property</h2>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="sm:col-span-2"><Label>Street address</Label><Input value={form.street_address || ""} onChange={(e) => update("street_address", e.target.value)} /></div>
-                  <div><Label>City</Label><Input value={form.city || ""} onChange={(e) => update("city", e.target.value)} /></div>
-                  <div><Label>State</Label><Input value={form.state || ""} onChange={(e) => update("state", e.target.value)} /></div>
-                  <div><Label>ZIP</Label><Input value={form.zip || ""} onChange={(e) => update("zip", e.target.value)} /></div>
+                  <div className="sm:col-span-2">
+                    <Label>Street address *</Label>
+                    <Input
+                      value={form.street_address || ""}
+                      onChange={(e) => update("street_address", e.target.value)}
+                      className={inputErrCls("street_address")}
+                      aria-invalid={!!errors.street_address}
+                    />
+                    <FieldError name="street_address" />
+                  </div>
                   <div>
-                    <Label>Frequency</Label>
+                    <Label>City *</Label>
+                    <Input
+                      value={form.city || ""}
+                      onChange={(e) => update("city", e.target.value)}
+                      className={inputErrCls("city")}
+                      aria-invalid={!!errors.city}
+                    />
+                    <FieldError name="city" />
+                  </div>
+                  <div>
+                    <Label>State *</Label>
+                    <Select value={form.state} onValueChange={(v) => update("state", v)}>
+                      <SelectTrigger className={inputErrCls("state")}><SelectValue placeholder="Select state" /></SelectTrigger>
+                      <SelectContent className="max-h-72">
+                        {US_STATES.map((s) => (
+                          <SelectItem key={s.code} value={s.code}>{s.name}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FieldError name="state" />
+                  </div>
+                  <div>
+                    <Label>ZIP *</Label>
+                    <Input
+                      inputMode="numeric"
+                      value={form.zip || ""}
+                      onChange={(e) => update("zip", e.target.value)}
+                      className={inputErrCls("zip")}
+                      aria-invalid={!!errors.zip}
+                    />
+                    <FieldError name="zip" />
+                  </div>
+                  <div>
+                    <Label>Frequency *</Label>
                     <Select value={form.frequency} onValueChange={(v) => update("frequency", v)}>
-                      <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                      <SelectTrigger className={inputErrCls("frequency")}><SelectValue placeholder="Select" /></SelectTrigger>
                       <SelectContent>{FREQUENCY.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
                     </Select>
+                    <FieldError name="frequency" />
                   </div>
                   <div className="sm:col-span-2"><Label>Square footage (optional)</Label><Input value={form.square_footage || ""} onChange={(e) => update("square_footage", e.target.value)} /></div>
                   <div className="sm:col-span-2">
-                    <Label>Which services are you interested in?</Label>
-                    <div className="mt-2 grid gap-2 sm:grid-cols-2">
+                    <Label>Which services are you interested in? *</Label>
+                    <p className="mt-1 text-xs text-muted-foreground">Select one or more.</p>
+                    <div className={`mt-2 grid gap-2 rounded-md sm:grid-cols-2 ${errors.services ? "rounded-md ring-1 ring-destructive p-2" : ""}`}>
                       {SERVICES.map((s) => (
                         <label key={s} className="flex items-center gap-2 rounded-md border border-border p-3 text-sm">
                           <Checkbox checked={form.services?.includes(s)} onCheckedChange={() => toggleService(s)} />
@@ -354,12 +395,20 @@ function QuotePage() {
                         </label>
                       ))}
                     </div>
+                    <FieldError name="services" />
                   </div>
                   <div className="sm:col-span-2"><Label>Project details</Label><Textarea rows={4} value={form.project_details || ""} onChange={(e) => update("project_details", e.target.value)} /></div>
                 </div>
                 <div className="flex justify-between">
                   <Button variant="outline" className="rounded-full" onClick={() => setStep(1)}>← Back</Button>
-                  <Button className="rounded-full" onClick={() => setStep(3)}>Continue →</Button>
+                  <Button
+                    className="rounded-full"
+                    onClick={() => {
+                      if (validateStep2()) setStep(3);
+                    }}
+                  >
+                    Continue →
+                  </Button>
                 </div>
               </div>
             )}
