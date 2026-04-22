@@ -55,7 +55,7 @@ export function ClientLogos({
           {loop.map((l, i) => (
             <div
               key={`${l.name}-${i}`}
-              className="flex h-28 w-44 shrink-0 items-center justify-center rounded-lg bg-white p-3"
+              className="flex h-28 w-44 shrink-0 items-center justify-center"
               aria-hidden={i >= LOGOS.length}
             >
               <img
