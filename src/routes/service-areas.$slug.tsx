@@ -2,6 +2,7 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
+import { ServiceAreaMap } from "@/components/site/ServiceAreaMap";
 import { CITIES, SERVICES, SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, localBusinessJsonLd } from "@/lib/seo";
 
@@ -32,17 +33,21 @@ export const Route = createFileRoute("/service-areas/$slug")({
           description={`Local crews serving ${city.name} homeowners, businesses and property managers — from streak-free glass to soft-washed siding and recurring interior care.`}
           breadcrumbs={[{ label: "Home", to: "/" }, { label: "Service areas", to: "/service-areas" }, { label: city.name }]} />
         <section className="container-prose py-20 lg:py-28">
-          <h2 className="font-serif text-3xl font-medium">Services available in {city.name}</h2>
+          <h2 className="font-serif text-3xl font-medium text-navy-deep">Services available in {city.name}</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {SERVICES.map((s) => (
               <Link key={s.slug} to={`/services/${s.slug}`}
-                className="rounded-xl border border-border bg-card p-6 hover:border-accent hover:shadow-soft">
-                <div className="font-serif text-xl font-medium">{s.title}</div>
+                className="rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent hover:shadow-soft">
+                <div className="font-serif text-xl font-medium text-navy-deep">{s.title}</div>
                 <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
               </Link>
             ))}
           </div>
         </section>
+        <ServiceAreaMap
+          title={`Where ${city.name} fits in our coverage`}
+          subtitle="The pin shows our home base in Avon. We dispatch crews across the region every day."
+        />
         <CTABand title={`Get a ${city.name} quote within 24 hours.`} />
       </SiteShell>
     );
