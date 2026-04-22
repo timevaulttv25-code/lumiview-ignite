@@ -50,13 +50,30 @@ const schema = z.object({
   property_type: z.string().min(1, "Property type is required"),
   preferred_timing: z.string().min(1, "Preferred timing is required"),
   hear_about: z.string().optional(),
-  street_address: z.string().max(200).optional(),
-  city: z.string().max(80).optional(),
-  state: z.string().max(40).optional(),
-  zip: z.string().max(20).optional(),
-  frequency: z.string().optional(),
+  street_address: z
+    .string()
+    .trim()
+    .min(3, "Street address is required")
+    .max(200)
+    .regex(/\d/, "Street address should include a house or building number"),
+  city: z
+    .string()
+    .trim()
+    .min(2, "City is required")
+    .max(80)
+    .regex(/^[A-Za-z\s'.-]+$/, "City can only contain letters, spaces, hyphens or apostrophes"),
+  state: z.string().min(2, "State is required").max(2),
+  zip: z
+    .string()
+    .trim()
+    .min(1, "ZIP code is required")
+    .regex(/^\d{5}(-\d{4})?$/, "Enter a valid 5-digit ZIP (or ZIP+4)"),
+  frequency: z.string().min(1, "Frequency is required"),
   square_footage: z.string().max(20).optional(),
-  services: z.array(z.string()).max(20),
+  services: z
+    .array(z.string())
+    .min(1, "Select at least one service you're interested in")
+    .max(20),
   project_details: z.string().max(4000).optional(),
   parking: z.string().optional(),
   flexibility: z.string().optional(),
@@ -71,11 +88,31 @@ const TIMING = ["As Soon as Possible", "Within 1–2 Weeks", "This Month", "Plan
 const HEAR = ["Google Search", "Google Business Profile", "Referral", "Social Media", "Mailer", "Door Hanger", "Yard Sign", "Repeat Customer", "Other"];
 const FREQUENCY = ["One-Time", "Weekly", "Bi-Weekly", "Monthly", "Quarterly", "Not Sure Yet"];
 
+const US_STATES: { code: string; name: string }[] = [
+  { code: "AL", name: "Alabama" }, { code: "AK", name: "Alaska" }, { code: "AZ", name: "Arizona" },
+  { code: "AR", name: "Arkansas" }, { code: "CA", name: "California" }, { code: "CO", name: "Colorado" },
+  { code: "CT", name: "Connecticut" }, { code: "DE", name: "Delaware" }, { code: "DC", name: "District of Columbia" },
+  { code: "FL", name: "Florida" }, { code: "GA", name: "Georgia" }, { code: "HI", name: "Hawaii" },
+  { code: "ID", name: "Idaho" }, { code: "IL", name: "Illinois" }, { code: "IN", name: "Indiana" },
+  { code: "IA", name: "Iowa" }, { code: "KS", name: "Kansas" }, { code: "KY", name: "Kentucky" },
+  { code: "LA", name: "Louisiana" }, { code: "ME", name: "Maine" }, { code: "MD", name: "Maryland" },
+  { code: "MA", name: "Massachusetts" }, { code: "MI", name: "Michigan" }, { code: "MN", name: "Minnesota" },
+  { code: "MS", name: "Mississippi" }, { code: "MO", name: "Missouri" }, { code: "MT", name: "Montana" },
+  { code: "NE", name: "Nebraska" }, { code: "NV", name: "Nevada" }, { code: "NH", name: "New Hampshire" },
+  { code: "NJ", name: "New Jersey" }, { code: "NM", name: "New Mexico" }, { code: "NY", name: "New York" },
+  { code: "NC", name: "North Carolina" }, { code: "ND", name: "North Dakota" }, { code: "OH", name: "Ohio" },
+  { code: "OK", name: "Oklahoma" }, { code: "OR", name: "Oregon" }, { code: "PA", name: "Pennsylvania" },
+  { code: "RI", name: "Rhode Island" }, { code: "SC", name: "South Carolina" }, { code: "SD", name: "South Dakota" },
+  { code: "TN", name: "Tennessee" }, { code: "TX", name: "Texas" }, { code: "UT", name: "Utah" },
+  { code: "VT", name: "Vermont" }, { code: "VA", name: "Virginia" }, { code: "WA", name: "Washington" },
+  { code: "WV", name: "West Virginia" }, { code: "WI", name: "Wisconsin" }, { code: "WY", name: "Wyoming" },
+];
+
 function QuotePage() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState<Record<string, any>>({ services: [], contact_method: "Email", state: "Ohio" });
+  const [form, setForm] = useState<Record<string, any>>({ services: [], contact_method: "Email", state: "OH" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const update = (k: string, v: any) => {
@@ -125,14 +162,37 @@ function QuotePage() {
     return true;
   };
 
+  const validateStep2 = () => {
+    const result = schema.pick({
+      street_address: true,
+      city: true,
+      state: true,
+      zip: true,
+      frequency: true,
+      services: true,
+    }).safeParse(form);
+    if (!result.success) {
+      const map = collectErrors(result.error.issues);
+      setErrors((prev) => ({ ...prev, ...map }));
+      toast.error("Please fix the highlighted fields", {
+        description: Object.values(map)[0],
+      });
+      return false;
+    }
+    return true;
+  };
+
+  const step1Keys = ["full_name", "email", "phone", "contact_method", "property_type", "preferred_timing"];
+  const step2Keys = ["street_address", "city", "state", "zip", "frequency", "services"];
+
   const submit = async () => {
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
       const map = collectErrors(parsed.error.issues);
       setErrors(map);
-      // If errors are on step-1 fields, send the user back so they can see them
-      const step1Keys = ["full_name", "email", "phone", "contact_method", "property_type", "preferred_timing"];
-      if (Object.keys(map).some((k) => step1Keys.includes(k))) setStep(1);
+      const errKeys = Object.keys(map);
+      if (errKeys.some((k) => step1Keys.includes(k))) setStep(1);
+      else if (errKeys.some((k) => step2Keys.includes(k))) setStep(2);
       toast.error("Please check the highlighted fields", { description: Object.values(map)[0] });
       return;
     }
@@ -272,21 +332,62 @@ function QuotePage() {
               <div className="space-y-5">
                 <h2 className="font-serif text-2xl font-medium">About the property</h2>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="sm:col-span-2"><Label>Street address</Label><Input value={form.street_address || ""} onChange={(e) => update("street_address", e.target.value)} /></div>
-                  <div><Label>City</Label><Input value={form.city || ""} onChange={(e) => update("city", e.target.value)} /></div>
-                  <div><Label>State</Label><Input value={form.state || ""} onChange={(e) => update("state", e.target.value)} /></div>
-                  <div><Label>ZIP</Label><Input value={form.zip || ""} onChange={(e) => update("zip", e.target.value)} /></div>
+                  <div className="sm:col-span-2">
+                    <Label>Street address *</Label>
+                    <Input
+                      value={form.street_address || ""}
+                      onChange={(e) => update("street_address", e.target.value)}
+                      className={inputErrCls("street_address")}
+                      aria-invalid={!!errors.street_address}
+                    />
+                    <FieldError name="street_address" />
+                  </div>
                   <div>
-                    <Label>Frequency</Label>
+                    <Label>City *</Label>
+                    <Input
+                      value={form.city || ""}
+                      onChange={(e) => update("city", e.target.value)}
+                      className={inputErrCls("city")}
+                      aria-invalid={!!errors.city}
+                    />
+                    <FieldError name="city" />
+                  </div>
+                  <div>
+                    <Label>State *</Label>
+                    <Select value={form.state} onValueChange={(v) => update("state", v)}>
+                      <SelectTrigger className={inputErrCls("state")}><SelectValue placeholder="Select state" /></SelectTrigger>
+                      <SelectContent className="max-h-72">
+                        {US_STATES.map((s) => (
+                          <SelectItem key={s.code} value={s.code}>{s.name}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FieldError name="state" />
+                  </div>
+                  <div>
+                    <Label>ZIP *</Label>
+                    <Input
+                      inputMode="numeric"
+                      value={form.zip || ""}
+                      onChange={(e) => update("zip", e.target.value)}
+                      className={inputErrCls("zip")}
+                      aria-invalid={!!errors.zip}
+                    />
+                    <FieldError name="zip" />
+                  </div>
+                  <div>
+                    <Label>Frequency *</Label>
                     <Select value={form.frequency} onValueChange={(v) => update("frequency", v)}>
-                      <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                      <SelectTrigger className={inputErrCls("frequency")}><SelectValue placeholder="Select" /></SelectTrigger>
                       <SelectContent>{FREQUENCY.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
                     </Select>
+                    <FieldError name="frequency" />
                   </div>
                   <div className="sm:col-span-2"><Label>Square footage (optional)</Label><Input value={form.square_footage || ""} onChange={(e) => update("square_footage", e.target.value)} /></div>
                   <div className="sm:col-span-2">
-                    <Label>Which services are you interested in?</Label>
-                    <div className="mt-2 grid gap-2 sm:grid-cols-2">
+                    <Label>Which services are you interested in? *</Label>
+                    <p className="mt-1 text-xs text-muted-foreground">Select one or more.</p>
+                    <div className={`mt-2 grid gap-2 rounded-md sm:grid-cols-2 ${errors.services ? "rounded-md ring-1 ring-destructive p-2" : ""}`}>
                       {SERVICES.map((s) => (
                         <label key={s} className="flex items-center gap-2 rounded-md border border-border p-3 text-sm">
                           <Checkbox checked={form.services?.includes(s)} onCheckedChange={() => toggleService(s)} />
@@ -294,12 +395,20 @@ function QuotePage() {
                         </label>
                       ))}
                     </div>
+                    <FieldError name="services" />
                   </div>
                   <div className="sm:col-span-2"><Label>Project details</Label><Textarea rows={4} value={form.project_details || ""} onChange={(e) => update("project_details", e.target.value)} /></div>
                 </div>
                 <div className="flex justify-between">
                   <Button variant="outline" className="rounded-full" onClick={() => setStep(1)}>← Back</Button>
-                  <Button className="rounded-full" onClick={() => setStep(3)}>Continue →</Button>
+                  <Button
+                    className="rounded-full"
+                    onClick={() => {
+                      if (validateStep2()) setStep(3);
+                    }}
+                  >
+                    Continue →
+                  </Button>
                 </div>
               </div>
             )}
