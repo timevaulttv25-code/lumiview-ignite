@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { ArrowRight, ShieldCheck, Clock, Star, CheckCircle2, Phone, Sparkles } from "lucide-react";
 
 import heroImg from "@/assets/hero-window-cleaner.jpg";
@@ -7,6 +8,10 @@ import windowImg from "@/assets/service-window-cleaning.jpg";
 import pressureImg from "@/assets/service-pressure-washing.jpg";
 import janitorialImg from "@/assets/service-janitorial.jpg";
 import propertyImg from "@/assets/service-property-care.jpg";
+import commercialImg from "@/assets/industry-commercial.jpg";
+import residentialImg from "@/assets/industry-residential.jpg";
+import propertyMgrImg from "@/assets/industry-property-managers.jpg";
+import airbnbImg from "@/assets/service-airbnb-turnover.jpg";
 
 import { SiteShell } from "@/components/site/SiteShell";
 import { Button } from "@/components/ui/button";
