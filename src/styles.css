@@ -199,6 +199,10 @@
 
   /* Shimmer sweep for the word "shine" */
   .text-shine {
+    display: inline-block;
+    padding-right: 0.15em;
+    padding-left: 0.05em;
+    margin-right: -0.05em;
     background-image: linear-gradient(
       100deg,
       var(--accent) 0%,
