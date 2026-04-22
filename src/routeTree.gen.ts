@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ServicePolicyRouteImport } from './routes/service-policy'
 import { Route as ServiceAreasRouteImport } from './routes/service-areas'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as ResultsRouteImport } from './routes/results'
@@ -50,6 +51,11 @@ const TermsRoute = TermsRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicePolicyRoute = ServicePolicyRouteImport.update({
+  id: '/service-policy',
+  path: '/service-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServiceAreasRoute = ServiceAreasRouteImport.update({
@@ -225,6 +231,7 @@ export interface FileRoutesByFullPath {
   '/results': typeof ResultsRoute
   '/reviews': typeof ReviewsRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
+  '/service-policy': typeof ServicePolicyRoute
   '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -259,6 +266,7 @@ export interface FileRoutesByTo {
   '/results': typeof ResultsRoute
   '/reviews': typeof ReviewsRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
+  '/service-policy': typeof ServicePolicyRoute
   '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -294,6 +302,7 @@ export interface FileRoutesById {
   '/results': typeof ResultsRoute
   '/reviews': typeof ReviewsRoute
   '/service-areas': typeof ServiceAreasRouteWithChildren
+  '/service-policy': typeof ServicePolicyRoute
   '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -330,6 +339,7 @@ export interface FileRouteTypes {
     | '/results'
     | '/reviews'
     | '/service-areas'
+    | '/service-policy'
     | '/services'
     | '/terms'
     | '/blog/$slug'
@@ -364,6 +374,7 @@ export interface FileRouteTypes {
     | '/results'
     | '/reviews'
     | '/service-areas'
+    | '/service-policy'
     | '/services'
     | '/terms'
     | '/blog/$slug'
@@ -398,6 +409,7 @@ export interface FileRouteTypes {
     | '/results'
     | '/reviews'
     | '/service-areas'
+    | '/service-policy'
     | '/services'
     | '/terms'
     | '/blog/$slug'
@@ -433,6 +445,7 @@ export interface RootRouteChildren {
   ResultsRoute: typeof ResultsRoute
   ReviewsRoute: typeof ReviewsRoute
   ServiceAreasRoute: typeof ServiceAreasRouteWithChildren
+  ServicePolicyRoute: typeof ServicePolicyRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   TermsRoute: typeof TermsRoute
 }
@@ -451,6 +464,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-policy': {
+      id: '/service-policy'
+      path: '/service-policy'
+      fullPath: '/service-policy'
+      preLoaderRoute: typeof ServicePolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/service-areas': {
@@ -750,6 +770,7 @@ const rootRouteChildren: RootRouteChildren = {
   ResultsRoute: ResultsRoute,
   ReviewsRoute: ReviewsRoute,
   ServiceAreasRoute: ServiceAreasRouteWithChildren,
+  ServicePolicyRoute: ServicePolicyRoute,
   ServicesRoute: ServicesRouteWithChildren,
   TermsRoute: TermsRoute,
 }
