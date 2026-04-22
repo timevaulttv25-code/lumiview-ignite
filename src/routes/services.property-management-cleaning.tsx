@@ -77,6 +77,10 @@ export const Route = createFileRoute("/services/property-management-cleaning")({
         "AppFolio / Buildium / Yardi friendly",
         "Reserve crews for emergencies",
         "Consolidated monthly billing",
+        "24–72 hour vacancy turns",
+        "Common-area & hallway programs",
+        "Per-property work orders & photos",
+        "COI per property on request",
       ]}
       tiersEyebrow="Property Management Programs"
       tiersHeading="Cleaning programs built for the doors you actually manage."

@@ -113,8 +113,12 @@ function ResidentialIndustryPage() {
       highlights={[
         "Insured & background-checked",
         "Pet- & child-safe products",
-        `${SITE.rating.value}★ rated service`,
+        `${SITE.rating.value}★ on Google`,
         "24-hour quote response",
+        "No-mess, no-trace cleanup",
+        "Friendly, uniformed crews",
+        "Recurring discount programs",
+        "Free written estimates",
       ]}
       tiersEyebrow="Residential Services"
       tiersHeading="One trusted team for every part of your home."

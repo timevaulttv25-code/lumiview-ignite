@@ -77,6 +77,10 @@ export const Route = createFileRoute("/services/airbnb-vrbo-turnover")({
         "iCal-synced auto-scheduling",
         "Photo confirmation every clean",
         "Linen & restock service available",
+        "Hotel-grade 5-star standards",
+        "Damage & low-supply reporting",
+        "Airbnb, Vrbo & Booking.com ready",
+        "Backup crews to protect your reviews",
       ]}
       tiersEyebrow="Turnover Service Plans"
       tiersHeading="Service tiers built around how you run your rental."

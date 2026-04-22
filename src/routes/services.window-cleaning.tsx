@@ -148,22 +148,19 @@ function WindowCleaningPage() {
         image={heroImg}
       />
 
-      {/* Quick highlights bar */}
-      <section className="border-b border-border bg-secondary/30">
-        <div className="container-prose grid gap-4 py-8 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            "One-time or recurring scheduling",
-            "Residential + commercial support",
-            `${SITE.rating.value}★ rated service`,
-            "24-hour quote response",
-          ].map((h) => (
-            <div key={h} className="flex items-center gap-2.5 text-sm font-medium text-foreground">
-              <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" />
-              {h}
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Quick highlights marquee */}
+      <HighlightMarquee
+        items={[
+          "One-time or recurring scheduling",
+          "Residential + commercial support",
+          `${SITE.rating.value}★ on Google`,
+          "24-hour quote response",
+          "Purified-water exterior cleaning",
+          "Streak-free, residue-free finish",
+          "Fully insured + bonded crews",
+          "Free written estimates",
+        ]}
+      />
 
       {/* Service tiers */}
       <section className="container-prose py-20 lg:py-28">

@@ -115,6 +115,10 @@ function ConstructionIndustryPage() {
         "$2M insured + OSHA-aware",
         "Direct super coordination",
         "Punch-list walkthrough support",
+        "Mortar, paint & sticker removal",
+        "Final-phase window detailing",
+        "Site-clean & debris removal",
+        "Weekend & evening crews available",
       ]}
       tiersEyebrow="Construction Services"
       tiersHeading="Three phases, one cleaning partner — no surprises at handover."
