@@ -17,6 +17,7 @@ import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
+import { HighlightMarquee } from "@/components/site/HighlightMarquee";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/service-window-cleaning.jpg";
 import beforeAfterImg from "@/assets/work-windows-ba.jpg";
