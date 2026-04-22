@@ -109,8 +109,8 @@ export const Route = createFileRoute("/case-studies")({
           {CASE_STUDIES.map((c, idx) => {
             const Icon = c.icon;
             return (
-              <Reveal key={c.title} delay={(idx % 2) * 120} as="article">
-                <div className="lift-card flex flex-col rounded-2xl border border-border bg-card p-8 shadow-soft hover:shadow-elegant lg:p-10">
+              <Reveal key={c.title} delay={(idx % 2) * 120} as="article" className="h-full">
+                <div className="lift-card flex h-full flex-col rounded-2xl border border-border bg-card p-8 shadow-soft hover:shadow-elegant lg:p-10">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/15 text-accent transition-transform duration-500 hover:rotate-6 hover:scale-110">
                       <Icon className="h-5 w-5" />
@@ -131,7 +131,8 @@ export const Route = createFileRoute("/case-studies")({
                     </div>
                   </dl>
 
-                  <div className="mt-6 rounded-xl bg-secondary/40 p-5">
+                  <div className="mt-auto pt-6">
+                  <div className="rounded-xl bg-secondary/40 p-5">
                     <div className="text-xs font-semibold uppercase tracking-wide text-accent">Outcomes</div>
                     <ul className="mt-3 space-y-2 text-sm">
                       {c.outcomes.map((o) => (
@@ -141,6 +142,7 @@ export const Route = createFileRoute("/case-studies")({
                         </li>
                       ))}
                     </ul>
+                  </div>
                   </div>
                 </div>
               </Reveal>
