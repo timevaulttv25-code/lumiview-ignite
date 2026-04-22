@@ -125,30 +125,8 @@ function HomePage() {
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative">
-              <div className="overflow-hidden rounded-3xl shadow-elegant">
-                <img
-                  src={heroImg}
-                  alt="Professional window cleaner servicing a modern home at golden hour"
-                  width={1920}
-                  height={1080}
-                  className="h-[420px] w-full object-cover sm:h-[520px] lg:h-[640px]"
-                />
-              </div>
-              <div className="absolute -bottom-6 left-6 hidden rounded-2xl border border-border bg-card p-5 shadow-elegant sm:block lg:left-auto lg:right-6">
-                <div className="flex items-center gap-3">
-                  <div className="flex">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                    ))}
-                  </div>
-                  <div className="text-sm font-semibold">{SITE.rating.value} on Google</div>
-                </div>
-                <div className="mt-1 text-xs text-muted-foreground">
-                  Based on {SITE.rating.count}+ verified reviews
-                </div>
-              </div>
-            </div>
+            <HeroCarousel />
+          </div>
           </div>
         </div>
       </section>
