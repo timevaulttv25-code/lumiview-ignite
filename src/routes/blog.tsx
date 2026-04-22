@@ -20,7 +20,8 @@ export const Route = createFileRoute("/blog")({
       <PageHero eyebrow="Insights" title="Property-care guides for owners who care."
         description="Short, practical articles on how to keep windows clear, exteriors clean, and properties well-presented."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Insights" }]} />
-      <section className="container-prose grid gap-8 py-20 lg:grid-cols-3 lg:py-28">
+      <section className="border-y border-border bg-secondary/40">
+        <div className="container-prose grid gap-8 py-20 lg:grid-cols-3 lg:py-28">
         {POSTS.map((p) => (
           <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }}
             className="group flex flex-col rounded-2xl border border-border bg-card p-8 transition-all hover:-translate-y-1 hover:border-accent hover:shadow-soft">
@@ -30,6 +31,7 @@ export const Route = createFileRoute("/blog")({
             <div className="mt-5 text-sm font-semibold text-navy-deep group-hover:text-accent">Read article →</div>
           </Link>
         ))}
+        </div>
       </section>
     </SiteShell>
   ),

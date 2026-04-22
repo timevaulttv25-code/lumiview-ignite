@@ -66,7 +66,8 @@ export const Route = createFileRoute("/results")({
         </div>
       </section>
 
-      <section className="container-prose pb-20 lg:pb-28">
+      <section className="border-y border-border bg-secondary/40">
+        <div className="container-prose py-20 lg:py-24">
         <div className="mb-12 max-w-2xl">
           <div className="eyebrow">Three ways to explore</div>
           <h2 className="mt-3 font-serif text-3xl font-medium tracking-tight text-navy-deep lg:text-4xl">
@@ -94,6 +95,7 @@ export const Route = createFileRoute("/results")({
               </Link>
             );
           })}
+        </div>
         </div>
       </section>
 
