@@ -33,8 +33,9 @@ export const SITE = {
   primaryAreas: [
     "Avon", "Avon Lake", "Westlake", "Lakewood", "Rocky River",
     "North Olmsted", "Bay Village", "North Ridgeville", "Strongsville",
-    "Berea", "Fairview Park", "Olmsted Falls", "Elyria", "Lorain",
-    "Sheffield Lake", "Amherst",
+    "Berea", "Olmsted Falls", "Fairview Park", "Brook Park", "Elyria",
+    "Lorain", "Sheffield Lake", "Amherst", "Grafton", "Columbia Station",
+    "LaGrange", "Oberlin", "Vermilion",
   ],
 };
 
