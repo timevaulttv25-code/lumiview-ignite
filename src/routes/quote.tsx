@@ -27,7 +27,12 @@ export const Route = createFileRoute("/quote")({
 const phoneRegex = /^(?:\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
 
 const schema = z.object({
-  full_name: z.string().trim().min(1, "Full name is required").max(120),
+  full_name: z
+    .string()
+    .trim()
+    .min(1, "Full name is required")
+    .max(120)
+    .regex(/^[A-Za-z\s'.-]+$/, "Full name can only contain letters, spaces, hyphens or apostrophes"),
   company_name: z.string().trim().max(160).optional().or(z.literal("")),
   contact_method: z.enum(["Call", "Text", "Email"]),
   email: z
