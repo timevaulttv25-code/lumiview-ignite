@@ -200,6 +200,57 @@ export type Database = {
         }
         Relationships: []
       }
+      referral_submissions: {
+        Row: {
+          created_at: string
+          id: string
+          notes: string | null
+          referral_type: string
+          referred_company_name: string | null
+          referred_contact_name: string | null
+          referred_customer_name: string | null
+          referred_email: string | null
+          referred_phone: string | null
+          referrer_email: string
+          referrer_name: string
+          referrer_phone: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          referral_type: string
+          referred_company_name?: string | null
+          referred_contact_name?: string | null
+          referred_customer_name?: string | null
+          referred_email?: string | null
+          referred_phone?: string | null
+          referrer_email: string
+          referrer_name: string
+          referrer_phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          referral_type?: string
+          referred_company_name?: string | null
+          referred_contact_name?: string | null
+          referred_customer_name?: string | null
+          referred_email?: string | null
+          referred_phone?: string | null
+          referrer_email?: string
+          referrer_name?: string
+          referrer_phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
