@@ -71,17 +71,64 @@ function QuotePage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState<Record<string, any>>({ services: [], contact_method: "Email", state: "Ohio" });
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const update = (k: string, v: any) => setForm((f) => ({ ...f, [k]: v }));
+  const update = (k: string, v: any) => {
+    setForm((f) => ({ ...f, [k]: v }));
+    // Clear an existing error as soon as the user starts correcting it
+    setErrors((e) => (e[k] ? { ...e, [k]: "" } : e));
+  };
   const toggleService = (s: string) => {
     const has = form.services?.includes(s);
     update("services", has ? form.services.filter((x: string) => x !== s) : [...(form.services || []), s]);
   };
 
+  const FieldError = ({ name }: { name: string }) =>
+    errors[name] ? (
+      <p className="mt-1.5 text-sm font-medium text-destructive">{errors[name]}</p>
+    ) : null;
+
+  const inputErrCls = (name: string) =>
+    errors[name] ? "border-destructive focus-visible:ring-destructive" : "";
+
+  const collectErrors = (issues: { path: (string | number)[]; message: string }[]) => {
+    const map: Record<string, string> = {};
+    for (const i of issues) {
+      const key = String(i.path[0] ?? "");
+      if (key && !map[key]) map[key] = i.message;
+    }
+    return map;
+  };
+
+  const validateStep1 = () => {
+    const result = schema.pick({
+      full_name: true,
+      email: true,
+      phone: true,
+      contact_method: true,
+      property_type: true,
+      preferred_timing: true,
+    }).safeParse(form);
+    if (!result.success) {
+      const map = collectErrors(result.error.issues);
+      setErrors((prev) => ({ ...prev, ...map }));
+      toast.error("Please fix the highlighted fields", {
+        description: Object.values(map)[0],
+      });
+      return false;
+    }
+    return true;
+  };
+
   const submit = async () => {
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
-      toast.error("Please check the highlighted fields", { description: parsed.error.issues[0]?.message });
+      const map = collectErrors(parsed.error.issues);
+      setErrors(map);
+      // If errors are on step-1 fields, send the user back so they can see them
+      const step1Keys = ["full_name", "email", "phone", "contact_method", "property_type", "preferred_timing"];
+      if (Object.keys(map).some((k) => step1Keys.includes(k))) setStep(1);
+      toast.error("Please check the highlighted fields", { description: Object.values(map)[0] });
       return;
     }
     setLoading(true);
