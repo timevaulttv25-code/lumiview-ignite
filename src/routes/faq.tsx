@@ -3,7 +3,7 @@ import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
-import { buildSeo, faqJsonLd, jsonLdScript } from "@/lib/seo";
+import { buildSeo, faqJsonLd, jsonLdScript, speakableFaqJsonLd } from "@/lib/seo";
 
 const FAQS = [
   {
@@ -74,7 +74,7 @@ export const Route = createFileRoute("/faq")({
     });
     return {
       ...seo,
-      scripts: [jsonLdScript(faqJsonLd(FAQS))],
+      scripts: [jsonLdScript(faqJsonLd(FAQS)), jsonLdScript(speakableFaqJsonLd())],
     };
   },
   component: () => (
