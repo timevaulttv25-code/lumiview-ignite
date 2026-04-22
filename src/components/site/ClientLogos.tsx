@@ -1,7 +1,6 @@
 import maximizeFitness from "@/assets/clients/maximize-fitness.png";
 import coffeeTherapy from "@/assets/clients/coffee-therapy.png";
 import oliveTree from "@/assets/clients/olive-tree.png";
-import qahwahHouse from "@/assets/clients/qahwah-house.png";
 import amanisLearning from "@/assets/clients/amanis-learning.png";
 import wirelessExpress from "@/assets/clients/wireless-express.png";
 import blushBeauty from "@/assets/clients/blush-beauty.png";
@@ -18,7 +17,6 @@ const LOGOS: { src: string; name: string }[] = [
   { src: maximizeFitness, name: "Maximize Fitness" },
   { src: coffeeTherapy, name: "Coffee Therapy" },
   { src: oliveTree, name: "Olive Tree" },
-  { src: qahwahHouse, name: "Qahwah House Coffee" },
   { src: amanisLearning, name: "Amani's Hopes & Dreams Early Learning Center" },
   { src: wirelessExpress, name: "Wireless Express" },
   { src: blushBeauty, name: "Blush Beauty & Aesthetics" },
@@ -53,20 +51,20 @@ export function ClientLogos({
             "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
         }}
       >
-        <div className="mx-auto flex w-max animate-marquee items-center justify-center gap-24 will-change-transform group-hover:[animation-play-state:paused]">
+        <div className="mx-auto flex w-max animate-marquee items-center justify-center gap-20 will-change-transform group-hover:[animation-play-state:paused]">
           {loop.map((l, i) => (
             <div
               key={`${l.name}-${i}`}
-              className="flex h-32 w-56 shrink-0 items-center justify-center"
+              className="flex h-28 w-44 shrink-0 items-center justify-center rounded-lg bg-white p-3"
               aria-hidden={i >= LOGOS.length}
             >
               <img
                 src={l.src}
                 alt={i < LOGOS.length ? l.name : ""}
-                className="h-full w-full object-contain opacity-95 transition duration-300 hover:opacity-100 hover:scale-105"
+                className="max-h-full max-w-full object-contain transition duration-300 hover:scale-105"
                 loading="lazy"
-                width={224}
-                height={128}
+                width={176}
+                height={112}
               />
             </div>
           ))}
