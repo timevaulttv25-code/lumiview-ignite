@@ -68,6 +68,10 @@ export function Footer() {
             <li><Link to="/case-studies" className="text-ivory/85 hover:text-accent">Case Studies</Link></li>
             <li><Link to="/reviews" className="text-ivory/85 hover:text-accent">Customer Reviews</Link></li>
             <li><Link to="/blog" className="text-ivory/85 hover:text-accent">Insights & Guides</Link></li>
+            <li><Link to="/faq" className="text-ivory/85 hover:text-accent">FAQ</Link></li>
+            <li><Link to="/partner" className="text-ivory/85 hover:text-accent">Partner With Us</Link></li>
+            <li><Link to="/referral" className="text-ivory/85 hover:text-accent">Referral Program</Link></li>
+            <li><Link to="/careers" className="text-ivory/85 hover:text-accent">Careers</Link></li>
             <li><Link to="/quote" className="text-ivory/85 hover:text-accent">Request a Quote</Link></li>
             <li><Link to="/contact" className="text-ivory/85 hover:text-accent">Contact</Link></li>
           </ul>
@@ -77,7 +81,8 @@ export function Footer() {
       <div className="border-t border-ivory/10">
         <div className="container-prose flex flex-col items-start justify-between gap-3 py-6 text-xs text-ivory/55 sm:flex-row sm:items-center">
           <div>© {new Date().getFullYear()} {SITE.name}. All rights reserved. Fully insured.</div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <Link to="/service-policy" className="hover:text-accent">Service Policy</Link>
             <Link to="/privacy" className="hover:text-accent">Privacy</Link>
             <Link to="/terms" className="hover:text-accent">Terms</Link>
           </div>

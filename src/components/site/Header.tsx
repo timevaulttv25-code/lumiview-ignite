@@ -28,7 +28,6 @@ const NAV: Array<{
       description: i.short,
     })),
   },
-  { to: "/service-areas", label: "Service Areas" },
   {
     to: "/results",
     label: "Results",
@@ -43,14 +42,15 @@ const NAV: Array<{
     label: "About",
     children: [
       { to: "/about", label: "Our Story", description: "Locally owned. Detail obsessed." },
+      { to: "/service-areas", label: "Service Areas", description: "Cities and neighborhoods we serve." },
       { to: "/faq", label: "FAQ", description: "Pricing, scheduling, methods, and more." },
+      { to: "/blog", label: "Insights & Guides", description: "Tips, seasonal advice, and how-tos." },
       { to: "/careers", label: "Careers", description: "Join a team that pays and trains right." },
       { to: "/giving-back", label: "Giving Back", description: "How we invest in Northeast Ohio." },
       { to: "/partner", label: "Partner With Us", description: "For PMs, realtors, builders, hosts." },
       { to: "/referral", label: "Referral Program", description: "Earn credit or cash for every referral." },
     ],
   },
-  { to: "/blog", label: "Insights" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -113,15 +113,15 @@ export function Header() {
           )}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center gap-3 lg:flex">
           <a
             href={SITE.phoneLink}
-            className="flex items-center gap-2 text-sm font-semibold text-navy-deep"
+            className="flex shrink-0 items-center gap-2 whitespace-nowrap text-sm font-semibold text-navy-deep"
           >
-            <Phone className="h-4 w-4" />
-            {SITE.phoneDisplay}
+            <Phone className="h-4 w-4 shrink-0" />
+            <span className="whitespace-nowrap">{SITE.phoneDisplay}</span>
           </a>
-          <Button asChild variant="default" size="sm" className="rounded-full px-5">
+          <Button asChild variant="default" size="sm" className="whitespace-nowrap rounded-full px-5">
             <Link to="/quote">Request a Quote</Link>
           </Button>
         </div>
