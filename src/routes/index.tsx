@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { ArrowRight, ShieldCheck, Clock, Star, CheckCircle2, Phone, Sparkles } from "lucide-react";
 
 import heroImg from "@/assets/hero-window-cleaner.jpg";
@@ -7,6 +8,10 @@ import windowImg from "@/assets/service-window-cleaning.jpg";
 import pressureImg from "@/assets/service-pressure-washing.jpg";
 import janitorialImg from "@/assets/service-janitorial.jpg";
 import propertyImg from "@/assets/service-property-care.jpg";
+import commercialImg from "@/assets/industry-commercial.jpg";
+import residentialImg from "@/assets/industry-residential.jpg";
+import propertyMgrImg from "@/assets/industry-property-managers.jpg";
+import airbnbImg from "@/assets/service-airbnb-turnover.jpg";
 
 import { SiteShell } from "@/components/site/SiteShell";
 import { Button } from "@/components/ui/button";
@@ -120,30 +125,7 @@ function HomePage() {
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative">
-              <div className="overflow-hidden rounded-3xl shadow-elegant">
-                <img
-                  src={heroImg}
-                  alt="Professional window cleaner servicing a modern home at golden hour"
-                  width={1920}
-                  height={1080}
-                  className="h-[420px] w-full object-cover sm:h-[520px] lg:h-[640px]"
-                />
-              </div>
-              <div className="absolute -bottom-6 left-6 hidden rounded-2xl border border-border bg-card p-5 shadow-elegant sm:block lg:left-auto lg:right-6">
-                <div className="flex items-center gap-3">
-                  <div className="flex">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                    ))}
-                  </div>
-                  <div className="text-sm font-semibold">{SITE.rating.value} on Google</div>
-                </div>
-                <div className="mt-1 text-xs text-muted-foreground">
-                  Based on {SITE.rating.count}+ verified reviews
-                </div>
-              </div>
-            </div>
+            <HeroCarousel />
           </div>
         </div>
       </section>
@@ -341,5 +323,99 @@ function HomePage() {
         body="Tell us a few details and we'll follow up within 24 hours with clear next steps for residential or commercial service across Avon and nearby Northeast Ohio."
       />
     </SiteShell>
+  );
+}
+
+const HERO_SLIDES = [
+  { src: heroImg, label: "Window Cleaning", sub: "Streak-free clarity" },
+  { src: pressureImg, label: "Pressure Washing", sub: "Driveways, siding & patios" },
+  { src: commercialImg, label: "Commercial", sub: "Storefronts & offices" },
+  { src: residentialImg, label: "Residential", sub: "Homes across NE Ohio" },
+  { src: propertyMgrImg, label: "Property Managers", sub: "Multi-unit portfolios" },
+  { src: airbnbImg, label: "Airbnb & VRBO", sub: "Turnover-ready" },
+  { src: janitorialImg, label: "Janitorial", sub: "Interior care" },
+  { src: propertyImg, label: "Property Care", sub: "Year-round upkeep" },
+] as const;
+
+function HeroCarousel() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setIndex((i) => (i + 1) % HERO_SLIDES.length);
+    }, 4200);
+    return () => window.clearInterval(id);
+  }, []);
+
+  return (
+    <div className="relative">
+      <div className="relative overflow-hidden rounded-3xl shadow-elegant">
+        <div className="relative h-[420px] w-full sm:h-[520px] lg:h-[640px]">
+          {HERO_SLIDES.map((slide, i) => (
+            <img
+              key={slide.label}
+              src={slide.src}
+              alt={slide.label}
+              width={1920}
+              height={1080}
+              className={`absolute inset-0 h-full w-full object-cover transition-all duration-[1400ms] ease-out ${
+                i === index
+                  ? "opacity-100 scale-100"
+                  : "opacity-0 scale-105"
+              }`}
+            />
+          ))}
+
+          {/* Caption */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/80 via-navy-deep/30 to-transparent p-6 lg:p-8">
+            {HERO_SLIDES.map((slide, i) => (
+              <div
+                key={slide.label}
+                className={`transition-all duration-700 ${
+                  i === index ? "opacity-100 translate-y-0" : "absolute opacity-0 translate-y-3"
+                }`}
+              >
+                <div className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+                  {slide.sub}
+                </div>
+                <div className="mt-1 font-serif text-2xl font-medium text-ivory lg:text-3xl">
+                  {slide.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dots */}
+        <div className="absolute right-4 top-4 flex gap-1.5 rounded-full bg-navy-deep/40 px-2.5 py-1.5 backdrop-blur-sm">
+          {HERO_SLIDES.map((slide, i) => (
+            <button
+              key={slide.label}
+              type="button"
+              aria-label={`Show ${slide.label}`}
+              onClick={() => setIndex(i)}
+              className={`h-1.5 rounded-full transition-all ${
+                i === index ? "w-5 bg-accent" : "w-1.5 bg-ivory/60 hover:bg-ivory"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Rating card */}
+      <div className="absolute -bottom-6 left-6 hidden rounded-2xl border border-border bg-card p-5 shadow-elegant sm:block lg:left-auto lg:right-6">
+        <div className="flex items-center gap-3">
+          <div className="flex">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+            ))}
+          </div>
+          <div className="text-sm font-semibold">{SITE.rating.value} on Google</div>
+        </div>
+        <div className="mt-1 text-xs text-muted-foreground">
+          Based on {SITE.rating.count}+ verified reviews
+        </div>
+      </div>
+    </div>
   );
 }
