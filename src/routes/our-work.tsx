@@ -61,15 +61,41 @@ export const Route = createFileRoute("/our-work")({
     description: "Real before-and-after photos from window cleaning, pressure washing, and exterior projects across Avon and Northeast Ohio. See the LumiView difference for yourself.",
     path: "/our-work",
   }),
-  component: () => (
+  component: OurWorkPage,
+});
+
+const STATS = [
+  { value: "12,000+", label: "Windows cleaned this year" },
+  { value: "1,800+", label: "Sq ft pressure-washed weekly" },
+  { value: "100%", label: "Jobs photographed before & after" },
+];
+
+function OurWorkPage() {
+  return (
     <SiteShell>
       <PageHero
         eyebrow="Our Work"
         title="The proof is in the panes."
         description="Every project is photographed before and after. Browse real jobs from homes, storefronts, and managed properties across Northeast Ohio."
-        breadcrumbs={[{ label: "Home", to: "/" }, { label: "Results" }, { label: "Our Work" }]}
+        breadcrumbs={[
+          { label: "Home", to: "/" },
+          { label: "Results", to: "/results" },
+          { label: "Our Work" },
+        ]}
       />
-      <section className="container-prose grid gap-10 py-20 lg:grid-cols-2 lg:py-28">
+
+      <section className="container-prose pt-12">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {STATS.map((s) => (
+            <div key={s.label} className="rounded-2xl border border-border bg-card p-6 text-center shadow-soft">
+              <div className="font-serif text-3xl font-semibold text-navy-deep lg:text-4xl">{s.value}</div>
+              <div className="mt-2 text-sm leading-snug text-muted-foreground">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-prose grid gap-10 py-20 lg:grid-cols-2 lg:py-24">
         {PROJECTS.map((p) => (
           <figure key={p.title} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-shadow duration-300 hover:shadow-elegant">
             <div className="relative aspect-[3/2] overflow-hidden bg-muted">
@@ -98,5 +124,5 @@ export const Route = createFileRoute("/our-work")({
       </section>
       <CTABand title="Want your property in the next gallery?" />
     </SiteShell>
-  ),
-});
+  );
+}
