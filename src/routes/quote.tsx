@@ -23,14 +23,27 @@ export const Route = createFileRoute("/quote")({
   component: QuotePage,
 });
 
+// US phone: accepts 10 digits with optional +1, spaces, dashes, parens, dots
+const phoneRegex = /^(?:\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+
 const schema = z.object({
-  full_name: z.string().trim().min(1).max(120),
+  full_name: z.string().trim().min(1, "Full name is required").max(120),
   company_name: z.string().trim().max(160).optional().or(z.literal("")),
   contact_method: z.enum(["Call", "Text", "Email"]),
-  email: z.string().trim().email().max(254).optional().or(z.literal("")),
-  phone: z.string().trim().max(40).optional().or(z.literal("")),
-  property_type: z.string().min(1),
-  preferred_timing: z.string().optional(),
+  email: z
+    .string()
+    .trim()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address")
+    .max(254),
+  phone: z
+    .string()
+    .trim()
+    .min(1, "Phone number is required")
+    .regex(phoneRegex, "Please enter a valid US phone number (e.g. 216-555-1234)")
+    .max(40),
+  property_type: z.string().min(1, "Property type is required"),
+  preferred_timing: z.string().min(1, "Preferred timing is required"),
   hear_about: z.string().optional(),
   street_address: z.string().max(200).optional(),
   city: z.string().max(80).optional(),
@@ -48,7 +61,7 @@ const schema = z.object({
 });
 
 const SERVICES = ["Window Cleaning", "Pressure Washing & Exterior", "Janitorial & Interior", "Property Care", "Not Sure Yet"];
-const PROPERTY_TYPES = ["Residential", "Commercial", "Builder / New Construction", "Property Management", "Daycare / Childcare"];
+const PROPERTY_TYPES = ["Residential", "Commercial", "Builder / New Construction", "Property Management", "Daycare / Childcare", "Facility"];
 const TIMING = ["As Soon as Possible", "Within 1–2 Weeks", "This Month", "Planning Ahead", "Looking for Recurring Service"];
 const HEAR = ["Google Search", "Google Business Profile", "Referral", "Social Media", "Mailer", "Door Hanger", "Yard Sign", "Repeat Customer", "Other"];
 const FREQUENCY = ["One-Time", "Weekly", "Bi-Weekly", "Monthly", "Quarterly", "Not Sure Yet"];
