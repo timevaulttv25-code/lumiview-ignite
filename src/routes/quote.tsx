@@ -50,13 +50,30 @@ const schema = z.object({
   property_type: z.string().min(1, "Property type is required"),
   preferred_timing: z.string().min(1, "Preferred timing is required"),
   hear_about: z.string().optional(),
-  street_address: z.string().max(200).optional(),
-  city: z.string().max(80).optional(),
-  state: z.string().max(40).optional(),
-  zip: z.string().max(20).optional(),
-  frequency: z.string().optional(),
+  street_address: z
+    .string()
+    .trim()
+    .min(3, "Street address is required")
+    .max(200)
+    .regex(/\d/, "Street address should include a house or building number"),
+  city: z
+    .string()
+    .trim()
+    .min(2, "City is required")
+    .max(80)
+    .regex(/^[A-Za-z\s'.-]+$/, "City can only contain letters, spaces, hyphens or apostrophes"),
+  state: z.string().min(2, "State is required").max(2),
+  zip: z
+    .string()
+    .trim()
+    .min(1, "ZIP code is required")
+    .regex(/^\d{5}(-\d{4})?$/, "Enter a valid 5-digit ZIP (or ZIP+4)"),
+  frequency: z.string().min(1, "Frequency is required"),
   square_footage: z.string().max(20).optional(),
-  services: z.array(z.string()).max(20),
+  services: z
+    .array(z.string())
+    .min(1, "Select at least one service you're interested in")
+    .max(20),
   project_details: z.string().max(4000).optional(),
   parking: z.string().optional(),
   flexibility: z.string().optional(),
@@ -70,6 +87,26 @@ const PROPERTY_TYPES = ["Residential", "Commercial", "Builder / New Construction
 const TIMING = ["As Soon as Possible", "Within 1–2 Weeks", "This Month", "Planning Ahead", "Looking for Recurring Service"];
 const HEAR = ["Google Search", "Google Business Profile", "Referral", "Social Media", "Mailer", "Door Hanger", "Yard Sign", "Repeat Customer", "Other"];
 const FREQUENCY = ["One-Time", "Weekly", "Bi-Weekly", "Monthly", "Quarterly", "Not Sure Yet"];
+
+const US_STATES: { code: string; name: string }[] = [
+  { code: "AL", name: "Alabama" }, { code: "AK", name: "Alaska" }, { code: "AZ", name: "Arizona" },
+  { code: "AR", name: "Arkansas" }, { code: "CA", name: "California" }, { code: "CO", name: "Colorado" },
+  { code: "CT", name: "Connecticut" }, { code: "DE", name: "Delaware" }, { code: "DC", name: "District of Columbia" },
+  { code: "FL", name: "Florida" }, { code: "GA", name: "Georgia" }, { code: "HI", name: "Hawaii" },
+  { code: "ID", name: "Idaho" }, { code: "IL", name: "Illinois" }, { code: "IN", name: "Indiana" },
+  { code: "IA", name: "Iowa" }, { code: "KS", name: "Kansas" }, { code: "KY", name: "Kentucky" },
+  { code: "LA", name: "Louisiana" }, { code: "ME", name: "Maine" }, { code: "MD", name: "Maryland" },
+  { code: "MA", name: "Massachusetts" }, { code: "MI", name: "Michigan" }, { code: "MN", name: "Minnesota" },
+  { code: "MS", name: "Mississippi" }, { code: "MO", name: "Missouri" }, { code: "MT", name: "Montana" },
+  { code: "NE", name: "Nebraska" }, { code: "NV", name: "Nevada" }, { code: "NH", name: "New Hampshire" },
+  { code: "NJ", name: "New Jersey" }, { code: "NM", name: "New Mexico" }, { code: "NY", name: "New York" },
+  { code: "NC", name: "North Carolina" }, { code: "ND", name: "North Dakota" }, { code: "OH", name: "Ohio" },
+  { code: "OK", name: "Oklahoma" }, { code: "OR", name: "Oregon" }, { code: "PA", name: "Pennsylvania" },
+  { code: "RI", name: "Rhode Island" }, { code: "SC", name: "South Carolina" }, { code: "SD", name: "South Dakota" },
+  { code: "TN", name: "Tennessee" }, { code: "TX", name: "Texas" }, { code: "UT", name: "Utah" },
+  { code: "VT", name: "Vermont" }, { code: "VA", name: "Virginia" }, { code: "WA", name: "Washington" },
+  { code: "WV", name: "West Virginia" }, { code: "WI", name: "Wisconsin" }, { code: "WY", name: "Wyoming" },
+];
 
 function QuotePage() {
   const [step, setStep] = useState(1);
