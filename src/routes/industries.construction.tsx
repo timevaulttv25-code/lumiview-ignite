@@ -4,8 +4,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, faqJsonLd } from "@/lib/seo";
 import { RichIndustryLayout } from "@/components/site/RichIndustryLayout";
 import heroImg from "@/assets/industry-construction.jpg";
-import beforeImg from "@/assets/work/work-windows-before.jpg";
-import afterImg from "@/assets/work/work-windows-after.jpg";
+import beforeImg from "@/assets/ba/construction-before.jpg";
+import afterImg from "@/assets/ba/construction-after.jpg";
 
 const slug = "construction";
 const industryTitle = "Builders & New Construction";

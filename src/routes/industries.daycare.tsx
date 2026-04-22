@@ -4,8 +4,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, faqJsonLd } from "@/lib/seo";
 import { RichIndustryLayout } from "@/components/site/RichIndustryLayout";
 import heroImg from "@/assets/industry-daycare.jpg";
-import beforeImg from "@/assets/work/work-storefront-before.jpg";
-import afterImg from "@/assets/work/work-storefront-after.jpg";
+import beforeImg from "@/assets/ba/daycare-before.jpg";
+import afterImg from "@/assets/ba/daycare-after.jpg";
 
 const slug = "daycare";
 const industryTitle = "Daycare & Childcare Facility";

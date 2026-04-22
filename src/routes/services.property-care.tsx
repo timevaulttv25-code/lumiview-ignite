@@ -13,8 +13,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { RichServiceLayout } from "@/components/site/RichServiceLayout";
 import heroImg from "@/assets/service-property-care.jpg";
-import beforeImg from "@/assets/work/work-siding-before.jpg";
-import afterImg from "@/assets/work/work-siding-after.jpg";
+import beforeImg from "@/assets/ba/property-care-before.jpg";
+import afterImg from "@/assets/ba/property-care-after.jpg";
 
 const slug = "property-care";
 const title = "Property Care & Facility Support";

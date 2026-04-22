@@ -13,8 +13,8 @@ import { SITE } from "@/lib/site";
 import { buildSeo, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { RichServiceLayout } from "@/components/site/RichServiceLayout";
 import heroImg from "@/assets/service-janitorial.jpg";
-import beforeImg from "@/assets/work/work-storefront-before.jpg";
-import afterImg from "@/assets/work/work-storefront-after.jpg";
+import beforeImg from "@/assets/ba/janitorial-before.jpg";
+import afterImg from "@/assets/ba/janitorial-after.jpg";
 
 const slug = "janitorial-interior-cleaning";
 const title = "Janitorial & Interior Cleaning";
