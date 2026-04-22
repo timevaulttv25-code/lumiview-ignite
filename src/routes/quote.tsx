@@ -216,7 +216,6 @@ function QuotePage() {
                       type="tel"
                       required
                       inputMode="tel"
-                      placeholder="(216) 555-1234"
                       value={form.phone || ""}
                       onChange={(e) => update("phone", e.target.value)}
                       className={inputErrCls("phone")}
