@@ -47,20 +47,20 @@ export function ClientLogos({
             "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
         }}
       >
-        <div className="flex w-max animate-marquee items-center gap-14 will-change-transform group-hover:[animation-play-state:paused]">
+        <div className="mx-auto flex w-max animate-marquee items-center justify-center gap-20 will-change-transform group-hover:[animation-play-state:paused]">
           {loop.map((l, i) => (
             <div
               key={`${l.name}-${i}`}
-              className="flex h-16 w-40 shrink-0 items-center justify-center"
+              className="flex h-28 w-64 shrink-0 items-center justify-center"
               aria-hidden={i >= LOGOS.length}
             >
               <img
                 src={l.src}
                 alt={i < LOGOS.length ? l.name : ""}
-                className="max-h-16 w-auto opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                className="max-h-28 w-auto opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
                 loading="lazy"
-                width={160}
-                height={64}
+                width={256}
+                height={112}
               />
             </div>
           ))}
