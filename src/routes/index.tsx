@@ -121,7 +121,7 @@ function HomePage() {
                   style={{ animationDelay: `${120 + i * 110}ms` }}
                 >
                   <Icon className="h-4 w-4 shrink-0 text-accent" />
-                  <dt className="text-xs font-medium text-foreground/85">{label}</dt>
+                  <dt className="whitespace-nowrap text-xs font-medium text-foreground/85">{label}</dt>
                 </div>
               ))}
             </dl>
