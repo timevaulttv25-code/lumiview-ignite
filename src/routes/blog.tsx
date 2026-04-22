@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { buildSeo } from "@/lib/seo";
+import heroImg from "@/assets/page-insights.jpg";
 
 export const POSTS = [
   { slug: "how-often-clean-windows", title: "How often should you really clean your windows?", excerpt: "A practical schedule for homes, storefronts and managed properties, and why most owners under-clean.", date: "2026-04-12" },
@@ -19,7 +20,8 @@ export const Route = createFileRoute("/blog")({
     <SiteShell>
       <PageHero eyebrow="Insights" title="Property-care guides for owners who care."
         description="Short, practical articles on how to keep windows clear, exteriors clean, and properties well-presented."
-        breadcrumbs={[{ label: "Home", to: "/" }, { label: "Insights" }]} />
+        breadcrumbs={[{ label: "Home", to: "/" }, { label: "Insights" }]}
+        image={heroImg} />
       <section className="border-y border-border bg-secondary/40">
         <div className="container-prose grid gap-8 py-20 lg:grid-cols-3 lg:py-28">
         {POSTS.map((p) => (

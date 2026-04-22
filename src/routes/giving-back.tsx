@@ -4,6 +4,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { buildSeo } from "@/lib/seo";
 import { Heart, HandHeart, Sparkles, Home } from "lucide-react";
+import heroImg from "@/assets/page-giving-back.jpg";
 
 const INITIATIVES = [
   {
@@ -55,6 +56,7 @@ export const Route = createFileRoute("/giving-back")({
           { label: "About", to: "/about" },
           { label: "Giving Back" },
         ]}
+        image={heroImg}
       />
 
       <section className="container-prose py-20 lg:py-24">
