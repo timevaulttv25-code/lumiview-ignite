@@ -2,9 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
+import { PartnerInquiryForm } from "@/components/site/PartnerInquiryForm";
 import { Button } from "@/components/ui/button";
 import { buildSeo } from "@/lib/seo";
 import { Building2, Hammer, KeyRound, Sparkles, Handshake, FileText } from "lucide-react";
+import heroImg from "@/assets/page-partner.jpg";
 
 const PARTNER_TYPES = [
   {
@@ -69,6 +71,7 @@ export const Route = createFileRoute("/partner")({
           { label: "About", to: "/about" },
           { label: "Partner With Us" },
         ]}
+        image={heroImg}
       />
 
       <section className="container-prose py-20 lg:py-24">
@@ -106,7 +109,7 @@ export const Route = createFileRoute("/partner")({
               not a national franchise, not a different crew every visit.
             </p>
             <Button asChild size="lg" className="mt-7 rounded-full">
-              <Link to="/contact">Start a partner conversation</Link>
+              <a href="#partner-inquiry">Start a partner conversation</a>
             </Button>
           </div>
           <ul className="grid gap-3 lg:col-span-7 lg:grid-cols-2">
@@ -135,10 +138,34 @@ export const Route = createFileRoute("/partner")({
         </div>
       </section>
 
+      <section id="partner-inquiry" className="border-y border-border bg-secondary/40 py-20 lg:py-24 scroll-mt-24">
+        <div className="container-prose grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <div className="eyebrow">Become a partner</div>
+            <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight lg:text-5xl">
+              Tell us about your business.
+            </h2>
+            <p className="mt-5 text-muted-foreground leading-relaxed">
+              Share a few details about your portfolio and what you need from a cleaning
+              partner. A LumiView account manager will follow up within 24 business hours
+              with a custom plan and pricing sheet.
+            </p>
+            <ul className="mt-7 space-y-2 text-sm text-foreground/85">
+              <li>• 15-minute intro call, no obligation</li>
+              <li>• Custom partner pricing within 3 business days</li>
+              <li>• COI on file before first service</li>
+            </ul>
+          </div>
+          <div className="lg:col-span-7">
+            <PartnerInquiryForm />
+          </div>
+        </div>
+      </section>
+
       <CTABand
-        eyebrow="Let's build it"
-        title="Become a LumiView partner."
-        body="Tell us about your business and what you need from a cleaning partner. We'll come back within 24 hours with a custom plan."
+        eyebrow="Prefer to talk first?"
+        title="Reach out directly."
+        body="Call or email us and we'll connect you with the right account manager for your portfolio."
       />
     </SiteShell>
   ),

@@ -14,6 +14,105 @@ export type Database = {
   }
   public: {
     Tables: {
+      career_applications: {
+        Row: {
+          availability: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          internal_notes: string | null
+          message: string | null
+          phone: string | null
+          resume_path: string | null
+          role_applied: string
+          status: string
+          updated_at: string
+          years_experience: string | null
+        }
+        Insert: {
+          availability?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          internal_notes?: string | null
+          message?: string | null
+          phone?: string | null
+          resume_path?: string | null
+          role_applied: string
+          status?: string
+          updated_at?: string
+          years_experience?: string | null
+        }
+        Update: {
+          availability?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          internal_notes?: string | null
+          message?: string | null
+          phone?: string | null
+          resume_path?: string | null
+          role_applied?: string
+          status?: string
+          updated_at?: string
+          years_experience?: string | null
+        }
+        Relationships: []
+      }
+      partner_inquiries: {
+        Row: {
+          company_name: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          internal_notes: string | null
+          job_title: string | null
+          message: string | null
+          partner_type: string
+          phone: string | null
+          portfolio_size: string | null
+          service_interests: string[]
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          company_name: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          internal_notes?: string | null
+          job_title?: string | null
+          message?: string | null
+          partner_type: string
+          phone?: string | null
+          portfolio_size?: string | null
+          service_interests?: string[]
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          company_name?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          internal_notes?: string | null
+          job_title?: string | null
+          message?: string | null
+          partner_type?: string
+          phone?: string | null
+          portfolio_size?: string | null
+          service_interests?: string[]
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       quote_requests: {
         Row: {
           access: string | null

@@ -1,10 +1,13 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/ui/button";
+import { CareerApplyDialog } from "@/components/site/CareerApplyDialog";
 import { buildSeo } from "@/lib/seo";
 import { CheckCircle2, Heart, TrendingUp, Users } from "lucide-react";
+import heroImg from "@/assets/page-careers.jpg";
 
 const VALUES = [
   {
@@ -79,7 +82,19 @@ export const Route = createFileRoute("/careers")({
         "Join a Northeast Ohio property-care team that pays well, trains thoroughly, and treats people right. Open roles in window cleaning, pressure washing, janitorial, and crew leadership.",
       path: "/careers",
     }),
-  component: () => (
+  component: CareersPage,
+});
+
+function CareersPage() {
+  const [open, setOpen] = useState(false);
+  const [selectedRole, setSelectedRole] = useState<string | undefined>(undefined);
+
+  const openDialog = (role?: string) => {
+    setSelectedRole(role);
+    setOpen(true);
+  };
+
+  return (
     <SiteShell>
       <PageHero
         eyebrow="Careers"
@@ -90,6 +105,7 @@ export const Route = createFileRoute("/careers")({
           { label: "About", to: "/about" },
           { label: "Careers" },
         ]}
+        image={heroImg}
       />
 
       <section className="container-prose py-20 lg:py-24">
@@ -125,7 +141,14 @@ export const Route = createFileRoute("/careers")({
               </h2>
             </div>
             <p className="max-w-md text-muted-foreground">
-              Don't see a perfect fit? We hire year-round and grow into new roles often. Send your info and we'll keep you in mind.
+              Don't see a perfect fit? We hire year-round and grow into new roles often.{" "}
+              <button
+                onClick={() => openDialog("Other / Open Application")}
+                className="font-semibold text-accent underline-offset-4 hover:underline"
+              >
+                Send your info
+              </button>{" "}
+              and we'll keep you in mind.
             </p>
           </div>
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
@@ -137,8 +160,13 @@ export const Route = createFileRoute("/careers")({
                 </div>
                 <p className="mt-1 text-xs uppercase tracking-wide text-muted-foreground">{r.type}</p>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{r.summary}</p>
-                <Button asChild variant="outline" size="sm" className="mt-5 rounded-full">
-                  <Link to="/contact">Apply for this role</Link>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="mt-5 rounded-full"
+                  onClick={() => openDialog(r.title)}
+                >
+                  Apply for this role
                 </Button>
               </div>
             ))}
@@ -155,6 +183,13 @@ export const Route = createFileRoute("/careers")({
           <p className="mt-5 text-muted-foreground leading-relaxed">
             Competitive pay is the floor, not the ceiling. Here's what comes with the role.
           </p>
+          <Button
+            size="lg"
+            className="mt-7 rounded-full"
+            onClick={() => openDialog()}
+          >
+            Apply now
+          </Button>
         </div>
         <ul className="space-y-3">
           {PERKS.map((p) => (
@@ -171,6 +206,9 @@ export const Route = createFileRoute("/careers")({
         title="Send us a quick hello."
         body="No formal resume needed for entry roles. Tell us a little about yourself and we'll be in touch within two business days."
       />
+
+      <CareerApplyDialog open={open} onOpenChange={setOpen} defaultRole={selectedRole} />
     </SiteShell>
-  ),
-});
+  );
+}
+

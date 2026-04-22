@@ -4,6 +4,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
 import { buildSeo, faqJsonLd, jsonLdScript, speakableFaqJsonLd } from "@/lib/seo";
+import heroImg from "@/assets/page-faq.jpg";
 
 const FAQS = [
   {
@@ -88,6 +89,7 @@ export const Route = createFileRoute("/faq")({
           { label: "About", to: "/about" },
           { label: "FAQ" },
         ]}
+        image={heroImg}
       />
       <FaqSection items={FAQS} title="Everything you wanted to know." eyebrow="Frequently asked" />
       <CTABand title="Still have a question? Let's talk." />
