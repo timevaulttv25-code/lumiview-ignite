@@ -7,7 +7,7 @@ import heroImg from "@/assets/industry-daycare.jpg";
 import resultImg from "@/assets/work-storefront-ba.jpg";
 
 const slug = "daycare";
-const industryTitle = "Daycare & Childcare";
+const industryTitle = "Daycare & Childcare Facility";
 const intro =
   "Detail-focused cleaning and disinfection for daycare and childcare facilities across Northeast Ohio. EPA-registered, low-VOC, fragrance-free products, CDC childcare protocols and after-hours service so the facility is fully reset before the next morning's drop-off.";
 
@@ -105,7 +105,7 @@ export const Route = createFileRoute("/industries/daycare")({
 function DaycareIndustryPage() {
   return (
     <RichIndustryLayout
-      heroEyebrow="Industry • Daycare & Childcare"
+      heroEyebrow="Industry • Daycare & Childcare Facility"
       heroTitle="Cleaning that earns the trust of every parent through the door."
       heroDescription={intro}
       heroImage={heroImg}
