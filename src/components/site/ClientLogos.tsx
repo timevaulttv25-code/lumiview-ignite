@@ -3,7 +3,7 @@ import coffeeTherapy from "@/assets/clients/coffee-therapy.png";
 import oliveTree from "@/assets/clients/olive-tree.png";
 import amanisLearning from "@/assets/clients/amanis-learning.png";
 import wirelessExpress from "@/assets/clients/wireless-express.png";
-import blushBeauty from "@/assets/clients/blush-beauty.png";
+import blushBeauty from "@/assets/clients/blush-beauty.jpeg";
 import perfect10Nails from "@/assets/clients/perfect-10-nails.png";
 import zeinas from "@/assets/clients/zeinas.png";
 import bkBarbershop from "@/assets/clients/bk-barbershop.png";
