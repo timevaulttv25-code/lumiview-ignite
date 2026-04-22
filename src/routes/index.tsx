@@ -13,7 +13,8 @@ import { Button } from "@/components/ui/button";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
 import { ClientLogos } from "@/components/site/ClientLogos";
-import { SITE, SERVICES, INDUSTRIES, CITIES } from "@/lib/site";
+import { ServiceAreaMap } from "@/components/site/ServiceAreaMap";
+import { SITE, SERVICES, INDUSTRIES } from "@/lib/site";
 import { buildSeo, faqJsonLd, jsonLdScript, localBusinessJsonLd } from "@/lib/seo";
 
 const FAQS = [
@@ -155,7 +156,7 @@ function HomePage() {
         <div className="container-prose">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <div className="eyebrow">Why LumiView</div>
+              <div className="eyebrow text-accent">Why LumiView</div>
               <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-balance lg:text-5xl">
                 The standard your property deserves.
               </h2>
@@ -185,7 +186,7 @@ function HomePage() {
       <section className="container-prose py-20 lg:py-28">
         <div className="flex flex-col items-end justify-between gap-6 lg:flex-row">
           <div className="max-w-2xl">
-            <div className="eyebrow">Services</div>
+            <div className="eyebrow text-accent">Services</div>
             <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-balance lg:text-5xl">
               Professional cleaning &amp; property-care services
             </h2>
@@ -259,7 +260,7 @@ function HomePage() {
       {/* PROCESS */}
       <section className="container-prose py-20 lg:py-28">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="eyebrow">How it works</div>
+          <div className="eyebrow text-accent">How it works</div>
           <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-balance lg:text-5xl">
             Simple. Clear. Reliable.
           </h2>
@@ -283,7 +284,7 @@ function HomePage() {
       <section className="border-y border-border bg-secondary/40 py-20 lg:py-28">
         <div className="container-prose">
           <div className="mx-auto max-w-2xl text-center">
-            <div className="eyebrow">Reviews</div>
+            <div className="eyebrow text-accent">Reviews</div>
             <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-balance lg:text-5xl">
               Trusted by homeowners, businesses &amp; property managers.
             </h2>
@@ -316,36 +317,21 @@ function HomePage() {
 
       {/* SERVICE AREAS */}
       <section className="container-prose py-20 lg:py-28">
-        <div className="grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <div className="eyebrow">Service areas</div>
-            <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-balance lg:text-5xl">
-              Serving Avon &amp; Northeast Ohio.
-            </h2>
-            <p className="mt-5 text-muted-foreground">
-              We work across Avon, Avon Lake, Westlake, Rocky River, Lakewood,
-              North Olmsted, Bay Village and many surrounding communities. Don't see
-              your town? Call — we'll confirm coverage.
-            </p>
-            <Button asChild variant="outline" className="mt-7 rounded-full">
-              <Link to="/service-areas">View all service areas <ArrowRight className="ml-1 h-4 w-4" /></Link>
-            </Button>
-          </div>
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {CITIES.map((c) => (
-                <Link
-                  key={c.slug}
-                  to="/service-areas/$slug"
-                  params={{ slug: c.slug }}
-                  className="group rounded-xl border border-border bg-card p-4 text-sm transition-all hover:border-accent hover:shadow-soft"
-                >
-                  <div className="font-semibold text-navy-deep">{c.name}</div>
-                  <div className="text-xs text-muted-foreground">{c.zip}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="eyebrow text-accent">Service areas</div>
+          <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-balance lg:text-5xl">
+            Serving Avon &amp; <span className="brand-gradient-text">Northeast Ohio</span>.
+          </h2>
+          <p className="mt-5 text-muted-foreground">
+            Local crews across Avon, Avon Lake, Westlake, Rocky River, Lakewood,
+            North Olmsted, Bay Village and many surrounding communities.
+          </p>
+          <Button asChild variant="outline" className="mt-6 rounded-full">
+            <Link to="/service-areas">View all service areas <ArrowRight className="ml-1 h-4 w-4" /></Link>
+          </Button>
+        </div>
+        <div className="mt-12">
+          <ServiceAreaMap compact />
         </div>
       </section>
 
