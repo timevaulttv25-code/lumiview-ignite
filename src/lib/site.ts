@@ -6,7 +6,7 @@ export const SITE = {
   url: "https://lumiviewservices.com",
   phoneDisplay: "(216) 939-LUMI",
   phoneLink: "tel:+12169395864",
-  email: "hello@lumiviewservices.com",
+  email: "connect@lumiviewservices.com",
   address: {
     street: "Avon, OH",
     city: "Avon",
@@ -15,10 +15,18 @@ export const SITE = {
     country: "US",
   },
   geo: { lat: 41.4517, lng: -82.0357 },
-  hours: "Mo-Sa 07:00-19:00",
+  /** Display strings for human-facing UI. */
+  hoursDisplay: [
+    { days: "Mon – Fri", time: "8:00 AM – 6:00 PM" },
+    { days: "Saturday", time: "9:00 AM – 2:00 PM" },
+    { days: "Sunday", time: "Closed" },
+  ],
+  /** Schema.org-compatible openingHours strings for JSON-LD. */
+  hoursSchema: ["Mo-Fr 08:00-18:00", "Sa 09:00-14:00"],
   rating: { value: 4.9, count: 127 },
   social: {
     google: "https://www.google.com/maps/place/LumiView+Services",
+    googleReviews: "https://g.page/r/lumiview-services/review",
     facebook: "https://facebook.com/lumiviewservices",
     instagram: "https://instagram.com/lumiviewservices",
   },
