@@ -63,7 +63,7 @@ export function ClientLogos({
               <img
                 src={l.src}
                 alt={i < LOGOS.length ? l.name : ""}
-                className="h-full w-full object-contain opacity-85 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                className="h-full w-full object-contain opacity-95 transition duration-300 hover:opacity-100 hover:scale-105"
                 loading="lazy"
                 width={224}
                 height={128}
