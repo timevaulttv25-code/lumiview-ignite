@@ -42,11 +42,11 @@ const NAV: Array<{
     label: "About",
     children: [
       { to: "/about", label: "Our Story", description: "Locally owned. Detail obsessed." },
+      { to: "/giving-back", label: "Giving Back", description: "How we invest in Northeast Ohio." },
+      { to: "/careers", label: "Careers", description: "Join a team that pays and trains right." },
       { to: "/service-areas", label: "Service Areas", description: "Cities and neighborhoods we serve." },
       { to: "/faq", label: "FAQ", description: "Pricing, scheduling, methods, and more." },
       { to: "/blog", label: "Insights & Guides", description: "Tips, seasonal advice, and how-tos." },
-      { to: "/careers", label: "Careers", description: "Join a team that pays and trains right." },
-      { to: "/giving-back", label: "Giving Back", description: "How we invest in Northeast Ohio." },
       { to: "/partner", label: "Partner With Us", description: "For PMs, realtors, builders, hosts." },
       { to: "/referral", label: "Referral Program", description: "Earn credit or cash for every referral." },
     ],
