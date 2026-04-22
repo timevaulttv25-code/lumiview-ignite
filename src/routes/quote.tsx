@@ -232,7 +232,8 @@ function QuotePage() {
       <PageHero eyebrow="Free quote · 3 steps · ~2 min" title="Let's talk about your property."
         description="Tell us a few details and we'll follow up within 24 hours with clear guidance."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Request a quote" }]} />
-      <section className="container-prose py-16 lg:py-20">
+      <section className="border-y border-border bg-secondary/40">
+        <div className="container-prose py-16 lg:py-20">
         <div className="mx-auto max-w-3xl">
           <ol className="mb-10 flex items-center justify-between">
             {[1, 2, 3].map((n) => (
@@ -463,6 +464,7 @@ function QuotePage() {
               </div>
             )}
           </div>
+        </div>
         </div>
       </section>
     </SiteShell>

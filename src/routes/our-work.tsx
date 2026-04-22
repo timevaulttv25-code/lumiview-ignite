@@ -124,7 +124,8 @@ function OurWorkPage() {
         </div>
       </section>
 
-      <section className="container-prose grid gap-10 py-20 lg:grid-cols-2 lg:py-24">
+      <section className="mt-20 border-y border-border bg-secondary/40 lg:mt-24">
+        <div className="container-prose grid gap-10 py-20 lg:grid-cols-2 lg:py-24">
         {PROJECTS.map((p) => (
           <figure
             key={p.title}
@@ -149,6 +150,7 @@ function OurWorkPage() {
             </figcaption>
           </figure>
         ))}
+        </div>
       </section>
       <CTABand title="Want your property in the next gallery?" />
     </SiteShell>

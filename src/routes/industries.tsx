@@ -45,7 +45,8 @@ function IndustriesIndex() {
         description="The same dependable standard, adapted to context — from single-family homes to short-term rentals to multi-property portfolios and retail plazas."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Industries" }]}
       />
-      <section className="container-prose grid gap-8 py-20 lg:grid-cols-2 lg:py-28">
+      <section className="border-y border-border bg-secondary/40">
+        <div className="container-prose grid gap-8 py-20 lg:grid-cols-2 lg:py-28">
         {INDUSTRIES.map((i) => (
           <Link
             key={i.slug}
@@ -69,6 +70,7 @@ function IndustriesIndex() {
             </div>
           </Link>
         ))}
+        </div>
       </section>
       <CTABand title="Let's talk about your portfolio." />
     </SiteShell>

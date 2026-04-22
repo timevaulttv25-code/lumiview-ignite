@@ -24,7 +24,8 @@ function ContactPage() {
         description="Call, email, or request a quote. We respond to every inquiry within 24 hours."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Contact" }]}
       />
-      <section className="container-prose grid gap-12 py-20 lg:grid-cols-2 lg:py-28">
+      <section className="border-y border-border bg-secondary/40">
+        <div className="container-prose grid gap-12 py-20 lg:grid-cols-2 lg:py-28">
         <div className="space-y-6">
           <a href={SITE.phoneLink} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6 hover:border-accent">
             <Phone className="h-6 w-6 text-accent" />
@@ -110,7 +111,7 @@ function ContactPage() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-border bg-secondary/40 p-10">
+        <div className="rounded-2xl border border-border bg-card p-10 shadow-soft">
           <h2 className="font-serif text-3xl font-medium">Prefer the quote form?</h2>
           <p className="mt-3 text-muted-foreground">
             Walk through a guided three-step quote with everything we need to give you a clear estimate.
@@ -120,6 +121,7 @@ function ContactPage() {
               Request a Quote <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </Button>
+        </div>
         </div>
       </section>
     </SiteShell>

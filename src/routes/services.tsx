@@ -52,7 +52,8 @@ function ServicesIndex() {
         description="From streak-free glass to soft-washed siding to weekly interior care, every LumiView service is delivered with the same dependable standard."
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Services" }]}
       />
-      <section className="container-prose grid gap-8 py-20 lg:grid-cols-2 lg:py-28">
+      <section className="border-y border-border bg-secondary/40">
+        <div className="container-prose grid gap-8 py-20 lg:grid-cols-2 lg:py-28">
         {SERVICES.map((s) => (
           <Link
             key={s.slug}
@@ -76,6 +77,7 @@ function ServicesIndex() {
             </div>
           </Link>
         ))}
+        </div>
       </section>
       <CTABand
         title="Not sure which service you need?"

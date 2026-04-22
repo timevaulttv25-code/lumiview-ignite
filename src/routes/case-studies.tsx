@@ -94,7 +94,8 @@ export const Route = createFileRoute("/case-studies")({
         </div>
       </section>
 
-      <section className="container-prose pb-20 lg:pb-28">
+      <section className="border-y border-border bg-secondary/40">
+        <div className="container-prose py-20 lg:py-28">
         <div className="mb-12 max-w-2xl">
           <div className="eyebrow">Case Studies</div>
           <h2 className="mt-3 font-serif text-3xl font-medium tracking-tight text-navy-deep lg:text-4xl">
@@ -153,6 +154,7 @@ export const Route = createFileRoute("/case-studies")({
           >
             View Our Work <ArrowRight className="h-4 w-4" />
           </Link>
+        </div>
         </div>
       </section>
 
