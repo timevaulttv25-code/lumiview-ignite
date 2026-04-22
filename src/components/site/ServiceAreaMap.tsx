@@ -33,6 +33,7 @@ export function ServiceAreaMap({
       ? activeCitySlug
       : "avon";
   const [selectedSlug, setSelectedSlug] = useState(initialSlug);
+  const [mapActive, setMapActive] = useState(false);
   const active = cities.find((c) => c.slug === selectedSlug) ?? cities[0];
 
   const lat = active?.lat ?? SITE.geo.lat;
@@ -64,15 +65,27 @@ export function ServiceAreaMap({
         )}
 
         <div className="mt-10 overflow-hidden rounded-2xl border border-border shadow-soft">
-          <div className="relative">
+          <div className="relative" onMouseLeave={() => setMapActive(false)}>
             <iframe
               key={`${lat},${lng}`}
               title={`${SITE.name} service area map — ${active?.name ?? "Avon"}`}
               src={mapSrc}
               loading="lazy"
-              className="h-[420px] w-full bg-muted"
+              className={`h-[420px] w-full bg-muted ${mapActive ? "" : "pointer-events-none"}`}
               referrerPolicy="no-referrer-when-downgrade"
             />
+            {!mapActive && (
+              <button
+                type="button"
+                onClick={() => setMapActive(true)}
+                aria-label="Activate map — click to enable scrolling and zooming"
+                className="absolute inset-0 flex items-end justify-center bg-transparent pb-6 text-xs font-semibold text-navy-deep transition-colors hover:bg-navy-deep/5"
+              >
+                <span className="rounded-full bg-background/95 px-4 py-2 shadow-soft">
+                  Click to interact with the map
+                </span>
+              </button>
+            )}
             <a
               href={externalMap}
               target="_blank"
