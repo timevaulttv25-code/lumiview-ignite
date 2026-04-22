@@ -76,9 +76,9 @@ const schema = z.object({
     .max(20),
   project_details: z.string().max(4000).optional(),
   parking: z.string().optional(),
-  flexibility: z.string().optional(),
-  access: z.string().optional(),
-  has_pets: z.string().optional(),
+  flexibility: z.string().min(1, "Please let us know if your day or time is flexible"),
+  access: z.string().min(1, "Please tell us how we can access the property"),
+  has_pets: z.string().min(1, "Please let us know about pets on the property"),
   additional_info: z.string().max(4000).optional(),
 });
 
