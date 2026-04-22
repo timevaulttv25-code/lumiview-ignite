@@ -421,10 +421,34 @@ function QuotePage() {
               <div className="space-y-5">
                 <h2 className="font-serif text-2xl font-medium">Final details</h2>
                 <div className="grid gap-4">
-                  <div><Label>Where can our team park?</Label><Input value={form.parking || ""} onChange={(e) => update("parking", e.target.value)} /></div>
-                  <div><Label>Is your day or time flexible?</Label><Input value={form.flexibility || ""} onChange={(e) => update("flexibility", e.target.value)} /></div>
-                  <div><Label>How can we access the property?</Label><Input value={form.access || ""} onChange={(e) => update("access", e.target.value)} /></div>
-                  <div><Label>Pets on property? (residential)</Label><Input value={form.has_pets || ""} onChange={(e) => update("has_pets", e.target.value)} placeholder="e.g. Yes — friendly dog" /></div>
+                  <div>
+                    <Label>Where can our team park?</Label>
+                    <Select value={form.parking} onValueChange={(v) => update("parking", v)}>
+                      <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                      <SelectContent>{PARKING.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <Label>Is your day or time flexible?</Label>
+                    <Select value={form.flexibility} onValueChange={(v) => update("flexibility", v)}>
+                      <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                      <SelectContent>{FLEXIBILITY.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <Label>How can we access the property?</Label>
+                    <Select value={form.access} onValueChange={(v) => update("access", v)}>
+                      <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                      <SelectContent>{ACCESS.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <Label>Pets on property? (residential)</Label>
+                    <Select value={form.has_pets} onValueChange={(v) => update("has_pets", v)}>
+                      <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                      <SelectContent>{PETS.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}</SelectContent>
+                    </Select>
+                  </div>
                   <div><Label>Additional information</Label><Textarea rows={4} value={form.additional_info || ""} onChange={(e) => update("additional_info", e.target.value)} /></div>
                 </div>
                 <div className="flex justify-between">
