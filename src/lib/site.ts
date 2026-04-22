@@ -89,7 +89,7 @@ export const INDUSTRIES = [
   { slug: "commercial", title: "Commercial Properties", short: "Offices, storefronts, retail plazas" },
   { slug: "property-managers", title: "Property Managers", short: "Multi-unit & portfolio support" },
   { slug: "construction", title: "Builders & New Construction", short: "Post-build & turnover prep" },
-  { slug: "daycare", title: "Daycare & Childcare", short: "Detail-focused, family-trusted" },
+  { slug: "daycare", title: "Daycare & Childcare Facility", short: "Detail-focused, family-trusted" },
 ] as const;
 
 export const CITIES = [

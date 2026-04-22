@@ -125,7 +125,7 @@ export const INDUSTRY_DETAILS: Record<string, IndustryDetailContent> = {
   },
   daycare: {
     slug: "daycare",
-    title: "Daycare & Childcare",
+    title: "Daycare & Childcare Facility",
     intro:
       "Detail-focused interior and exterior cleaning for childcare environments where cleanliness, safety and presentation directly affect the trust of every parent through the door.",
     services: [
