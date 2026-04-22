@@ -1,20 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useLocation } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { INDUSTRIES } from "@/lib/site";
 import { buildSeo } from "@/lib/seo";
-
-export const Route = createFileRoute("/industries")({
-  head: () => buildSeo({
-    title: "Industries We Serve — Residential, Commercial & Property Managers",
-    description: "LumiView serves homeowners, businesses, property managers, builders and daycare facilities across Avon and Northeast Ohio.",
-    path: "/industries",
-  }),
-  component: IndustriesIndex,
-});
-
 import residentialImg from "@/assets/industry-residential.jpg";
 import commercialImg from "@/assets/industry-commercial.jpg";
 import pmImg from "@/assets/industry-property-managers.jpg";
@@ -28,6 +18,23 @@ const IMG: Record<string, string> = {
   construction: constructionImg,
   daycare: daycareImg,
 };
+
+export const Route = createFileRoute("/industries")({
+  head: () => buildSeo({
+    title: "Industries We Serve — Residential, Commercial & Property Managers",
+    description: "LumiView serves homeowners, businesses, property managers, builders and daycare facilities across Avon and Northeast Ohio.",
+    path: "/industries",
+  }),
+  component: IndustriesRoute,
+});
+
+function IndustriesRoute() {
+  const location = useLocation();
+  if (location.pathname === "/industries") {
+    return <IndustriesIndex />;
+  }
+  return <Outlet />;
+}
 
 function IndustriesIndex() {
   return (
