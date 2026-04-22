@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useLocation } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
@@ -30,8 +30,18 @@ export const Route = createFileRoute("/services")({
       image: `${SITE.url}/og-default.jpg`,
     }),
   }),
-  component: ServicesIndex,
+  component: ServicesRoute,
 });
+
+function ServicesRoute() {
+  const location = useLocation();
+
+  if (location.pathname === "/services") {
+    return <ServicesIndex />;
+  }
+
+  return <Outlet />;
+}
 
 function ServicesIndex() {
   return (
@@ -44,10 +54,18 @@ function ServicesIndex() {
       />
       <section className="container-prose grid gap-8 py-20 lg:grid-cols-2 lg:py-28">
         {SERVICES.map((s) => (
-          <Link key={s.slug} to={`/services/${s.slug}`}
-            className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-elegant">
+          <Link
+            key={s.slug}
+            to={`/services/${s.slug}`}
+            className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-elegant"
+          >
             <div className="aspect-[16/9] overflow-hidden">
-              <img src={IMG[s.slug]} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img
+                src={IMG[s.slug]}
+                alt=""
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
             <div className="p-8">
               <h2 className="font-serif text-2xl font-medium">{s.title}</h2>
@@ -59,7 +77,10 @@ function ServicesIndex() {
           </Link>
         ))}
       </section>
-      <CTABand title="Not sure which service you need?" body="Tell us about the property and we'll recommend the right approach." />
+      <CTABand
+        title="Not sure which service you need?"
+        body="Tell us about the property and we'll recommend the right approach."
+      />
     </SiteShell>
   );
 }
