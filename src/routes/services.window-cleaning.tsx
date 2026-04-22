@@ -18,9 +18,11 @@ import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
 import { HighlightMarquee } from "@/components/site/HighlightMarquee";
+import { BeforeAfterSlider } from "@/components/site/BeforeAfterSlider";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/service-window-cleaning.jpg";
-import beforeAfterImg from "@/assets/work-windows-ba.jpg";
+import beforeImg from "@/assets/work/work-windows-before.jpg";
+import afterImg from "@/assets/work/work-windows-after.jpg";
 
 const slug = "window-cleaning";
 const title = "Window Cleaning";
@@ -269,16 +271,15 @@ function WindowCleaningPage() {
             </div>
           </div>
           <div className="lg:col-span-7">
-            <div className="overflow-hidden rounded-2xl border border-border shadow-elegant">
-              <img
-                src={beforeAfterImg}
-                alt="Before and after window cleaning by LumiView Services"
-                width={1280}
-                height={832}
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-            </div>
+            <BeforeAfterSlider
+              beforeSrc={beforeImg}
+              afterSrc={afterImg}
+              alt="Before and after window cleaning by LumiView Services"
+              className="overflow-hidden rounded-2xl border border-border shadow-elegant"
+            />
+            <p className="mt-3 text-center text-xs text-muted-foreground">
+              Drag the slider to compare before and after.
+            </p>
           </div>
         </div>
       </section>
