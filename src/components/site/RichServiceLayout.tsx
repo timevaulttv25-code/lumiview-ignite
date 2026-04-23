@@ -9,6 +9,7 @@ import { FaqSection } from "@/components/site/FaqSection";
 import { HighlightMarquee } from "@/components/site/HighlightMarquee";
 import { BeforeAfterSlider } from "@/components/site/BeforeAfterSlider";
 import { Button } from "@/components/ui/button";
+import { PhoneDisplay } from "@/components/site/PhoneDisplay";
 
 export interface RichTier {
   icon: LucideIcon;
@@ -288,7 +289,7 @@ export function RichServiceLayout(p: RichServiceLayoutProps) {
                   href={SITE.phoneLink}
                   className="phone-btn !px-6 !py-3 !text-sm"
                 >
-                  <Phone className="h-4 w-4" /> {SITE.phoneDisplay}
+                  <Phone className="h-4 w-4" /> <PhoneDisplay />
                 </a>
               </div>
             </div>

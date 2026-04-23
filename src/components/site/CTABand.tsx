@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Phone } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { Button } from "@/components/ui/button";
+import { PhoneDisplay } from "@/components/site/PhoneDisplay";
 
 interface CTABandProps {
   eyebrow?: string;
@@ -37,7 +38,7 @@ export function CTABand({
               href={SITE.phoneLink}
               className="phone-btn-dark"
             >
-              <Phone className="h-4 w-4" /> {SITE.phoneDisplay}
+              <Phone className="h-4 w-4" /> <PhoneDisplay />
             </a>
           </div>
         </div>

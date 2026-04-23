@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Facebook, Instagram, Star, MapPinned } from "lucide-react";
 import { SITE, SERVICES, CITIES } from "@/lib/site";
+import { PhoneDisplay } from "@/components/site/PhoneDisplay";
 import logo from "@/assets/lumiview-logo.png";
 
 export function Footer() {
@@ -23,7 +24,7 @@ export function Footer() {
           </p>
           <div className="mt-6 space-y-3 text-sm">
             <a href={SITE.phoneLink} className="flex items-center gap-2.5 text-ivory hover:text-accent">
-              <Phone className="h-4 w-4 text-accent" /> {SITE.phoneDisplay}
+              <Phone className="h-4 w-4 text-accent" /> <PhoneDisplay />
             </a>
             <a href={`mailto:${SITE.email}`} className="flex items-center gap-2.5 text-ivory hover:text-accent">
               <Mail className="h-4 w-4 text-accent" /> {SITE.email}

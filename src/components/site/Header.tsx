@@ -3,6 +3,7 @@ import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { SITE, SERVICES, INDUSTRIES } from "@/lib/site";
 import { Button } from "@/components/ui/button";
+import { PhoneDisplay } from "@/components/site/PhoneDisplay";
 import logo from "@/assets/lumiview-logo.png";
 
 const NAV: Array<{
@@ -119,7 +120,7 @@ export function Header() {
             className="phone-btn-sm shrink-0 whitespace-nowrap"
           >
             <Phone className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:rotate-12" />
-            <span className="whitespace-nowrap">{SITE.phoneDisplay}</span>
+            <span className="whitespace-nowrap"><PhoneDisplay /></span>
           </a>
           <Button asChild variant="default" size="sm" className="whitespace-nowrap rounded-full px-5">
             <Link to="/quote">Request a Quote</Link>
@@ -188,7 +189,7 @@ export function Header() {
                 href={SITE.phoneLink}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-navy-deep"
               >
-                <Phone className="h-4 w-4" /> {SITE.phoneDisplay}
+                <Phone className="h-4 w-4" /> <PhoneDisplay />
               </a>
               <Button asChild className="rounded-full">
                 <Link to="/quote" onClick={() => setOpen(false)}>
