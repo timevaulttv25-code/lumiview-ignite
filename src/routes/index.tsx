@@ -16,6 +16,7 @@ import airbnbImg from "@/assets/service-airbnb-turnover.jpg";
 
 import { SiteShell } from "@/components/site/SiteShell";
 import { Button } from "@/components/ui/button";
+import { PhoneDisplay } from "@/components/site/PhoneDisplay";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
 import { ClientLogos } from "@/components/site/ClientLogos";
@@ -107,7 +108,7 @@ function HomePage() {
                 </Link>
               </Button>
               <a href={SITE.phoneLink} className="phone-btn h-11 px-7 py-0 text-base">
-                <Phone className="h-4 w-4 text-accent" /> {SITE.phoneDisplay}
+                <Phone className="h-4 w-4 text-accent" /> <PhoneDisplay />
               </a>
             </div>
 

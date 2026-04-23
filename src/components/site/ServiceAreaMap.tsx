@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { MapPin } from "lucide-react";
 import { CITIES, SITE } from "@/lib/site";
+import { PhoneDisplay } from "@/components/site/PhoneDisplay";
 
 type CityLike = { slug: string; name: string; zip: string; lat: number; lng: number };
 
@@ -179,7 +180,7 @@ export function ServiceAreaMap({
           <p className="mt-6 text-center text-sm text-muted-foreground">
             Don&rsquo;t see your town? Call{" "}
             <a href={SITE.phoneLink} className="font-semibold text-accent hover:underline">
-              {SITE.phoneDisplay}
+              <PhoneDisplay />
             </a>{" "}, we&rsquo;re happy to confirm coverage.
           </p>
         )}

@@ -12,6 +12,7 @@ import {
   Star,
 } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { PhoneDisplay } from "@/components/site/PhoneDisplay";
 import { buildSeo, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
@@ -356,7 +357,7 @@ function WindowCleaningPage() {
                   href={SITE.phoneLink}
                   className="phone-btn !px-6 !py-3 !text-sm"
                 >
-                  <Phone className="h-4 w-4" /> {SITE.phoneDisplay}
+                  <Phone className="h-4 w-4" /> <PhoneDisplay />
                 </a>
               </div>
             </div>

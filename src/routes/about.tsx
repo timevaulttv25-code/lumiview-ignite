@@ -5,6 +5,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
+import { PhoneDisplay } from "@/components/site/PhoneDisplay";
 import { buildSeo } from "@/lib/seo";
 import heroImg from "@/assets/hero-window-cleaner.jpg";
 
@@ -112,7 +113,7 @@ function AboutPage() {
               </Link>
             </Button>
             <a href={SITE.phoneLink} className="phone-btn">
-              <Phone className="h-4 w-4 text-accent" /> {SITE.phoneDisplay}
+              <Phone className="h-4 w-4 text-accent" /> <PhoneDisplay />
             </a>
           </div>
         </div>

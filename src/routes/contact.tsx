@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, Clock, ArrowRight, Star, Facebook, Instagram, MapP
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
+import { PhoneDisplay } from "@/components/site/PhoneDisplay";
 import { SITE } from "@/lib/site";
 import { buildSeo } from "@/lib/seo";
 
@@ -31,7 +32,7 @@ function ContactPage() {
             <Phone className="h-6 w-6 text-accent" />
             <div>
               <div className="eyebrow">Phone</div>
-              <div className="mt-1 font-serif text-2xl">{SITE.phoneDisplay}</div>
+              <div className="mt-1 font-serif text-2xl"><PhoneDisplay /></div>
             </div>
           </a>
 
