@@ -106,7 +106,7 @@ function HomePage() {
                   Request a Quote <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
-              <a href={SITE.phoneLink} className="phone-btn">
+              <a href={SITE.phoneLink} className="phone-btn h-11 px-7 py-0 text-base">
                 <Phone className="h-4 w-4 text-accent" /> {SITE.phoneDisplay}
               </a>
             </div>
