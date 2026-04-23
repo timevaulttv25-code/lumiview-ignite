@@ -41,7 +41,7 @@ export function localBusinessJsonLd(extra?: Record<string, unknown>) {
     "@id": `${SITE.url}#business`,
     name: SITE.name,
     url: SITE.url,
-    telephone: SITE.phoneDisplay,
+    telephone: SITE.phoneNumeric,
     email: SITE.email,
     image: `${SITE.url}/og-default.jpg`,
     priceRange: "$$",
@@ -120,7 +120,7 @@ export function organizationJsonLd() {
     url: SITE.url,
     logo: `${SITE.url}/og-default.jpg`,
     image: `${SITE.url}/og-default.jpg`,
-    telephone: SITE.phoneDisplay,
+    telephone: SITE.phoneNumeric,
     email: SITE.email,
     sameAs: Object.values(SITE.social),
     contactPoint: {
