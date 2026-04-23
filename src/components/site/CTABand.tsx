@@ -35,7 +35,7 @@ export function CTABand({
             </Button>
             <a
               href={SITE.phoneLink}
-              className="flex items-center gap-2 rounded-full border border-ivory/20 px-5 py-3 text-sm font-semibold text-ivory hover:border-accent hover:text-accent"
+              className="phone-btn-dark"
             >
               <Phone className="h-4 w-4" /> {SITE.phoneDisplay}
             </a>
