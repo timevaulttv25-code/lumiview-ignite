@@ -299,7 +299,7 @@ function HomePage() {
       </section>
 
       {/* SERVICE AREAS */}
-      <section className="container-prose py-20 lg:py-28">
+      <section className="container-prose pt-20 pb-8 lg:pt-28 lg:pb-12">
         <div className="mx-auto max-w-2xl text-center">
           <div className="eyebrow text-accent">Service areas</div>
           <h2 className="mt-3 font-serif text-4xl font-medium tracking-tight text-balance lg:text-5xl">
@@ -317,12 +317,16 @@ function HomePage() {
         </div>
       </section>
 
-      <FaqSection items={FAQS as unknown as { q: string; a: string }[]} />
+      <div className="[&>section]:py-10 lg:[&>section]:py-14">
+        <FaqSection items={FAQS as unknown as { q: string; a: string }[]} />
+      </div>
 
-      <CTABand
-        title="Let's talk about your property."
-        body="Tell us a few details and we'll follow up within 24 hours with clear next steps for residential or commercial service across Avon and nearby Northeast Ohio."
-      />
+      <div className="[&>section]:py-8 lg:[&>section]:py-12 [&_footer]:mt-0">
+        <CTABand
+          title="Let's talk about your property."
+          body="Tell us a few details and we'll follow up within 24 hours with clear next steps for residential or commercial service across Avon and nearby Northeast Ohio."
+        />
+      </div>
     </SiteShell>
   );
 }

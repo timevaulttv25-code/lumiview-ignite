@@ -5,7 +5,7 @@ import logo from "@/assets/lumiview-logo.png";
 
 export function Footer() {
   return (
-    <footer className="navy-gradient mt-24 text-ivory">
+    <footer className="navy-gradient mt-8 text-ivory lg:mt-12">
       <div className="container-prose grid gap-12 py-16 lg:grid-cols-12 lg:py-20">
         <div className="lg:col-span-4">
           <Link to="/" aria-label={`${SITE.name} home`} className="inline-flex items-center">
