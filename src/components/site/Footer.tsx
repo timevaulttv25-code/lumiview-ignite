@@ -41,7 +41,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Leave a Google review"
-                className="inline-flex items-center gap-2 rounded-full border border-ivory/15 bg-ivory/5 px-3.5 py-1.5 text-xs font-semibold text-ivory transition-colors hover:border-accent hover:bg-accent/15 hover:text-accent"
+                className="review-btn-dark px-3.5 py-1.5 text-xs font-semibold"
               >
                 <Star className="h-3.5 w-3.5 fill-accent text-accent" />
                 {SITE.rating.value}★ Google Reviews

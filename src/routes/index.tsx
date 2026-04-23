@@ -404,7 +404,13 @@ function HeroCarousel() {
       </div>
 
       {/* Rating card */}
-      <div className="absolute -bottom-6 left-6 hidden rounded-2xl border border-border bg-card p-5 shadow-elegant sm:block lg:left-auto lg:right-6">
+      <a
+        href={SITE.social.googleReviews}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${SITE.rating.value} on Google — read reviews`}
+        className="review-btn absolute -bottom-6 left-6 hidden flex-col !items-start !gap-1 !rounded-2xl p-5 shadow-elegant sm:flex lg:left-auto lg:right-6"
+      >
         <div className="flex items-center gap-3">
           <div className="flex">
             {[1, 2, 3, 4, 5].map((i) => (
@@ -413,10 +419,10 @@ function HeroCarousel() {
           </div>
           <div className="text-sm font-semibold">{SITE.rating.value} on Google</div>
         </div>
-        <div className="mt-1 text-xs text-muted-foreground">
+        <div className="text-xs text-muted-foreground">
           Based on {SITE.rating.count}+ verified reviews
         </div>
-      </div>
+      </a>
     </div>
   );
 }
