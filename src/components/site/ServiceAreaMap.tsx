@@ -64,7 +64,7 @@ export function ServiceAreaMap({
           </div>
         )}
 
-        <div className="mt-10 overflow-hidden rounded-2xl border border-border shadow-soft">
+        <div className={`${compact ? "mt-3" : "mt-10"} overflow-hidden rounded-2xl border border-border shadow-soft`}>
           <div className="relative" onMouseLeave={() => setMapActive(false)}>
             <iframe
               key={`${lat},${lng}`}
