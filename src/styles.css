@@ -187,7 +187,7 @@
 
   /* Phone-button hover: gradient outline only (fill + text unchanged) */
   .phone-btn {
-    @apply inline-flex items-center gap-2 rounded-full border-2 border-border bg-card px-6 py-3 text-base font-semibold text-navy-deep shadow-sm transition-all duration-300 ease-out;
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-full border-2 border-border bg-card px-8 text-base font-semibold text-navy-deep shadow-sm transition-all duration-300 ease-out;
   }
   .phone-btn:hover {
     transform: translateY(-2px);
