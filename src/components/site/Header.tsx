@@ -116,7 +116,7 @@ export function Header() {
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
           <a
             href={SITE.phoneLink}
-            className="group relative inline-flex h-8 shrink-0 items-center gap-2 overflow-hidden whitespace-nowrap rounded-full border border-border bg-background px-4 text-xs font-semibold text-navy-deep shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-transparent hover:bg-[linear-gradient(90deg,var(--brand-blue),var(--brand-purple))] hover:bg-[length:200%_100%] hover:bg-right hover:text-white hover:shadow-[0_10px_28px_-10px_color-mix(in_oklab,var(--brand-purple)_55%,transparent)] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="phone-btn-sm shrink-0 whitespace-nowrap"
           >
             <Phone className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:rotate-12" />
             <span className="whitespace-nowrap">{SITE.phoneDisplay}</span>

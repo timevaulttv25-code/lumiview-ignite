@@ -111,10 +111,7 @@ function AboutPage() {
                 Request a Quote <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
-            <a
-              href={SITE.phoneLink}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-base font-semibold text-navy-deep hover:bg-muted"
-            >
+            <a href={SITE.phoneLink} className="phone-btn">
               <Phone className="h-4 w-4 text-accent" /> {SITE.phoneDisplay}
             </a>
           </div>

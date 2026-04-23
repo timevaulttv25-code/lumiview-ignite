@@ -286,7 +286,7 @@ export function RichServiceLayout(p: RichServiceLayoutProps) {
                 </Button>
                 <a
                   href={SITE.phoneLink}
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-navy-deep hover:border-accent hover:text-accent"
+                  className="phone-btn !px-6 !py-3 !text-sm"
                 >
                   <Phone className="h-4 w-4" /> {SITE.phoneDisplay}
                 </a>
