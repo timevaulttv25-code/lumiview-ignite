@@ -74,7 +74,7 @@ const PROCESS = [
 const TESTIMONIALS = [
   { name: "James L.", role: "Property Owner & Airbnb Host", quote: "They've been consistent and dependable across multiple units. Communication is clear, and the results are always solid." },
   { name: "Sarah M.", role: "Homeowner, Westlake", quote: "LumiView did an excellent job on our windows and exterior cleaning. Everything looked noticeably better right away." },
-  { name: "David R.", role: "Business Owner, Rocky River", quote: "Reliable, professional, and easy to work with. Our storefront always looks clean and well-presented after each visit." },
+  { name: "David R.", role: "Business Owner, North Olmsted", quote: "Reliable, professional, and easy to work with. Our storefront always looks clean and well-presented after each visit." },
 ] as const;
 
 function HomePage() {
