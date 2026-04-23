@@ -310,7 +310,10 @@ function HomePage() {
           </p>
         </div>
         <div className="mt-12">
-          <ServiceAreaMap compact />
+          <p className="mb-4 text-center text-sm text-muted-foreground">
+            Tap a city to move the pin and open its dedicated services page.
+          </p>
+          <ServiceAreaMap compact interactive pillsAsLinks />
         </div>
       </section>
 
