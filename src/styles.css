@@ -142,7 +142,7 @@
   }
   .site-main > section:nth-of-type(even):not(.bg-navy-deep):not([class*="bg-secondary"]):not([class*="navy-gradient"]),
   .site-main > div:nth-of-type(even):not([class*="[&_footer]"]) > section:not(.bg-navy-deep):not([class*="bg-secondary"]):not([class*="navy-gradient"]) {
-    background-color: color-mix(in oklab, var(--secondary) 52%, var(--background));
+    background-color: color-mix(in oklab, var(--brand-cyan) 7%, var(--background));
   }
   h1, h2, h3, .font-serif {
     font-family: var(--font-serif);
@@ -156,7 +156,8 @@
     @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12;
   }
   .eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-accent;
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em];
+    color: var(--brand-blue);
   }
   .gold-rule {
     background: linear-gradient(90deg, transparent, var(--brand-cyan), var(--brand-purple), transparent);
