@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { MapPin } from "lucide-react";
 import { CITIES, SITE } from "@/lib/site";
@@ -34,7 +34,26 @@ export function ServiceAreaMap({
       : "avon";
   const [selectedSlug, setSelectedSlug] = useState(initialSlug);
   const [mapActive, setMapActive] = useState(false);
+  const [mapVisible, setMapVisible] = useState(false);
+  const mapWrapRef = useRef<HTMLDivElement | null>(null);
   const active = cities.find((c) => c.slug === selectedSlug) ?? cities[0];
+
+  useEffect(() => {
+    if (mapVisible || typeof IntersectionObserver === "undefined") return;
+    const el = mapWrapRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setMapVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [mapVisible]);
 
   const lat = active?.lat ?? SITE.geo.lat;
   const lng = active?.lng ?? SITE.geo.lng;
@@ -65,15 +84,19 @@ export function ServiceAreaMap({
         )}
 
         <div className={`${compact ? "mt-3" : "mt-10"} overflow-hidden rounded-2xl border border-border shadow-soft`}>
-          <div className="relative" onMouseLeave={() => setMapActive(false)}>
-            <iframe
-              key={`${lat},${lng}`}
-              title={`${SITE.name} service area map, ${active?.name ?? "Avon"}`}
-              src={mapSrc}
-              loading="lazy"
-              className={`h-[420px] w-full bg-muted ${mapActive ? "" : "pointer-events-none"}`}
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="relative" ref={mapWrapRef} onMouseLeave={() => setMapActive(false)}>
+            {mapVisible ? (
+              <iframe
+                key={`${lat},${lng}`}
+                title={`${SITE.name} service area map, ${active?.name ?? "Avon"}`}
+                src={mapSrc}
+                loading="lazy"
+                className={`h-[420px] w-full bg-muted ${mapActive ? "" : "pointer-events-none"}`}
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            ) : (
+              <div className="h-[420px] w-full bg-muted" aria-hidden="true" />
+            )}
             {!mapActive && (
               <button
                 type="button"
