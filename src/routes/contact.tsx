@@ -35,11 +35,21 @@ function ContactPage() {
             </div>
           </a>
 
-          <a href={`mailto:${SITE.email}`} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6 hover:border-accent">
+          <a href={`mailto:${SITE.emails.general}`} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6 hover:border-accent">
             <Mail className="h-6 w-6 text-accent" />
             <div>
-              <div className="eyebrow">Email</div>
-              <div className="mt-1 font-serif text-xl">{SITE.email}</div>
+              <div className="eyebrow">General inquiries</div>
+              <div className="mt-1 font-serif text-xl">{SITE.emails.general}</div>
+              <div className="mt-1 text-xs text-muted-foreground">Questions, feedback, anything else.</div>
+            </div>
+          </a>
+
+          <a href={`mailto:${SITE.emails.quotes}`} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6 hover:border-accent">
+            <Mail className="h-6 w-6 text-accent" />
+            <div>
+              <div className="eyebrow">Quote requests</div>
+              <div className="mt-1 font-serif text-xl">{SITE.emails.quotes}</div>
+              <div className="mt-1 text-xs text-muted-foreground">Pricing, scheduling, new projects.</div>
             </div>
           </a>
 
