@@ -9,7 +9,7 @@ import { buildSeo } from "@/lib/seo";
 
 const STATS = [
   { value: "175+", label: "Windows Cleaned" },
-  { value: "450+", label: "Properties on recurring service" },
+  { value: "35+", label: "Properties on recurring service" },
   { value: `${SITE.rating.value}★`, label: `Across ${SITE.rating.count}+ Google reviews` },
   { value: "24 hr", label: "Average quote turnaround" },
 ];
