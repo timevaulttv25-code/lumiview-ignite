@@ -409,7 +409,7 @@ function HeroCarousel() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`${SITE.rating.value} on Google — read reviews`}
-        className="review-btn absolute -bottom-6 left-6 hidden flex-col !items-start !gap-1 p-5 shadow-elegant sm:flex lg:left-auto lg:right-6"
+        className="review-btn absolute -bottom-6 left-6 hidden flex-col !items-start !gap-1 !rounded-2xl p-5 shadow-elegant sm:flex lg:left-auto lg:right-6"
       >
         <div className="flex items-center gap-3">
           <div className="flex">
