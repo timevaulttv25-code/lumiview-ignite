@@ -62,6 +62,42 @@ export type Database = {
         }
         Relationships: []
       }
+      faq_questions: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          internal_notes: string | null
+          phone: string | null
+          question: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          internal_notes?: string | null
+          phone?: string | null
+          question: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          internal_notes?: string | null
+          phone?: string | null
+          question?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       partner_inquiries: {
         Row: {
           company_name: string
