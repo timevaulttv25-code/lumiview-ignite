@@ -363,6 +363,9 @@ function HeroCarousel() {
               alt={slide.label}
               width={1920}
               height={1080}
+              loading={i === 0 ? "eager" : "lazy"}
+              decoding="async"
+              fetchPriority={i === 0 ? "high" : "low"}
               className={`absolute inset-0 h-full w-full object-cover transition-all duration-[1400ms] ease-out ${
                 i === index
                   ? "opacity-100 scale-100"
