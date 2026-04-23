@@ -77,21 +77,21 @@
   --primary: oklch(0.58 0.22 270);                /* CTA blue */
   --primary-foreground: oklch(1 0 0);
 
-  --secondary: oklch(0.97 0.012 260);
+  --secondary: oklch(0.96 0.025 215);
   --secondary-foreground: oklch(0.20 0.05 265);
 
-  --muted: oklch(0.96 0.010 260);
+  --muted: oklch(0.96 0.018 215);
   --muted-foreground: oklch(0.48 0.03 265);
 
-  --accent: oklch(0.50 0.235 305);                /* purple, darkened for readability on white */
+  --accent: oklch(0.62 0.21 268);                /* shifted to brand-blue for stronger logo presence */
   --accent-foreground: oklch(1 0 0);
 
   --destructive: oklch(0.55 0.20 27);
   --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.92 0.012 260);
-  --input: oklch(0.92 0.012 260);
-  --ring: oklch(0.58 0.22 270);
+  --border: oklch(0.92 0.020 215);
+  --input: oklch(0.92 0.020 215);
+  --ring: oklch(0.62 0.21 268);
 }
 
 .dark {
@@ -142,7 +142,7 @@
   }
   .site-main > section:nth-of-type(even):not(.bg-navy-deep):not([class*="bg-secondary"]):not([class*="navy-gradient"]),
   .site-main > div:nth-of-type(even):not([class*="[&_footer]"]) > section:not(.bg-navy-deep):not([class*="bg-secondary"]):not([class*="navy-gradient"]) {
-    background-color: color-mix(in oklab, var(--secondary) 52%, var(--background));
+    background-color: color-mix(in oklab, var(--brand-cyan) 7%, var(--background));
   }
   h1, h2, h3, .font-serif {
     font-family: var(--font-serif);
@@ -156,7 +156,8 @@
     @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12;
   }
   .eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-accent;
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em];
+    color: var(--brand-blue);
   }
   .gold-rule {
     background: linear-gradient(90deg, transparent, var(--brand-cyan), var(--brand-purple), transparent);
