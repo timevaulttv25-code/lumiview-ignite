@@ -116,10 +116,10 @@ export function Header() {
         <div className="hidden shrink-0 items-center gap-3 lg:flex">
           <a
             href={SITE.phoneLink}
-            className="flex shrink-0 items-center gap-2 whitespace-nowrap text-sm font-semibold text-navy-deep"
+            className="group flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-transparent px-3 py-1.5 text-sm font-semibold text-navy-deep transition-all hover:border-accent hover:bg-accent/10 hover:text-accent active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
           >
-            <Phone className="h-4 w-4 shrink-0" />
-            <span className="whitespace-nowrap">{SITE.phoneDisplay}</span>
+            <Phone className="h-4 w-4 shrink-0 transition-transform group-hover:rotate-12 group-hover:text-accent" />
+            <span className="whitespace-nowrap underline-offset-4 group-hover:underline">{SITE.phoneDisplay}</span>
           </a>
           <Button asChild variant="default" size="sm" className="whitespace-nowrap rounded-full px-5">
             <Link to="/quote">Request a Quote</Link>
