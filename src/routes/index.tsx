@@ -7,7 +7,8 @@ import ogImg from "@/assets/og-default.jpg";
 import windowImg from "@/assets/service-window-cleaning.jpg";
 import pressureImg from "@/assets/service-pressure-washing.jpg";
 import janitorialImg from "@/assets/service-janitorial.jpg";
-import propertyImg from "@/assets/service-property-care.jpg";
+
+import pmImg from "@/assets/service-property-management.jpg";
 import commercialImg from "@/assets/industry-commercial.jpg";
 import residentialImg from "@/assets/industry-residential.jpg";
 import propertyMgrImg from "@/assets/industry-property-managers.jpg";
@@ -186,7 +187,7 @@ function HomePage() {
             { ...SERVICES[0], img: windowImg },
             { ...SERVICES[1], img: pressureImg },
             { ...SERVICES[2], img: janitorialImg },
-            { ...SERVICES[3], img: propertyImg },
+            { ...SERVICES[4], img: pmImg },
           ].map((s) => (
             <Link
               key={s.slug}
@@ -337,7 +338,7 @@ const HERO_SLIDES = [
   { src: propertyMgrImg, label: "Property Managers", sub: "Multi-unit portfolios" },
   { src: airbnbImg, label: "Airbnb & VRBO", sub: "Turnover-ready" },
   { src: janitorialImg, label: "Janitorial", sub: "Interior care" },
-  { src: propertyImg, label: "Property Care", sub: "Year-round upkeep" },
+  { src: pmImg, label: "Property Management", sub: "Portfolio cleaning" },
 ] as const;
 
 function HeroCarousel() {
