@@ -62,13 +62,6 @@ export const SERVICES = [
       "Detail-driven janitorial and interior cleaning for offices, facilities, and residences, scheduled service you can plan a week around.",
   },
   {
-    slug: "property-care",
-    title: "Property Care & Facility Support",
-    short: "Ongoing upkeep for managed portfolios.",
-    excerpt:
-      "Single point of contact for ongoing exterior and interior upkeep across managed properties, multi-unit buildings, and facility portfolios.",
-  },
-  {
     slug: "airbnb-vrbo-turnover",
     title: "Airbnb & Vrbo Turnover Cleaning",
     short: "5-star ready between every guest.",

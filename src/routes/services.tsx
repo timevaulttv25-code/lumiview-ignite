@@ -8,7 +8,6 @@ import { buildSeo } from "@/lib/seo";
 import windowImg from "@/assets/service-window-cleaning.jpg";
 import pressureImg from "@/assets/service-pressure-washing.jpg";
 import janitorialImg from "@/assets/service-janitorial.jpg";
-import propertyImg from "@/assets/service-property-care.jpg";
 import airbnbImg from "@/assets/service-airbnb-turnover.jpg";
 import pmImg from "@/assets/service-property-management.jpg";
 
@@ -16,7 +15,6 @@ const IMG: Record<string, string> = {
   "window-cleaning": windowImg,
   "pressure-washing": pressureImg,
   "janitorial-interior-cleaning": janitorialImg,
-  "property-care": propertyImg,
   "airbnb-vrbo-turnover": airbnbImg,
   "property-management-cleaning": pmImg,
 };

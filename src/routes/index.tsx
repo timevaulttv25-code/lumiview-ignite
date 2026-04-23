@@ -186,7 +186,7 @@ function HomePage() {
             { ...SERVICES[0], img: windowImg },
             { ...SERVICES[1], img: pressureImg },
             { ...SERVICES[2], img: janitorialImg },
-            { ...SERVICES[3], img: propertyImg },
+            { ...SERVICES[4], img: propertyImg },
           ].map((s) => (
             <Link
               key={s.slug}
