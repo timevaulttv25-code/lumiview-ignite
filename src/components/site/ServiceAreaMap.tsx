@@ -34,7 +34,26 @@ export function ServiceAreaMap({
       : "avon";
   const [selectedSlug, setSelectedSlug] = useState(initialSlug);
   const [mapActive, setMapActive] = useState(false);
+  const [mapVisible, setMapVisible] = useState(false);
+  const mapWrapRef = useRef<HTMLDivElement | null>(null);
   const active = cities.find((c) => c.slug === selectedSlug) ?? cities[0];
+
+  useEffect(() => {
+    if (mapVisible || typeof IntersectionObserver === "undefined") return;
+    const el = mapWrapRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setMapVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [mapVisible]);
 
   const lat = active?.lat ?? SITE.geo.lat;
   const lng = active?.lng ?? SITE.geo.lng;
