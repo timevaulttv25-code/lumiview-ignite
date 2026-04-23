@@ -34,8 +34,8 @@ const PILLARS = [
 ] as const;
 
 const STATS = [
-  { value: "175+", label: "Windows cleaned" },
-  { value: "9,800+", label: "Sq ft pressure-washed weekly" },
+  { value: "175+", label: "Windows Cleaned" },
+  { value: "2,800+", label: "Sq ft pressure-washed monthly" },
   { value: `${SITE.rating.value}★`, label: `Across ${SITE.rating.count}+ Google reviews` },
   { value: "24 hr", label: "Average quote turnaround" },
 ];

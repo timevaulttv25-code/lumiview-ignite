@@ -88,8 +88,8 @@ export const Route = createFileRoute("/our-work")({
 });
 
 const STATS = [
-  { value: "12,000+", label: "Windows cleaned this year" },
-  { value: "1,800+", label: "Sq ft pressure-washed weekly" },
+  { value: "175+", label: "Windows Cleaned" },
+  { value: "2,800+", label: "Sq ft pressure-washed monthly" },
   { value: "100%", label: "Jobs photographed before & after" },
 ];
 

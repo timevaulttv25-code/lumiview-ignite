@@ -10,7 +10,7 @@ import heroImg from "@/assets/hero-window-cleaner.jpg";
 
 const STATS = [
   { value: `${SITE.rating.value}★`, label: `Across ${SITE.rating.count}+ Google reviews` },
-  { value: "12,000+", label: "Windows cleaned this year" },
+  { value: "175+", label: "Windows Cleaned" },
   { value: "450+", label: "Properties on recurring service" },
   { value: "24 hr", label: "Typical quote turnaround" },
 ];
