@@ -332,7 +332,7 @@ function HomePage() {
 }
 
 const HERO_SLIDES = [
-  { src: heroImg, label: "Window Cleaning", sub: "Streak-free clarity" },
+  { src: windowImg, label: "Window Cleaning", sub: "Streak-free clarity" },
   { src: pressureImg, label: "Pressure Washing", sub: "Driveways, siding & patios" },
   { src: commercialImg, label: "Commercial", sub: "Storefronts & offices" },
   { src: residentialImg, label: "Residential", sub: "Homes across NE Ohio" },
