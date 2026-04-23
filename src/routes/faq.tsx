@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { MessageCircleQuestion } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
+import { AskQuestionDialog } from "@/components/site/AskQuestionDialog";
+import { Button } from "@/components/ui/button";
 import { buildSeo, faqJsonLd, jsonLdScript, speakableFaqJsonLd } from "@/lib/seo";
 import heroImg from "@/assets/page-faq.jpg";
 
@@ -78,7 +82,12 @@ export const Route = createFileRoute("/faq")({
       scripts: [jsonLdScript(faqJsonLd(FAQS)), jsonLdScript(speakableFaqJsonLd())],
     };
   },
-  component: () => (
+  component: FaqPage,
+});
+
+function FaqPage() {
+  const [open, setOpen] = useState(false);
+  return (
     <SiteShell>
       <PageHero
         eyebrow="FAQ"
@@ -92,7 +101,22 @@ export const Route = createFileRoute("/faq")({
         image={heroImg}
       />
       <FaqSection items={FAQS} title="Everything you wanted to know." eyebrow="Frequently asked" />
+      <section className="container-prose pb-20 lg:pb-28">
+        <div className="rounded-3xl border border-border bg-muted/30 px-8 py-12 text-center lg:px-16 lg:py-16">
+          <MessageCircleQuestion className="mx-auto h-10 w-10 text-accent" />
+          <h2 className="mt-5 font-serif text-3xl font-medium tracking-tight lg:text-4xl">
+            Still have a question?
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
+            Send it to us directly and we'll get back to you within one business day.
+          </p>
+          <Button size="lg" className="mt-7 rounded-full" onClick={() => setOpen(true)}>
+            Ask a question
+          </Button>
+        </div>
+      </section>
+      <AskQuestionDialog open={open} onOpenChange={setOpen} />
       <CTABand title="Still have a question? Let's talk." />
     </SiteShell>
-  ),
-});
+  );
+}
