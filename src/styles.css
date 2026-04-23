@@ -205,6 +205,31 @@
     box-shadow: 0 14px 36px -10px color-mix(in oklab, var(--brand-purple) 55%, transparent);
   }
 
+  /* Google-review button: gradient outline only on hover (light surface) */
+  .review-btn {
+    @apply inline-flex items-center gap-2 rounded-full border-2 border-border bg-card text-navy-deep shadow-sm transition-all duration-300 ease-out;
+  }
+  .review-btn:hover {
+    transform: translateY(-2px);
+    border-color: transparent;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      linear-gradient(90deg, var(--brand-blue), var(--brand-purple)) border-box;
+    box-shadow: 0 14px 36px -10px color-mix(in oklab, var(--brand-purple) 45%, transparent);
+  }
+  /* Dark-surface variant (footer on navy) */
+  .review-btn-dark {
+    @apply inline-flex items-center gap-2 rounded-full border-2 border-ivory/15 text-ivory transition-all duration-300 ease-out;
+  }
+  .review-btn-dark:hover {
+    transform: translateY(-2px);
+    border-color: transparent;
+    background:
+      linear-gradient(var(--navy-deep), var(--navy-deep)) padding-box,
+      linear-gradient(90deg, var(--brand-cyan), var(--brand-purple)) border-box;
+    box-shadow: 0 14px 36px -10px color-mix(in oklab, var(--brand-purple) 55%, transparent);
+  }
+
   /* Horizontal marquee for client logos */
   @keyframes marquee {
     from { transform: translateX(0); }
