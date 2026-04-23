@@ -130,6 +130,20 @@
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
   }
+  .site-main > section,
+  .site-main > div > section {
+    position: relative;
+  }
+  .site-main > section + section,
+  .site-main > div + section,
+  .site-main > section + div,
+  .site-main > div + div {
+    border-top: 1px solid color-mix(in oklab, var(--border) 82%, transparent);
+  }
+  .site-main > section:nth-of-type(even):not(.bg-navy-deep):not([class*="bg-secondary"]):not([class*="navy-gradient"]),
+  .site-main > div:nth-of-type(even):not([class*="[&_footer]"]) > section:not(.bg-navy-deep):not([class*="bg-secondary"]):not([class*="navy-gradient"]) {
+    background-color: color-mix(in oklab, var(--secondary) 52%, var(--background));
+  }
   h1, h2, h3, .font-serif {
     font-family: var(--font-serif);
     font-feature-settings: "ss01";
