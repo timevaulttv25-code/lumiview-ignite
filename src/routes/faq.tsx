@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { MessageCircleQuestion } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABand } from "@/components/site/CTABand";
 import { FaqSection } from "@/components/site/FaqSection";
+import { AskQuestionDialog } from "@/components/site/AskQuestionDialog";
+import { Button } from "@/components/ui/button";
 import { buildSeo, faqJsonLd, jsonLdScript, speakableFaqJsonLd } from "@/lib/seo";
 import heroImg from "@/assets/page-faq.jpg";
 
