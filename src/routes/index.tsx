@@ -375,7 +375,7 @@ function HeroCarousel() {
           ))}
 
           {/* Caption */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/80 via-navy-deep/30 to-transparent p-6 lg:p-8">
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/80 via-navy-deep/30 to-transparent p-6 sm:pr-44 lg:p-8 lg:pr-56">
             {HERO_SLIDES.map((slide, i) => (
               <div
                 key={slide.label}
