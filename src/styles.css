@@ -170,6 +170,41 @@
     background: linear-gradient(90deg, var(--brand-blue), var(--brand-purple));
   }
 
+  /* Phone-button hover: gradient outline only (fill + text unchanged) */
+  .phone-btn {
+    @apply inline-flex items-center gap-2 rounded-full border-2 border-border bg-card px-6 py-3 text-base font-semibold text-navy-deep shadow-sm transition-all duration-300 ease-out;
+  }
+  .phone-btn:hover {
+    transform: translateY(-2px);
+    border-color: transparent;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      linear-gradient(90deg, var(--brand-blue), var(--brand-purple)) border-box;
+    box-shadow: 0 14px 36px -10px color-mix(in oklab, var(--brand-purple) 45%, transparent);
+  }
+  .phone-btn-sm {
+    @apply inline-flex h-8 items-center gap-2 rounded-full border-2 border-border bg-background px-4 text-xs font-semibold text-navy-deep shadow-sm transition-all duration-300 ease-out;
+  }
+  .phone-btn-sm:hover {
+    transform: translateY(-2px);
+    border-color: transparent;
+    background:
+      linear-gradient(var(--background), var(--background)) padding-box,
+      linear-gradient(90deg, var(--brand-blue), var(--brand-purple)) border-box;
+    box-shadow: 0 10px 28px -10px color-mix(in oklab, var(--brand-purple) 55%, transparent);
+  }
+  .phone-btn-dark {
+    @apply inline-flex items-center gap-2 rounded-full border-2 border-ivory/20 px-5 py-3 text-sm font-semibold text-ivory transition-all duration-300 ease-out;
+  }
+  .phone-btn-dark:hover {
+    transform: translateY(-2px);
+    border-color: transparent;
+    background:
+      linear-gradient(var(--navy-deep), var(--navy-deep)) padding-box,
+      linear-gradient(90deg, var(--brand-cyan), var(--brand-purple)) border-box;
+    box-shadow: 0 14px 36px -10px color-mix(in oklab, var(--brand-purple) 55%, transparent);
+  }
+
   /* Horizontal marquee for client logos */
   @keyframes marquee {
     from { transform: translateX(0); }
