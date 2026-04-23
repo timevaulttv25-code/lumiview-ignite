@@ -108,7 +108,7 @@ function HomePage() {
               </Button>
               <a
                 href={SITE.phoneLink}
-                className="group relative inline-flex items-center gap-2 rounded-full border border-transparent bg-card px-6 py-3 text-base font-semibold text-navy-deep shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_14px_36px_-10px_color-mix(in_oklab,var(--brand-purple)_45%,transparent)] [background:linear-gradient(var(--card),var(--card))_padding-box,linear-gradient(90deg,var(--brand-blue),var(--brand-purple))_border-box] border-2"
+                className="group inline-flex items-center gap-2 rounded-full border-2 border-border bg-card px-6 py-3 text-base font-semibold text-navy-deep shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-transparent hover:shadow-[0_14px_36px_-10px_color-mix(in_oklab,var(--brand-purple)_45%,transparent)] hover:[background:linear-gradient(var(--card),var(--card))_padding-box,linear-gradient(90deg,var(--brand-blue),var(--brand-purple))_border-box]"
               >
                 <Phone className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-x-0.5" /> {SITE.phoneDisplay}
               </a>
