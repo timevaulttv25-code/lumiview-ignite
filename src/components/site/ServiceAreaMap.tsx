@@ -84,15 +84,19 @@ export function ServiceAreaMap({
         )}
 
         <div className={`${compact ? "mt-3" : "mt-10"} overflow-hidden rounded-2xl border border-border shadow-soft`}>
-          <div className="relative" onMouseLeave={() => setMapActive(false)}>
-            <iframe
-              key={`${lat},${lng}`}
-              title={`${SITE.name} service area map, ${active?.name ?? "Avon"}`}
-              src={mapSrc}
-              loading="lazy"
-              className={`h-[420px] w-full bg-muted ${mapActive ? "" : "pointer-events-none"}`}
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="relative" ref={mapWrapRef} onMouseLeave={() => setMapActive(false)}>
+            {mapVisible ? (
+              <iframe
+                key={`${lat},${lng}`}
+                title={`${SITE.name} service area map, ${active?.name ?? "Avon"}`}
+                src={mapSrc}
+                loading="lazy"
+                className={`h-[420px] w-full bg-muted ${mapActive ? "" : "pointer-events-none"}`}
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            ) : (
+              <div className="h-[420px] w-full bg-muted" aria-hidden="true" />
+            )}
             {!mapActive && (
               <button
                 type="button"
