@@ -7,7 +7,7 @@ import ogImg from "@/assets/og-default.jpg";
 import windowImg from "@/assets/service-window-cleaning.jpg";
 import pressureImg from "@/assets/service-pressure-washing.jpg";
 import janitorialImg from "@/assets/service-janitorial.jpg";
-import propertyImg from "@/assets/service-property-care.jpg";
+
 import pmImg from "@/assets/service-property-management.jpg";
 import commercialImg from "@/assets/industry-commercial.jpg";
 import residentialImg from "@/assets/industry-residential.jpg";

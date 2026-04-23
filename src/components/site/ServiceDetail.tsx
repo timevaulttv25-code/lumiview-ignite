@@ -7,7 +7,6 @@ import { FaqSection } from "@/components/site/FaqSection";
 import windowImg from "@/assets/service-window-cleaning.jpg";
 import pressureImg from "@/assets/service-pressure-washing.jpg";
 import janitorialImg from "@/assets/service-janitorial.jpg";
-import propertyImg from "@/assets/service-property-care.jpg";
 import airbnbImg from "@/assets/service-airbnb-turnover.jpg";
 import pmImg from "@/assets/service-property-management.jpg";
 
@@ -15,7 +14,6 @@ export const SERVICE_IMG: Record<string, string> = {
   "window-cleaning": windowImg,
   "pressure-washing": pressureImg,
   "janitorial-interior-cleaning": janitorialImg,
-  "property-care": propertyImg,
   "airbnb-vrbo-turnover": airbnbImg,
   "property-management-cleaning": pmImg,
 };
@@ -98,30 +96,6 @@ export const SERVICE_DETAILS: Record<string, ServiceDetailContent> = {
       {
         q: "Do you offer after-hours service?",
         a: "Yes. Most commercial accounts prefer evening or early-morning service to avoid business disruption.",
-      },
-    ],
-  },
-  "property-care": {
-    slug: "property-care",
-    title: "Property Care & Facility Support",
-    intro:
-      "Single point of contact for ongoing exterior and interior property upkeep, ideal for property managers, multi-unit buildings and facility portfolios.",
-    includes: [
-      "Coordinated multi-property scheduling",
-      "Quarterly exterior refresh",
-      "Common-area janitorial",
-      "Seasonal pressure washing",
-      "Turnover & make-ready cleaning",
-      "One invoice across the portfolio",
-    ],
-    faqs: [
-      {
-        q: "Can you handle multiple properties on one account?",
-        a: "Absolutely, that's exactly what this service is built for. Consolidated scheduling, reporting, and billing.",
-      },
-      {
-        q: "Do you provide certificates of insurance?",
-        a: "Yes, immediately on request, with your management company listed as additional insured if needed.",
       },
     ],
   },
